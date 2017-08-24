@@ -1,0 +1,118 @@
+﻿ul {
+	-webkit-margin-before: 0px;
+	-webkit-margin-after: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+h4 {
+	-webkit-margin-before: 0px;
+	-webkit-margin-after: 0px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+
+.box {
+	margin: 14px;
+	border: 1px solid lightgray;
+}
+
+.box .box {
+	margin: 0px;
+}
+
+.box > h2, .box > a > h2 {
+	padding: 14px;
+	background-color: aquamarine;
+	margin: 0px;
+	border-radius: 3px 3px;
+}
+
+.box > h3, .box > a > h3 {
+	padding: 14px;
+	background-color: lightblue;
+	margin: 0px;
+	border-radius: 3px 3px;
+}
+
+.box > h4, .box > a > h4 {
+	background-color: aquamarine;
+	padding-left: 7px;
+}
+
+.box > .box-contents {
+	padding: 14px;
+}
+
+.property .title {
+	background-color: #aee;
+}
+
+.property .contents {
+	padding: 7px;
+	border: solid 1px #aee;
+}
+
+.stop-nesting-boxes .box, .stop-nesting-boxes .box-contents {
+	border: none;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+}
+
+.parameters li {
+	padding-bottom: 14px;
+}
+
+.description {
+	font-style: italic;
+}
+
+.attributes span {
+	padding-left: 2px;
+	padding-right: 2px;
+	margin-right: 7px;
+	border-radius: 3px 3px;
+	font-weight: bold;
+}
+
+.attributes .required {
+	background-color: orangered;
+}
+
+.attributes .deprecated {
+	background-color: blue;
+	color: white;
+}
+
+.attributes .allow-empty-value {
+	background-color: lightgray;
+}
+
+.attributes .in {
+	background-color: green;
+	color: white;
+}
+
+.attributes .mapped {
+	background-color: lightgray;
+}
+.attributes .manifest-entity {
+	background-color: lightblue;
+}
+.attributes .enum {
+	background-color: yellow;
+}
+.attributes .depends-on {
+	background-color: orange;
+}
+.attributes .preview {
+	background-color: blue;
+	color: white;
+}
+.attributes .tag {
+	background-color: lightgray;
+}
+.attributes .nullable {
+	background-color: lightgray;
+}
