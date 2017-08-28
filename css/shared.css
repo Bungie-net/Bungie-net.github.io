@@ -1,0 +1,249 @@
+﻿html
+{
+	font-size: 16px;
+}
+
+body
+{
+	color: white;
+	background: rgb(18, 23, 28);
+
+	font-family: sans-serif;
+}
+
+a
+{
+	color: rgba(255, 206, 31, 0.8);
+}
+
+a:hover
+{
+	color: rgba(255, 206, 31, 1);
+}
+
+ul
+{
+	margin-top: 0;
+	margin-bottom: 0;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+}
+
+li > .title
+{
+	font-weight: bold;
+}
+
+li > .description
+{
+	opacity: 0.75;
+}
+
+h4
+{
+	padding-top: 7px;
+	padding-bottom: 7px;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+}
+
+.box
+{
+	margin-bottom: 2rem;
+	padding: 0 1rem 1rem;
+
+	border: 1px solid rgba(245, 245, 245, 0.25);
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.box > h2,
+.box > a > h2,
+.box > h3,
+.box > a > h3,
+.box > h4,
+.box > a > h4
+{
+	margin: 0 -1rem;
+	padding: 1rem;
+
+	background: rgba(0, 150, 219, 0.25);
+}
+
+.box > .box-contents
+{
+	padding: 1rem;
+}
+
+.property .title
+{
+	color: rgba(255, 206, 31, 1);
+}
+
+.property .contents
+{
+	padding-left: 1rem;
+}
+
+.property .contents .type-info div:not(:empty)
+{
+	position: relative;
+
+	padding: 0.5rem 0 0.5rem 1.65rem;
+}
+
+.property .contents .type-info div:not(:empty):before
+{
+	position: absolute;
+
+	left: 0;
+
+	content: "├─";
+
+	opacity: 0.25;
+}
+
+.property .contents .type-info .attributes
+{
+	margin-left: -1rem;
+	padding-left: 0 !important;
+}
+
+.property .contents .type-info .attributes:before
+{
+	display: none;
+}
+
+.stop-nesting-boxes .box,
+.stop-nesting-boxes .box-contents
+{
+	padding-top: 0;
+	padding-right: 0;
+	padding-left: 0;
+
+	border: none;
+	box-shadow: none;
+}
+
+.parameters li
+{
+	padding-bottom: 1rem;
+}
+
+.description
+{
+	font-style: italic;
+}
+
+.attributes span
+{
+	margin-right: 7px;
+	padding: 2px 5px;
+
+	vertical-align: 1px;
+
+	color: rgb(18, 23, 28);
+	border-radius: 3px;
+
+	font-size: 0.7em;
+}
+
+.attributes .required
+{
+	background-color: rgb(244, 67, 54);
+}
+
+.attributes .deprecated
+{
+	color: white;
+	background-color: rgb(33, 40, 51);
+}
+
+.attributes .allow-empty-value
+{
+	background-color: lightgray;
+}
+
+.attributes .in
+{
+	color: white;
+	background-color: rgb(117, 183, 129);
+}
+
+.attributes .mapped
+{
+	background-color: lightgray;
+}
+
+.attributes .manifest-entity
+{
+	background-color: rgb(90, 171, 240);
+}
+
+.attributes .enum
+{
+	background-color: rgb(237, 192, 29);
+}
+
+.attributes .depends-on
+{
+	background-color: orange;
+}
+
+.attributes .preview
+{
+	color: white;
+	background-color: #0096db;
+}
+
+.attributes .tag
+{
+	background-color: lightgray;
+}
+
+.attributes .nullable
+{
+	background-color: lightgray;
+}
+
+h1
+{
+	margin-bottom: 1.125rem;
+
+	text-transform: uppercase;
+
+	font-size: 3rem;
+}
+
+h2
+{
+	margin-bottom: 0.675rem;
+
+	font-size: 1.75rem;
+}
+
+h3
+{
+	margin-bottom: 0.5rem;
+
+	text-transform: initial;
+
+	font-size: 1.25rem;
+	font-weight: normal;
+}
+
+h4
+{
+	margin-bottom: 0.4rem;
+
+	text-transform: initial;
+
+	font-size: 1rem;
+	font-weight: normal;
+}
+
+h2,
+h3,
+h4
+{
+	color: rgb(245, 245, 245);
+}

@@ -1,163 +1,129 @@
-﻿.sidebar {
+﻿.sidebar
+{
 	position: fixed;
-	left: 0;
+	overflow: scroll;
+
+	box-sizing: border-box;
 	top: 0;
 	bottom: 0;
-	overflow: scroll;
-	width: 600px;
+	left: 0;
+	width: 33vw;
+	min-width: 500px;
+	padding: 2rem;
 }
 
-.sidebar ul {
+.sidebar ul
+{
 	padding-left: 7px;
+
 	list-style-type: none;
 }
 
-.sidebar li {
-	padding-bottom: 5px;
+.sidebar li
+{
+	padding-bottom: 8px;
+
+	white-space: nowrap;
 }
 
-.description {
+.sidebar li li:before,
+.sidebar li a:first-child:before
+{
+	content: "- ";
+
+	color: white;
+}
+
+.description
+{
 	padding-top: 14px;
-	font-style: normal;
 	padding-bottom: 14px;
+
+	font-style: normal;
 }
 
-.main {
+.main
+{
 	position: fixed;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	width: calc(100% - 600px);
 	overflow-y: scroll;
+
+	box-sizing: border-box;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: calc(100% - 33vw);
+	padding: 2rem;
 }
 
-ul {
-	-webkit-margin-before: 0px;
-	-webkit-margin-after: 0px;
-	margin-top: 0px;
-	margin-bottom: 0px;
+ul
+{
+	margin-top: 0;
+	margin-bottom: 0;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
 }
 
-h4 {
-	-webkit-margin-before: 0px;
-	-webkit-margin-after: 0px;
+h4
+{
 	padding-top: 7px;
 	padding-bottom: 7px;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
 }
 
-.box {
-	margin: 14px;
-	border: 1px solid lightgray;
-}
-
-.box .box {
-	margin: 0px;
-}
-
-.box > h2, .box > a > h2 {
-	padding: 14px;
-	background-color: aquamarine;
-	margin: 0px;
-	border-radius: 3px 3px;
-}
-
-.box > h3, .box > a > h3 {
-	padding: 14px;
-	background-color: lightblue;
-	margin: 0px;
-	border-radius: 3px 3px;
-}
-
-.box > h4, .box > a > h4 {
-	background-color: aquamarine;
-	padding-left: 7px;
-}
-
-.box > .box-contents {
-	padding: 14px;
-}
-
-.sidebar-box {
+.sidebar-box
+{
 	margin-top: 14px;
 	margin-bottom: 14px;
 }
 
-.sidebar-box > h2, .sidebar-box > a > h2 {
-	padding: 7px;
-	background-color: lightblue;
-	margin: 0px;
-	border-radius: 3px 3px;
+.sidebar-box > h2,
+.sidebar-box > a > h2
+{
+	margin: 0;
 }
 
-.sidebar-box > .box-contents {
-	padding: 7px
+.sidebar-box > .sidebar-box-contents
+{
+	padding: 20px;
+
+	border-left: 1px solid rgba(245, 245, 245, 0.1);
 }
 
-.property .title {
-	background-color: #aee;
+.sidebar-box ul
+{
+	padding-left: 0;
 }
 
-.property .contents {
-	padding: 7px;
-	border: solid 1px #aee;
+.sidebar li a
+{
+	text-decoration: none;
 }
 
-.stop-nesting-boxes .box, .stop-nesting-boxes .box-contents {
-	border: none;
-	padding-left: 0px;
-	padding-right: 0px;
-	padding-top: 0px;
+.sidebar-box h3
+{
+	padding-bottom: 10px;
 }
 
-.parameters li {
-	padding-bottom: 14px;
+::-webkit-scrollbar
+{
+	width: 1rem;
 }
 
-.attributes span {
-	padding-left: 2px;
-	padding-right: 2px;
-	margin-right: 7px;
-	border-radius: 3px 3px;
-	font-weight: bold;
+::-webkit-scrollbar-track
+{
+	background: #181c25;
+	box-shadow: inset 0 0 5px #12171c;
 }
 
-.attributes .required {
-	background-color: orangered;
+::-webkit-scrollbar-thumb
+{
+	border: 1px solid #181c25;
+	background: #232936;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
-.attributes .deprecated {
-	background-color: blue;
-	color: white;
-}
-
-.attributes .allow-empty-value {
-	background-color: lightgray;
-}
-
-.attributes .in {
-	background-color: green;
-	color: white;
-}
-
-.attributes .mapped {
-	background-color: lightgray;
-}
-.attributes .manifest-entity {
-	background-color: lightblue;
-}
-.attributes .enum {
-	background-color: yellow;
-}
-.attributes .depends-on {
-	background-color: orange;
-}
-.attributes .preview {
-	background-color: blue;
-	color: white;
-}
-.attributes .tag {
-	background-color: lightgray;
-}
-.attributes .nullable {
-	background-color: lightgray;
+::-webkit-scrollbar-thumb:hover
+{
+	background: #272e3d;
 }
