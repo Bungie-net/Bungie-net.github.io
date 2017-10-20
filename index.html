@@ -14,7 +14,7 @@
 		<div class="box-contents">
 			<div>These endpoints constitute the functionality exposed by Bungie.net, both for more traditional website functionality and for connectivity to Bungie video games and their related functionality.</div>
 			<div class="about-line-items">
-				<div><strong>Version:</strong> 2.0.0
+				<div><strong>Version:</strong> 2.0.1
 				</div>
 				<div><strong>License:</strong> <a href="https://github.com/Bungie-net/api/blob/master/LICENSE">https://github.com/Bungie-net/api/blob/master/LICENSE (BSD License 2.0)</a>
 				</div>
@@ -301,7 +301,7 @@ clan/group memberships, recent activity, muted users.</div>
 						</span>
 					</li>
 					<li>
-						<span>POST:</span> <a href="#GroupV2.GetRecommendedGroups">/GroupV2/Recommended/</a>
+						<span>POST:</span> <a href="#GroupV2.GetRecommendedGroups">/GroupV2/Recommended/{groupType}/{createDateRange}/</a>
 						<span class="attributes">
 						</span>
 					</li>
@@ -427,6 +427,11 @@ clan/group memberships, recent activity, muted users.</div>
 					</li>
 					<li>
 						<span>POST:</span> <a href="#GroupV2.ApprovePendingForList">/GroupV2/{groupId}/Members/ApproveList/</a>
+						<span class="attributes">
+						</span>
+					</li>
+					<li>
+						<span>POST:</span> <a href="#GroupV2.ApprovePending">/GroupV2/{groupId}/Members/Approve/{membershipType}/{membershipId}/</a>
 						<span class="attributes">
 						</span>
 					</li>
@@ -960,6 +965,11 @@ clan/group memberships, recent activity, muted users.</div>
 				<a href="#/components/schemas/Destiny.Definitions.DestinyInventoryItemDefinition">Destiny.Definitions.DestinyInventoryItemDefinition</a>
 				<span class="attributes">
 					<span class="manifest-entity">Mobile Manifest Entity</span>
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.Misc.DestinyColor">Destiny.Misc.DestinyColor</a>
+				<span class="attributes">
 				</span>
 			</li>
 			<li>
@@ -1826,6 +1836,12 @@ clan/group memberships, recent activity, muted users.</div>
 				</span>
 			</li>
 			<li>
+				<a href="#/components/schemas/GroupsV2.GroupDateRange">GroupsV2.GroupDateRange</a>
+				<span class="attributes">
+					<span class="enum">Enumeration</span>
+				</span>
+			</li>
+			<li>
 				<a href="#/components/schemas/GroupsV2.GroupV2Card">GroupsV2.GroupV2Card</a>
 				<span class="attributes">
 				</span>
@@ -1843,12 +1859,6 @@ clan/group memberships, recent activity, muted users.</div>
 			<li>
 				<a href="#/components/schemas/GroupsV2.GroupQuery">GroupsV2.GroupQuery</a>
 				<span class="attributes">
-				</span>
-			</li>
-			<li>
-				<a href="#/components/schemas/GroupsV2.GroupDateRange">GroupsV2.GroupDateRange</a>
-				<span class="attributes">
-					<span class="enum">Enumeration</span>
 				</span>
 			</li>
 			<li>
@@ -2225,6 +2235,11 @@ clan/group memberships, recent activity, muted users.</div>
 			</li>
 			<li>
 				<a href="#/components/schemas/Destiny.Challenges.DestinyChallengeStatus">Destiny.Challenges.DestinyChallengeStatus</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.Milestones.DestinyMilestoneVendor">Destiny.Milestones.DestinyMilestoneVendor</a>
 				<span class="attributes">
 				</span>
 			</li>
@@ -2906,6 +2921,11 @@ clan/group memberships, recent activity, muted users.</div>
 			</li>
 			<li>
 				<a href="#/components/schemas/Destiny.Milestones.DestinyPublicMilestoneChallenge">Destiny.Milestones.DestinyPublicMilestoneChallenge</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.Milestones.DestinyPublicMilestoneVendor">Destiny.Milestones.DestinyPublicMilestoneVendor</a>
 				<span class="attributes">
 				</span>
 			</li>
@@ -9194,7 +9214,7 @@ clan/group memberships, recent activity, muted users.</div>
 		<br />
 		<div><strong>Verb:</strong> POST</div>
 		<br />
-		<div><strong>Path:</strong> /GroupV2/Recommended/</div>
+		<div><strong>Path:</strong> /GroupV2/Recommended/{groupType}/{createDateRange}/</div>
 		<br />
 		<div class="description">Gets groups recommended for you based on the groups to whom those you follow belong.</div>
 		<br />
@@ -9207,16 +9227,27 @@ clan/group memberships, recent activity, muted users.</div>
 			</div>
 		</div>
 		
+		<div class="parameters box">
+			<h4>Path Parameters</h4>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<strong>createDateRange</strong>
+						<div class="description">The date range of activity of groups for which we should search. Is that proper grammar I don't know</div>
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/GroupsV2.GroupDateRange">GroupsV2.GroupDateRange</a>
+</div>					</li>
+					<li>
+						<strong>groupType</strong>
+						<div class="description">The type of group to get.</div>
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/GroupsV2.GroupType">GroupsV2.GroupType</a>
+</div>					</li>
+				</ul>
+			</div>
+		</div>
 
 	
-		<div class="request-body box">
-			<h4>Request Body</h4>
-			<div class="box-contents stop-nesting-boxes">
-			
-<div class="type-info stop-nesting-boxes">
-		See: <a href="#/components/schemas/GroupsV2.GroupQuery">GroupsV2.GroupQuery</a>
-</div>			</div>
-		</div>
 	
 		<div class="response box">
 			<h4>Response</h4>
@@ -9249,7 +9280,27 @@ clan/group memberships, recent activity, muted users.</div>
 						<div class="title"><strong>Response</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
-		See: <a href="#/components/schemas/GroupsV2.GroupSearchResponse">GroupsV2.GroupSearchResponse</a>
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/GroupsV2.GroupV2Card">GroupsV2.GroupV2Card</a>
+	</div>
+
+	
+	
+			
+
 </div>						</div>
 					</div>
 				</div>
@@ -15485,6 +15536,286 @@ clan/group memberships, recent activity, muted users.</div>
 		<strong>Array Contents:</strong>
 			<a href="#/components/schemas/Entities.EntityActionResult">Entities.EntityActionResult</a>
 	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorCode</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Exceptions.PlatformErrorCodes">Exceptions.PlatformErrorCodes</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ThrottleSeconds</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorStatus</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Message</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>MessageData</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			string
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		string
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+</div>			</div>
+		</div>
+	</div>
+</div>		</div>
+		<div class="endpoint">
+<div class="box">
+	<a id="GroupV2.ApprovePending"><h3>GroupV2.ApprovePending</h3></a>
+	<div class="box-contents">
+		<div class="attributes">
+			<span class="GroupV2 tag">GroupV2</span>
+		</div>
+		<br />
+		<div><strong>Verb:</strong> POST</div>
+		<br />
+		<div><strong>Path:</strong> /GroupV2/{groupId}/Members/Approve/{membershipType}/{membershipId}/</div>
+		<br />
+		<div class="description">Approve the given membershipId to join the group/clan as long as they have applied.</div>
+		<br />
+		<div class="required-scopes box">
+			<h4>Required Scope(s)</h4>
+			<div class="box-contents">
+				<ul>
+					<li>oauth2: AdminGroups</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="parameters box">
+			<h4>Path Parameters</h4>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<strong>groupId</strong>
+						<div class="description">ID of the group.</div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int64
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>					</li>
+					<li>
+						<strong>membershipId</strong>
+						<div class="description">The membership id being approved.</div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int64
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>					</li>
+					<li>
+						<strong>membershipType</strong>
+						<div class="description">Membership type of the supplied membership ID.</div>
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/BungieMembershipType">BungieMembershipType</a>
+</div>					</li>
+				</ul>
+			</div>
+		</div>
+
+	
+		<div class="request-body box">
+			<h4>Request Body</h4>
+			<div class="box-contents stop-nesting-boxes">
+			
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/GroupsV2.GroupApplicationRequest">GroupsV2.GroupApplicationRequest</a>
+</div>			</div>
+		</div>
+	
+		<div class="response box">
+			<h4>Response</h4>
+			<div class="box-contents stop-nesting-boxes">
+<div class="response">
+	<div class="description">Look at the Response property for more information about the nature of this response</div>
+		<div class="content">
+			<div class="content-type">Content Type: application/json</div>
+			<div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Response</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
 
 	
 	
@@ -27902,6 +28233,7 @@ clan/group memberships, recent activity, muted users.</div>
 					</li>
 					<li>
 						<div><strong>All</strong>: -1</div>
+						<div class="description">"All" is only valid for searching capabilities: you need to pass the actual matching BungieMembershipType for any query where you pass a known membershipId.</div>
 					</li>
 				</ul>
 			</div>
@@ -33635,6 +33967,38 @@ In practice, you will want to associate this data with "live" item data from a B
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
+						<div class="title"><strong>backgroundColor</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Sometimes, an item will have a background color. Most notably this occurs with Emblems, who use the Background Color for small character nameplates such as the "friends" view you see in-game. There are almost certainly other items that have background color as well, though I have not bothered to investigate what items have it nor what purposes they serve: use it as you will.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.Misc.DestinyColor">Destiny.Misc.DestinyColor</a>
+</div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
 						<div class="title"><strong>screenshot</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
@@ -35025,6 +35389,143 @@ When entities refer to each other in Destiny content, it is this hash that they 
 	
 	<div class="type">
 		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Misc.DestinyColor"><h3>Destiny.Misc.DestinyColor</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Represents a color whose RGBA values are all represented as values between 0 and 255.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>red</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: byte
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>green</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: byte
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>blue</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: byte
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>alpha</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: byte
 	</div>
 	
 	
@@ -40839,6 +41340,9 @@ When entities refer to each other in Destiny content, it is this hash that they 
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		I regret calling this a "large icon". It's more like a medium-sized image with a picture of the vendor's mug on it, trying their best to look cool. Not what one would call an icon.
+	</div>
 	
 	
 	<div class="type">
@@ -40866,6 +41370,36 @@ When entities refer to each other in Destiny content, it is this hash that they 
 	<div class="attributes">
 	</div>
 	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>originalIcon</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If we replaced the icon with something more glitzy, this is the original icon that the vendor had according to the game's content. It may be more lame and/or have less razzle-dazzle. But who am I to tell you which icon to use.
+	</div>
 	
 	
 	<div class="type">
@@ -44148,6 +44682,178 @@ A Faction is really just an entity that has a related progression for which a ch
 		<strong>Mapped to Manifest Database Definition: </strong>
 		<a href="#/components/schemas/Destiny.Definitions.DestinyProgressionDefinition">Destiny.Definitions.DestinyProgressionDefinition</a>
 	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>backgroundImagePath</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The relative path to the background image, for use in a banner.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>tokenValues</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The faction token item hashes, and their respective progression values.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			uint32
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		uint32
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>rewardItemHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	<div class="description">
+		The faction reward item hash, usually an engram.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyInventoryItemDefinition">Destiny.Definitions.DestinyInventoryItemDefinition</a>
+	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>rewardVendorHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	<div class="description">
+		The faction reward vendor hash, used for faction engram previews.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyVendorDefinition">Destiny.Definitions.DestinyVendorDefinition</a>
+	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>rewardVendorPreviewCategoryHashes</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		For the faction reward vendor, the category hashes to be shown as reward previews.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			uint32
+	</div>
+
+	
+	
 			
 
 </div>						</div>
@@ -49829,6 +50535,9 @@ Activities also have Activity Types, but unfortunately in Destiny 2 these are ev
 		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
+	<div class="description">
+		If this activity had an activity mode directly defined on it, this will be the hash of that mode.
+	</div>
 	
 	
 	<div class="type">
@@ -49862,6 +50571,9 @@ Activities also have Activity Types, but unfortunately in Destiny 2 these are ev
 		<span class="enum">Enumeration</span>
 	</div>
 	
+	<div class="description">
+		If the activity had an activity mode directly defined on it, this will be the enum value of that mode.
+	</div>
 	
 	
 	<div class="type">
@@ -49909,6 +50621,7 @@ Activities also have Activity Types, but unfortunately in Destiny 2 these are ev
 					</li>
 					<li>
 						<div><strong>Clash</strong>: 12</div>
+						<div class="description">Clash -> Destiny's name for Team Deathmatch. 4v4 combat, the team with the highest kills at the end of time wins.</div>
 					</li>
 					<li>
 						<div><strong>Reserved13</strong>: 13</div>
@@ -49976,6 +50689,21 @@ Activities also have Activity Types, but unfortunately in Destiny 2 these are ev
 					<li>
 						<div><strong>Social</strong>: 40</div>
 					</li>
+					<li>
+						<div><strong>TrialsCountdown</strong>: 41</div>
+					</li>
+					<li>
+						<div><strong>TrialsSurvival</strong>: 42</div>
+					</li>
+					<li>
+						<div><strong>IronBannerControl</strong>: 43</div>
+					</li>
+					<li>
+						<div><strong>IronBannerClash</strong>: 44</div>
+					</li>
+					<li>
+						<div><strong>IronBannerSupremacy</strong>: 45</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -49996,6 +50724,9 @@ Activities also have Activity Types, but unfortunately in Destiny 2 these are ev
 		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
+	<div class="description">
+		The hash identifiers for Activity Modes relevant to this activity.  Note that if this is a playlist, the specific playlist entry chosen will determine the actual activity modes that end up being relevant.
+	</div>
 	
 	
 	<div class="type">
@@ -50031,6 +50762,9 @@ Activities also have Activity Types, but unfortunately in Destiny 2 these are ev
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		The activity modes - if any - in enum form. Because we can't seem to escape the enums.
+	</div>
 	
 	
 	<div class="type">
@@ -50666,6 +51400,9 @@ When entities refer to each other in Destiny content, it is this hash that they 
 		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
+	<div class="description">
+		If this playlist entry had an activity mode directly defined on it, this will be the hash of that mode.
+	</div>
 	
 	
 	<div class="type">
@@ -50699,6 +51436,9 @@ When entities refer to each other in Destiny content, it is this hash that they 
 		<span class="enum">Enumeration</span>
 	</div>
 	
+	<div class="description">
+		If the playlist entry had an activity mode directly defined on it, this will be the enum value of that mode.
+	</div>
 	
 	
 	<div class="type">
@@ -50746,6 +51486,7 @@ When entities refer to each other in Destiny content, it is this hash that they 
 					</li>
 					<li>
 						<div><strong>Clash</strong>: 12</div>
+						<div class="description">Clash -> Destiny's name for Team Deathmatch. 4v4 combat, the team with the highest kills at the end of time wins.</div>
 					</li>
 					<li>
 						<div><strong>Reserved13</strong>: 13</div>
@@ -50813,6 +51554,21 @@ When entities refer to each other in Destiny content, it is this hash that they 
 					<li>
 						<div><strong>Social</strong>: 40</div>
 					</li>
+					<li>
+						<div><strong>TrialsCountdown</strong>: 41</div>
+					</li>
+					<li>
+						<div><strong>TrialsSurvival</strong>: 42</div>
+					</li>
+					<li>
+						<div><strong>IronBannerControl</strong>: 43</div>
+					</li>
+					<li>
+						<div><strong>IronBannerClash</strong>: 44</div>
+					</li>
+					<li>
+						<div><strong>IronBannerSupremacy</strong>: 45</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -50833,6 +51589,9 @@ When entities refer to each other in Destiny content, it is this hash that they 
 		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
+	<div class="description">
+		The hash identifiers for Activity Modes relevant to this entry.
+	</div>
 	
 	
 	<div class="type">
@@ -50868,6 +51627,9 @@ When entities refer to each other in Destiny content, it is this hash that they 
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		The activity modes - if any - in enum form. Because we can't seem to escape the enums.
+	</div>
 	
 	
 	<div class="type">
@@ -50904,6 +51666,9 @@ When entities refer to each other in Destiny content, it is this hash that they 
 		<span class="enum">Enumeration</span>
 	</div>
 	
+	<div class="description">
+		For historical reasons, this list will have both D1 and D2-relevant Activity Modes in it. Please don't take this to mean that some D1-only feature is coming back!
+	</div>
 	
 	
 	<div class="type">
@@ -50951,6 +51716,7 @@ When entities refer to each other in Destiny content, it is this hash that they 
 					</li>
 					<li>
 						<div><strong>Clash</strong>: 12</div>
+						<div class="description">Clash -> Destiny's name for Team Deathmatch. 4v4 combat, the team with the highest kills at the end of time wins.</div>
 					</li>
 					<li>
 						<div><strong>Reserved13</strong>: 13</div>
@@ -51018,6 +51784,21 @@ When entities refer to each other in Destiny content, it is this hash that they 
 					<li>
 						<div><strong>Social</strong>: 40</div>
 					</li>
+					<li>
+						<div><strong>TrialsCountdown</strong>: 41</div>
+					</li>
+					<li>
+						<div><strong>TrialsSurvival</strong>: 42</div>
+					</li>
+					<li>
+						<div><strong>IronBannerControl</strong>: 43</div>
+					</li>
+					<li>
+						<div><strong>IronBannerClash</strong>: 44</div>
+					</li>
+					<li>
+						<div><strong>IronBannerSupremacy</strong>: 45</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -51034,6 +51815,10 @@ When entities refer to each other in Destiny content, it is this hash that they 
 		<span class="manifest-entity">Mobile Manifest Entity</span>
 	</div>
 	
+	<div class="description">
+		This definition represents an "Activity Mode" as it exists in the Historical Stats endpoints. An individual Activity Mode represents a collection of activities that are played in a certain way. For example, Nightfall Strikes are part of a "Nightfall" activity mode, and any activities played as the PVP mode "Clash" are part of the "Clash activity mode.
+Activity modes are nested under each other in a hierarchy, so that if you ask for - for example - "AllPvP", you will get any PVP activities that the user has played, regardless of what specific PVP mode was being played.
+	</div>
 	
 	<div class="manifest-database">
 		<strong>Mapped to Mobile Manifest Table</strong>: ActivityModes
@@ -51070,6 +51855,9 @@ When entities refer to each other in Destiny content, it is this hash that they 
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		If this activity mode has a related PGCR image, this will be the path to said image.
+	</div>
 	
 	
 	<div class="type">
@@ -51092,7 +51880,28 @@ When entities refer to each other in Destiny content, it is this hash that they 
 						<div class="title"><strong>modeType</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The Enumeration value for this Activity Mode. Pass this identifier into Stats endpoints to get aggregate stats for this mode.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
 		See: <a href="#/components/schemas/Destiny.HistoricalStats.Definitions.DestinyActivityModeType">Destiny.HistoricalStats.Definitions.DestinyActivityModeType</a>
+</div>	
+
+	
+	
+			
+
 </div>						</div>
 					</div>
 				</div>
@@ -51103,7 +51912,28 @@ When entities refer to each other in Destiny content, it is this hash that they 
 						<div class="title"><strong>activityModeCategory</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The type of play being performed in broad terms (PVP, PVE)
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
 		See: <a href="#/components/schemas/Destiny.DestinyActivityModeCategory">Destiny.DestinyActivityModeCategory</a>
+</div>	
+
+	
+	
+			
+
 </div>						</div>
 					</div>
 				</div>
@@ -51119,6 +51949,10 @@ When entities refer to each other in Destiny content, it is this hash that they 
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		If True, this mode has oppositional teams fighting against each other rather than "Free-For-All" or Co-operative modes of play.
+Note that Aggregate modes are never marked as team based, even if they happen to be team based at the moment. At any time, an aggregate whose subordinates are only team based could be changed so that one or more aren't team based, and then this boolean won't make much sense (the aggregation would become "sometimes team based"). Let's not deal with that right now.
+	</div>
 	
 	
 	<div class="type">
@@ -51146,6 +51980,9 @@ When entities refer to each other in Destiny content, it is this hash that they 
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		If true, this mode is an aggregation of other, more specific modes rather than being a mode in itself. This includes modes that group Features/Events rather than Gameplay, such as Trials of The Nine: Trials of the Nine being an Event that is interesting to see aggregate data for, but when you play the activities within Trials of the Nine they are more specific activity modes such as Clash.
+	</div>
 	
 	
 	<div class="type">
@@ -51173,6 +52010,9 @@ When entities refer to each other in Destiny content, it is this hash that they 
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		The hash identifiers of the DestinyActivityModeDefinitions that represent all of the "parent" modes for this mode. For instance, the Nightfall Mode is also a member of AllStrikes and AllPvE.
+	</div>
 	
 	
 	<div class="type">
@@ -51204,6 +52044,9 @@ When entities refer to each other in Destiny content, it is this hash that they 
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		A Friendly identifier you can use for referring to this Activity Mode. We really only used this in our URLs, so... you know, take that for whatever it's worth.
+	</div>
 	
 	
 	<div class="type">
@@ -51231,6 +52074,9 @@ When entities refer to each other in Destiny content, it is this hash that they 
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		If this exists, the mode has specific Activities (referred to by the Key) that should instead map to other Activity Modes when they are played. This was useful in D1 for Private Matches, where we wanted to have Private Matches as an activity mode while still referring to the specific mode being played.
+	</div>
 	
 	
 	<div class="type">
@@ -59926,6 +60772,52 @@ When entities refer to each other in Destiny content, it is this hash that they 
 </div>			</div>
 		</div>
 		<div class="schema box">
+			<a id="/components/schemas/GroupsV2.GroupDateRange"><h3>GroupsV2.GroupDateRange</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="enum">Enumeration</span>
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+		<div class="enum-values box">
+			<h5>Valid Enum Values</h5>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<div><strong>All</strong>: 0</div>
+					</li>
+					<li>
+						<div><strong>PastDay</strong>: 1</div>
+					</li>
+					<li>
+						<div><strong>PastWeek</strong>: 2</div>
+					</li>
+					<li>
+						<div><strong>PastMonth</strong>: 3</div>
+					</li>
+					<li>
+						<div><strong>PastYear</strong>: 4</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+</div>			</div>
+		</div>
+		<div class="schema box">
 			<a id="/components/schemas/GroupsV2.GroupV2Card"><h3>GroupsV2.GroupV2Card</h3></a>
 			<div class="schema-detail box-contents">
 <div class="type-info stop-nesting-boxes">
@@ -60871,52 +61763,6 @@ This is a long-held historical throwback to when we used to do paging with known
 		</div>
 	
 			
-
-</div>			</div>
-		</div>
-		<div class="schema box">
-			<a id="/components/schemas/GroupsV2.GroupDateRange"><h3>GroupsV2.GroupDateRange</h3></a>
-			<div class="schema-detail box-contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-		<span class="enum">Enumeration</span>
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-		<div class="enum-values box">
-			<h5>Valid Enum Values</h5>
-			<div class="box-contents stop-nesting-boxes">
-				<ul>
-					<li>
-						<div><strong>All</strong>: 0</div>
-					</li>
-					<li>
-						<div><strong>PastDay</strong>: 1</div>
-					</li>
-					<li>
-						<div><strong>PastWeek</strong>: 2</div>
-					</li>
-					<li>
-						<div><strong>PastMonth</strong>: 3</div>
-					</li>
-					<li>
-						<div><strong>PastYear</strong>: 4</div>
-					</li>
-				</ul>
-			</div>
-		</div>
 
 </div>			</div>
 		</div>
@@ -64159,6 +65005,9 @@ This is a long-held historical throwback to when we used to do paging with known
 						<div><strong>AuthContextCacheAssertion</strong>: 52</div>
 					</li>
 					<li>
+						<div><strong>ExPlatformStringValidationError</strong>: 53</div>
+					</li>
+					<li>
 						<div><strong>ObsoleteCredentialType</strong>: 89</div>
 					</li>
 					<li>
@@ -67222,7 +68071,7 @@ This is a long-held historical throwback to when we used to do paging with known
 					</li>
 					<li>
 						<div><strong>ItemCommonData</strong>: 307</div>
-						<div class="description">Items that *aren't* instanced still have important information you need to know: how much of it you have, the itemHash so you can look up their DestinyInventoryItemDefinition, whether they're locked, etc... Both instanced and non-instanced items will have these properties.</div>
+						<div class="description">Items that *aren't* instanced still have important information you need to know: how much of it you have, the itemHash so you can look up their DestinyInventoryItemDefinition, whether they're locked, etc... Both instanced and non-instanced items will have these properties. You will get this automatically with Inventory components - you only need to pass this when calling GetItem on a specific item.</div>
 					</li>
 					<li>
 						<div><strong>ItemPlugStates</strong>: 308</div>
@@ -69820,6 +70669,38 @@ It'll be preferable in the general case to look up the related definition: but f
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
+						<div class="title"><strong>emblemColor</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		A shortcut for getting the background color of the user's currently equipped emblem without having to do a DestinyInventoryItemDefinition lookup.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.Misc.DestinyColor">Destiny.Misc.DestinyColor</a>
+</div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
 						<div class="title"><strong>levelProgression</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
@@ -71536,7 +72417,8 @@ This dictionary is keyed by the item's hash: which you can use to look up the na
 	</div>
 	
 	<div class="description">
-		A milestone may have one or more active vendors that are "related" to it (that provide rewards, or that are the initiators of the Milestone). I already regret this, even as I'm typing it. You see, sometimes a milestone may be directly correlated with a set of vendors that provide varying tiers of rewards. The player may not be able to interact with one or more of those vendors. This will return the hashes of the Vendors that the player *can* interact with, allowing you to show their current inventory as rewards or related items to the Milestone or its activities.
+		A milestone may have one or more active vendors that are "related" to it (that provide rewards, or that are the initiators of the Milestone). I already regret this, even as I'm typing it. [I told you I'd regret this] You see, sometimes a milestone may be directly correlated with a set of vendors that provide varying tiers of rewards. The player may not be able to interact with one or more of those vendors. This will return the hashes of the Vendors that the player *can* interact with, allowing you to show their current inventory as rewards or related items to the Milestone or its activities.
+Before we even use it, it's already deprecated! How much of a bummer is that? We need more data.
 	</div>
 	
 	
@@ -71556,6 +72438,40 @@ This dictionary is keyed by the item's hash: which you can use to look up the na
 		<strong>Mapped to Manifest Database Definition: </strong>
 		<a href="#/components/schemas/Destiny.Definitions.DestinyVendorDefinition">Destiny.Definitions.DestinyVendorDefinition</a>
 	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>vendors</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Replaces vendorHashes, which I knew was going to be trouble the day it walked in the door. This will return not only what Vendors are active and relevant to the activity (in an implied order that you can choose to ignore), but also other data - for example, if the Vendor is featuring a specific item relevant to this event that you should show with them.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/Destiny.Milestones.DestinyMilestoneVendor">Destiny.Milestones.DestinyMilestoneVendor</a>
+	</div>
+
+	
+	
 			
 
 </div>						</div>
@@ -72785,6 +73701,106 @@ A challenge is a bonus objective, generally tacked onto Quests or Activities, th
 </div>			</div>
 		</div>
 		<div class="schema box">
+			<a id="/components/schemas/Destiny.Milestones.DestinyMilestoneVendor"><h3>Destiny.Milestones.DestinyMilestoneVendor</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If a Milestone has one or more Vendors that are relevant to it, this will contain information about that vendor that you can choose to show.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>vendorHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	<div class="description">
+		The hash identifier of the Vendor related to this Milestone. You can show useful things from this, such as thier Faction icon or whatever you might care about.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyVendorDefinition">Destiny.Definitions.DestinyVendorDefinition</a>
+	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>previewItemHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	<div class="description">
+		If this vendor is featuring a specific item for this event, this will be the hash identifier of that item. I'm taking bets now on how long we go before this needs to be a list or some other, more complex representation instead and I deprecate this too. I'm going to go with 5 months. Calling it now, 2017-09-14 at 9:46pm PST.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyInventoryItemDefinition">Destiny.Definitions.DestinyInventoryItemDefinition</a>
+	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
 			<a id="/components/schemas/Destiny.Milestones.DestinyMilestoneRewardCategory"><h3>Destiny.Milestones.DestinyMilestoneRewardCategory</h3></a>
 			<div class="schema-detail box-contents">
 <div class="type-info stop-nesting-boxes">
@@ -73291,6 +74307,36 @@ Most of these milestones appear in game as well. Some of them are BNet only, bec
 		<strong>Dictionary Key Type: </strong> 
 		uint32
 	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>vendorsDisplayTitle</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If you're going to show Vendors for the Milestone, you can use this as a localized "header" for the section where you show that vendor data. It'll provide a more context-relevant clue about what the vendor's role is in the Milestone.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
 	
 	
 			
@@ -75734,6 +76780,9 @@ You can look up the relevant class/race/gender combo in DestinyCharacterCustomiz
 		<span class="enum">Enumeration</span>
 	</div>
 	
+	<div class="description">
+		And the current activity's most specific mode type, if it can be found.
+	</div>
 	
 	
 	<div class="type">
@@ -75785,6 +76834,7 @@ You can look up the relevant class/race/gender combo in DestinyCharacterCustomiz
 					</li>
 					<li>
 						<div><strong>Clash</strong>: 12</div>
+						<div class="description">Clash -> Destiny's name for Team Deathmatch. 4v4 combat, the team with the highest kills at the end of time wins.</div>
 					</li>
 					<li>
 						<div><strong>Reserved13</strong>: 13</div>
@@ -75852,6 +76902,21 @@ You can look up the relevant class/race/gender combo in DestinyCharacterCustomiz
 					<li>
 						<div><strong>Social</strong>: 40</div>
 					</li>
+					<li>
+						<div><strong>TrialsCountdown</strong>: 41</div>
+					</li>
+					<li>
+						<div><strong>TrialsSurvival</strong>: 42</div>
+					</li>
+					<li>
+						<div><strong>IronBannerControl</strong>: 43</div>
+					</li>
+					<li>
+						<div><strong>IronBannerClash</strong>: 44</div>
+					</li>
+					<li>
+						<div><strong>IronBannerSupremacy</strong>: 45</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -75872,6 +76937,9 @@ You can look up the relevant class/race/gender combo in DestinyCharacterCustomiz
 		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
+	<div class="description">
+		If the user is in an activity, this will be the hashes of the DestinyActivityModeDefinition being played. Combine with currentActivityHash to give a person a full picture of what they're doing right now.
+	</div>
 	
 	
 	<div class="type">
@@ -75907,6 +76975,9 @@ You can look up the relevant class/race/gender combo in DestinyCharacterCustomiz
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		All Activity Modes that apply to the current activity being played, in enum form.
+	</div>
 	
 	
 	<div class="type">
@@ -75940,6 +77011,9 @@ You can look up the relevant class/race/gender combo in DestinyCharacterCustomiz
 		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
+	<div class="description">
+		If the user is in a playlist, this is the hash identifier for the playlist that they chose.
+	</div>
 	
 	
 	<div class="type">
@@ -83327,6 +84401,9 @@ These are individual bits of state that can be either set or not set, and someti
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		Summary information about the activity that was played.
+	</div>
 	
 	
 	<div class="type">
@@ -83351,7 +84428,7 @@ These are individual bits of state that can be either set or not set, and someti
 	</div>
 	
 	<div class="description">
-		Hash ID that can be looked up in the DestinyActivityTable.
+		The unique hash identifier of the DestinyActivityDefinition that was played. If I had this to do over, it'd be named activityHash. Too late now.
 	</div>
 	
 	
@@ -83385,6 +84462,9 @@ These are individual bits of state that can be either set or not set, and someti
 		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
+	<div class="description">
+		The unique hash identifier of the DestinyActivityDefinition that was played.
+	</div>
 	
 	
 	<div class="type">
@@ -83417,7 +84497,8 @@ These are individual bits of state that can be either set or not set, and someti
 	</div>
 	
 	<div class="description">
-		This value can be used to get additional data about this activity such as who else was playing.
+		The unique identifier for this *specific* match that was played.
+This value can be used to get additional data about this activity such as who else was playing via the GetPostGameCarnageReport endpoint.
 	</div>
 	
 	
@@ -83447,7 +84528,7 @@ These are individual bits of state that can be either set or not set, and someti
 	</div>
 	
 	<div class="description">
-		Indicates the game mode of the activity.
+		Indicates the most specific game mode of the activity that we could find.
 	</div>
 	
 	
@@ -83478,6 +84559,9 @@ These are individual bits of state that can be either set or not set, and someti
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		The list of all Activity Modes to which this activity applies, including aggregates. This will let you see, for example, whether the activity was both Clash and part of the Trials of the Nine event.
+	</div>
 	
 	
 	<div class="type">
@@ -83510,7 +84594,7 @@ These are individual bits of state that can be either set or not set, and someti
 	</div>
 	
 	<div class="description">
-		Whether or not the match was a private match.
+		Whether or not the match was a private match. There's no private matches in Destiny 2... yet... DUN DUN DUNNNN
 	</div>
 	
 	
@@ -83891,6 +84975,37 @@ These are individual bits of state that can be either set or not set, and someti
 <div class="type-info stop-nesting-boxes">
 		See: <a href="#/components/schemas/Destiny.HistoricalStats.DestinyHistoricalStatsValuePair">Destiny.HistoricalStats.DestinyHistoricalStatsValuePair</a>
 </div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>activityId</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+	</div>
+	
+	<div class="description">
+		When a stat represents the best, most, longest, fastest or some other personal best, the actual activity ID where that personal best was established is available on this property.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int64
+	</div>
+	
+	
 
 	
 	
@@ -87567,6 +88682,7 @@ This is a long-held historical throwback to when we used to do paging with known
 	
 	<div class="description">
 		Sometimes milestones - or activities active in milestones - will have relevant vendors. These are the vendors that are currently relevant.
+Deprecated, already, for the sake of the new "vendors" property that has more data. What was I thinking.
 	</div>
 	
 	
@@ -87578,6 +88694,40 @@ This is a long-held historical throwback to when we used to do paging with known
 	<div class="items">
 		<strong>Array Contents:</strong>
 			uint32
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>vendors</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		This is why we can't have nice things. This is the ordered list of vendors to be shown that relate to this milestone, potentially along with other interesting data.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/Destiny.Milestones.DestinyPublicMilestoneVendor">Destiny.Milestones.DestinyPublicMilestoneVendor</a>
 	</div>
 
 	
@@ -88066,6 +89216,103 @@ This is a long-held historical throwback to when we used to do paging with known
 	<div class="mapped">
 		<strong>Mapped to Manifest Database Definition: </strong>
 		<a href="#/components/schemas/Destiny.Definitions.DestinyActivityDefinition">Destiny.Definitions.DestinyActivityDefinition</a>
+	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Milestones.DestinyPublicMilestoneVendor"><h3>Destiny.Milestones.DestinyPublicMilestoneVendor</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>vendorHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	<div class="description">
+		The hash identifier of the Vendor related to this Milestone. You can show useful things from this, such as thier Faction icon or whatever you might care about.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyVendorDefinition">Destiny.Definitions.DestinyVendorDefinition</a>
+	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>previewItemHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	<div class="description">
+		If this vendor is featuring a specific item for this event, this will be the hash identifier of that item. I'm taking bets now on how long we go before this needs to be a list or some other, more complex representation instead and I deprecate this too. I'm going to go with 5 months. Calling it now, 2017-09-14 at 9:46pm PST.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyInventoryItemDefinition">Destiny.Definitions.DestinyInventoryItemDefinition</a>
 	</div>
 			
 

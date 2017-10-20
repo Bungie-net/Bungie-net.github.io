@@ -303,6 +303,11 @@
 										</span>
 									</li>
 									<li>
+										POST: <a href="operation_post_GroupV2-ApprovePending.html#operation_post_GroupV2-ApprovePending" id="operation_post_GroupV2-ApprovePending">GroupV2.ApprovePending</a>
+										<span class="attributes">
+										</span>
+									</li>
+									<li>
 										POST: <a href="operation_post_GroupV2-DenyPendingForList.html#operation_post_GroupV2-DenyPendingForList" id="operation_post_GroupV2-DenyPendingForList">GroupV2.DenyPendingForList</a>
 										<span class="attributes">
 										</span>
@@ -834,6 +839,11 @@
 							<a href="schema_Destiny-Definitions-DestinyInventoryItemDefinition.html#schema_Destiny-Definitions-DestinyInventoryItemDefinition" id="schema_Destiny-Definitions-DestinyInventoryItemDefinition">Destiny.Definitions.DestinyInventoryItemDefinition</a>
 							<span class="attributes">
 								<span class="manifest-entity">Manifest</span>
+							</span>
+						</li>
+						<li>
+							<a href="schema_Destiny-Misc-DestinyColor.html#schema_Destiny-Misc-DestinyColor" id="schema_Destiny-Misc-DestinyColor">Destiny.Misc.DestinyColor</a>
+							<span class="attributes">
 							</span>
 						</li>
 						<li>
@@ -1700,6 +1710,12 @@
 							</span>
 						</li>
 						<li>
+							<a href="schema_GroupsV2-GroupDateRange.html#schema_GroupsV2-GroupDateRange" id="schema_GroupsV2-GroupDateRange">GroupsV2.GroupDateRange</a>
+							<span class="attributes">
+								<span class="enum">Enum</span>
+							</span>
+						</li>
+						<li>
 							<a href="schema_GroupsV2-GroupV2Card.html#schema_GroupsV2-GroupV2Card" id="schema_GroupsV2-GroupV2Card">GroupsV2.GroupV2Card</a>
 							<span class="attributes">
 							</span>
@@ -1717,12 +1733,6 @@
 						<li>
 							<a href="schema_GroupsV2-GroupQuery.html#schema_GroupsV2-GroupQuery" id="schema_GroupsV2-GroupQuery">GroupsV2.GroupQuery</a>
 							<span class="attributes">
-							</span>
-						</li>
-						<li>
-							<a href="schema_GroupsV2-GroupDateRange.html#schema_GroupsV2-GroupDateRange" id="schema_GroupsV2-GroupDateRange">GroupsV2.GroupDateRange</a>
-							<span class="attributes">
-								<span class="enum">Enum</span>
 							</span>
 						</li>
 						<li>
@@ -2099,6 +2109,11 @@
 						</li>
 						<li>
 							<a href="schema_Destiny-Challenges-DestinyChallengeStatus.html#schema_Destiny-Challenges-DestinyChallengeStatus" id="schema_Destiny-Challenges-DestinyChallengeStatus">Destiny.Challenges.DestinyChallengeStatus</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
+							<a href="schema_Destiny-Milestones-DestinyMilestoneVendor.html#schema_Destiny-Milestones-DestinyMilestoneVendor" id="schema_Destiny-Milestones-DestinyMilestoneVendor">Destiny.Milestones.DestinyMilestoneVendor</a>
 							<span class="attributes">
 							</span>
 						</li>
@@ -2780,6 +2795,11 @@
 						</li>
 						<li>
 							<a href="schema_Destiny-Milestones-DestinyPublicMilestoneChallenge.html#schema_Destiny-Milestones-DestinyPublicMilestoneChallenge" id="schema_Destiny-Milestones-DestinyPublicMilestoneChallenge">Destiny.Milestones.DestinyPublicMilestoneChallenge</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
+							<a href="schema_Destiny-Milestones-DestinyPublicMilestoneVendor.html#schema_Destiny-Milestones-DestinyPublicMilestoneVendor" id="schema_Destiny-Milestones-DestinyPublicMilestoneVendor">Destiny.Milestones.DestinyPublicMilestoneVendor</a>
 							<span class="attributes">
 							</span>
 						</li>
@@ -3619,6 +3639,9 @@ Activities also have Activity Types, but unfortunately in Destiny 2 these are ev
 	</div>
 	
 	
+	<div class="description">
+		If this activity had an activity mode directly defined on it, this will be the hash of that mode.
+	</div>
 	
 	
 	<div class="type">
@@ -3655,6 +3678,9 @@ Activities also have Activity Types, but unfortunately in Destiny 2 these are ev
 	</div>
 	
 	
+	<div class="description">
+		If the activity had an activity mode directly defined on it, this will be the enum value of that mode.
+	</div>
 	
 	
 	<div class="type">
@@ -3703,6 +3729,7 @@ Activities also have Activity Types, but unfortunately in Destiny 2 these are ev
 					</li>
 					<li>
 						<div><strong>Clash</strong>: 12</div>
+						<div class="description">Clash -> Destiny's name for Team Deathmatch. 4v4 combat, the team with the highest kills at the end of time wins.</div>
 					</li>
 					<li>
 						<div><strong>Reserved13</strong>: 13</div>
@@ -3770,6 +3797,21 @@ Activities also have Activity Types, but unfortunately in Destiny 2 these are ev
 					<li>
 						<div><strong>Social</strong>: 40</div>
 					</li>
+					<li>
+						<div><strong>TrialsCountdown</strong>: 41</div>
+					</li>
+					<li>
+						<div><strong>TrialsSurvival</strong>: 42</div>
+					</li>
+					<li>
+						<div><strong>IronBannerControl</strong>: 43</div>
+					</li>
+					<li>
+						<div><strong>IronBannerClash</strong>: 44</div>
+					</li>
+					<li>
+						<div><strong>IronBannerSupremacy</strong>: 45</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -3792,6 +3834,9 @@ Activities also have Activity Types, but unfortunately in Destiny 2 these are ev
 	</div>
 	
 	
+	<div class="description">
+		The hash identifiers for Activity Modes relevant to this activity.  Note that if this is a playlist, the specific playlist entry chosen will determine the actual activity modes that end up being relevant.
+	</div>
 	
 	
 	<div class="type">
@@ -3830,6 +3875,9 @@ Activities also have Activity Types, but unfortunately in Destiny 2 these are ev
 	</div>
 	
 	
+	<div class="description">
+		The activity modes - if any - in enum form. Because we can't seem to escape the enums.
+	</div>
 	
 	
 	<div class="type">

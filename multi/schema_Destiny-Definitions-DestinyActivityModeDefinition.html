@@ -303,6 +303,11 @@
 										</span>
 									</li>
 									<li>
+										POST: <a href="operation_post_GroupV2-ApprovePending.html#operation_post_GroupV2-ApprovePending" id="operation_post_GroupV2-ApprovePending">GroupV2.ApprovePending</a>
+										<span class="attributes">
+										</span>
+									</li>
+									<li>
 										POST: <a href="operation_post_GroupV2-DenyPendingForList.html#operation_post_GroupV2-DenyPendingForList" id="operation_post_GroupV2-DenyPendingForList">GroupV2.DenyPendingForList</a>
 										<span class="attributes">
 										</span>
@@ -834,6 +839,11 @@
 							<a href="schema_Destiny-Definitions-DestinyInventoryItemDefinition.html#schema_Destiny-Definitions-DestinyInventoryItemDefinition" id="schema_Destiny-Definitions-DestinyInventoryItemDefinition">Destiny.Definitions.DestinyInventoryItemDefinition</a>
 							<span class="attributes">
 								<span class="manifest-entity">Manifest</span>
+							</span>
+						</li>
+						<li>
+							<a href="schema_Destiny-Misc-DestinyColor.html#schema_Destiny-Misc-DestinyColor" id="schema_Destiny-Misc-DestinyColor">Destiny.Misc.DestinyColor</a>
+							<span class="attributes">
 							</span>
 						</li>
 						<li>
@@ -1700,6 +1710,12 @@
 							</span>
 						</li>
 						<li>
+							<a href="schema_GroupsV2-GroupDateRange.html#schema_GroupsV2-GroupDateRange" id="schema_GroupsV2-GroupDateRange">GroupsV2.GroupDateRange</a>
+							<span class="attributes">
+								<span class="enum">Enum</span>
+							</span>
+						</li>
+						<li>
 							<a href="schema_GroupsV2-GroupV2Card.html#schema_GroupsV2-GroupV2Card" id="schema_GroupsV2-GroupV2Card">GroupsV2.GroupV2Card</a>
 							<span class="attributes">
 							</span>
@@ -1717,12 +1733,6 @@
 						<li>
 							<a href="schema_GroupsV2-GroupQuery.html#schema_GroupsV2-GroupQuery" id="schema_GroupsV2-GroupQuery">GroupsV2.GroupQuery</a>
 							<span class="attributes">
-							</span>
-						</li>
-						<li>
-							<a href="schema_GroupsV2-GroupDateRange.html#schema_GroupsV2-GroupDateRange" id="schema_GroupsV2-GroupDateRange">GroupsV2.GroupDateRange</a>
-							<span class="attributes">
-								<span class="enum">Enum</span>
 							</span>
 						</li>
 						<li>
@@ -2099,6 +2109,11 @@
 						</li>
 						<li>
 							<a href="schema_Destiny-Challenges-DestinyChallengeStatus.html#schema_Destiny-Challenges-DestinyChallengeStatus" id="schema_Destiny-Challenges-DestinyChallengeStatus">Destiny.Challenges.DestinyChallengeStatus</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
+							<a href="schema_Destiny-Milestones-DestinyMilestoneVendor.html#schema_Destiny-Milestones-DestinyMilestoneVendor" id="schema_Destiny-Milestones-DestinyMilestoneVendor">Destiny.Milestones.DestinyMilestoneVendor</a>
 							<span class="attributes">
 							</span>
 						</li>
@@ -2784,6 +2799,11 @@
 							</span>
 						</li>
 						<li>
+							<a href="schema_Destiny-Milestones-DestinyPublicMilestoneVendor.html#schema_Destiny-Milestones-DestinyPublicMilestoneVendor" id="schema_Destiny-Milestones-DestinyPublicMilestoneVendor">Destiny.Milestones.DestinyPublicMilestoneVendor</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
 							<a href="schema_Forum-CommunityContentSortMode.html#schema_Forum-CommunityContentSortMode" id="schema_Forum-CommunityContentSortMode">Forum.CommunityContentSortMode</a>
 							<span class="attributes">
 								<span class="enum">Enum</span>
@@ -2909,6 +2929,10 @@
 	</div>
 	
 	
+	<div class="description">
+		This definition represents an "Activity Mode" as it exists in the Historical Stats endpoints. An individual Activity Mode represents a collection of activities that are played in a certain way. For example, Nightfall Strikes are part of a "Nightfall" activity mode, and any activities played as the PVP mode "Clash" are part of the "Clash activity mode.
+Activity modes are nested under each other in a hierarchy, so that if you ask for - for example - "AllPvP", you will get any PVP activities that the user has played, regardless of what specific PVP mode was being played.
+	</div>
 	
 	<div class="manifest-database">
 		<strong>Mapped to Mobile Manifest Table</strong>: ActivityModes
@@ -2948,6 +2972,9 @@
 	</div>
 	
 	
+	<div class="description">
+		If this activity mode has a related PGCR image, this will be the path to said image.
+	</div>
 	
 	
 	<div class="type">
@@ -2971,7 +2998,31 @@
 						<div class="title"><strong>modeType</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
+
+	
+	
+	<div class="attributes">
+	</div>
+	
+	
+	<div class="description">
+		The Enumeration value for this Activity Mode. Pass this identifier into Stats endpoints to get aggregate stats for this mode.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
 		See: <a href="schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType.html#schema_Destiny-HistoricalStats-Definitions-DestinyActivityModeType">Destiny.HistoricalStats.Definitions.DestinyActivityModeType</a>
+</div>	
+
+	
+	
+	
+			
+
 </div>						</div>
 					</div>
 				</div>
@@ -2982,7 +3033,31 @@
 						<div class="title"><strong>activityModeCategory</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
+
+	
+	
+	<div class="attributes">
+	</div>
+	
+	
+	<div class="description">
+		The type of play being performed in broad terms (PVP, PVE)
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
 		See: <a href="schema_Destiny-DestinyActivityModeCategory.html#schema_Destiny-DestinyActivityModeCategory">Destiny.DestinyActivityModeCategory</a>
+</div>	
+
+	
+	
+	
+			
+
 </div>						</div>
 					</div>
 				</div>
@@ -3000,6 +3075,10 @@
 	</div>
 	
 	
+	<div class="description">
+		If True, this mode has oppositional teams fighting against each other rather than "Free-For-All" or Co-operative modes of play.
+Note that Aggregate modes are never marked as team based, even if they happen to be team based at the moment. At any time, an aggregate whose subordinates are only team based could be changed so that one or more aren't team based, and then this boolean won't make much sense (the aggregation would become "sometimes team based"). Let's not deal with that right now.
+	</div>
 	
 	
 	<div class="type">
@@ -3030,6 +3109,9 @@
 	</div>
 	
 	
+	<div class="description">
+		If true, this mode is an aggregation of other, more specific modes rather than being a mode in itself. This includes modes that group Features/Events rather than Gameplay, such as Trials of The Nine: Trials of the Nine being an Event that is interesting to see aggregate data for, but when you play the activities within Trials of the Nine they are more specific activity modes such as Clash.
+	</div>
 	
 	
 	<div class="type">
@@ -3060,6 +3142,9 @@
 	</div>
 	
 	
+	<div class="description">
+		The hash identifiers of the DestinyActivityModeDefinitions that represent all of the "parent" modes for this mode. For instance, the Nightfall Mode is also a member of AllStrikes and AllPvE.
+	</div>
 	
 	
 	<div class="type">
@@ -3094,6 +3179,9 @@
 	</div>
 	
 	
+	<div class="description">
+		A Friendly identifier you can use for referring to this Activity Mode. We really only used this in our URLs, so... you know, take that for whatever it's worth.
+	</div>
 	
 	
 	<div class="type">
@@ -3124,6 +3212,9 @@
 	</div>
 	
 	
+	<div class="description">
+		If this exists, the mode has specific Activities (referred to by the Key) that should instead map to other Activity Modes when they are played. This was useful in D1 for Private Matches, where we wanted to have Private Matches as an activity mode while still referring to the specific mode being played.
+	</div>
 	
 	
 	<div class="type">
