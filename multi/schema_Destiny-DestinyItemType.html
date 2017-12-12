@@ -983,6 +983,7 @@
 						<li>
 							<a href="schema_Destiny-Definitions-DestinyEquipmentSlotDefinition.html#schema_Destiny-Definitions-DestinyEquipmentSlotDefinition" id="schema_Destiny-Definitions-DestinyEquipmentSlotDefinition">Destiny.Definitions.DestinyEquipmentSlotDefinition</a>
 							<span class="attributes">
+								<span class="manifest-entity">Manifest</span>
 							</span>
 						</li>
 						<li>
@@ -1469,6 +1470,18 @@
 							</span>
 						</li>
 						<li>
+							<a href="schema_Destiny-PlugUiStyles.html#schema_Destiny-PlugUiStyles" id="schema_Destiny-PlugUiStyles">Destiny.PlugUiStyles</a>
+							<span class="attributes">
+								<span class="enum">Enum</span>
+							</span>
+						</li>
+						<li>
+							<a href="schema_Destiny-PlugAvailabilityMode.html#schema_Destiny-PlugAvailabilityMode" id="schema_Destiny-PlugAvailabilityMode">Destiny.PlugAvailabilityMode</a>
+							<span class="attributes">
+								<span class="enum">Enum</span>
+							</span>
+						</li>
+						<li>
 							<a href="schema_Destiny-Definitions-DestinyMaterialRequirementSetDefinition.html#schema_Destiny-Definitions-DestinyMaterialRequirementSetDefinition" id="schema_Destiny-Definitions-DestinyMaterialRequirementSetDefinition">Destiny.Definitions.DestinyMaterialRequirementSetDefinition</a>
 							<span class="attributes">
 							</span>
@@ -1515,6 +1528,12 @@
 							</span>
 						</li>
 						<li>
+							<a href="schema_Destiny-SocketTypeActionType.html#schema_Destiny-SocketTypeActionType" id="schema_Destiny-SocketTypeActionType">Destiny.SocketTypeActionType</a>
+							<span class="attributes">
+								<span class="enum">Enum</span>
+							</span>
+						</li>
+						<li>
 							<a href="schema_Destiny-Definitions-Sockets-DestinyPlugWhitelistEntryDefinition.html#schema_Destiny-Definitions-Sockets-DestinyPlugWhitelistEntryDefinition" id="schema_Destiny-Definitions-Sockets-DestinyPlugWhitelistEntryDefinition">Destiny.Definitions.Sockets.DestinyPlugWhitelistEntryDefinition</a>
 							<span class="attributes">
 							</span>
@@ -1529,6 +1548,11 @@
 							<a href="schema_Destiny-Definitions-Sockets-DestinySocketCategoryDefinition.html#schema_Destiny-Definitions-Sockets-DestinySocketCategoryDefinition" id="schema_Destiny-Definitions-Sockets-DestinySocketCategoryDefinition">Destiny.Definitions.Sockets.DestinySocketCategoryDefinition</a>
 							<span class="attributes">
 								<span class="manifest-entity">Manifest</span>
+							</span>
+						</li>
+						<li>
+							<a href="schema_Destiny-Definitions-DestinyItemIntrinsicSocketEntryDefinition.html#schema_Destiny-Definitions-DestinyItemIntrinsicSocketEntryDefinition" id="schema_Destiny-Definitions-DestinyItemIntrinsicSocketEntryDefinition">Destiny.Definitions.DestinyItemIntrinsicSocketEntryDefinition</a>
+							<span class="attributes">
 							</span>
 						</li>
 						<li>
@@ -2016,6 +2040,11 @@
 							</span>
 						</li>
 						<li>
+							<a href="schema_Destiny-Quests-DestinyObjectiveProgress.html#schema_Destiny-Quests-DestinyObjectiveProgress" id="schema_Destiny-Quests-DestinyObjectiveProgress">Destiny.Quests.DestinyObjectiveProgress</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
 							<a href="schema_SingleComponentResponseOfDestinyKiosksComponent.html#schema_SingleComponentResponseOfDestinyKiosksComponent" id="schema_SingleComponentResponseOfDestinyKiosksComponent">SingleComponentResponseOfDestinyKiosksComponent</a>
 							<span class="attributes">
 							</span>
@@ -2089,11 +2118,6 @@
 						</li>
 						<li>
 							<a href="schema_Destiny-Quests-DestinyQuestStatus.html#schema_Destiny-Quests-DestinyQuestStatus" id="schema_Destiny-Quests-DestinyQuestStatus">Destiny.Quests.DestinyQuestStatus</a>
-							<span class="attributes">
-							</span>
-						</li>
-						<li>
-							<a href="schema_Destiny-Quests-DestinyObjectiveProgress.html#schema_Destiny-Quests-DestinyObjectiveProgress" id="schema_Destiny-Quests-DestinyObjectiveProgress">Destiny.Quests.DestinyObjectiveProgress</a>
 							<span class="attributes">
 							</span>
 						</li>
@@ -2342,6 +2366,11 @@
 						</li>
 						<li>
 							<a href="schema_Destiny-Entities-Items-DestinyItemSocketState.html#schema_Destiny-Entities-Items-DestinyItemSocketState" id="schema_Destiny-Entities-Items-DestinyItemSocketState">Destiny.Entities.Items.DestinyItemSocketState</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
+							<a href="schema_Destiny-Sockets-DestinyItemPlug.html#schema_Destiny-Sockets-DestinyItemPlug" id="schema_Destiny-Sockets-DestinyItemPlug">Destiny.Sockets.DestinyItemPlug</a>
 							<span class="attributes">
 							</span>
 						</li>
@@ -2985,6 +3014,7 @@
 		An enumeration that indicates the high-level "type" of the item, attempting to iron out the context specific differences for specific instances of an entity. For instance, though a weapon may be of various wepaon "Types", in DestinyItemType they are all classified as "Weapon". This allows for better filtering on a higher level of abstraction for the concept of types.
  This enum is provided for historical compatibility with Destiny 1, but an ideal alternative is to use DestinyItemCategoryDefinitions and the DestinyItemDefinition.itemCategories property instead. Item Categories allow for arbitrary hierarchies of specificity, and for items to belong to multiple categories across multiple hierarchies simultaneously. For this enum, we pick a single type as a "best guess" fit.
  NOTE: This is not all of the item types available, and some of these are holdovers from Destiny 1 that may or may not still exist.
+ I keep updating these because they're so damn convenient. I guess I shouldn't fight it.
 	</div>
 	
 	
@@ -3052,6 +3082,24 @@
 					</li>
 					<li>
 						<div><strong>Mod</strong>: 19</div>
+					</li>
+					<li>
+						<div><strong>Dummy</strong>: 20</div>
+					</li>
+					<li>
+						<div><strong>Ship</strong>: 21</div>
+					</li>
+					<li>
+						<div><strong>Vehicle</strong>: 22</div>
+					</li>
+					<li>
+						<div><strong>Emote</strong>: 23</div>
+					</li>
+					<li>
+						<div><strong>Ghost</strong>: 24</div>
+					</li>
+					<li>
+						<div><strong>Package</strong>: 25</div>
 					</li>
 				</ul>
 			</div>

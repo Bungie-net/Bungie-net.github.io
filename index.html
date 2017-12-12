@@ -14,7 +14,7 @@
 		<div class="box-contents">
 			<div>These endpoints constitute the functionality exposed by Bungie.net, both for more traditional website functionality and for connectivity to Bungie video games and their related functionality.</div>
 			<div class="about-line-items">
-				<div><strong>Version:</strong> 2.1.0
+				<div><strong>Version:</strong> 2.1.1
 				</div>
 				<div><strong>License:</strong> <a href="https://github.com/Bungie-net/api/blob/master/LICENSE">https://github.com/Bungie-net/api/blob/master/LICENSE (BSD License 2.0)</a>
 				</div>
@@ -1112,6 +1112,7 @@ clan/group memberships, recent activity, muted users.</div>
 			<li>
 				<a href="#/components/schemas/Destiny.Definitions.DestinyEquipmentSlotDefinition">Destiny.Definitions.DestinyEquipmentSlotDefinition</a>
 				<span class="attributes">
+					<span class="manifest-entity">Mobile Manifest Entity</span>
 				</span>
 			</li>
 			<li>
@@ -1598,6 +1599,18 @@ clan/group memberships, recent activity, muted users.</div>
 				</span>
 			</li>
 			<li>
+				<a href="#/components/schemas/Destiny.PlugUiStyles">Destiny.PlugUiStyles</a>
+				<span class="attributes">
+					<span class="enum">Enumeration</span>
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.PlugAvailabilityMode">Destiny.PlugAvailabilityMode</a>
+				<span class="attributes">
+					<span class="enum">Enumeration</span>
+				</span>
+			</li>
+			<li>
 				<a href="#/components/schemas/Destiny.Definitions.DestinyMaterialRequirementSetDefinition">Destiny.Definitions.DestinyMaterialRequirementSetDefinition</a>
 				<span class="attributes">
 				</span>
@@ -1644,6 +1657,12 @@ clan/group memberships, recent activity, muted users.</div>
 				</span>
 			</li>
 			<li>
+				<a href="#/components/schemas/Destiny.SocketTypeActionType">Destiny.SocketTypeActionType</a>
+				<span class="attributes">
+					<span class="enum">Enumeration</span>
+				</span>
+			</li>
+			<li>
 				<a href="#/components/schemas/Destiny.Definitions.Sockets.DestinyPlugWhitelistEntryDefinition">Destiny.Definitions.Sockets.DestinyPlugWhitelistEntryDefinition</a>
 				<span class="attributes">
 				</span>
@@ -1658,6 +1677,11 @@ clan/group memberships, recent activity, muted users.</div>
 				<a href="#/components/schemas/Destiny.Definitions.Sockets.DestinySocketCategoryDefinition">Destiny.Definitions.Sockets.DestinySocketCategoryDefinition</a>
 				<span class="attributes">
 					<span class="manifest-entity">Mobile Manifest Entity</span>
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.Definitions.DestinyItemIntrinsicSocketEntryDefinition">Destiny.Definitions.DestinyItemIntrinsicSocketEntryDefinition</a>
+				<span class="attributes">
 				</span>
 			</li>
 			<li>
@@ -2145,6 +2169,11 @@ clan/group memberships, recent activity, muted users.</div>
 				</span>
 			</li>
 			<li>
+				<a href="#/components/schemas/Destiny.Quests.DestinyObjectiveProgress">Destiny.Quests.DestinyObjectiveProgress</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
 				<a href="#/components/schemas/SingleComponentResponseOfDestinyKiosksComponent">SingleComponentResponseOfDestinyKiosksComponent</a>
 				<span class="attributes">
 				</span>
@@ -2218,11 +2247,6 @@ clan/group memberships, recent activity, muted users.</div>
 			</li>
 			<li>
 				<a href="#/components/schemas/Destiny.Quests.DestinyQuestStatus">Destiny.Quests.DestinyQuestStatus</a>
-				<span class="attributes">
-				</span>
-			</li>
-			<li>
-				<a href="#/components/schemas/Destiny.Quests.DestinyObjectiveProgress">Destiny.Quests.DestinyObjectiveProgress</a>
 				<span class="attributes">
 				</span>
 			</li>
@@ -2471,6 +2495,11 @@ clan/group memberships, recent activity, muted users.</div>
 			</li>
 			<li>
 				<a href="#/components/schemas/Destiny.Entities.Items.DestinyItemSocketState">Destiny.Entities.Items.DestinyItemSocketState</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.Sockets.DestinyItemPlug">Destiny.Sockets.DestinyItemPlug</a>
 				<span class="attributes">
 				</span>
 			</li>
@@ -34557,6 +34586,36 @@ In practice, you will want to associate this data with "live" item data from a B
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
+						<div class="title"><strong>uiItemDisplayStyle</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		A string identifier that the game's UI uses to determine how the item should be rendered in inventory screens and the like. This could really be anything - at the moment, we don't have the time to really breakdown and maintain all the possible strings this could be, partly because new ones could be added ad hoc. But if you want to use it to dictate your own UI, or look for items with a certain display style, go for it!
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
 						<div class="title"><strong>itemTypeAndTierDisplayName</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
@@ -34763,6 +34822,37 @@ In practice, you will want to associate this data with "live" item data from a B
 <div class="type-info stop-nesting-boxes">
 		See: <a href="#/components/schemas/Destiny.Definitions.DestinyItemStatBlockDefinition">Destiny.Definitions.DestinyItemStatBlockDefinition</a>
 </div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>emblemObjectiveHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+	</div>
+	
+	<div class="description">
+		If the item is an emblem that has a special Objective attached to it - for instance, if the emblem tracks PVP Kills, or what-have-you. This is a bit different from, for example, the Vanguard Kill Tracker mod, which pipes data into the "art channel". When I get some time, I would like to standardize these so you can get at the values they expose without having to care about what they're being used for and how they are wired up, but for now here's the raw data.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
 
 	
 	
@@ -39775,6 +39865,7 @@ For now, this can only be "equip on acquire", which would mean that the item wil
 
 	
 	<div class="attributes">
+		<span class="manifest-entity">Mobile Manifest Entity</span>
 	</div>
 	
 	<div class="description">
@@ -39783,6 +39874,9 @@ The Equipment Slot is an indicator that the related bucket can have instanced it
 An Equipment Slot must have a related Inventory Bucket, but not all inventory buckets must have Equipment Slots.
 	</div>
 	
+	<div class="manifest-database">
+		<strong>Mapped to Mobile Manifest Table</strong>: EquipmentSlots
+	</div>
 	
 	<div class="type">
 		<strong>Type</strong>: object
@@ -53021,6 +53115,7 @@ In practice, not only was that never done in Destiny 1, but now this isn't even 
 	<div class="description">
 		The string identifier for this item's "infusability", if any. 
 Items that match the same infusionCategoryName are allowed to infuse with each other.
+DEPRECATED: Items can now have multiple infusion categories. Please use infusionCategoryHashes instead.
 	</div>
 	
 	
@@ -53051,6 +53146,7 @@ Items that match the same infusionCategoryName are allowed to infuse with each o
 	
 	<div class="description">
 		The hash identifier for the infusion. It does not map to a Definition entity.
+DEPRECATED: Items can now have multiple infusion categories. Please use infusionCategoryHashes instead.
 	</div>
 	
 	
@@ -53059,6 +53155,40 @@ Items that match the same infusionCategoryName are allowed to infuse with each o
 	</div>
 	
 	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>infusionCategoryHashes</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If any one of these hashes matches any value in another item's infusionCategoryHashes, the two can infuse with each other.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			uint32
+	</div>
 
 	
 	
@@ -54672,6 +54802,109 @@ The live data DestinyItemPlugComponent.enableFailIndexes will be an index into t
 					</div>
 				</div>
 			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>uiPlugLabel</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Plugs can have arbitrary, UI-defined identifiers that the UI designers use to determine the style applied to plugs. Unfortunately, we have neither a definitive list of these labels nor advance warning of when new labels might be applied or how that relates to how they get rendered. If you want to, you can refer to known labels to change your own styles: but know that new ones can be created arbitrarily, and we have no way of associating the labels with any specific UI style guidance... you'll have to piece that together on your end. Or do what we do, and just show plugs more generically, without specialized styles.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>plugStyle</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.PlugUiStyles">Destiny.PlugUiStyles</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>isPseudoPlug</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If TRUE, the plug doesn't actually convey any benefit: it only exists to show information in the UI.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>plugAvailability</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Indicates the rules about when this plug can be used. See the PlugAvailabilityMode enumeration for more information!
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.PlugAvailabilityMode">Destiny.PlugAvailabilityMode</a>
+</div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	
 			
@@ -54735,6 +54968,93 @@ In practice, the live Destiny data will refer to these entries by index. You can
 		</div>
 	
 			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.PlugUiStyles"><h3>Destiny.PlugUiStyles</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="enum">Enumeration</span>
+	</div>
+	
+	<div class="description">
+		If the plug has a specific custom style, this enumeration will represent that style/those styles.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+		<div class="enum-values box">
+			<h5>Valid Enum Values</h5>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<div><strong>None</strong>: 0</div>
+					</li>
+					<li>
+						<div><strong>Masterwork</strong>: 1</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.PlugAvailabilityMode"><h3>Destiny.PlugAvailabilityMode</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="enum">Enumeration</span>
+	</div>
+	
+	<div class="description">
+		This enum determines whether the plug is available to be inserted.
+- Normal means that all existing rules for plug insertion apply.
+- UnavailableIfSocketContainsMatchingPlugCategory means that the plug is only available if the socket does NOT match the plug category.
+- AvailableIfSocketContainsMatchingPlugCategory means that the plug is only available if the socket DOES match the plug category.
+For category matching, use the plug's "plugCategoryIdentifier" property, comparing it to
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+		<div class="enum-values box">
+			<h5>Valid Enum Values</h5>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<div><strong>Normal</strong>: 0</div>
+					</li>
+					<li>
+						<div><strong>UnavailableIfSocketContainsMatchingPlugCategory</strong>: 1</div>
+					</li>
+					<li>
+						<div><strong>AvailableIfSocketContainsMatchingPlugCategory</strong>: 2</div>
+					</li>
+				</ul>
+			</div>
+		</div>
 
 </div>			</div>
 		</div>
@@ -55380,7 +55700,7 @@ When entities refer to each other in Destiny content, it is this hash that they 
 	</div>
 	
 	<div class="description">
-		Each socket on an item is defined here. Check inside for more info.
+		Each non-intrinsic (or mutable) socket on an item is defined here. Check inside for more info.
 	</div>
 	
 	
@@ -55392,6 +55712,40 @@ When entities refer to each other in Destiny content, it is this hash that they 
 	<div class="items">
 		<strong>Array Contents:</strong>
 			<a href="#/components/schemas/Destiny.Definitions.DestinyItemSocketEntryDefinition">Destiny.Definitions.DestinyItemSocketEntryDefinition</a>
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>intrinsicSockets</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Each intrinsic (or immutable/permanent) socket on an item is defined here, along with the plug that is permanently affixed to the socket.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/Destiny.Definitions.DestinyItemIntrinsicSocketEntryDefinition">Destiny.Definitions.DestinyItemIntrinsicSocketEntryDefinition</a>
 	</div>
 
 	
@@ -55561,6 +55915,67 @@ If this list is populated, you will not be allowed to plug an arbitrary item in 
 		<strong>Array Contents:</strong>
 			<a href="#/components/schemas/Destiny.Definitions.DestinyItemSocketEntryPlugItemDefinition">Destiny.Definitions.DestinyItemSocketEntryPlugItemDefinition</a>
 	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>preventInitializationOnVendorPurchase</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If this is true, then the socket will not be initialized with a plug if the item is purchased from a Vendor.
+Remember that Vendors are much more than conceptual vendors: they include "Collection Kiosks" and other entities. See DestinyVendorDefinition for more information.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>hidePerksInItemTooltip</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If this is true, the perks provided by this socket shouldn't be shown in the item's tooltip. This might be useful if it's providing a hidden bonus, or if the bonus is less important than other benefits on the item.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
 
 	
 	
@@ -55961,9 +56376,84 @@ When entities refer to each other in Destiny content, it is this hash that they 
 					</div>
 				</div>
 			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>actionType</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The type of action being performed when you act on this Socket Type. The most common value is "insert plug", but there are others as well (for instance, a "Masterwork" socket may allow for Re-initialization, and an Infusion socket allows for items to be consumed to upgrade the item)
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.SocketTypeActionType">Destiny.SocketTypeActionType</a>
+</div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	
 			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.SocketTypeActionType"><h3>Destiny.SocketTypeActionType</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="enum">Enumeration</span>
+	</div>
+	
+	<div class="description">
+		Indicates the type of actions that can be performed
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+		<div class="enum-values box">
+			<h5>Valid Enum Values</h5>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<div><strong>InsertPlug</strong>: 0</div>
+					</li>
+					<li>
+						<div><strong>InfuseItem</strong>: 1</div>
+					</li>
+					<li>
+						<div><strong>ReinitializeSocket</strong>: 2</div>
+					</li>
+				</ul>
+			</div>
+		</div>
 
 </div>			</div>
 		</div>
@@ -56052,6 +56542,44 @@ Note that this does NOT relate to any Definition in itself, it is only used for 
 					</div>
 				</div>
 			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>reinitializationPossiblePlugHashes</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The list of all plug items (DestinyInventoryItemDefinition) that the socket may randomly be populated with when reinitialized.
+Which ones you should actually show are determined by the plug being inserted into the socket, and the socket’s type.
+When you inspect the plug that could go into a Masterwork Socket, look up the socket type of the socket being inspected and find the DestinySocketTypeDefinition.
+Then, look at the Plugs that can fit in that socket. Find the Whitelist in the DestinySocketTypeDefinition that matches the plug item’s categoryhash.
+That whitelist entry will potentially have a new “reinitializationPossiblePlugHashes” property.If it does, that means we know what it will roll if you try to insert this plug into this socket.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			uint32
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	
 			
@@ -56091,6 +56619,9 @@ Note that this does NOT relate to any Definition in itself, it is only used for 
 					</li>
 					<li>
 						<div><strong>HiddenWhenEmpty</strong>: 2</div>
+					</li>
+					<li>
+						<div><strong>HiddenIfNoPlugsAvailable</strong>: 3</div>
 					</li>
 				</ul>
 			</div>
@@ -56254,6 +56785,105 @@ When entities refer to each other in Destiny content, it is this hash that they 
 
 	
 	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Definitions.DestinyItemIntrinsicSocketEntryDefinition"><h3>Destiny.Definitions.DestinyItemIntrinsicSocketEntryDefinition</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Represents a socket that has a plug associated with it intrinsically. This is useful for situations where the weapon needs to have a visual plug/Mod on it, but that plug/Mod should never change.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>plugItemHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	<div class="description">
+		Indicates the plug that is intrinsically inserted into this socket.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyInventoryItemDefinition">Destiny.Definitions.DestinyInventoryItemDefinition</a>
+	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>socketTypeHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	<div class="description">
+		Indicates the type of this intrinsic socket.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.Sockets.DestinySocketTypeDefinition">Destiny.Definitions.Sockets.DestinySocketTypeDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -59609,6 +60239,7 @@ NOTE: This is not all of the item types available, and some of these are holdove
 		An enumeration that indicates the high-level "type" of the item, attempting to iron out the context specific differences for specific instances of an entity. For instance, though a weapon may be of various wepaon "Types", in DestinyItemType they are all classified as "Weapon". This allows for better filtering on a higher level of abstraction for the concept of types.
  This enum is provided for historical compatibility with Destiny 1, but an ideal alternative is to use DestinyItemCategoryDefinitions and the DestinyItemDefinition.itemCategories property instead. Item Categories allow for arbitrary hierarchies of specificity, and for items to belong to multiple categories across multiple hierarchies simultaneously. For this enum, we pick a single type as a "best guess" fit.
  NOTE: This is not all of the item types available, and some of these are holdovers from Destiny 1 that may or may not still exist.
+ I keep updating these because they're so damn convenient. I guess I shouldn't fight it.
 	</div>
 	
 	
@@ -59675,6 +60306,24 @@ NOTE: This is not all of the item types available, and some of these are holdove
 					</li>
 					<li>
 						<div><strong>Mod</strong>: 19</div>
+					</li>
+					<li>
+						<div><strong>Dummy</strong>: 20</div>
+					</li>
+					<li>
+						<div><strong>Ship</strong>: 21</div>
+					</li>
+					<li>
+						<div><strong>Vehicle</strong>: 22</div>
+					</li>
+					<li>
+						<div><strong>Emote</strong>: 23</div>
+					</li>
+					<li>
+						<div><strong>Ghost</strong>: 24</div>
+					</li>
+					<li>
+						<div><strong>Package</strong>: 25</div>
 					</li>
 				</ul>
 			</div>
@@ -59765,6 +60414,36 @@ NOTE: This is not all of the item types available, and some of these are holdove
 					</li>
 					<li>
 						<div><strong>Shader</strong>: 20</div>
+					</li>
+					<li>
+						<div><strong>Ornament</strong>: 21</div>
+					</li>
+					<li>
+						<div><strong>FusionRifleLine</strong>: 22</div>
+					</li>
+					<li>
+						<div><strong>GrenadeLauncher</strong>: 23</div>
+					</li>
+					<li>
+						<div><strong>SubmachineGun</strong>: 24</div>
+					</li>
+					<li>
+						<div><strong>TraceRifle</strong>: 25</div>
+					</li>
+					<li>
+						<div><strong>HelmetArmor</strong>: 26</div>
+					</li>
+					<li>
+						<div><strong>GauntletsArmor</strong>: 27</div>
+					</li>
+					<li>
+						<div><strong>ChestArmor</strong>: 28</div>
+					</li>
+					<li>
+						<div><strong>LegArmor</strong>: 29</div>
+					</li>
+					<li>
+						<div><strong>ClassArmor</strong>: 30</div>
 					</li>
 				</ul>
 			</div>
@@ -60139,6 +60818,64 @@ In this way, you can build up a visual hierarchy of item categories. That's what
 		<strong>Mapped to Manifest Database Definition: </strong>
 		<a href="#/components/schemas/Destiny.Definitions.DestinyItemCategoryDefinition">Destiny.Definitions.DestinyItemCategoryDefinition</a>
 	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>parentCategoryHashes</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			uint32
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>groupCategoryOnly</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
 			
 
 </div>						</div>
@@ -67522,6 +68259,9 @@ This is a long-held historical throwback to when we used to do paging with known
 					<li>
 						<div><strong>ReportSubmissionFailed</strong>: 2702</div>
 					</li>
+					<li>
+						<div><strong>ReportCannotReportSelf</strong>: 2703</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -70230,7 +70970,7 @@ Inventory Items returned here are in a flat list, but importantly they have a bu
 	</div>
 	
 	<div class="description">
-		A flags enumeration indicating the states of the item: whether it's tracked or locked for example.
+		A flags enumeration indicating the transient/custom states of the item that affect how it is rendered: whether it's tracked or locked for example, or whether it has a masterwork plug inserted.
 	</div>
 	
 	
@@ -70359,6 +71099,9 @@ Inventory Items returned here are in a flat list, but importantly they have a bu
 		<span class="enum">Enumeration</span>
 	</div>
 	
+	<div class="description">
+		A flags enumeration where each bit represents a different possible state that the item can be in that may effect how the item is displayed to the user and what actions can be performed against it.
+	</div>
 	
 	
 	<div class="type">
@@ -70379,9 +71122,15 @@ Inventory Items returned here are in a flat list, but importantly they have a bu
 					</li>
 					<li>
 						<div><strong>Locked</strong>: 1</div>
+						<div class="description">If this bit is set, the item has been "locked" by the user and cannot be deleted. You may want to represent this visually with a "lock" icon.</div>
 					</li>
 					<li>
 						<div><strong>Tracked</strong>: 2</div>
+						<div class="description">If this bit is set, the item is a quest that's being tracked by the user. You may want a visual indicator to show that this is a tracked quest.</div>
+					</li>
+					<li>
+						<div><strong>Masterwork</strong>: 4</div>
+						<div class="description">If this bit is set, the item has a Masterwork plug inserted. This usually coincides with having a special "glowing" effect applied to the item's icon.</div>
 					</li>
 				</ul>
 			</div>
@@ -70866,6 +71615,235 @@ Note that, because this component returns vendorItemIndexes (that is to say, ind
 		<strong>Array Contents:</strong>
 			int32
 	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>flavorObjective</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		I may regret naming it this way - but this represents when an item has an objective that doesn't serve a beneficial purpose, but rather is used for "flavor" or additional information. For instance, when Emblems track specific stats, those stats are represented as Objectives on the item.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.Quests.DestinyObjectiveProgress">Destiny.Quests.DestinyObjectiveProgress</a>
+</div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Quests.DestinyObjectiveProgress"><h3>Destiny.Quests.DestinyObjectiveProgress</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Returns data about a character's status with a given Objective. Combine with DestinyObjectiveDefinition static data for display purposes.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>objectiveHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	<div class="description">
+		The unique identifier of the Objective being referred to. Use to look up the DestinyObjectiveDefinition in static data.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyObjectiveDefinition">Destiny.Definitions.DestinyObjectiveDefinition</a>
+	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>destinationHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	<div class="description">
+		If the Objective has a Destination associated with it, this is the unique identifier of the Destination being referred to. Use to look up the DestinyDestinationDefinition in static data. This will give localized data about *where* in the universe the objective should be achieved.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyDestinationDefinition">Destiny.Definitions.DestinyDestinationDefinition</a>
+	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>activityHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	<div class="description">
+		If the Objective has an Activity associated with it, this is the unique identifier of the Activity being referred to. Use to look up the DestinyActivityDefinition in static data. This will give localized data about *what* you should be playing for the objective to be achieved.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyActivityDefinition">Destiny.Definitions.DestinyActivityDefinition</a>
+	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>progress</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+	</div>
+	
+	<div class="description">
+		If progress has been made, and the progress can be measured numerically, this will be the value of that progress. You can compare it to the DestinyObjectiveDefinition.completionValue property for current vs. upper bounds, and use DestinyObjectiveDefinition.valueStyle to determine how this should be rendered. Note that progress, in Destiny 2, need not be a literal numeric progression. It could be one of a number of possible values, even a Timestamp. Always examine DestinyObjectiveDefinition.valueStyle before rendering progress.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>complete</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Whether or not the Objective is completed.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
 
 	
 	
@@ -73905,203 +74883,6 @@ Before we even use it, it's already deprecated! How much of a bummer is that? We
 	
 	<div class="type">
 		<strong>Type</strong>: uint32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	
-			
-
-</div>			</div>
-		</div>
-		<div class="schema box">
-			<a id="/components/schemas/Destiny.Quests.DestinyObjectiveProgress"><h3>Destiny.Quests.DestinyObjectiveProgress</h3></a>
-			<div class="schema-detail box-contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		Returns data about a character's status with a given Objective. Combine with DestinyObjectiveDefinition static data for display purposes.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	
-		<div class="properties box">
-			<h5>Object Properties</h5>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>objectiveHash</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-		<span class="mapped">Mapped to Definition</span>
-	</div>
-	
-	<div class="description">
-		The unique identifier of the Objective being referred to. Use to look up the DestinyObjectiveDefinition in static data.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: uint32
-	</div>
-	
-	
-
-	
-	
-	<div class="mapped">
-		<strong>Mapped to Manifest Database Definition: </strong>
-		<a href="#/components/schemas/Destiny.Definitions.DestinyObjectiveDefinition">Destiny.Definitions.DestinyObjectiveDefinition</a>
-	</div>
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>destinationHash</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-		<span class="nullable">Nullable</span>
-		<span class="mapped">Mapped to Definition</span>
-	</div>
-	
-	<div class="description">
-		If the Objective has a Destination associated with it, this is the unique identifier of the Destination being referred to. Use to look up the DestinyDestinationDefinition in static data. This will give localized data about *where* in the universe the objective should be achieved.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: uint32
-	</div>
-	
-	
-
-	
-	
-	<div class="mapped">
-		<strong>Mapped to Manifest Database Definition: </strong>
-		<a href="#/components/schemas/Destiny.Definitions.DestinyDestinationDefinition">Destiny.Definitions.DestinyDestinationDefinition</a>
-	</div>
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>activityHash</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-		<span class="nullable">Nullable</span>
-		<span class="mapped">Mapped to Definition</span>
-	</div>
-	
-	<div class="description">
-		If the Objective has an Activity associated with it, this is the unique identifier of the Activity being referred to. Use to look up the DestinyActivityDefinition in static data. This will give localized data about *what* you should be playing for the objective to be achieved.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: uint32
-	</div>
-	
-	
-
-	
-	
-	<div class="mapped">
-		<strong>Mapped to Manifest Database Definition: </strong>
-		<a href="#/components/schemas/Destiny.Definitions.DestinyActivityDefinition">Destiny.Definitions.DestinyActivityDefinition</a>
-	</div>
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>progress</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-		<span class="nullable">Nullable</span>
-	</div>
-	
-	<div class="description">
-		If progress has been made, and the progress can be measured numerically, this will be the value of that progress. You can compare it to the DestinyObjectiveDefinition.completionValue property for current vs. upper bounds, and use DestinyObjectiveDefinition.valueStyle to determine how this should be rendered. Note that progress, in Destiny 2, need not be a literal numeric progression. It could be one of a number of possible values, even a Timestamp. Always examine DestinyObjectiveDefinition.valueStyle before rendering progress.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>complete</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		Whether or not the Objective is completed.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: boolean
 	</div>
 	
 	
@@ -79804,6 +80585,38 @@ Objectives are our standard way to describe a series of tasks that have to be co
 					</div>
 				</div>
 			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>flavorObjective</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		I may regret naming it this way - but this represents when an item has an objective that doesn't serve a beneficial purpose, but rather is used for "flavor" or additional information. For instance, when Emblems track specific stats, those stats are represented as Objectives on the item.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.Quests.DestinyObjectiveProgress">Destiny.Quests.DestinyObjectiveProgress</a>
+</div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	
 			
@@ -80724,6 +81537,276 @@ A Reusable Plug is a plug that you can *always* insert into this socket, regardl
 					</div>
 				</div>
 			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>plugObjectives</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Sometimes, Plugs may have objectives: generally, these are used for flavor and display purposes. For instance, a Plug might be tracking the number of PVP kills you have made. It will use the parent item's data about that tracking status to determine what to show, and will generally show it using the DestinyObjectiveDefinition's progressDescription property. Refer to the plug's itemHash and objective property for more information if you would like to display even more data.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/Destiny.Quests.DestinyObjectiveProgress">Destiny.Quests.DestinyObjectiveProgress</a>
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>reusablePlugs</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/Destiny.Sockets.DestinyItemPlug">Destiny.Sockets.DestinyItemPlug</a>
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Sockets.DestinyItemPlug"><h3>Destiny.Sockets.DestinyItemPlug</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>plugItemHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyInventoryItemDefinition">Destiny.Definitions.DestinyInventoryItemDefinition</a>
+	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>plugObjectives</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/Destiny.Quests.DestinyObjectiveProgress">Destiny.Quests.DestinyObjectiveProgress</a>
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>canInsert</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>enabled</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>insertFailIndexes</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			int32
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>enableFailIndexes</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			int32
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	
 			
@@ -81579,6 +82662,123 @@ This component finds all items that are considered "Plugs" in your inventory, an
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
+						<div class="title"><strong>plugItemHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyInventoryItemDefinition">Destiny.Definitions.DestinyInventoryItemDefinition</a>
+	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>plugObjectives</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/Destiny.Quests.DestinyObjectiveProgress">Destiny.Quests.DestinyObjectiveProgress</a>
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>canInsert</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>enabled</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
 						<div class="title"><strong>insertFailIndexes</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
@@ -81587,10 +82787,6 @@ This component finds all items that are considered "Plugs" in your inventory, an
 	<div class="attributes">
 	</div>
 	
-	<div class="description">
-		If the plug cannot be inserted for some reason, this will have the indexes into the plug item definition's plug.insertionRules property, so you can show the reasons why it can't be inserted.
-This list will be empty if the plug can be inserted.
-	</div>
 	
 	
 	<div class="type">
@@ -81622,10 +82818,6 @@ This list will be empty if the plug can be inserted.
 	<div class="attributes">
 	</div>
 	
-	<div class="description">
-		If a plug is not enabled, this will be populated with indexes into the plug item definition's plug.enabledRules property, so that you can show the reasons why it is not enabled.
-This list will be empty if the plug is enabled.
-	</div>
 	
 	
 	<div class="type">
@@ -86979,6 +88171,87 @@ This value can be used to get additional data about this activity such as who el
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
+						<div class="title"><strong>classHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>raceHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>genderHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
 						<div class="title"><strong>characterLevel</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
@@ -88385,6 +89658,9 @@ When entities refer to each other in Destiny content, it is this hash that they 
 		<span class="enum">Enumeration</span>
 	</div>
 	
+	<div class="description">
+		If the enum value is > 100, it is a "special" group that cannot be queried for directly (special cases apply to when they are returned, and are not relevant in general cases)
+	</div>
 	
 	
 	<div class="type">
@@ -88414,15 +89690,19 @@ When entities refer to each other in Destiny content, it is this hash that they 
 					</li>
 					<li>
 						<div><strong>ReservedGroups</strong>: 100</div>
+						<div class="description">This is purely to serve as the dividing line between filterable and un-filterable groups. Below this number is a group you can pass as a filter. Above it are groups used in very specific circumstances and not relevant for filtering.</div>
 					</li>
 					<li>
 						<div><strong>Leaderboard</strong>: 101</div>
+						<div class="description">Only applicable while generating leaderboards.</div>
 					</li>
 					<li>
 						<div><strong>Activity</strong>: 102</div>
+						<div class="description">These will *only* be consumed by GetAggregateStatsByActivity</div>
 					</li>
 					<li>
 						<div><strong>UniqueWeapon</strong>: 103</div>
+						<div class="description">These are only consumed and returned by GetUniqueWeaponHistory</div>
 					</li>
 					<li>
 						<div><strong>Internal</strong>: 104</div>

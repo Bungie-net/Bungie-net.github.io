@@ -983,6 +983,7 @@
 						<li>
 							<a href="schema_Destiny-Definitions-DestinyEquipmentSlotDefinition.html#schema_Destiny-Definitions-DestinyEquipmentSlotDefinition" id="schema_Destiny-Definitions-DestinyEquipmentSlotDefinition">Destiny.Definitions.DestinyEquipmentSlotDefinition</a>
 							<span class="attributes">
+								<span class="manifest-entity">Manifest</span>
 							</span>
 						</li>
 						<li>
@@ -1469,6 +1470,18 @@
 							</span>
 						</li>
 						<li>
+							<a href="schema_Destiny-PlugUiStyles.html#schema_Destiny-PlugUiStyles" id="schema_Destiny-PlugUiStyles">Destiny.PlugUiStyles</a>
+							<span class="attributes">
+								<span class="enum">Enum</span>
+							</span>
+						</li>
+						<li>
+							<a href="schema_Destiny-PlugAvailabilityMode.html#schema_Destiny-PlugAvailabilityMode" id="schema_Destiny-PlugAvailabilityMode">Destiny.PlugAvailabilityMode</a>
+							<span class="attributes">
+								<span class="enum">Enum</span>
+							</span>
+						</li>
+						<li>
 							<a href="schema_Destiny-Definitions-DestinyMaterialRequirementSetDefinition.html#schema_Destiny-Definitions-DestinyMaterialRequirementSetDefinition" id="schema_Destiny-Definitions-DestinyMaterialRequirementSetDefinition">Destiny.Definitions.DestinyMaterialRequirementSetDefinition</a>
 							<span class="attributes">
 							</span>
@@ -1515,6 +1528,12 @@
 							</span>
 						</li>
 						<li>
+							<a href="schema_Destiny-SocketTypeActionType.html#schema_Destiny-SocketTypeActionType" id="schema_Destiny-SocketTypeActionType">Destiny.SocketTypeActionType</a>
+							<span class="attributes">
+								<span class="enum">Enum</span>
+							</span>
+						</li>
+						<li>
 							<a href="schema_Destiny-Definitions-Sockets-DestinyPlugWhitelistEntryDefinition.html#schema_Destiny-Definitions-Sockets-DestinyPlugWhitelistEntryDefinition" id="schema_Destiny-Definitions-Sockets-DestinyPlugWhitelistEntryDefinition">Destiny.Definitions.Sockets.DestinyPlugWhitelistEntryDefinition</a>
 							<span class="attributes">
 							</span>
@@ -1529,6 +1548,11 @@
 							<a href="schema_Destiny-Definitions-Sockets-DestinySocketCategoryDefinition.html#schema_Destiny-Definitions-Sockets-DestinySocketCategoryDefinition" id="schema_Destiny-Definitions-Sockets-DestinySocketCategoryDefinition">Destiny.Definitions.Sockets.DestinySocketCategoryDefinition</a>
 							<span class="attributes">
 								<span class="manifest-entity">Manifest</span>
+							</span>
+						</li>
+						<li>
+							<a href="schema_Destiny-Definitions-DestinyItemIntrinsicSocketEntryDefinition.html#schema_Destiny-Definitions-DestinyItemIntrinsicSocketEntryDefinition" id="schema_Destiny-Definitions-DestinyItemIntrinsicSocketEntryDefinition">Destiny.Definitions.DestinyItemIntrinsicSocketEntryDefinition</a>
+							<span class="attributes">
 							</span>
 						</li>
 						<li>
@@ -2016,6 +2040,11 @@
 							</span>
 						</li>
 						<li>
+							<a href="schema_Destiny-Quests-DestinyObjectiveProgress.html#schema_Destiny-Quests-DestinyObjectiveProgress" id="schema_Destiny-Quests-DestinyObjectiveProgress">Destiny.Quests.DestinyObjectiveProgress</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
 							<a href="schema_SingleComponentResponseOfDestinyKiosksComponent.html#schema_SingleComponentResponseOfDestinyKiosksComponent" id="schema_SingleComponentResponseOfDestinyKiosksComponent">SingleComponentResponseOfDestinyKiosksComponent</a>
 							<span class="attributes">
 							</span>
@@ -2089,11 +2118,6 @@
 						</li>
 						<li>
 							<a href="schema_Destiny-Quests-DestinyQuestStatus.html#schema_Destiny-Quests-DestinyQuestStatus" id="schema_Destiny-Quests-DestinyQuestStatus">Destiny.Quests.DestinyQuestStatus</a>
-							<span class="attributes">
-							</span>
-						</li>
-						<li>
-							<a href="schema_Destiny-Quests-DestinyObjectiveProgress.html#schema_Destiny-Quests-DestinyObjectiveProgress" id="schema_Destiny-Quests-DestinyObjectiveProgress">Destiny.Quests.DestinyObjectiveProgress</a>
 							<span class="attributes">
 							</span>
 						</li>
@@ -2342,6 +2366,11 @@
 						</li>
 						<li>
 							<a href="schema_Destiny-Entities-Items-DestinyItemSocketState.html#schema_Destiny-Entities-Items-DestinyItemSocketState" id="schema_Destiny-Entities-Items-DestinyItemSocketState">Destiny.Entities.Items.DestinyItemSocketState</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
+							<a href="schema_Destiny-Sockets-DestinyItemPlug.html#schema_Destiny-Sockets-DestinyItemPlug" id="schema_Destiny-Sockets-DestinyItemPlug">Destiny.Sockets.DestinyItemPlug</a>
 							<span class="attributes">
 							</span>
 						</li>
@@ -3214,6 +3243,39 @@ In practice, you will want to associate this data with "live" item data from a B
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
+						<div class="title"><strong>uiItemDisplayStyle</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	
+	<div class="attributes">
+	</div>
+	
+	
+	<div class="description">
+		A string identifier that the game's UI uses to determine how the item should be rendered in inventory screens and the like. This could really be anything - at the moment, we don't have the time to really breakdown and maintain all the possible strings this could be, partly because new ones could be added ad hoc. But if you want to use it to dictate your own UI, or look for items with a certain display style, go for it!
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
 						<div class="title"><strong>itemTypeAndTierDisplayName</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
@@ -3440,6 +3502,40 @@ In practice, you will want to associate this data with "live" item data from a B
 <div class="type-info stop-nesting-boxes">
 		See: <a href="schema_Destiny-Definitions-DestinyItemStatBlockDefinition.html#schema_Destiny-Definitions-DestinyItemStatBlockDefinition">Destiny.Definitions.DestinyItemStatBlockDefinition</a>
 </div>	
+
+	
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>emblemObjectiveHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+	</div>
+	
+	
+	<div class="description">
+		If the item is an emblem that has a special Objective attached to it - for instance, if the emblem tracks PVP Kills, or what-have-you. This is a bit different from, for example, the Vanguard Kill Tracker mod, which pipes data into the "art channel". When I get some time, I would like to standardize these so you can get at the values they expose without having to care about what they're being used for and how they are wired up, but for now here's the raw data.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
 
 	
 	
