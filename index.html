@@ -14,7 +14,7 @@
 		<div class="box-contents">
 			<div>These endpoints constitute the functionality exposed by Bungie.net, both for more traditional website functionality and for connectivity to Bungie video games and their related functionality.</div>
 			<div class="about-line-items">
-				<div><strong>Version:</strong> 2.1.1
+				<div><strong>Version:</strong> 2.1.2
 				</div>
 				<div><strong>License:</strong> <a href="https://github.com/Bungie-net/api/blob/master/LICENSE">https://github.com/Bungie-net/api/blob/master/LICENSE (BSD License 2.0)</a>
 				</div>
@@ -149,6 +149,12 @@ clan/group memberships, recent activity, muted users.</div>
 										<div class="description">Read offer history and claim and apply tokens for the user.</div>
 									</li>
 								</ul>
+								<ul>
+									<li>
+										<div class="title">AdvancedWriteActions</div>
+										<div class="description">Can perform actions that will result in a prompt to the user via the Destiny app.</div>
+									</li>
+								</ul>
 							</div>
 						</div>
 					</div>
@@ -166,11 +172,6 @@ clan/group memberships, recent activity, muted users.</div>
 				<ul>
 					<li>
 						<span>GET:</span> <a href="#User.GetBungieNetUserById">/User/GetBungieNetUserById/{id}/</a>
-						<span class="attributes">
-						</span>
-					</li>
-					<li>
-						<span>GET:</span> <a href="#User.GetUserAliases">/User/GetUserAliases/{id}/</a>
 						<span class="attributes">
 						</span>
 					</li>
@@ -549,12 +550,6 @@ clan/group memberships, recent activity, muted users.</div>
 						</span>
 					</li>
 					<li>
-						<span>POST:</span> <a href="#Destiny2.ActivateTalentNode">/Destiny2/Actions/Items/ActivateTalentNode/</a>
-						<span class="attributes">
-							<span class="preview">Preview - Not Ready for Release</span>
-						</span>
-					</li>
-					<li>
 						<span>GET:</span> <a href="#Destiny2.GetPostGameCarnageReport">/Destiny2/Stats/PostGameCarnageReport/{activityId}/</a>
 						<span class="attributes">
 						</span>
@@ -630,6 +625,21 @@ clan/group memberships, recent activity, muted users.</div>
 					</li>
 					<li>
 						<span>GET:</span> <a href="#Destiny2.GetPublicMilestones">/Destiny2/Milestones/</a>
+						<span class="attributes">
+						</span>
+					</li>
+					<li>
+						<span>POST:</span> <a href="#Destiny2.AwaInitializeRequest">/Destiny2/Awa/Initialize/</a>
+						<span class="attributes">
+						</span>
+					</li>
+					<li>
+						<span>POST:</span> <a href="#Destiny2.AwaProvideAuthorizationResult">/Destiny2/Awa/AwaProvideAuthorizationResult/</a>
+						<span class="attributes">
+						</span>
+					</li>
+					<li>
+						<span>GET:</span> <a href="#Destiny2.AwaGetActionToken">/Destiny2/Awa/GetActionToken/{correlationId}/</a>
 						<span class="attributes">
 						</span>
 					</li>
@@ -726,11 +736,6 @@ clan/group memberships, recent activity, muted users.</div>
 				<a href="#/components/schemas/Ignores.IgnoreStatus">Ignores.IgnoreStatus</a>
 				<span class="attributes">
 					<span class="enum">Enumeration</span>
-				</span>
-			</li>
-			<li>
-				<a href="#/components/schemas/User.Models.UserAlias">User.Models.UserAlias</a>
-				<span class="attributes">
 				</span>
 			</li>
 			<li>
@@ -1214,6 +1219,12 @@ clan/group memberships, recent activity, muted users.</div>
 				</span>
 			</li>
 			<li>
+				<a href="#/components/schemas/Destiny.VendorInteractionType">Destiny.VendorInteractionType</a>
+				<span class="attributes">
+					<span class="enum">Enumeration</span>
+				</span>
+			</li>
+			<li>
 				<a href="#/components/schemas/Destiny.Definitions.DestinyVendorInventoryFlyoutDefinition">Destiny.Definitions.DestinyVendorInventoryFlyoutDefinition</a>
 				<span class="attributes">
 				</span>
@@ -1671,6 +1682,11 @@ clan/group memberships, recent activity, muted users.</div>
 				<a href="#/components/schemas/Destiny.DestinySocketVisibility">Destiny.DestinySocketVisibility</a>
 				<span class="attributes">
 					<span class="enum">Enumeration</span>
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.Definitions.Sockets.DestinySocketTypeScalarMaterialRequirementEntry">Destiny.Definitions.Sockets.DestinySocketTypeScalarMaterialRequirementEntry</a>
+				<span class="attributes">
 				</span>
 			</li>
 			<li>
@@ -2782,6 +2798,22 @@ clan/group memberships, recent activity, muted users.</div>
 				</span>
 			</li>
 			<li>
+				<a href="#/components/schemas/Destiny.Responses.DestinySocketResponseCodes">Destiny.Responses.DestinySocketResponseCodes</a>
+				<span class="attributes">
+					<span class="enum">Enumeration</span>
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.Requests.Actions.DestinyInsertPlugsActionRequest">Destiny.Requests.Actions.DestinyInsertPlugsActionRequest</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.Requests.Actions.DestinyInsertPlugsRequestEntry">Destiny.Requests.Actions.DestinyInsertPlugsRequestEntry</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
 				<a href="#/components/schemas/Destiny.HistoricalStats.DestinyPostGameCarnageReportData">Destiny.HistoricalStats.DestinyPostGameCarnageReportData</a>
 				<span class="attributes">
 				</span>
@@ -3014,6 +3046,44 @@ clan/group memberships, recent activity, muted users.</div>
 				</span>
 			</li>
 			<li>
+				<a href="#/components/schemas/Destiny.Advanced.AwaInitializeResponse">Destiny.Advanced.AwaInitializeResponse</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.Advanced.AwaPermissionRequested">Destiny.Advanced.AwaPermissionRequested</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.Advanced.AwaType">Destiny.Advanced.AwaType</a>
+				<span class="attributes">
+					<span class="enum">Enumeration</span>
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.Advanced.AwaUserResponse">Destiny.Advanced.AwaUserResponse</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.Advanced.AwaUserSelection">Destiny.Advanced.AwaUserSelection</a>
+				<span class="attributes">
+					<span class="enum">Enumeration</span>
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.Advanced.AwaAuthorizationResult">Destiny.Advanced.AwaAuthorizationResult</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.Advanced.AwaResponseReason">Destiny.Advanced.AwaResponseReason</a>
+				<span class="attributes">
+					<span class="enum">Enumeration</span>
+				</span>
+			</li>
+			<li>
 				<a href="#/components/schemas/Forum.CommunityContentSortMode">Forum.CommunityContentSortMode</a>
 				<span class="attributes">
 					<span class="enum">Enumeration</span>
@@ -3206,246 +3276,6 @@ clan/group memberships, recent activity, muted users.</div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
 		See: <a href="#/components/schemas/User.GeneralUser">User.GeneralUser</a>
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>ErrorCode</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-		See: <a href="#/components/schemas/Exceptions.PlatformErrorCodes">Exceptions.PlatformErrorCodes</a>
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>ThrottleSeconds</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>ErrorStatus</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>Message</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>MessageData</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	<div class="dictionary">
-		<strong>Dictionary Contents:</strong>
-			string
-	</div>
-	<div>
-		<strong>Dictionary Key Type: </strong> 
-		string
-	</div>
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	
-			
-
-</div>			</div>
-		</div>
-</div>			</div>
-		</div>
-	</div>
-</div>		</div>
-		<div class="endpoint">
-<div class="box">
-	<a id="User.GetUserAliases"><h3>User.GetUserAliases</h3></a>
-	<div class="box-contents">
-		<div class="attributes">
-			<span class="User tag">User</span>
-		</div>
-		<br />
-		<div><strong>Verb:</strong> GET</div>
-		<br />
-		<div><strong>Path:</strong> /User/GetUserAliases/{id}/</div>
-		<br />
-		<div class="description">Loads aliases of a bungienet membership id.</div>
-		<br />
-		
-		<div class="parameters box">
-			<h4>Path Parameters</h4>
-			<div class="box-contents stop-nesting-boxes">
-				<ul>
-					<li>
-						<strong>id</strong>
-						<div class="description">The requested Bungie.net membership id.</div>
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int64
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>					</li>
-				</ul>
-			</div>
-		</div>
-
-	
-	
-		<div class="response box">
-			<h4>Response</h4>
-			<div class="box-contents stop-nesting-boxes">
-<div class="response">
-	<div class="description">Look at the Response property for more information about the nature of this response</div>
-		<div class="content">
-			<div class="content-type">Content Type: application/json</div>
-			<div>
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	
-		<div class="properties box">
-			<h5>Object Properties</h5>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>Response</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: array
-	</div>
-	
-	
-	<div class="items">
-		<strong>Array Contents:</strong>
-			<a href="#/components/schemas/User.Models.UserAlias">User.Models.UserAlias</a>
-	</div>
-
-	
-	
-			
-
 </div>						</div>
 					</div>
 				</div>
@@ -5404,7 +5234,7 @@ clan/group memberships, recent activity, muted users.</div>
 	
 	
 	<div class="type">
-		<strong>Type</strong>: uint64
+		<strong>Type</strong>: int64
 	</div>
 	
 	
@@ -5701,7 +5531,7 @@ clan/group memberships, recent activity, muted users.</div>
 	
 	
 	<div class="type">
-		<strong>Type</strong>: uint64
+		<strong>Type</strong>: int64
 	</div>
 	
 	
@@ -6040,7 +5870,7 @@ clan/group memberships, recent activity, muted users.</div>
 	
 	
 	<div class="type">
-		<strong>Type</strong>: uint64
+		<strong>Type</strong>: int64
 	</div>
 	
 	
@@ -6290,7 +6120,7 @@ clan/group memberships, recent activity, muted users.</div>
 	
 	
 	<div class="type">
-		<strong>Type</strong>: uint64
+		<strong>Type</strong>: int64
 	</div>
 	
 	
@@ -20729,13 +20559,13 @@ clan/group memberships, recent activity, muted users.</div>
 		<br />
 		<div><strong>Path:</strong> /Destiny2/Actions/Items/InsertSocketPlug/</div>
 		<br />
-		<div class="description">Insert a plug into a socketed item. I know how it sounds, but I assure you it's much more G-rated than you might be guessing. We haven't decided yet whether this will be able to insert plugs that have side effects, but if we do it will require special scope permission for an application attempting to do so. You must have a valid Destiny Account, and either be in a social space, in orbit, or offline. PREVIEW: This service is not yet active, but we are returning the planned schema of the endpoint for review, comment, and preparation for its eventual implementation.</div>
+		<div class="description">Insert a plug into a socketed item. I know how it sounds, but I assure you it's much more G-rated than you might be guessing. We haven't decided yet whether this will be able to insert plugs that have side effects, but if we do it will require special scope permission for an application attempting to do so. You must have a valid Destiny Account, and either be in a social space, in orbit, or offline. Request must include proof of permission for 'InsertPlugs' from the account owner.</div>
 		<br />
 		<div class="required-scopes box">
 			<h4>Required Scope(s)</h4>
 			<div class="box-contents">
 				<ul>
-					<li>oauth2: MoveEquipDestinyItems</li>
+					<li>oauth2: AdvancedWriteActions</li>
 				</ul>
 			</div>
 		</div>
@@ -20747,7 +20577,7 @@ clan/group memberships, recent activity, muted users.</div>
 			<div class="box-contents stop-nesting-boxes">
 			
 <div class="type-info stop-nesting-boxes">
-		See: <a href="#/components/schemas/Destiny.Requests.Actions.DestinyItemActionRequest">Destiny.Requests.Actions.DestinyItemActionRequest</a>
+		See: <a href="#/components/schemas/Destiny.Requests.Actions.DestinyInsertPlugsActionRequest">Destiny.Requests.Actions.DestinyInsertPlugsActionRequest</a>
 </div>			</div>
 		</div>
 	
@@ -20782,248 +20612,7 @@ clan/group memberships, recent activity, muted users.</div>
 						<div class="title"><strong>Response</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>ErrorCode</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-		See: <a href="#/components/schemas/Exceptions.PlatformErrorCodes">Exceptions.PlatformErrorCodes</a>
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>ThrottleSeconds</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>ErrorStatus</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>Message</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>MessageData</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	<div class="dictionary">
-		<strong>Dictionary Contents:</strong>
-			string
-	</div>
-	<div>
-		<strong>Dictionary Key Type: </strong> 
-		string
-	</div>
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	
-			
-
-</div>			</div>
-		</div>
-</div>			</div>
-		</div>
-	</div>
-</div>		</div>
-		<div class="endpoint">
-<div class="box">
-	<a id="Destiny2.ActivateTalentNode"><h3>Destiny2.ActivateTalentNode</h3></a>
-	<div class="box-contents">
-		<div class="attributes">
-			<span class="preview">Preview - Not Ready for Release</span>
-			<span class="Destiny2 tag">Destiny2</span>
-			<span class="Preview tag">Preview</span>
-		</div>
-		<br />
-		<div><strong>Verb:</strong> POST</div>
-		<br />
-		<div><strong>Path:</strong> /Destiny2/Actions/Items/ActivateTalentNode/</div>
-		<br />
-		<div class="description">Activate a Talent Node. Chill out, everyone: we haven't decided yet whether this will be able to activate nodes with costs, but if we do it will require special scope permission for an application attempting to do so. You must have a valid Destiny Account, and either be in a social space, in orbit, or offline. PREVIEW: This service is not actually implemented yet, but we are returning the planned schema of the endpoint for review, comment, and preparation for its eventual implementation.</div>
-		<br />
-		<div class="required-scopes box">
-			<h4>Required Scope(s)</h4>
-			<div class="box-contents">
-				<ul>
-					<li>oauth2: MoveEquipDestinyItems</li>
-				</ul>
-			</div>
-		</div>
-		
-
-	
-		<div class="request-body box">
-			<h4>Request Body</h4>
-			<div class="box-contents stop-nesting-boxes">
-			
-<div class="type-info stop-nesting-boxes">
-		See: <a href="#/components/schemas/Destiny.Requests.Actions.DestinyItemActionRequest">Destiny.Requests.Actions.DestinyItemActionRequest</a>
-</div>			</div>
-		</div>
-	
-		<div class="response box">
-			<h4>Response</h4>
-			<div class="box-contents stop-nesting-boxes">
-<div class="response">
-	<div class="description">Look at the Response property for more information about the nature of this response</div>
-		<div class="content">
-			<div class="content-type">Content Type: application/json</div>
-			<div>
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	
-		<div class="properties box">
-			<h5>Object Properties</h5>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>Response</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
+		See: <a href="#/components/schemas/Destiny.Responses.DestinySocketResponseCodes">Destiny.Responses.DestinySocketResponseCodes</a>
 </div>						</div>
 					</div>
 				</div>
@@ -25303,6 +24892,656 @@ clan/group memberships, recent activity, muted users.</div>
 </div>		</div>
 		<div class="endpoint">
 <div class="box">
+	<a id="Destiny2.AwaInitializeRequest"><h3>Destiny2.AwaInitializeRequest</h3></a>
+	<div class="box-contents">
+		<div class="attributes">
+			<span class="Destiny2 tag">Destiny2</span>
+		</div>
+		<br />
+		<div><strong>Verb:</strong> POST</div>
+		<br />
+		<div><strong>Path:</strong> /Destiny2/Awa/Initialize/</div>
+		<br />
+		<div class="description">Initialize a request to perform an advanced write action.</div>
+		<br />
+		<div class="required-scopes box">
+			<h4>Required Scope(s)</h4>
+			<div class="box-contents">
+				<ul>
+					<li>oauth2: AdvancedWriteActions</li>
+				</ul>
+			</div>
+		</div>
+		
+
+	
+		<div class="request-body box">
+			<h4>Request Body</h4>
+			<div class="box-contents stop-nesting-boxes">
+			
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.Advanced.AwaPermissionRequested">Destiny.Advanced.AwaPermissionRequested</a>
+</div>			</div>
+		</div>
+	
+		<div class="response box">
+			<h4>Response</h4>
+			<div class="box-contents stop-nesting-boxes">
+<div class="response">
+	<div class="description">Look at the Response property for more information about the nature of this response</div>
+		<div class="content">
+			<div class="content-type">Content Type: application/json</div>
+			<div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Response</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.Advanced.AwaInitializeResponse">Destiny.Advanced.AwaInitializeResponse</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorCode</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Exceptions.PlatformErrorCodes">Exceptions.PlatformErrorCodes</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ThrottleSeconds</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorStatus</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Message</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>MessageData</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			string
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		string
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+</div>			</div>
+		</div>
+	</div>
+</div>		</div>
+		<div class="endpoint">
+<div class="box">
+	<a id="Destiny2.AwaProvideAuthorizationResult"><h3>Destiny2.AwaProvideAuthorizationResult</h3></a>
+	<div class="box-contents">
+		<div class="attributes">
+			<span class="Destiny2 tag">Destiny2</span>
+		</div>
+		<br />
+		<div><strong>Verb:</strong> POST</div>
+		<br />
+		<div><strong>Path:</strong> /Destiny2/Awa/AwaProvideAuthorizationResult/</div>
+		<br />
+		<div class="description">Provide the result of the user interaction. Called by the Bungie Destiny App to approve or reject a request.</div>
+		<br />
+		
+
+	
+		<div class="request-body box">
+			<h4>Request Body</h4>
+			<div class="box-contents stop-nesting-boxes">
+			
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.Advanced.AwaUserResponse">Destiny.Advanced.AwaUserResponse</a>
+</div>			</div>
+		</div>
+	
+		<div class="response box">
+			<h4>Response</h4>
+			<div class="box-contents stop-nesting-boxes">
+<div class="response">
+	<div class="description">Look at the Response property for more information about the nature of this response</div>
+		<div class="content">
+			<div class="content-type">Content Type: application/json</div>
+			<div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Response</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorCode</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Exceptions.PlatformErrorCodes">Exceptions.PlatformErrorCodes</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ThrottleSeconds</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorStatus</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Message</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>MessageData</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			string
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		string
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+</div>			</div>
+		</div>
+	</div>
+</div>		</div>
+		<div class="endpoint">
+<div class="box">
+	<a id="Destiny2.AwaGetActionToken"><h3>Destiny2.AwaGetActionToken</h3></a>
+	<div class="box-contents">
+		<div class="attributes">
+			<span class="Destiny2 tag">Destiny2</span>
+		</div>
+		<br />
+		<div><strong>Verb:</strong> GET</div>
+		<br />
+		<div><strong>Path:</strong> /Destiny2/Awa/GetActionToken/{correlationId}/</div>
+		<br />
+		<div class="description">Returns the action token if user approves the request.</div>
+		<br />
+		<div class="required-scopes box">
+			<h4>Required Scope(s)</h4>
+			<div class="box-contents">
+				<ul>
+					<li>oauth2: AdvancedWriteActions</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="parameters box">
+			<h4>Path Parameters</h4>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<strong>correlationId</strong>
+						<div class="description">The identifier for the advanced write action request.</div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>					</li>
+				</ul>
+			</div>
+		</div>
+
+	
+	
+		<div class="response box">
+			<h4>Response</h4>
+			<div class="box-contents stop-nesting-boxes">
+<div class="response">
+	<div class="description">Look at the Response property for more information about the nature of this response</div>
+		<div class="content">
+			<div class="content-type">Content Type: application/json</div>
+			<div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Response</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.Advanced.AwaAuthorizationResult">Destiny.Advanced.AwaAuthorizationResult</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorCode</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Exceptions.PlatformErrorCodes">Exceptions.PlatformErrorCodes</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ThrottleSeconds</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorStatus</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Message</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>MessageData</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			string
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		string
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+</div>			</div>
+		</div>
+	</div>
+</div>		</div>
+		<div class="endpoint">
+<div class="box">
 	<a id="CommunityContent.GetCommunityContent"><h3>CommunityContent.GetCommunityContent</h3></a>
 	<div class="box-contents">
 		<div class="attributes">
@@ -27512,6 +27751,10 @@ clan/group memberships, recent activity, muted users.</div>
 						<div><strong>ReadAndApplyTokens</strong>: 1024</div>
 						<div class="description">Read offer history and claim and apply tokens for the user.</div>
 					</li>
+					<li>
+						<div><strong>AdvancedWriteActions</strong>: 2048</div>
+						<div class="description">Can perform actions that will result in a prompt to the user via the Destiny app.</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -28549,59 +28792,6 @@ clan/group memberships, recent activity, muted users.</div>
 				</ul>
 			</div>
 		</div>
-
-</div>			</div>
-		</div>
-		<div class="schema box">
-			<a id="/components/schemas/User.Models.UserAlias"><h3>User.Models.UserAlias</h3></a>
-			<div class="schema-detail box-contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	
-		<div class="properties box">
-			<h5>Object Properties</h5>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>cachePrefix</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	
-			
 
 </div>			</div>
 		</div>
@@ -43480,7 +43670,7 @@ But usually, it will be a small square image that you can use as... well, an ico
 	</div>
 	
 	<div class="description">
-		A UI hint for the behavior of the interaction screen. BNet doesn't use this, but you can choose to.
+		A UI hint for the behavior of the interaction screen. This is useful to determine what type of interaction is occurring, such as a prompt to receive a rank up reward or a prompt to choose a reward for completing a quest. The hash isn't as useful as the Enum in retrospect, well what can you do. Try using interactionType instead.
 	</div>
 	
 	
@@ -43489,6 +43679,38 @@ But usually, it will be a small square image that you can use as... well, an ico
 	</div>
 	
 	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>interactionType</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The enumerated version of the possible UI hints for vendor interactions, which is a little easier to grok than the hash found in uiInteractionType.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.VendorInteractionType">Destiny.VendorInteractionType</a>
+</div>	
 
 	
 	
@@ -43949,6 +44171,79 @@ You can potentially choose one from multiple replies when replying to an interac
 		</div>
 	
 			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.VendorInteractionType"><h3>Destiny.VendorInteractionType</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="enum">Enumeration</span>
+	</div>
+	
+	<div class="description">
+		An enumeration of the known UI interactions for Vendors.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+		<div class="enum-values box">
+			<h5>Valid Enum Values</h5>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<div><strong>Unknown</strong>: 0</div>
+					</li>
+					<li>
+						<div><strong>QuestComplete</strong>: 1</div>
+						<div class="description">An interaction shown when you complete a quest and receive a reward.</div>
+					</li>
+					<li>
+						<div><strong>QuestContinue</strong>: 2</div>
+						<div class="description">An interaction shown when you talk to a Vendor as an intermediary step of a quest.</div>
+					</li>
+					<li>
+						<div><strong>ReputationPreview</strong>: 3</div>
+						<div class="description">An interaction shown when you are previewing the vendor's reputation rewards.</div>
+					</li>
+					<li>
+						<div><strong>RankUpReward</strong>: 4</div>
+						<div class="description">An interaction shown when you rank up with the vendor.</div>
+					</li>
+					<li>
+						<div><strong>TokenTurnIn</strong>: 5</div>
+						<div class="description">An interaction shown when you have tokens to turn in for the vendor.</div>
+					</li>
+					<li>
+						<div><strong>QuestAccept</strong>: 6</div>
+						<div class="description">An interaction shown when you're accepting a new quest.</div>
+					</li>
+					<li>
+						<div><strong>ProgressTab</strong>: 7</div>
+						<div class="description">Honestly, this doesn't seem consistent to me. It is used to give you choices in the Cryptarch as well as some reward prompts by the Eververse vendor. I'll have to look into that further at some point.</div>
+					</li>
+					<li>
+						<div><strong>End</strong>: 8</div>
+						<div class="description">These seem even less consistent. I don't know what these are.</div>
+					</li>
+					<li>
+						<div><strong>Start</strong>: 9</div>
+						<div class="description">Also seem inconsistent. I also don't know what these are offhand.</div>
+					</li>
+				</ul>
+			</div>
+		</div>
 
 </div>			</div>
 		</div>
@@ -47804,7 +48099,7 @@ Activities also have Activity Types, but unfortunately in Destiny 2 these are ev
 						<div><strong>Reserved13</strong>: 13</div>
 					</li>
 					<li>
-						<div><strong>Reserved15</strong>: 15</div>
+						<div><strong>CrimsonDoubles</strong>: 15</div>
 					</li>
 					<li>
 						<div><strong>Nightfall</strong>: 16</div>
@@ -50913,7 +51208,7 @@ When entities refer to each other in Destiny content, it is this hash that they 
 						<div><strong>Reserved13</strong>: 13</div>
 					</li>
 					<li>
-						<div><strong>Reserved15</strong>: 15</div>
+						<div><strong>CrimsonDoubles</strong>: 15</div>
 					</li>
 					<li>
 						<div><strong>Nightfall</strong>: 16</div>
@@ -51143,7 +51438,7 @@ When entities refer to each other in Destiny content, it is this hash that they 
 						<div><strong>Reserved13</strong>: 13</div>
 					</li>
 					<li>
-						<div><strong>Reserved15</strong>: 15</div>
+						<div><strong>CrimsonDoubles</strong>: 15</div>
 					</li>
 					<li>
 						<div><strong>Nightfall</strong>: 16</div>
@@ -56229,6 +56524,145 @@ If the plug's category matches any whitelisted plug, or if the whitelist is empt
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
+						<div class="title"><strong>alwaysRandomizeSockets</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>isPreviewEnabled</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>hideDuplicateReusablePlugs</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>avoidDuplicatesOnInitialization</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>currencyScalars</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/Destiny.Definitions.Sockets.DestinySocketTypeScalarMaterialRequirementEntry">Destiny.Definitions.Sockets.DestinySocketTypeScalarMaterialRequirementEntry</a>
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
 						<div class="title"><strong>hash</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
@@ -56626,6 +57060,86 @@ That whitelist entry will potentially have a new “reinitializationPossiblePlug
 				</ul>
 			</div>
 		</div>
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Definitions.Sockets.DestinySocketTypeScalarMaterialRequirementEntry"><h3>Destiny.Definitions.Sockets.DestinySocketTypeScalarMaterialRequirementEntry</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>currencyItemHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>scalarValue</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
 
 </div>			</div>
 		</div>
@@ -60174,7 +60688,7 @@ This is a single set of references to Talent Nodes that share a common trait or 
 	</div>
 	
 	<div class="description">
-		As you run into items that need to be classified for Milestone purposes in ways that we cannot infer via Babel or Bonbobo-sourced data, add a new classification here and use a string constant to represent it in the local item config file.
+		As you run into items that need to be classified for Milestone purposes in ways that we cannot infer via direct data, add a new classification here and use a string constant to represent it in the local item config file.
 NOTE: This is not all of the item types available, and some of these are holdovers from Destiny 1 that may or may not still exist.
 	</div>
 	
@@ -60236,7 +60750,7 @@ NOTE: This is not all of the item types available, and some of these are holdove
 	</div>
 	
 	<div class="description">
-		An enumeration that indicates the high-level "type" of the item, attempting to iron out the context specific differences for specific instances of an entity. For instance, though a weapon may be of various wepaon "Types", in DestinyItemType they are all classified as "Weapon". This allows for better filtering on a higher level of abstraction for the concept of types.
+		An enumeration that indicates the high-level "type" of the item, attempting to iron out the context specific differences for specific instances of an entity. For instance, though a weapon may be of various weapon "Types", in DestinyItemType they are all classified as "Weapon". This allows for better filtering on a higher level of abstraction for the concept of types.
  This enum is provided for historical compatibility with Destiny 1, but an ideal alternative is to use DestinyItemCategoryDefinitions and the DestinyItemDefinition.itemCategories property instead. Item Categories allow for arbitrary hierarchies of specificity, and for items to belong to multiple categories across multiple hierarchies simultaneously. For this enum, we pick a single type as a "best guess" fit.
  NOTE: This is not all of the item types available, and some of these are holdovers from Destiny 1 that may or may not still exist.
  I keep updating these because they're so damn convenient. I guess I shouldn't fight it.
@@ -60366,12 +60880,15 @@ NOTE: This is not all of the item types available, and some of these are holdove
 					</li>
 					<li>
 						<div><strong>Crucible</strong>: 1</div>
+						<div class="description">DEPRECATED. Items can be both "Crucible" and something else interesting.</div>
 					</li>
 					<li>
 						<div><strong>Vanguard</strong>: 2</div>
+						<div class="description">DEPRECATED. An item can both be "Vanguard" and something else.</div>
 					</li>
 					<li>
 						<div><strong>Exotic</strong>: 5</div>
+						<div class="description">DEPRECATED. An item can both be Exotic and something else.</div>
 					</li>
 					<li>
 						<div><strong>AutoRifle</strong>: 6</div>
@@ -60402,6 +60919,7 @@ NOTE: This is not all of the item types available, and some of these are holdove
 					</li>
 					<li>
 						<div><strong>Crm</strong>: 16</div>
+						<div class="description">DEPRECATED. An item can both be CRM and something else.</div>
 					</li>
 					<li>
 						<div><strong>Sidearm</strong>: 17</div>
@@ -60835,6 +61353,9 @@ In this way, you can build up a visual hierarchy of item categories. That's what
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		All item category hashes of "parent" categories: categories that contain this as a child through the hierarchy of groupedCategoryHashes. It's a bit redundant, but having this child-centric list speeds up some calculations.
+	</div>
 	
 	
 	<div class="type">
@@ -60866,6 +61387,9 @@ In this way, you can build up a visual hierarchy of item categories. That's what
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		If true, this category is only used for grouping, and should not be evaluated with its own checks. Rather, the item only has this category if it has one of its child categories.
+	</div>
 	
 	
 	<div class="type">
@@ -67203,6 +67727,9 @@ This is a long-held historical throwback to when we used to do paging with known
 						<div><strong>ForumRecruitmentFireteamMembersOnly</strong>: 594</div>
 					</li>
 					<li>
+						<div><strong>ForumRequiresDestiny2Progress</strong>: 595</div>
+					</li>
+					<li>
 						<div><strong>GroupMembershipApplicationAlreadyResolved</strong>: 601</div>
 					</li>
 					<li>
@@ -67957,6 +68484,9 @@ This is a long-held historical throwback to when we used to do paging with known
 						<div><strong>DestinyItemNotTransferrableHasSideEffects</strong>: 1673</div>
 					</li>
 					<li>
+						<div><strong>DestinyItemLocked</strong>: 1674</div>
+					</li>
+					<li>
 						<div><strong>FbInvalidRequest</strong>: 1800</div>
 					</li>
 					<li>
@@ -68261,6 +68791,27 @@ This is a long-held historical throwback to when we used to do paging with known
 					</li>
 					<li>
 						<div><strong>ReportCannotReportSelf</strong>: 2703</div>
+					</li>
+					<li>
+						<div><strong>AwaTypeDisabled</strong>: 2800</div>
+					</li>
+					<li>
+						<div><strong>AwaTooManyPendingRequests</strong>: 2801</div>
+					</li>
+					<li>
+						<div><strong>AwaTheFeatureRequiresARegisteredDevice</strong>: 2802</div>
+					</li>
+					<li>
+						<div><strong>AwaRequestWasUnansweredForTooLong</strong>: 2803</div>
+					</li>
+					<li>
+						<div><strong>AwaWriteRequestMissingOrInvalidToken</strong>: 2804</div>
+					</li>
+					<li>
+						<div><strong>AwaWriteRequestTokenExpired</strong>: 2805</div>
+					</li>
+					<li>
+						<div><strong>AwaWriteRequestTokenUsageLimitReached</strong>: 2806</div>
 					</li>
 				</ul>
 			</div>
@@ -70980,6 +71531,38 @@ Inventory Items returned here are in a flat list, but importantly they have a bu
 	
 <div class="type-info stop-nesting-boxes">
 		See: <a href="#/components/schemas/Destiny.ItemState">Destiny.ItemState</a>
+</div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>dismantlePermission</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Indicates what type of permission is required from the player before an app can dismantle this item.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.DismantlePermissionGroup">Destiny.DismantlePermissionGroup</a>
 </div>	
 
 	
@@ -75064,7 +75647,7 @@ Before we even use it, it's already deprecated! How much of a bummer is that? We
 						<div><strong>Reserved13</strong>: 13</div>
 					</li>
 					<li>
-						<div><strong>Reserved15</strong>: 15</div>
+						<div><strong>CrimsonDoubles</strong>: 15</div>
 					</li>
 					<li>
 						<div><strong>Nightfall</strong>: 16</div>
@@ -75423,7 +76006,7 @@ Before we even use it, it's already deprecated! How much of a bummer is that? We
 						<div><strong>Reserved13</strong>: 13</div>
 					</li>
 					<li>
-						<div><strong>Reserved15</strong>: 15</div>
+						<div><strong>CrimsonDoubles</strong>: 15</div>
 					</li>
 					<li>
 						<div><strong>Nightfall</strong>: 16</div>
@@ -78902,7 +79485,7 @@ You can look up the relevant class/race/gender combo in DestinyCharacterCustomiz
 						<div><strong>Reserved13</strong>: 13</div>
 					</li>
 					<li>
-						<div><strong>Reserved15</strong>: 15</div>
+						<div><strong>CrimsonDoubles</strong>: 15</div>
 					</li>
 					<li>
 						<div><strong>Nightfall</strong>: 16</div>
@@ -81383,6 +81966,7 @@ Sockets are a bit complex: be sure to examine the documentation on the DestinyIn
 	
 	<div class="description">
 		The status of a given item's socket. (which plug is inserted, if any: whether it is enabled, what "reusable" plugs can be inserted, etc...)
+If I had it to do over, this would probably have a DestinyItemPlug representing the inserted item instead of most of these properties. :shrug:
 	</div>
 	
 	
@@ -81510,8 +82094,7 @@ This flag indicates whether the plug is active and providing its benefits.
 	</div>
 	
 	<div class="description">
-		If the item supports reusable plugs, this is the list of plug item hashes that are currently allowed to be used for this socket. (sometimes restrictions may cause reusable plugs defined on the item definition to not be valid, so you should trust the instanced reusablePlugHashes list rather than the definition's list)
-A Reusable Plug is a plug that you can *always* insert into this socket, regardless of whether or not you have the plug in your inventory. In practice, a socket will *either* have reusable plugs *or* it will allow for plugs in your inventory to be inserted. See DestinyInventoryItemDefinition.socket for more info.
+		If the item supports reusable plugs, this is the list of plug item hashes that are currently allowed to be used for this socket. See the "reusablePlugs" property, which has rendered this obsolete, for more information.
 	</div>
 	
 	
@@ -81582,6 +82165,11 @@ A Reusable Plug is a plug that you can *always* insert into this socket, regardl
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		If the item supports reusabe plugs, this is the list of plugs that are allowed to be used for the socket, and any relevant information about whether they are "enabled", whether they are allowed to be inserted, and any other information such as objectives.
+A Reusable Plug is a plug that you can always insert into this socket as long as its insertion rules are passed, regardless of whether or not you have the plug in your inventory. An example of it failing an insertion rule would be if it has an Objective that needs to be completed before it can be inserted, and that objective hasn't been completed yet.
+In practice, a socket will *either* have reusable plugs *or* it will allow for plugs in your inventory to be inserted. See DestinyInventoryItemDefinition.socket for more info.
+	</div>
 	
 	
 	<div class="type">
@@ -81640,6 +82228,9 @@ A Reusable Plug is a plug that you can *always* insert into this socket, regardl
 		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
+	<div class="description">
+		The hash identifier of the DestinyInventoryItemDefinition that represents this plug.
+	</div>
 	
 	
 	<div class="type">
@@ -81671,6 +82262,9 @@ A Reusable Plug is a plug that you can *always* insert into this socket, regardl
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		Sometimes, Plugs may have objectives: these are often used for flavor and display purposes, but they can be used for any arbitrary purpose (both fortunately and unfortunately). Recently (with Season 2) they were expanded in use to be used as the "gating" for whether the plug can be inserted at all. For instance, a Plug might be tracking the number of PVP kills you have made. It will use the parent item's data about that tracking status to determine what to show, and will generally show it using the DestinyObjectiveDefinition's progressDescription property. Refer to the plug's itemHash and objective property for more information if you would like to display even more data.
+	</div>
 	
 	
 	<div class="type">
@@ -81702,6 +82296,9 @@ A Reusable Plug is a plug that you can *always* insert into this socket, regardl
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		If true, this plug has met all of its insertion requirements. Big if true.
+	</div>
 	
 	
 	<div class="type">
@@ -81729,6 +82326,9 @@ A Reusable Plug is a plug that you can *always* insert into this socket, regardl
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		If true, this plug will provide its benefits while inserted.
+	</div>
 	
 	
 	<div class="type">
@@ -81756,6 +82356,10 @@ A Reusable Plug is a plug that you can *always* insert into this socket, regardl
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		If the plug cannot be inserted for some reason, this will have the indexes into the plug item definition's plug.insertionRules property, so you can show the reasons why it can't be inserted.
+This list will be empty if the plug can be inserted.
+	</div>
 	
 	
 	<div class="type">
@@ -81787,6 +82391,10 @@ A Reusable Plug is a plug that you can *always* insert into this socket, regardl
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		If a plug is not enabled, this will be populated with indexes into the plug item definition's plug.enabledRules property, so that you can show the reasons why it is not enabled.
+This list will be empty if the plug is enabled.
+	</div>
 	
 	
 	<div class="type">
@@ -82671,6 +83279,9 @@ This component finds all items that are considered "Plugs" in your inventory, an
 		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
+	<div class="description">
+		The hash identifier of the DestinyInventoryItemDefinition that represents this plug.
+	</div>
 	
 	
 	<div class="type">
@@ -82702,6 +83313,9 @@ This component finds all items that are considered "Plugs" in your inventory, an
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		Sometimes, Plugs may have objectives: these are often used for flavor and display purposes, but they can be used for any arbitrary purpose (both fortunately and unfortunately). Recently (with Season 2) they were expanded in use to be used as the "gating" for whether the plug can be inserted at all. For instance, a Plug might be tracking the number of PVP kills you have made. It will use the parent item's data about that tracking status to determine what to show, and will generally show it using the DestinyObjectiveDefinition's progressDescription property. Refer to the plug's itemHash and objective property for more information if you would like to display even more data.
+	</div>
 	
 	
 	<div class="type">
@@ -82733,6 +83347,9 @@ This component finds all items that are considered "Plugs" in your inventory, an
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		If true, this plug has met all of its insertion requirements. Big if true.
+	</div>
 	
 	
 	<div class="type">
@@ -82760,6 +83377,9 @@ This component finds all items that are considered "Plugs" in your inventory, an
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		If true, this plug will provide its benefits while inserted.
+	</div>
 	
 	
 	<div class="type">
@@ -82787,6 +83407,10 @@ This component finds all items that are considered "Plugs" in your inventory, an
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		If the plug cannot be inserted for some reason, this will have the indexes into the plug item definition's plug.insertionRules property, so you can show the reasons why it can't be inserted.
+This list will be empty if the plug can be inserted.
+	</div>
 	
 	
 	<div class="type">
@@ -82818,6 +83442,10 @@ This component finds all items that are considered "Plugs" in your inventory, an
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		If a plug is not enabled, this will be populated with indexes into the plug item definition's plug.enabledRules property, so that you can show the reasons why it is not enabled.
+This list will be empty if the plug is enabled.
+	</div>
 	
 	
 	<div class="type">
@@ -84362,6 +84990,8 @@ COMPONENT TYPE: VendorSales
 	
 	<div class="description">
 		The date when this vendor's inventory will next rotate/refresh.
+Note that this is distinct from the date ranges that the vendor is visible/available in-game: this field indicates the specific time when the vendor's available items refresh and rotate, regardless of whether the vendor is actually available at that time. Unfortunately, these two values may be (and are, for the case of important vendors like Xur) different.
+Issue https://github.com/Bungie-net/api/issues/353 is tracking a fix to start providing visibility date ranges where possible in addition to this refresh date, so that all important dates for vendors are available for use.
 	</div>
 	
 	
@@ -87205,6 +87835,288 @@ COMPONENT TYPE: [See inside the DestinyItemComponentSet contract for component t
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
 		See: <a href="#/components/schemas/BungieMembershipType">BungieMembershipType</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Responses.DestinySocketResponseCodes"><h3>Destiny.Responses.DestinySocketResponseCodes</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="enum">Enumeration</span>
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+		<div class="enum-values box">
+			<h5>Valid Enum Values</h5>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<div><strong>None</strong>: 0</div>
+					</li>
+					<li>
+						<div><strong>CannotAffordMaterialRequirements</strong>: 1</div>
+					</li>
+					<li>
+						<div><strong>FailedPlugInsertionRules</strong>: 2</div>
+					</li>
+					<li>
+						<div><strong>CategoryNotWhitelisted</strong>: 4</div>
+					</li>
+					<li>
+						<div><strong>PlugItemInvalid</strong>: 8</div>
+					</li>
+					<li>
+						<div><strong>PlugItemAlreadySocketed</strong>: 16</div>
+					</li>
+					<li>
+						<div><strong>SocketDefinitionBlank</strong>: 32</div>
+					</li>
+					<li>
+						<div><strong>SocketIndexInvalid</strong>: 64</div>
+					</li>
+					<li>
+						<div><strong>SocketInstanceUnoccupied</strong>: 128</div>
+					</li>
+					<li>
+						<div><strong>SocketItemInvalid</strong>: 256</div>
+					</li>
+					<li>
+						<div><strong>SocketItemNotFound</strong>: 512</div>
+					</li>
+					<li>
+						<div><strong>RequestInvalid</strong>: 2048</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Requests.Actions.DestinyInsertPlugsActionRequest"><h3>Destiny.Requests.Actions.DestinyInsertPlugsActionRequest</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>actionToken</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Action token provided by the AwaGetActionToken API call.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>itemInstanceId</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int64
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>plug</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.Requests.Actions.DestinyInsertPlugsRequestEntry">Destiny.Requests.Actions.DestinyInsertPlugsRequestEntry</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>characterId</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int64
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>membershipType</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/BungieMembershipType">BungieMembershipType</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Requests.Actions.DestinyInsertPlugsRequestEntry"><h3>Destiny.Requests.Actions.DestinyInsertPlugsRequestEntry</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>socketIndex</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>plugItemHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Plugs are never instanced. So with the hash alone, we should be able to: 1) Infer whether the player actually needs to have the item, or if it's a reusable plug 2) Perform any operation needed to use the Plug, including removing the plug item and running reward sheets.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+			
+
 </div>						</div>
 					</div>
 				</div>
@@ -92678,7 +93590,7 @@ Deprecated, already, for the sake of the new "vendors" property that has more da
 						<div><strong>Reserved13</strong>: 13</div>
 					</li>
 					<li>
-						<div><strong>Reserved15</strong>: 15</div>
+						<div><strong>CrimsonDoubles</strong>: 15</div>
 					</li>
 					<li>
 						<div><strong>Nightfall</strong>: 16</div>
@@ -92927,7 +93839,7 @@ Deprecated, already, for the sake of the new "vendors" property that has more da
 						<div><strong>Reserved13</strong>: 13</div>
 					</li>
 					<li>
-						<div><strong>Reserved15</strong>: 15</div>
+						<div><strong>CrimsonDoubles</strong>: 15</div>
 					</li>
 					<li>
 						<div><strong>Nightfall</strong>: 16</div>
@@ -93212,6 +94124,667 @@ Deprecated, already, for the sake of the new "vendors" property that has more da
 		</div>
 	
 			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Advanced.AwaInitializeResponse"><h3>Destiny.Advanced.AwaInitializeResponse</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>correlationId</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Advanced.AwaPermissionRequested"><h3>Destiny.Advanced.AwaPermissionRequested</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>type</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Type of advanced write action.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.Advanced.AwaType">Destiny.Advanced.AwaType</a>
+</div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>affectedItemId</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+	</div>
+	
+	<div class="description">
+		Item instance ID the action shall be applied to. This is optional for all but a new AwaType values. Rule of thumb is to provide the item instance ID if one is available.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int64
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>membershipType</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Destiny membership type of the account to modify.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/BungieMembershipType">BungieMembershipType</a>
+</div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>characterId</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+	</div>
+	
+	<div class="description">
+		Destiny character ID, if applicable, that will be affected by the action.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int64
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Advanced.AwaType"><h3>Destiny.Advanced.AwaType</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="enum">Enumeration</span>
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+		<div class="enum-values box">
+			<h5>Valid Enum Values</h5>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<div><strong>None</strong>: 0</div>
+					</li>
+					<li>
+						<div><strong>InsertPlugs</strong>: 1</div>
+						<div class="description">Insert plugs into sockets.</div>
+					</li>
+					<li>
+						<div><strong>BuyItemFromVendor</strong>: 2</div>
+						<div class="description">Exchange currency to purchase something from a vendor.</div>
+					</li>
+					<li>
+						<div><strong>RefundItem</strong>: 3</div>
+						<div class="description">Return an item to a vendor that accepts returns.</div>
+					</li>
+					<li>
+						<div><strong>DismantleGroupA</strong>: 4</div>
+						<div class="description">Dismantle highest value weapons and armor. This group requires permission for a specific item and the resulting token can be used once on that specific item.</div>
+					</li>
+					<li>
+						<div><strong>DismantleGroupB</strong>: 5</div>
+						<div class="description">Dismantle high value weapons and armor.</div>
+					</li>
+					<li>
+						<div><strong>DismantleGroupC</strong>: 6</div>
+						<div class="description">Dismantle mid value weapons and armor.</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Advanced.AwaUserResponse"><h3>Destiny.Advanced.AwaUserResponse</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>selection</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Indication of the selection the user has made (Approving or rejecting the action)
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.Advanced.AwaUserSelection">Destiny.Advanced.AwaUserSelection</a>
+</div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>correlationId</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Correlation ID of the request
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>nonce</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Secret nonce received via the PUSH notification.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			byte
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Advanced.AwaUserSelection"><h3>Destiny.Advanced.AwaUserSelection</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="enum">Enumeration</span>
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+		<div class="enum-values box">
+			<h5>Valid Enum Values</h5>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<div><strong>None</strong>: 0</div>
+					</li>
+					<li>
+						<div><strong>Rejected</strong>: 1</div>
+					</li>
+					<li>
+						<div><strong>Approved</strong>: 2</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Advanced.AwaAuthorizationResult"><h3>Destiny.Advanced.AwaAuthorizationResult</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>userSelection</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Indication of how the user responded to the request. If the value is "Approved" the actionToken will contain the token that can be presented when performing the advanced write action.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.Advanced.AwaUserSelection">Destiny.Advanced.AwaUserSelection</a>
+</div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>responseReason</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.Advanced.AwaResponseReason">Destiny.Advanced.AwaResponseReason</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>developerNote</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Message to the app developer to help understand the response.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>actionToken</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Credential used to prove the user authorized an advanced write action.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>maximumNumberOfUses</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		This token may be used to perform the requested action this number of times, at a maximum. If this value is 0, then there is no limit.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>validUntil</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+	</div>
+	
+	<div class="description">
+		Time, UTC, when token expires.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: date-time
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Advanced.AwaResponseReason"><h3>Destiny.Advanced.AwaResponseReason</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="enum">Enumeration</span>
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+		<div class="enum-values box">
+			<h5>Valid Enum Values</h5>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<div><strong>None</strong>: 0</div>
+					</li>
+					<li>
+						<div><strong>Answered</strong>: 1</div>
+						<div class="description">User provided an answer</div>
+					</li>
+					<li>
+						<div><strong>TimedOut</strong>: 2</div>
+						<div class="description">The HTTP request timed out, a new request may be made and an answer may still be provided.</div>
+					</li>
+					<li>
+						<div><strong>Replaced</strong>: 3</div>
+						<div class="description">This request was replaced by another request.</div>
+					</li>
+				</ul>
+			</div>
+		</div>
 
 </div>			</div>
 		</div>
@@ -94644,6 +96217,37 @@ This is a long-held historical throwback to when we used to do paging with known
 		<strong>Array Contents:</strong>
 			<a href="#/components/schemas/Trending.TrendingEntry">Trending.TrendingEntry</a>
 	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>creationDate</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+	</div>
+	
+	<div class="description">
+		If the entry has a date at which it was created, this is that date.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: date-time
+	</div>
+	
+	
 
 	
 	
@@ -96388,7 +97992,7 @@ These are often pointers to fake items that look good in a tooltip, but represen
 	
 	
 	<div class="type">
-		<strong>Type</strong>: uint64
+		<strong>Type</strong>: int64
 	</div>
 	
 	
