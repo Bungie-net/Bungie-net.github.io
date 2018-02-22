@@ -1143,15 +1143,8 @@
 							</span>
 						</li>
 						<li>
-							<a href="schema_Destiny-Definitions-DestinyFactionDefinition.html#schema_Destiny-Definitions-DestinyFactionDefinition" id="schema_Destiny-Definitions-DestinyFactionDefinition">Destiny.Definitions.DestinyFactionDefinition</a>
+							<a href="schema_Destiny-Definitions-Vendors-DestinyVendorLocationDefinition.html#schema_Destiny-Definitions-Vendors-DestinyVendorLocationDefinition" id="schema_Destiny-Definitions-Vendors-DestinyVendorLocationDefinition">Destiny.Definitions.Vendors.DestinyVendorLocationDefinition</a>
 							<span class="attributes">
-								<span class="manifest-entity">Manifest</span>
-							</span>
-						</li>
-						<li>
-							<a href="schema_Destiny-Definitions-DestinyFactionVendorDefinition.html#schema_Destiny-Definitions-DestinyFactionVendorDefinition" id="schema_Destiny-Definitions-DestinyFactionVendorDefinition">Destiny.Definitions.DestinyFactionVendorDefinition</a>
-							<span class="attributes">
-								<span class="manifest-entity">Manifest</span>
 							</span>
 						</li>
 						<li>
@@ -1417,6 +1410,17 @@
 							</span>
 						</li>
 						<li>
+							<a href="schema_Destiny-Definitions-DestinyFactionDefinition.html#schema_Destiny-Definitions-DestinyFactionDefinition" id="schema_Destiny-Definitions-DestinyFactionDefinition">Destiny.Definitions.DestinyFactionDefinition</a>
+							<span class="attributes">
+								<span class="manifest-entity">Manifest</span>
+							</span>
+						</li>
+						<li>
+							<a href="schema_Destiny-Definitions-DestinyFactionVendorDefinition.html#schema_Destiny-Definitions-DestinyFactionVendorDefinition" id="schema_Destiny-Definitions-DestinyFactionVendorDefinition">Destiny.Definitions.DestinyFactionVendorDefinition</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
 							<a href="schema_Destiny-Definitions-DestinyItemQualityBlockDefinition.html#schema_Destiny-Definitions-DestinyItemQualityBlockDefinition" id="schema_Destiny-Definitions-DestinyItemQualityBlockDefinition">Destiny.Definitions.DestinyItemQualityBlockDefinition</a>
 							<span class="attributes">
 							</span>
@@ -1489,6 +1493,7 @@
 						<li>
 							<a href="schema_Destiny-Definitions-DestinyMaterialRequirementSetDefinition.html#schema_Destiny-Definitions-DestinyMaterialRequirementSetDefinition" id="schema_Destiny-Definitions-DestinyMaterialRequirementSetDefinition">Destiny.Definitions.DestinyMaterialRequirementSetDefinition</a>
 							<span class="attributes">
+								<span class="manifest-entity">Manifest</span>
 							</span>
 						</li>
 						<li>
@@ -2663,9 +2668,8 @@
 							</span>
 						</li>
 						<li>
-							<a href="schema_Destiny-Responses-DestinySocketResponseCodes.html#schema_Destiny-Responses-DestinySocketResponseCodes" id="schema_Destiny-Responses-DestinySocketResponseCodes">Destiny.Responses.DestinySocketResponseCodes</a>
+							<a href="schema_Destiny-Responses-InventoryChangedResponse.html#schema_Destiny-Responses-InventoryChangedResponse" id="schema_Destiny-Responses-InventoryChangedResponse">Destiny.Responses.InventoryChangedResponse</a>
 							<span class="attributes">
-								<span class="enum">Enum</span>
 							</span>
 						</li>
 						<li>
@@ -2676,6 +2680,12 @@
 						<li>
 							<a href="schema_Destiny-Requests-Actions-DestinyInsertPlugsRequestEntry.html#schema_Destiny-Requests-Actions-DestinyInsertPlugsRequestEntry" id="schema_Destiny-Requests-Actions-DestinyInsertPlugsRequestEntry">Destiny.Requests.Actions.DestinyInsertPlugsRequestEntry</a>
 							<span class="attributes">
+							</span>
+						</li>
+						<li>
+							<a href="schema_Destiny-Requests-Actions-DestinySocketArrayType.html#schema_Destiny-Requests-Actions-DestinySocketArrayType" id="schema_Destiny-Requests-Actions-DestinySocketArrayType">Destiny.Requests.Actions.DestinySocketArrayType</a>
+							<span class="attributes">
+								<span class="enum">Enum</span>
 							</span>
 						</li>
 						<li>
@@ -3073,6 +3083,10 @@
 	</div>
 	
 	
+	<div class="description">
+		Represents all of the data related to a single plug to be inserted.
+Note that, while you *can* point to a socket that represents infusion, you will receive an error if you attempt to do so. Come on guys, let's play nice.
+	</div>
 	
 	
 	<div class="type">
@@ -3098,6 +3112,10 @@
 	</div>
 	
 	
+	<div class="description">
+		The index into the socket array, which identifies the specific socket being operated on. We also need to know the socketArrayType in order to uniquely identify the socket.
+Don't point to or try to insert a plug into an infusion socket. It won't work.
+	</div>
 	
 	
 	<div class="type">
@@ -3105,6 +3123,41 @@
 	</div>
 	
 	
+
+	
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>socketArrayType</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	
+	<div class="attributes">
+	</div>
+	
+	
+	<div class="description">
+		This property, combined with the socketIndex, tells us which socket we are referring to (since operations can be performed on both Intrinsic and "default" sockets, and they occupy different arrays in the Inventory Item Definition). I know, I know. Don't give me that look.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="schema_Destiny-Requests-Actions-DestinySocketArrayType.html#schema_Destiny-Requests-Actions-DestinySocketArrayType">Destiny.Requests.Actions.DestinySocketArrayType</a>
+</div>	
 
 	
 	
@@ -3129,7 +3182,7 @@
 	
 	
 	<div class="description">
-		Plugs are never instanced. So with the hash alone, we should be able to: 1) Infer whether the player actually needs to have the item, or if it's a reusable plug 2) Perform any operation needed to use the Plug, including removing the plug item and running reward sheets.
+		Plugs are never instanced (except in infusion). So with the hash alone, we should be able to: 1) Infer whether the player actually needs to have the item, or if it's a reusable plug 2) Perform any operation needed to use the Plug, including removing the plug item and running reward sheets.
 	</div>
 	
 	

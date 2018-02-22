@@ -1143,15 +1143,8 @@
 							</span>
 						</li>
 						<li>
-							<a href="schema_Destiny-Definitions-DestinyFactionDefinition.html#schema_Destiny-Definitions-DestinyFactionDefinition" id="schema_Destiny-Definitions-DestinyFactionDefinition">Destiny.Definitions.DestinyFactionDefinition</a>
+							<a href="schema_Destiny-Definitions-Vendors-DestinyVendorLocationDefinition.html#schema_Destiny-Definitions-Vendors-DestinyVendorLocationDefinition" id="schema_Destiny-Definitions-Vendors-DestinyVendorLocationDefinition">Destiny.Definitions.Vendors.DestinyVendorLocationDefinition</a>
 							<span class="attributes">
-								<span class="manifest-entity">Manifest</span>
-							</span>
-						</li>
-						<li>
-							<a href="schema_Destiny-Definitions-DestinyFactionVendorDefinition.html#schema_Destiny-Definitions-DestinyFactionVendorDefinition" id="schema_Destiny-Definitions-DestinyFactionVendorDefinition">Destiny.Definitions.DestinyFactionVendorDefinition</a>
-							<span class="attributes">
-								<span class="manifest-entity">Manifest</span>
 							</span>
 						</li>
 						<li>
@@ -1417,6 +1410,17 @@
 							</span>
 						</li>
 						<li>
+							<a href="schema_Destiny-Definitions-DestinyFactionDefinition.html#schema_Destiny-Definitions-DestinyFactionDefinition" id="schema_Destiny-Definitions-DestinyFactionDefinition">Destiny.Definitions.DestinyFactionDefinition</a>
+							<span class="attributes">
+								<span class="manifest-entity">Manifest</span>
+							</span>
+						</li>
+						<li>
+							<a href="schema_Destiny-Definitions-DestinyFactionVendorDefinition.html#schema_Destiny-Definitions-DestinyFactionVendorDefinition" id="schema_Destiny-Definitions-DestinyFactionVendorDefinition">Destiny.Definitions.DestinyFactionVendorDefinition</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
 							<a href="schema_Destiny-Definitions-DestinyItemQualityBlockDefinition.html#schema_Destiny-Definitions-DestinyItemQualityBlockDefinition" id="schema_Destiny-Definitions-DestinyItemQualityBlockDefinition">Destiny.Definitions.DestinyItemQualityBlockDefinition</a>
 							<span class="attributes">
 							</span>
@@ -1489,6 +1493,7 @@
 						<li>
 							<a href="schema_Destiny-Definitions-DestinyMaterialRequirementSetDefinition.html#schema_Destiny-Definitions-DestinyMaterialRequirementSetDefinition" id="schema_Destiny-Definitions-DestinyMaterialRequirementSetDefinition">Destiny.Definitions.DestinyMaterialRequirementSetDefinition</a>
 							<span class="attributes">
+								<span class="manifest-entity">Manifest</span>
 							</span>
 						</li>
 						<li>
@@ -2663,9 +2668,8 @@
 							</span>
 						</li>
 						<li>
-							<a href="schema_Destiny-Responses-DestinySocketResponseCodes.html#schema_Destiny-Responses-DestinySocketResponseCodes" id="schema_Destiny-Responses-DestinySocketResponseCodes">Destiny.Responses.DestinySocketResponseCodes</a>
+							<a href="schema_Destiny-Responses-InventoryChangedResponse.html#schema_Destiny-Responses-InventoryChangedResponse" id="schema_Destiny-Responses-InventoryChangedResponse">Destiny.Responses.InventoryChangedResponse</a>
 							<span class="attributes">
-								<span class="enum">Enum</span>
 							</span>
 						</li>
 						<li>
@@ -2676,6 +2680,12 @@
 						<li>
 							<a href="schema_Destiny-Requests-Actions-DestinyInsertPlugsRequestEntry.html#schema_Destiny-Requests-Actions-DestinyInsertPlugsRequestEntry" id="schema_Destiny-Requests-Actions-DestinyInsertPlugsRequestEntry">Destiny.Requests.Actions.DestinyInsertPlugsRequestEntry</a>
 							<span class="attributes">
+							</span>
+						</li>
+						<li>
+							<a href="schema_Destiny-Requests-Actions-DestinySocketArrayType.html#schema_Destiny-Requests-Actions-DestinySocketArrayType" id="schema_Destiny-Requests-Actions-DestinySocketArrayType">Destiny.Requests.Actions.DestinySocketArrayType</a>
+							<span class="attributes">
+								<span class="enum">Enum</span>
 							</span>
 						</li>
 						<li>
@@ -3103,7 +3113,7 @@
 	
 	
 	<div class="description">
-		The base properties of the vendor.
+		The base properties of the vendor. These are keyed by the Vendor Hash, so you will get one Vendor Component per vendor returned.
 COMPONENT TYPE: Vendors
 	</div>
 	
@@ -3140,7 +3150,7 @@ COMPONENT TYPE: Vendors
 	
 	
 	<div class="description">
-		Categories that the vendor has available, and references to the sales therein.
+		Categories that the vendor has available, and references to the sales therein. These are keyed by the Vendor Hash, so you will get one Categories Component per vendor returned.
 COMPONENT TYPE: VendorCategories
 	</div>
 	
@@ -3177,7 +3187,8 @@ COMPONENT TYPE: VendorCategories
 	
 	
 	<div class="description">
-		Sales, keyed by the vendorItemIndex of the item being sold.
+		Sales, keyed by the vendorItemIndex of the item being sold. These are keyed by the Vendor Hash, so you will get one Sale Item Set Component per vendor returned.
+Note that within the Sale Item Set component, the sales are themselves keyed by the vendorSaleIndex, so you can relate it to the corrent sale item definition within the Vendor's definition.
 COMPONENT TYPE: VendorSales
 	</div>
 	
@@ -3212,6 +3223,10 @@ COMPONENT TYPE: VendorSales
 	</div>
 	
 	
+	<div class="description">
+		The set of item detail components, one set of item components per Vendor. These are keyed by the Vendor Hash, so you will get one Item Component Set per vendor returned.
+The components contained inside are themselves keyed by the vendorSaleIndex, and will have whatever item-level components you requested (Sockets, Stats, Instance data etc...) per item being sold by the vendor.
+	</div>
 	
 	
 	<div class="type">

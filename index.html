@@ -14,7 +14,7 @@
 		<div class="box-contents">
 			<div>These endpoints constitute the functionality exposed by Bungie.net, both for more traditional website functionality and for connectivity to Bungie video games and their related functionality.</div>
 			<div class="about-line-items">
-				<div><strong>Version:</strong> 2.1.2
+				<div><strong>Version:</strong> 2.1.3
 				</div>
 				<div><strong>License:</strong> <a href="https://github.com/Bungie-net/api/blob/master/LICENSE">https://github.com/Bungie-net/api/blob/master/LICENSE (BSD License 2.0)</a>
 				</div>
@@ -1278,15 +1278,8 @@ clan/group memberships, recent activity, muted users.</div>
 				</span>
 			</li>
 			<li>
-				<a href="#/components/schemas/Destiny.Definitions.DestinyFactionDefinition">Destiny.Definitions.DestinyFactionDefinition</a>
+				<a href="#/components/schemas/Destiny.Definitions.Vendors.DestinyVendorLocationDefinition">Destiny.Definitions.Vendors.DestinyVendorLocationDefinition</a>
 				<span class="attributes">
-					<span class="manifest-entity">Mobile Manifest Entity</span>
-				</span>
-			</li>
-			<li>
-				<a href="#/components/schemas/Destiny.Definitions.DestinyFactionVendorDefinition">Destiny.Definitions.DestinyFactionVendorDefinition</a>
-				<span class="attributes">
-					<span class="manifest-entity">Mobile Manifest Entity</span>
 				</span>
 			</li>
 			<li>
@@ -1552,6 +1545,17 @@ clan/group memberships, recent activity, muted users.</div>
 				</span>
 			</li>
 			<li>
+				<a href="#/components/schemas/Destiny.Definitions.DestinyFactionDefinition">Destiny.Definitions.DestinyFactionDefinition</a>
+				<span class="attributes">
+					<span class="manifest-entity">Mobile Manifest Entity</span>
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.Definitions.DestinyFactionVendorDefinition">Destiny.Definitions.DestinyFactionVendorDefinition</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
 				<a href="#/components/schemas/Destiny.Definitions.DestinyItemQualityBlockDefinition">Destiny.Definitions.DestinyItemQualityBlockDefinition</a>
 				<span class="attributes">
 				</span>
@@ -1624,6 +1628,7 @@ clan/group memberships, recent activity, muted users.</div>
 			<li>
 				<a href="#/components/schemas/Destiny.Definitions.DestinyMaterialRequirementSetDefinition">Destiny.Definitions.DestinyMaterialRequirementSetDefinition</a>
 				<span class="attributes">
+					<span class="manifest-entity">Mobile Manifest Entity</span>
 				</span>
 			</li>
 			<li>
@@ -2798,9 +2803,8 @@ clan/group memberships, recent activity, muted users.</div>
 				</span>
 			</li>
 			<li>
-				<a href="#/components/schemas/Destiny.Responses.DestinySocketResponseCodes">Destiny.Responses.DestinySocketResponseCodes</a>
+				<a href="#/components/schemas/Destiny.Responses.InventoryChangedResponse">Destiny.Responses.InventoryChangedResponse</a>
 				<span class="attributes">
-					<span class="enum">Enumeration</span>
 				</span>
 			</li>
 			<li>
@@ -2811,6 +2815,12 @@ clan/group memberships, recent activity, muted users.</div>
 			<li>
 				<a href="#/components/schemas/Destiny.Requests.Actions.DestinyInsertPlugsRequestEntry">Destiny.Requests.Actions.DestinyInsertPlugsRequestEntry</a>
 				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.Requests.Actions.DestinySocketArrayType">Destiny.Requests.Actions.DestinySocketArrayType</a>
+				<span class="attributes">
+					<span class="enum">Enumeration</span>
 				</span>
 			</li>
 			<li>
@@ -20585,7 +20595,7 @@ clan/group memberships, recent activity, muted users.</div>
 			<h4>Response</h4>
 			<div class="box-contents stop-nesting-boxes">
 <div class="response">
-	<div class="description">Look at the Response property for more information about the nature of this response</div>
+	<div class="description">A response containing all of the components for all requested vendors.</div>
 		<div class="content">
 			<div class="content-type">Content Type: application/json</div>
 			<div>
@@ -20612,7 +20622,7 @@ clan/group memberships, recent activity, muted users.</div>
 						<div class="title"><strong>Response</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
-		See: <a href="#/components/schemas/Destiny.Responses.DestinySocketResponseCodes">Destiny.Responses.DestinySocketResponseCodes</a>
+		See: <a href="#/components/schemas/Destiny.Responses.InventoryChangedResponse">Destiny.Responses.InventoryChangedResponse</a>
 </div>						</div>
 					</div>
 				</div>
@@ -42058,6 +42068,37 @@ Note that a vendor can sell the same item multiple ways: for instance, nothing s
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
+						<div class="title"><strong>locations</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/Destiny.Definitions.Vendors.DestinyVendorLocationDefinition">Destiny.Definitions.Vendors.DestinyVendorLocationDefinition</a>
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
 						<div class="title"><strong>hash</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
@@ -42284,6 +42325,96 @@ When entities refer to each other in Destiny content, it is this hash that they 
 		<strong>Array Contents:</strong>
 			<a href="#/components/schemas/Destiny.Definitions.DestinyVendorRequirementDisplayEntryDefinition">Destiny.Definitions.DestinyVendorRequirementDisplayEntryDefinition</a>
 	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>smallTransparentIcon</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		This is the icon used in parts of the game UI such as the vendor's waypoint.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>mapIcon</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		This is the icon used in the map overview, when the vendor is located on the map.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>largeTransparentIcon</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		This is apparently the "Watermark". I am not certain offhand where this is actually used in the Game UI, but some people may find it useful.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
 
 	
 	
@@ -43280,6 +43411,36 @@ But usually, it will be a small square image that you can use as... well, an ico
 		<strong>Array Contents:</strong>
 			int32
 	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>isPreview</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Sometimes a category isn't actually used to sell items, but rather to preview them. This implies different UI (and manual placement of the category in the UI) in the game, and special treatment.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
 
 	
 	
@@ -45692,23 +45853,18 @@ The mechanics for Postmaster works similarly, which is also a vendor. All driven
 </div>			</div>
 		</div>
 		<div class="schema box">
-			<a id="/components/schemas/Destiny.Definitions.DestinyFactionDefinition"><h3>Destiny.Definitions.DestinyFactionDefinition</h3></a>
+			<a id="/components/schemas/Destiny.Definitions.Vendors.DestinyVendorLocationDefinition"><h3>Destiny.Definitions.Vendors.DestinyVendorLocationDefinition</h3></a>
 			<div class="schema-detail box-contents">
 <div class="type-info stop-nesting-boxes">
 
 	
 	<div class="attributes">
-		<span class="manifest-entity">Mobile Manifest Entity</span>
 	</div>
 	
 	<div class="description">
-		These definitions represent Factions in the game. Factions have ended up unilaterally being related to Vendors that represent them, but that need not necessarily be the case.
-A Faction is really just an entity that has a related progression for which a character can gain experience. In Destiny 1, Dead Orbit was an example of a Faction: there happens to be a Vendor that represents Dead Orbit (and indeed, DestinyVendorDefinition.factionHash defines to this relationship), but Dead Orbit could theoretically exist without the Vendor that provides rewards.
+		These definitions represent vendors' locations and relevant display information at different times in the game.
 	</div>
 	
-	<div class="manifest-database">
-		<strong>Mapped to Mobile Manifest Table</strong>: Factions
-	</div>
 	
 	<div class="type">
 		<strong>Type</strong>: object
@@ -45719,354 +45875,6 @@ A Faction is really just an entity that has a related progression for which a ch
 	
 		<div class="properties box">
 			<h5>Object Properties</h5>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>displayProperties</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-		See: <a href="#/components/schemas/Destiny.Definitions.Common.DestinyDisplayPropertiesDefinition">Destiny.Definitions.Common.DestinyDisplayPropertiesDefinition</a>
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>progressionHash</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-		<span class="mapped">Mapped to Definition</span>
-	</div>
-	
-	<div class="description">
-		The hash identifier for the DestinyProgressionDefinition that indicates the character's relationship with this faction in terms of experience and levels.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: uint32
-	</div>
-	
-	
-
-	
-	
-	<div class="mapped">
-		<strong>Mapped to Manifest Database Definition: </strong>
-		<a href="#/components/schemas/Destiny.Definitions.DestinyProgressionDefinition">Destiny.Definitions.DestinyProgressionDefinition</a>
-	</div>
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>tokenValues</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		The faction token item hashes, and their respective progression values.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	<div class="dictionary">
-		<strong>Dictionary Contents:</strong>
-			uint32
-	</div>
-	<div>
-		<strong>Dictionary Key Type: </strong> 
-		uint32
-	</div>
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>rewardItemHash</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-		<span class="mapped">Mapped to Definition</span>
-	</div>
-	
-	<div class="description">
-		The faction reward item hash, usually an engram.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: uint32
-	</div>
-	
-	
-
-	
-	
-	<div class="mapped">
-		<strong>Mapped to Manifest Database Definition: </strong>
-		<a href="#/components/schemas/Destiny.Definitions.DestinyInventoryItemDefinition">Destiny.Definitions.DestinyInventoryItemDefinition</a>
-	</div>
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>rewardVendorHash</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-		<span class="mapped">Mapped to Definition</span>
-	</div>
-	
-	<div class="description">
-		The faction reward vendor hash, used for faction engram previews.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: uint32
-	</div>
-	
-	
-
-	
-	
-	<div class="mapped">
-		<strong>Mapped to Manifest Database Definition: </strong>
-		<a href="#/components/schemas/Destiny.Definitions.DestinyVendorDefinition">Destiny.Definitions.DestinyVendorDefinition</a>
-	</div>
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>vendors</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		List of vendors that are associated with this faction. The last vendor that passes the unlock flag checks is the one that should be shown.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: array
-	</div>
-	
-	
-	<div class="items">
-		<strong>Array Contents:</strong>
-			<a href="#/components/schemas/Destiny.Definitions.DestinyFactionVendorDefinition">Destiny.Definitions.DestinyFactionVendorDefinition</a>
-	</div>
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>hash</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
-When entities refer to each other in Destiny content, it is this hash that they are referring to.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: uint32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>index</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		The index of the entity as it was found in the investment tables.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>redacted</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: boolean
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	
-			
-
-</div>			</div>
-		</div>
-		<div class="schema box">
-			<a id="/components/schemas/Destiny.Definitions.DestinyFactionVendorDefinition"><h3>Destiny.Definitions.DestinyFactionVendorDefinition</h3></a>
-			<div class="schema-detail box-contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-		<span class="manifest-entity">Mobile Manifest Entity</span>
-	</div>
-	
-	<div class="description">
-		These definitions represent faction vendors at different points in the game.
-A single faction may contain multiple vendors, or the same vendor available at two different locations.
-	</div>
-	
-	<div class="manifest-database">
-		<strong>Mapped to Mobile Manifest Table</strong>: Factions
-	</div>
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	
-		<div class="properties box">
-			<h5>Object Properties</h5>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>vendorHash</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-		<span class="mapped">Mapped to Definition</span>
-	</div>
-	
-	<div class="description">
-		The faction vendor hash.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: uint32
-	</div>
-	
-	
-
-	
-	
-	<div class="mapped">
-		<strong>Mapped to Manifest Database Definition: </strong>
-		<a href="#/components/schemas/Destiny.Definitions.DestinyVendorDefinition">Destiny.Definitions.DestinyVendorDefinition</a>
-	</div>
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
@@ -46080,7 +45888,7 @@ A single faction may contain multiple vendors, or the same vendor available at t
 	</div>
 	
 	<div class="description">
-		The faction vendor destination hash.
+		The hash identifier for a Destination at which this vendor may be located. Each destination where a Vendor may exist will only ever have a single entry.
 	</div>
 	
 	
@@ -46114,7 +45922,7 @@ A single faction may contain multiple vendors, or the same vendor available at t
 	</div>
 	
 	<div class="description">
-		The relative path to the background image, for use in a banner.
+		The relative path to the background image representing this Vendor at this location, for use in a banner.
 	</div>
 	
 	
@@ -48126,7 +47934,7 @@ Activities also have Activity Types, but unfortunately in Destiny 2 these are ev
 						<div><strong>Reserved24</strong>: 24</div>
 					</li>
 					<li>
-						<div><strong>Reserved25</strong>: 25</div>
+						<div><strong>AllMayhem</strong>: 25</div>
 					</li>
 					<li>
 						<div><strong>Reserved26</strong>: 26</div>
@@ -49250,6 +49058,9 @@ When entities refer to each other in Destiny content, it is this hash that they 
 					<li>
 						<div><strong>Hidden</strong>: 8</div>
 						<div class="description">Don't bother showing the value at all, it's not easily human-interpretable, and used for some internal purpose.</div>
+					</li>
+					<li>
+						<div><strong>Multiplier</strong>: 9</div>
 					</li>
 				</ul>
 			</div>
@@ -50585,6 +50396,87 @@ When entities refer to each other in Destiny content, it is this hash that they 
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
+						<div class="title"><strong>smallTransparentIcon</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>mapIcon</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>largeTransparentIcon</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
 						<div class="title"><strong>spawnPoint</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
@@ -51235,7 +51127,7 @@ When entities refer to each other in Destiny content, it is this hash that they 
 						<div><strong>Reserved24</strong>: 24</div>
 					</li>
 					<li>
-						<div><strong>Reserved25</strong>: 25</div>
+						<div><strong>AllMayhem</strong>: 25</div>
 					</li>
 					<li>
 						<div><strong>Reserved26</strong>: 26</div>
@@ -51465,7 +51357,7 @@ When entities refer to each other in Destiny content, it is this hash that they 
 						<div><strong>Reserved24</strong>: 24</div>
 					</li>
 					<li>
-						<div><strong>Reserved25</strong>: 25</div>
+						<div><strong>AllMayhem</strong>: 25</div>
 					</li>
 					<li>
 						<div><strong>Reserved26</strong>: 26</div>
@@ -53289,6 +53181,449 @@ Use UnlockExpressionParser to evaluate expressions using an IUnlockContext parse
 	
 	<div class="type">
 		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Definitions.DestinyFactionDefinition"><h3>Destiny.Definitions.DestinyFactionDefinition</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="manifest-entity">Mobile Manifest Entity</span>
+	</div>
+	
+	<div class="description">
+		These definitions represent Factions in the game. Factions have ended up unilaterally being related to Vendors that represent them, but that need not necessarily be the case.
+A Faction is really just an entity that has a related progression for which a character can gain experience. In Destiny 1, Dead Orbit was an example of a Faction: there happens to be a Vendor that represents Dead Orbit (and indeed, DestinyVendorDefinition.factionHash defines to this relationship), but Dead Orbit could theoretically exist without the Vendor that provides rewards.
+	</div>
+	
+	<div class="manifest-database">
+		<strong>Mapped to Mobile Manifest Table</strong>: Factions
+	</div>
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>displayProperties</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.Definitions.Common.DestinyDisplayPropertiesDefinition">Destiny.Definitions.Common.DestinyDisplayPropertiesDefinition</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>progressionHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	<div class="description">
+		The hash identifier for the DestinyProgressionDefinition that indicates the character's relationship with this faction in terms of experience and levels.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyProgressionDefinition">Destiny.Definitions.DestinyProgressionDefinition</a>
+	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>tokenValues</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The faction token item hashes, and their respective progression values.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			uint32
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		uint32
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>rewardItemHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	<div class="description">
+		The faction reward item hash, usually an engram.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyInventoryItemDefinition">Destiny.Definitions.DestinyInventoryItemDefinition</a>
+	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>rewardVendorHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	<div class="description">
+		The faction reward vendor hash, used for faction engram previews.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyVendorDefinition">Destiny.Definitions.DestinyVendorDefinition</a>
+	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>vendors</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		List of vendors that are associated with this faction. The last vendor that passes the unlock flag checks is the one that should be shown.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/Destiny.Definitions.DestinyFactionVendorDefinition">Destiny.Definitions.DestinyFactionVendorDefinition</a>
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>hash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
+When entities refer to each other in Destiny content, it is this hash that they are referring to.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>index</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The index of the entity as it was found in the investment tables.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>redacted</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Definitions.DestinyFactionVendorDefinition"><h3>Destiny.Definitions.DestinyFactionVendorDefinition</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		These definitions represent faction vendors at different points in the game.
+A single faction may contain multiple vendors, or the same vendor available at two different locations.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>vendorHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	<div class="description">
+		The faction vendor hash.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyVendorDefinition">Destiny.Definitions.DestinyVendorDefinition</a>
+	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>destinationHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	<div class="description">
+		The hash identifier for a Destination at which this vendor may be located. Each destination where a Vendor may exist will only ever have a single entry.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyDestinationDefinition">Destiny.Definitions.DestinyDestinationDefinition</a>
+	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>backgroundImagePath</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The relative path to the background image representing this Vendor at this location, for use in a banner.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
 	</div>
 	
 	
@@ -55360,6 +55695,7 @@ For category matching, use the plug's "plugCategoryIdentifier" property, compari
 
 	
 	<div class="attributes">
+		<span class="manifest-entity">Mobile Manifest Entity</span>
 	</div>
 	
 	<div class="description">
@@ -55367,6 +55703,9 @@ For category matching, use the plug's "plugCategoryIdentifier" property, compari
 A variety of other entities refer to these as gatekeepers and payments for actions that can be performed in game.
 	</div>
 	
+	<div class="manifest-database">
+		<strong>Mapped to Mobile Manifest Table</strong>: MaterialRequirementSets
+	</div>
 	
 	<div class="type">
 		<strong>Type</strong>: object
@@ -56586,6 +56925,36 @@ If the plug's category matches any whitelisted plug, or if the whitelist is empt
 	<div class="attributes">
 	</div>
 	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>overridesUiAppearance</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		This property indicates if the socket type determines whether Emblem icons and nameplates should be overridden by the inserted plug item's icon and nameplate.
+	</div>
 	
 	
 	<div class="type">
@@ -68487,6 +68856,18 @@ This is a long-held historical throwback to when we used to do paging with known
 						<div><strong>DestinyItemLocked</strong>: 1674</div>
 					</li>
 					<li>
+						<div><strong>DestinyCannotAffordMaterialRequirements</strong>: 1675</div>
+					</li>
+					<li>
+						<div><strong>DestinyFailedPlugInsertionRules</strong>: 1676</div>
+					</li>
+					<li>
+						<div><strong>DestinySocketNotFound</strong>: 1677</div>
+					</li>
+					<li>
+						<div><strong>DestinySocketActionNotAllowed</strong>: 1678</div>
+					</li>
+					<li>
 						<div><strong>FbInvalidRequest</strong>: 1800</div>
 					</li>
 					<li>
@@ -75642,7 +76023,7 @@ Before we even use it, it's already deprecated! How much of a bummer is that? We
 						<div><strong>Reserved24</strong>: 24</div>
 					</li>
 					<li>
-						<div><strong>Reserved25</strong>: 25</div>
+						<div><strong>AllMayhem</strong>: 25</div>
 					</li>
 					<li>
 						<div><strong>Reserved26</strong>: 26</div>
@@ -76001,7 +76382,7 @@ Before we even use it, it's already deprecated! How much of a bummer is that? We
 						<div><strong>Reserved24</strong>: 24</div>
 					</li>
 					<li>
-						<div><strong>Reserved25</strong>: 25</div>
+						<div><strong>AllMayhem</strong>: 25</div>
 					</li>
 					<li>
 						<div><strong>Reserved26</strong>: 26</div>
@@ -79480,7 +79861,7 @@ You can look up the relevant class/race/gender combo in DestinyCharacterCustomiz
 						<div><strong>Reserved24</strong>: 24</div>
 					</li>
 					<li>
-						<div><strong>Reserved25</strong>: 25</div>
+						<div><strong>AllMayhem</strong>: 25</div>
 					</li>
 					<li>
 						<div><strong>Reserved26</strong>: 26</div>
@@ -84756,7 +85137,7 @@ COMPONENT TYPE: ItemSockets
 	</div>
 	
 	<div class="description">
-		The base properties of the vendor.
+		The base properties of the vendor. These are keyed by the Vendor Hash, so you will get one Vendor Component per vendor returned.
 COMPONENT TYPE: Vendors
 	</div>
 	
@@ -84790,7 +85171,7 @@ COMPONENT TYPE: Vendors
 	</div>
 	
 	<div class="description">
-		Categories that the vendor has available, and references to the sales therein.
+		Categories that the vendor has available, and references to the sales therein. These are keyed by the Vendor Hash, so you will get one Categories Component per vendor returned.
 COMPONENT TYPE: VendorCategories
 	</div>
 	
@@ -84824,7 +85205,8 @@ COMPONENT TYPE: VendorCategories
 	</div>
 	
 	<div class="description">
-		Sales, keyed by the vendorItemIndex of the item being sold.
+		Sales, keyed by the vendorItemIndex of the item being sold. These are keyed by the Vendor Hash, so you will get one Sale Item Set Component per vendor returned.
+Note that within the Sale Item Set component, the sales are themselves keyed by the vendorSaleIndex, so you can relate it to the corrent sale item definition within the Vendor's definition.
 COMPONENT TYPE: VendorSales
 	</div>
 	
@@ -84856,6 +85238,10 @@ COMPONENT TYPE: VendorSales
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		The set of item detail components, one set of item components per Vendor. These are keyed by the Vendor Hash, so you will get one Item Component Set per vendor returned.
+The components contained inside are themselves keyed by the vendorSaleIndex, and will have whatever item-level components you requested (Sockets, Stats, Instance data etc...) per item being sold by the vendor.
+	</div>
 	
 	
 	<div class="type">
@@ -85062,6 +85448,36 @@ Theoretically, Vendors can be restricted from selling items. In practice, none d
 <div class="type-info stop-nesting-boxes">
 		See: <a href="#/components/schemas/Destiny.DestinyProgression">Destiny.DestinyProgression</a>
 </div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>vendorLocationIndex</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		An index into the vendor definition's "locations" property array, indicating which location they are at currently. If -1, then the vendor has no known location (and you may choose not to show them in your UI as a result. I mean, it's your bag honey)
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
 
 	
 	
@@ -87814,69 +88230,99 @@ COMPONENT TYPE: [See inside the DestinyItemComponentSet contract for component t
 </div>			</div>
 		</div>
 		<div class="schema box">
-			<a id="/components/schemas/Destiny.Responses.DestinySocketResponseCodes"><h3>Destiny.Responses.DestinySocketResponseCodes</h3></a>
+			<a id="/components/schemas/Destiny.Responses.InventoryChangedResponse"><h3>Destiny.Responses.InventoryChangedResponse</h3></a>
 			<div class="schema-detail box-contents">
 <div class="type-info stop-nesting-boxes">
 
 	
 	<div class="attributes">
-		<span class="enum">Enumeration</span>
+	</div>
+	
+	<div class="description">
+		A response containing all of the components for all requested vendors.
 	</div>
 	
 	
-	
 	<div class="type">
-		<strong>Type</strong>: int32
+		<strong>Type</strong>: object
 	</div>
 	
 	
 
 	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>addedInventoryItems</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Items that appeared in the inventory possibly as a result of an action.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/Destiny.Entities.Items.DestinyItemComponent">Destiny.Entities.Items.DestinyItemComponent</a>
+	</div>
+
+	
 	
 			
-		<div class="enum-values box">
-			<h5>Valid Enum Values</h5>
-			<div class="box-contents stop-nesting-boxes">
-				<ul>
-					<li>
-						<div><strong>None</strong>: 0</div>
-					</li>
-					<li>
-						<div><strong>CannotAffordMaterialRequirements</strong>: 1</div>
-					</li>
-					<li>
-						<div><strong>FailedPlugInsertionRules</strong>: 2</div>
-					</li>
-					<li>
-						<div><strong>CategoryNotWhitelisted</strong>: 4</div>
-					</li>
-					<li>
-						<div><strong>PlugItemInvalid</strong>: 8</div>
-					</li>
-					<li>
-						<div><strong>PlugItemAlreadySocketed</strong>: 16</div>
-					</li>
-					<li>
-						<div><strong>SocketDefinitionBlank</strong>: 32</div>
-					</li>
-					<li>
-						<div><strong>SocketIndexInvalid</strong>: 64</div>
-					</li>
-					<li>
-						<div><strong>SocketInstanceUnoccupied</strong>: 128</div>
-					</li>
-					<li>
-						<div><strong>SocketItemInvalid</strong>: 256</div>
-					</li>
-					<li>
-						<div><strong>SocketItemNotFound</strong>: 512</div>
-					</li>
-					<li>
-						<div><strong>RequestInvalid</strong>: 2048</div>
-					</li>
-				</ul>
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>removedInventoryItems</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Items that disappeared from the inventory possibly as a result of an action.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/Destiny.Entities.Items.DestinyItemComponent">Destiny.Entities.Items.DestinyItemComponent</a>
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
 			</div>
 		</div>
+	
+			
 
 </div>			</div>
 		</div>
@@ -87941,6 +88387,9 @@ COMPONENT TYPE: [See inside the DestinyItemComponentSet contract for component t
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		The instance ID of the item having a plug inserted. Only instanced items can have sockets.
+	</div>
 	
 	
 	<div class="type">
@@ -87963,7 +88412,28 @@ COMPONENT TYPE: [See inside the DestinyItemComponentSet contract for component t
 						<div class="title"><strong>plug</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The plugs being inserted.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
 		See: <a href="#/components/schemas/Destiny.Requests.Actions.DestinyInsertPlugsRequestEntry">Destiny.Requests.Actions.DestinyInsertPlugsRequestEntry</a>
+</div>	
+
+	
+	
+			
+
 </div>						</div>
 					</div>
 				</div>
@@ -88021,6 +88491,10 @@ COMPONENT TYPE: [See inside the DestinyItemComponentSet contract for component t
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		Represents all of the data related to a single plug to be inserted.
+Note that, while you *can* point to a socket that represents infusion, you will receive an error if you attempt to do so. Come on guys, let's play nice.
+	</div>
 	
 	
 	<div class="type">
@@ -88043,6 +88517,10 @@ COMPONENT TYPE: [See inside the DestinyItemComponentSet contract for component t
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		The index into the socket array, which identifies the specific socket being operated on. We also need to know the socketArrayType in order to uniquely identify the socket.
+Don't point to or try to insert a plug into an infusion socket. It won't work.
+	</div>
 	
 	
 	<div class="type">
@@ -88050,6 +88528,38 @@ COMPONENT TYPE: [See inside the DestinyItemComponentSet contract for component t
 	</div>
 	
 	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>socketArrayType</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		This property, combined with the socketIndex, tells us which socket we are referring to (since operations can be performed on both Intrinsic and "default" sockets, and they occupy different arrays in the Inventory Item Definition). I know, I know. Don't give me that look.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.Requests.Actions.DestinySocketArrayType">Destiny.Requests.Actions.DestinySocketArrayType</a>
+</div>	
 
 	
 	
@@ -88071,7 +88581,7 @@ COMPONENT TYPE: [See inside the DestinyItemComponentSet contract for component t
 	</div>
 	
 	<div class="description">
-		Plugs are never instanced. So with the hash alone, we should be able to: 1) Infer whether the player actually needs to have the item, or if it's a reusable plug 2) Perform any operation needed to use the Plug, including removing the plug item and running reward sheets.
+		Plugs are never instanced (except in infusion). So with the hash alone, we should be able to: 1) Infer whether the player actually needs to have the item, or if it's a reusable plug 2) Perform any operation needed to use the Plug, including removing the plug item and running reward sheets.
 	</div>
 	
 	
@@ -88092,6 +88602,47 @@ COMPONENT TYPE: [See inside the DestinyItemComponentSet contract for component t
 		</div>
 	
 			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Requests.Actions.DestinySocketArrayType"><h3>Destiny.Requests.Actions.DestinySocketArrayType</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="enum">Enumeration</span>
+	</div>
+	
+	<div class="description">
+		If you look in the DestinyInventoryItemDefinition's "sockets" property, you'll see that there are two types of sockets: intrinsic, and "socketEntry."
+Unfortunately, because Intrinsic sockets are a whole separate array, it is no longer sufficient to know the index into that array to know which socket we're talking about. You have to know whether it's in the default "socketEntries" or if it's in the "intrinsic" list.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+		<div class="enum-values box">
+			<h5>Valid Enum Values</h5>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<div><strong>Default</strong>: 0</div>
+					</li>
+					<li>
+						<div><strong>Intrinsic</strong>: 1</div>
+					</li>
+				</ul>
+			</div>
+		</div>
 
 </div>			</div>
 		</div>
@@ -93585,7 +94136,7 @@ Deprecated, already, for the sake of the new "vendors" property that has more da
 						<div><strong>Reserved24</strong>: 24</div>
 					</li>
 					<li>
-						<div><strong>Reserved25</strong>: 25</div>
+						<div><strong>AllMayhem</strong>: 25</div>
 					</li>
 					<li>
 						<div><strong>Reserved26</strong>: 26</div>
@@ -93834,7 +94385,7 @@ Deprecated, already, for the sake of the new "vendors" property that has more da
 						<div><strong>Reserved24</strong>: 24</div>
 					</li>
 					<li>
-						<div><strong>Reserved25</strong>: 25</div>
+						<div><strong>AllMayhem</strong>: 25</div>
 					</li>
 					<li>
 						<div><strong>Reserved26</strong>: 26</div>
@@ -94695,6 +95246,70 @@ Deprecated, already, for the sake of the new "vendors" property that has more da
 	</div>
 	
 	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>type</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Advanced Write Action Type from the permission request.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.Advanced.AwaType">Destiny.Advanced.AwaType</a>
+</div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>membershipType</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		MembershipType from the permission request.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/BungieMembershipType">BungieMembershipType</a>
+</div>	
 
 	
 	
