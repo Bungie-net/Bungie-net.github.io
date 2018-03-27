@@ -14,7 +14,7 @@
 		<div class="box-contents">
 			<div>These endpoints constitute the functionality exposed by Bungie.net, both for more traditional website functionality and for connectivity to Bungie video games and their related functionality.</div>
 			<div class="about-line-items">
-				<div><strong>Version:</strong> 2.1.4
+				<div><strong>Version:</strong> 2.1.5
 				</div>
 				<div><strong>License:</strong> <a href="https://github.com/Bungie-net/api/blob/master/LICENSE">https://github.com/Bungie-net/api/blob/master/LICENSE (BSD License 2.0)</a>
 				</div>
@@ -521,13 +521,11 @@ clan/group memberships, recent activity, muted users.</div>
 					<li>
 						<span>GET:</span> <a href="#Destiny2.GetVendors">/Destiny2/{membershipType}/Profile/{destinyMembershipId}/Character/{characterId}/Vendors/</a>
 						<span class="attributes">
-							<span class="preview">Preview - Not Ready for Release</span>
 						</span>
 					</li>
 					<li>
 						<span>GET:</span> <a href="#Destiny2.GetVendor">/Destiny2/{membershipType}/Profile/{destinyMembershipId}/Character/{characterId}/Vendors/{vendorHash}/</a>
 						<span class="attributes">
-							<span class="preview">Preview - Not Ready for Release</span>
 						</span>
 					</li>
 					<li>
@@ -2625,6 +2623,17 @@ clan/group memberships, recent activity, muted users.</div>
 				</span>
 			</li>
 			<li>
+				<a href="#/components/schemas/Destiny.Components.Inventory.DestinyCurrenciesComponent">Destiny.Components.Inventory.DestinyCurrenciesComponent</a>
+				<span class="attributes">
+					<span class="depends-on">Depends on Component "CurrencyLookups"</span>
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent">DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
 				<a href="#/components/schemas/Destiny.Responses.DestinyCharacterResponse">Destiny.Responses.DestinyCharacterResponse</a>
 				<span class="attributes">
 				</span>
@@ -2646,6 +2655,11 @@ clan/group memberships, recent activity, muted users.</div>
 			</li>
 			<li>
 				<a href="#/components/schemas/SingleComponentResponseOfDestinyCharacterActivitiesComponent">SingleComponentResponseOfDestinyCharacterActivitiesComponent</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/SingleComponentResponseOfDestinyCurrenciesComponent">SingleComponentResponseOfDestinyCurrenciesComponent</a>
 				<span class="attributes">
 				</span>
 			</li>
@@ -19158,16 +19172,14 @@ clan/group memberships, recent activity, muted users.</div>
 	<a id="Destiny2.GetVendors"><h3>Destiny2.GetVendors</h3></a>
 	<div class="box-contents">
 		<div class="attributes">
-			<span class="preview">Preview - Not Ready for Release</span>
 			<span class="Destiny2 tag">Destiny2</span>
-			<span class="Preview tag">Preview</span>
 		</div>
 		<br />
 		<div><strong>Verb:</strong> GET</div>
 		<br />
 		<div><strong>Path:</strong> /Destiny2/{membershipType}/Profile/{destinyMembershipId}/Character/{characterId}/Vendors/</div>
 		<br />
-		<div class="description">Get currently available vendors from the list of vendors that can possibly have rotating inventory. Note that this does not include things like preview vendors and vendors-as-kiosks, neither of whom have rotating/dynamic inventories. Use their definitions as-is for those. PREVIEW: This service is not yet active, but we are returning the planned schema of the endpoint for review, comment, and preparation for its eventual implementation.</div>
+		<div class="description">Get currently available vendors from the list of vendors that can possibly have rotating inventory. Note that this does not include things like preview vendors and vendors-as-kiosks, neither of whom have rotating/dynamic inventories. Use their definitions as-is for those.</div>
 		<br />
 		
 		<div class="parameters box">
@@ -19443,16 +19455,14 @@ clan/group memberships, recent activity, muted users.</div>
 	<a id="Destiny2.GetVendor"><h3>Destiny2.GetVendor</h3></a>
 	<div class="box-contents">
 		<div class="attributes">
-			<span class="preview">Preview - Not Ready for Release</span>
 			<span class="Destiny2 tag">Destiny2</span>
-			<span class="Preview tag">Preview</span>
 		</div>
 		<br />
 		<div><strong>Verb:</strong> GET</div>
 		<br />
 		<div><strong>Path:</strong> /Destiny2/{membershipType}/Profile/{destinyMembershipId}/Character/{characterId}/Vendors/{vendorHash}/</div>
 		<br />
-		<div class="description">Get the details of a specific Vendor. PREVIEW: This service is not yet active, but we are returning the planned schema of the endpoint for review, comment, and preparation for its eventual implementation.</div>
+		<div class="description">Get the details of a specific Vendor.</div>
 		<br />
 		
 		<div class="parameters box">
@@ -48924,6 +48934,9 @@ Activities also have Activity Types, but unfortunately in Destiny 2 these are ev
 					<li>
 						<div><strong>ScoredHeroicNightfall</strong>: 47</div>
 					</li>
+					<li>
+						<div><strong>Rumble</strong>: 48</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -52123,6 +52136,9 @@ When entities refer to each other in Destiny content, it is this hash that they 
 					<li>
 						<div><strong>ScoredHeroicNightfall</strong>: 47</div>
 					</li>
+					<li>
+						<div><strong>Rumble</strong>: 48</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -52358,6 +52374,9 @@ When entities refer to each other in Destiny content, it is this hash that they 
 					</li>
 					<li>
 						<div><strong>ScoredHeroicNightfall</strong>: 47</div>
+					</li>
+					<li>
+						<div><strong>Rumble</strong>: 48</div>
 					</li>
 				</ul>
 			</div>
@@ -69691,6 +69710,9 @@ This is a long-held historical throwback to when we used to do paging with known
 						<div><strong>ActivityLoggingDisabled</strong>: 707</div>
 					</li>
 					<li>
+						<div><strong>ClanRequiresExistingDestinyAccount</strong>: 750</div>
+					</li>
+					<li>
 						<div><strong>ItemAlreadyFollowed</strong>: 801</div>
 					</li>
 					<li>
@@ -71882,6 +71904,10 @@ This is a long-held historical throwback to when we used to do paging with known
 						<div><strong>Kiosks</strong>: 500</div>
 						<div class="description">Asking for this component will return you the account's Kiosk statuses: that is, what items have been filled out/acquired. But only if you are the currently authenticated user or the user has elected to allow anonymous viewing of its progression info.</div>
 					</li>
+					<li>
+						<div><strong>CurrencyLookups</strong>: 600</div>
+						<div class="description">A "shortcut" component that will give you all of the item hashes/quantities of items that the requested character can use to determine if an action (purchasing, socket insertion) has the required currency. (recall that all currencies are just items, and that some vendor purchases require items that you might not traditionally consider to be a "currency", like plugs/mods!)</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -72344,6 +72370,40 @@ COMPONENT TYPE: [See inside the DestinyItemComponentSet contract for component t
 	
 <div class="type-info stop-nesting-boxes">
 		See: <a href="#/components/schemas/DestinyItemComponentSetOfint64">DestinyItemComponentSetOfint64</a>
+</div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>characterCurrencyLookups</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="depends-on">Depends on Component "CurrencyLookups"</span>
+	</div>
+	
+	<div class="description">
+		A "lookup" convenience component that can be used to quickly check if the character has access to items that can be used for purchasing.
+COMPONENT TYPE: CurrencyLookups
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent">DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent</a>
 </div>	
 
 	
@@ -77365,6 +77425,9 @@ Before we even use it, it's already deprecated! How much of a bummer is that? We
 					<li>
 						<div><strong>ScoredHeroicNightfall</strong>: 47</div>
 					</li>
+					<li>
+						<div><strong>Rumble</strong>: 48</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -77729,6 +77792,9 @@ Before we even use it, it's already deprecated! How much of a bummer is that? We
 					</li>
 					<li>
 						<div><strong>ScoredHeroicNightfall</strong>: 47</div>
+					</li>
+					<li>
+						<div><strong>Rumble</strong>: 48</div>
 					</li>
 				</ul>
 			</div>
@@ -81214,6 +81280,9 @@ You can look up the relevant class/race/gender combo in DestinyCharacterCustomiz
 					</li>
 					<li>
 						<div><strong>ScoredHeroicNightfall</strong>: 47</div>
+					</li>
+					<li>
+						<div><strong>Rumble</strong>: 48</div>
 					</li>
 				</ul>
 			</div>
@@ -85198,6 +85267,154 @@ This list will be empty if the plug is enabled.
 </div>			</div>
 		</div>
 		<div class="schema box">
+			<a id="/components/schemas/Destiny.Components.Inventory.DestinyCurrenciesComponent"><h3>Destiny.Components.Inventory.DestinyCurrenciesComponent</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="depends-on">Depends on Component "CurrencyLookups"</span>
+	</div>
+	
+	<div class="description">
+		This component provides a quick lookup of every item the requested character has and how much of that item they have.
+Requesting this component will allow you to circumvent manually putting together the list of which currencies you have for the purpose of testing currency requirements on an item being purchased, or operations that have costs.
+You *could* figure this out yourself by doing a GetCharacter or GetProfile request and forming your own lookup table, but that is inconvenient enough that this feels like a worthwhile (and optional) redundency. Don't bother requesting it if you have already created your own lookup from prior GetCharacter/GetProfile calls.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>itemQuantities</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	<div class="description">
+		A dictionary - keyed by the item's hash identifier (DestinyInventoryItemDefinition), and whose value is the amount of that item you have across all available inventory buckets for purchasing.
+This allows you to see whether the requesting character can afford any given purchase/action without having to re-create this list itself.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			int32
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		uint32
+	</div>
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyInventoryItemDefinition">Destiny.Definitions.DestinyInventoryItemDefinition</a>
+	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent"><h3>DictionaryComponentResponseOfint64AndDestinyCurrenciesComponent</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>data</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			<a href="#/components/schemas/Destiny.Components.Inventory.DestinyCurrenciesComponent">Destiny.Components.Inventory.DestinyCurrenciesComponent</a>
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		int64
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>privacy</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Components.ComponentPrivacySetting">Components.ComponentPrivacySetting</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
 			<a id="/components/schemas/Destiny.Responses.DestinyCharacterResponse"><h3>Destiny.Responses.DestinyCharacterResponse</h3></a>
 			<div class="schema-detail box-contents">
 <div class="type-info stop-nesting-boxes">
@@ -85491,6 +85708,40 @@ COMPONENT TYPE: [See inside the DestinyItemComponentSet contract for component t
 					</div>
 				</div>
 			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>currencyLookups</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="depends-on">Depends on Component "CurrencyLookups"</span>
+	</div>
+	
+	<div class="description">
+		A "lookup" convenience component that can be used to quickly check if the character has access to items that can be used for purchasing.
+COMPONENT TYPE: CurrencyLookups
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/SingleComponentResponseOfDestinyCurrenciesComponent">SingleComponentResponseOfDestinyCurrenciesComponent</a>
+</div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	
 			
@@ -85668,6 +85919,54 @@ COMPONENT TYPE: [See inside the DestinyItemComponentSet contract for component t
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
 		See: <a href="#/components/schemas/Destiny.Entities.Characters.DestinyCharacterActivitiesComponent">Destiny.Entities.Characters.DestinyCharacterActivitiesComponent</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>privacy</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Components.ComponentPrivacySetting">Components.ComponentPrivacySetting</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/SingleComponentResponseOfDestinyCurrenciesComponent"><h3>SingleComponentResponseOfDestinyCurrenciesComponent</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>data</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.Components.Inventory.DestinyCurrenciesComponent">Destiny.Components.Inventory.DestinyCurrenciesComponent</a>
 </div>						</div>
 					</div>
 				</div>
@@ -86596,6 +86895,40 @@ The components contained inside are themselves keyed by the vendorSaleIndex, and
 		<strong>Dictionary Key Type: </strong> 
 		uint32
 	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>currencyLookups</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="depends-on">Depends on Component "CurrencyLookups"</span>
+	</div>
+	
+	<div class="description">
+		A "lookup" convenience component that can be used to quickly check if the character has access to items that can be used for purchasing.
+COMPONENT TYPE: CurrencyLookups
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/SingleComponentResponseOfDestinyCurrenciesComponent">SingleComponentResponseOfDestinyCurrenciesComponent</a>
+</div>	
+
 	
 	
 			
@@ -88724,6 +89057,40 @@ COMPONENT TYPE: [See inside the DestinyItemComponentSet contract for component t
 	
 <div class="type-info stop-nesting-boxes">
 		See: <a href="#/components/schemas/DestinyItemComponentSetOfint32">DestinyItemComponentSetOfint32</a>
+</div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>currencyLookups</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="depends-on">Depends on Component "CurrencyLookups"</span>
+	</div>
+	
+	<div class="description">
+		A "lookup" convenience component that can be used to quickly check if the character has access to items that can be used for purchasing.
+COMPONENT TYPE: CurrencyLookups
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/SingleComponentResponseOfDestinyCurrenciesComponent">SingleComponentResponseOfDestinyCurrenciesComponent</a>
 </div>	
 
 	
@@ -95849,6 +96216,9 @@ Deprecated, already, for the sake of the new "vendors" property that has more da
 					<li>
 						<div><strong>ScoredHeroicNightfall</strong>: 47</div>
 					</li>
+					<li>
+						<div><strong>Rumble</strong>: 48</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -96103,6 +96473,9 @@ Deprecated, already, for the sake of the new "vendors" property that has more da
 					</li>
 					<li>
 						<div><strong>ScoredHeroicNightfall</strong>: 47</div>
+					</li>
+					<li>
+						<div><strong>Rumble</strong>: 48</div>
 					</li>
 				</ul>
 			</div>
@@ -96584,26 +96957,6 @@ Deprecated, already, for the sake of the new "vendors" property that has more da
 					<li>
 						<div><strong>InsertPlugs</strong>: 1</div>
 						<div class="description">Insert plugs into sockets.</div>
-					</li>
-					<li>
-						<div><strong>BuyItemFromVendor</strong>: 2</div>
-						<div class="description">Exchange currency to purchase something from a vendor.</div>
-					</li>
-					<li>
-						<div><strong>RefundItem</strong>: 3</div>
-						<div class="description">Return an item to a vendor that accepts returns.</div>
-					</li>
-					<li>
-						<div><strong>DismantleGroupA</strong>: 4</div>
-						<div class="description">Dismantle highest value weapons and armor. This group requires permission for a specific item and the resulting token can be used once on that specific item.</div>
-					</li>
-					<li>
-						<div><strong>DismantleGroupB</strong>: 5</div>
-						<div class="description">Dismantle high value weapons and armor.</div>
-					</li>
-					<li>
-						<div><strong>DismantleGroupC</strong>: 6</div>
-						<div class="description">Dismantle mid value weapons and armor.</div>
 					</li>
 				</ul>
 			</div>
