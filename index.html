@@ -14,7 +14,7 @@
 		<div class="box-contents">
 			<div>These endpoints constitute the functionality exposed by Bungie.net, both for more traditional website functionality and for connectivity to Bungie video games and their related functionality.</div>
 			<div class="about-line-items">
-				<div><strong>Version:</strong> 2.1.5
+				<div><strong>Version:</strong> 2.1.6
 				</div>
 				<div><strong>License:</strong> <a href="https://github.com/Bungie-net/api/blob/master/LICENSE">https://github.com/Bungie-net/api/blob/master/LICENSE (BSD License 2.0)</a>
 				</div>
@@ -170,6 +170,11 @@ clan/group memberships, recent activity, muted users.</div>
 			<h3>App</h3>
 			<div class="box-contents">
 				<ul>
+					<li>
+						<span>GET:</span> <a href="#App.GetApplicationApiUsage">/App/ApiUsage/{applicationId}/</a>
+						<span class="attributes">
+						</span>
+					</li>
 					<li>
 						<span>GET:</span> <a href="#App.GetBungieApplications">/App/FirstParty/</a>
 						<span class="attributes">
@@ -715,6 +720,38 @@ clan/group memberships, recent activity, muted users.</div>
 				</ul>
 			</div>
 		</div>
+		<div class="contents-set box">
+			<h3>Fireteam</h3>
+			<div class="box-contents">
+				<ul>
+					<li>
+						<span>GET:</span> <a href="#Fireteam.GetActivePrivateClanFireteamCount">/Fireteam/Clan/{groupId}/ActiveCount/</a>
+						<span class="attributes">
+						</span>
+					</li>
+					<li>
+						<span>GET:</span> <a href="#Fireteam.GetAvailableClanFireteams">/Fireteam/Clan/{groupId}/Available/{platform}/{activityType}/{dateRange}/{slotFilter}/{publicOnly}/{page}/</a>
+						<span class="attributes">
+						</span>
+					</li>
+					<li>
+						<span>GET:</span> <a href="#Fireteam.SearchPublicAvailableClanFireteams">/Fireteam/Search/Available/{platform}/{activityType}/{dateRange}/{slotFilter}/{page}/</a>
+						<span class="attributes">
+						</span>
+					</li>
+					<li>
+						<span>GET:</span> <a href="#Fireteam.GetMyClanFireteams">/Fireteam/Clan/{groupId}/My/{platform}/{includeClosed}/{page}/</a>
+						<span class="attributes">
+						</span>
+					</li>
+					<li>
+						<span>GET:</span> <a href="#Fireteam.GetClanFireteam">/Fireteam/Clan/{groupId}/Summary/{fireteamId}/</a>
+						<span class="attributes">
+						</span>
+					</li>
+				</ul>
+			</div>
+		</div>
 	</div>
 </div>
 <div class="contents box">
@@ -725,6 +762,26 @@ clan/group memberships, recent activity, muted users.</div>
 				<a href="#/components/schemas/Applications.ApplicationScopes">Applications.ApplicationScopes</a>
 				<span class="attributes">
 					<span class="enum">Enumeration</span>
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Applications.ApiUsage">Applications.ApiUsage</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Dates.DateRange">Dates.DateRange</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Applications.Series">Applications.Series</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Applications.Datapoint">Applications.Datapoint</a>
+				<span class="attributes">
 				</span>
 			</li>
 			<li>
@@ -1201,11 +1258,6 @@ clan/group memberships, recent activity, muted users.</div>
 			</li>
 			<li>
 				<a href="#/components/schemas/Destiny.Definitions.DestinyVendorRequirementDisplayEntryDefinition">Destiny.Definitions.DestinyVendorRequirementDisplayEntryDefinition</a>
-				<span class="attributes">
-				</span>
-			</li>
-			<li>
-				<a href="#/components/schemas/Dates.DateRange">Dates.DateRange</a>
 				<span class="attributes">
 				</span>
 			</li>
@@ -3293,12 +3345,356 @@ clan/group memberships, recent activity, muted users.</div>
 				<span class="attributes">
 				</span>
 			</li>
+			<li>
+				<a href="#/components/schemas/Fireteam.FireteamActivityType">Fireteam.FireteamActivityType</a>
+				<span class="attributes">
+					<span class="enum">Enumeration</span>
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Fireteam.FireteamDateRange">Fireteam.FireteamDateRange</a>
+				<span class="attributes">
+					<span class="enum">Enumeration</span>
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Fireteam.FireteamPlatform">Fireteam.FireteamPlatform</a>
+				<span class="attributes">
+					<span class="enum">Enumeration</span>
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Fireteam.FireteamPublicSearchOption">Fireteam.FireteamPublicSearchOption</a>
+				<span class="attributes">
+					<span class="enum">Enumeration</span>
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Fireteam.FireteamSlotSearch">Fireteam.FireteamSlotSearch</a>
+				<span class="attributes">
+					<span class="enum">Enumeration</span>
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Fireteam.FireteamSummary">Fireteam.FireteamSummary</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/SearchResultOfFireteamSummary">SearchResultOfFireteamSummary</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Fireteam.FireteamResponse">Fireteam.FireteamResponse</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Fireteam.FireteamMember">Fireteam.FireteamMember</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Fireteam.FireteamPlatformInviteResult">Fireteam.FireteamPlatformInviteResult</a>
+				<span class="attributes">
+					<span class="enum">Enumeration</span>
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/SearchResultOfFireteamResponse">SearchResultOfFireteamResponse</a>
+				<span class="attributes">
+				</span>
+			</li>
 		</ul>
 	</div>
 </div>
 <div class="endpoints box">
 	<h2>Endpoints</h2>
 	<div class="box-contents">
+		<div class="endpoint">
+<div class="box">
+	<a id="App.GetApplicationApiUsage"><h3>App.GetApplicationApiUsage</h3></a>
+	<div class="box-contents">
+		<div class="attributes">
+			<span class="App tag">App</span>
+		</div>
+		<br />
+		<div><strong>Verb:</strong> GET</div>
+		<br />
+		<div><strong>Path:</strong> /App/ApiUsage/{applicationId}/</div>
+		<br />
+		<div class="description">Get API usage by application for time frame specified.</div>
+		<br />
+		<div class="required-scopes box">
+			<h4>Required Scope(s)</h4>
+			<div class="box-contents">
+				<ul>
+					<li>oauth2: ReadUserData</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="parameters box">
+			<h4>Path Parameters</h4>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<strong>applicationId</strong>
+						<div class="description">ID of the application to get usage statistics.</div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="parameters box">
+			<h4>Querystring Parameters</h4>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<div class="name">
+							<strong>end</strong>
+						</div>
+						<div class="description">End time for query. Goes to now if not specified.</div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: date-time
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>					</li>
+					<li>
+						<div class="name">
+							<strong>start</strong>
+						</div>
+						<div class="description">Start time for query. Goes to 24 hours ago if not specified.</div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: date-time
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>					</li>
+				</ul>
+			</div>
+		</div>
+	
+	
+		<div class="response box">
+			<h4>Response</h4>
+			<div class="box-contents stop-nesting-boxes">
+<div class="response">
+	<div class="description">Look at the Response property for more information about the nature of this response</div>
+		<div class="content">
+			<div class="content-type">Content Type: application/json</div>
+			<div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Response</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Applications.ApiUsage">Applications.ApiUsage</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorCode</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Exceptions.PlatformErrorCodes">Exceptions.PlatformErrorCodes</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ThrottleSeconds</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorStatus</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Message</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>MessageData</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			string
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		string
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+</div>			</div>
+		</div>
+	</div>
+</div>		</div>
 		<div class="endpoint">
 <div class="box">
 	<a id="App.GetBungieApplications"><h3>App.GetBungieApplications</h3></a>
@@ -3311,7 +3707,7 @@ clan/group memberships, recent activity, muted users.</div>
 		<br />
 		<div><strong>Path:</strong> /App/FirstParty/</div>
 		<br />
-		<div class="description">Get of applications created by Bungie.</div>
+		<div class="description">Get list of applications created by Bungie.</div>
 		<br />
 		
 
@@ -27986,6 +28382,1310 @@ clan/group memberships, recent activity, muted users.</div>
 		</div>
 	</div>
 </div>		</div>
+		<div class="endpoint">
+<div class="box">
+	<a id="Fireteam.GetActivePrivateClanFireteamCount"><h3>Fireteam.GetActivePrivateClanFireteamCount</h3></a>
+	<div class="box-contents">
+		<div class="attributes">
+			<span class="Fireteam tag">Fireteam</span>
+		</div>
+		<br />
+		<div><strong>Verb:</strong> GET</div>
+		<br />
+		<div><strong>Path:</strong> /Fireteam/Clan/{groupId}/ActiveCount/</div>
+		<br />
+		<div class="description">Gets a count of all active non-public fireteams for the specified clan. Maximum value returned is 25.</div>
+		<br />
+		<div class="required-scopes box">
+			<h4>Required Scope(s)</h4>
+			<div class="box-contents">
+				<ul>
+					<li>oauth2: ReadGroups</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="parameters box">
+			<h4>Path Parameters</h4>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<strong>groupId</strong>
+						<div class="description">The group id of the clan.</div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int64
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>					</li>
+				</ul>
+			</div>
+		</div>
+
+	
+	
+		<div class="response box">
+			<h4>Response</h4>
+			<div class="box-contents stop-nesting-boxes">
+<div class="response">
+	<div class="description">Look at the Response property for more information about the nature of this response</div>
+		<div class="content">
+			<div class="content-type">Content Type: application/json</div>
+			<div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Response</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorCode</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Exceptions.PlatformErrorCodes">Exceptions.PlatformErrorCodes</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ThrottleSeconds</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorStatus</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Message</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>MessageData</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			string
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		string
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+</div>			</div>
+		</div>
+	</div>
+</div>		</div>
+		<div class="endpoint">
+<div class="box">
+	<a id="Fireteam.GetAvailableClanFireteams"><h3>Fireteam.GetAvailableClanFireteams</h3></a>
+	<div class="box-contents">
+		<div class="attributes">
+			<span class="Fireteam tag">Fireteam</span>
+		</div>
+		<br />
+		<div><strong>Verb:</strong> GET</div>
+		<br />
+		<div><strong>Path:</strong> /Fireteam/Clan/{groupId}/Available/{platform}/{activityType}/{dateRange}/{slotFilter}/{publicOnly}/{page}/</div>
+		<br />
+		<div class="description">Gets a listing of all of this clan's fireteams that are have available slots. Caller is not checked for join criteria so caching is maximized.</div>
+		<br />
+		<div class="required-scopes box">
+			<h4>Required Scope(s)</h4>
+			<div class="box-contents">
+				<ul>
+					<li>oauth2: ReadGroups</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="parameters box">
+			<h4>Path Parameters</h4>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<strong>activityType</strong>
+						<div class="description">The activity type to filter by.</div>
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Fireteam.FireteamActivityType">Fireteam.FireteamActivityType</a>
+</div>					</li>
+					<li>
+						<strong>dateRange</strong>
+						<div class="description">The date range to grab available fireteams.</div>
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Fireteam.FireteamDateRange">Fireteam.FireteamDateRange</a>
+</div>					</li>
+					<li>
+						<strong>groupId</strong>
+						<div class="description">The group id of the clan.</div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int64
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>					</li>
+					<li>
+						<strong>page</strong>
+						<div class="description">Zero based page</div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>					</li>
+					<li>
+						<strong>platform</strong>
+						<div class="description">The platform filter.</div>
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Fireteam.FireteamPlatform">Fireteam.FireteamPlatform</a>
+</div>					</li>
+					<li>
+						<strong>publicOnly</strong>
+						<div class="description">Determines public/private filtering.</div>
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Fireteam.FireteamPublicSearchOption">Fireteam.FireteamPublicSearchOption</a>
+</div>					</li>
+					<li>
+						<strong>slotFilter</strong>
+						<div class="description">Filters based on available slots</div>
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Fireteam.FireteamSlotSearch">Fireteam.FireteamSlotSearch</a>
+</div>					</li>
+				</ul>
+			</div>
+		</div>
+
+	
+	
+		<div class="response box">
+			<h4>Response</h4>
+			<div class="box-contents stop-nesting-boxes">
+<div class="response">
+	<div class="description">Look at the Response property for more information about the nature of this response</div>
+		<div class="content">
+			<div class="content-type">Content Type: application/json</div>
+			<div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Response</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/SearchResultOfFireteamSummary">SearchResultOfFireteamSummary</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorCode</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Exceptions.PlatformErrorCodes">Exceptions.PlatformErrorCodes</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ThrottleSeconds</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorStatus</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Message</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>MessageData</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			string
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		string
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+</div>			</div>
+		</div>
+	</div>
+</div>		</div>
+		<div class="endpoint">
+<div class="box">
+	<a id="Fireteam.SearchPublicAvailableClanFireteams"><h3>Fireteam.SearchPublicAvailableClanFireteams</h3></a>
+	<div class="box-contents">
+		<div class="attributes">
+			<span class="Fireteam tag">Fireteam</span>
+		</div>
+		<br />
+		<div><strong>Verb:</strong> GET</div>
+		<br />
+		<div><strong>Path:</strong> /Fireteam/Search/Available/{platform}/{activityType}/{dateRange}/{slotFilter}/{page}/</div>
+		<br />
+		<div class="description">Gets a listing of all public fireteams starting now with open slots. Caller is not checked for join criteria so caching is maximized.</div>
+		<br />
+		<div class="required-scopes box">
+			<h4>Required Scope(s)</h4>
+			<div class="box-contents">
+				<ul>
+					<li>oauth2: ReadGroups</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="parameters box">
+			<h4>Path Parameters</h4>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<strong>activityType</strong>
+						<div class="description">The activity type to filter by.</div>
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Fireteam.FireteamActivityType">Fireteam.FireteamActivityType</a>
+</div>					</li>
+					<li>
+						<strong>dateRange</strong>
+						<div class="description">The date range to grab available fireteams.</div>
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Fireteam.FireteamDateRange">Fireteam.FireteamDateRange</a>
+</div>					</li>
+					<li>
+						<strong>page</strong>
+						<div class="description">Zero based page</div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>					</li>
+					<li>
+						<strong>platform</strong>
+						<div class="description">The platform filter.</div>
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Fireteam.FireteamPlatform">Fireteam.FireteamPlatform</a>
+</div>					</li>
+					<li>
+						<strong>slotFilter</strong>
+						<div class="description">Filters based on available slots</div>
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Fireteam.FireteamSlotSearch">Fireteam.FireteamSlotSearch</a>
+</div>					</li>
+				</ul>
+			</div>
+		</div>
+
+	
+	
+		<div class="response box">
+			<h4>Response</h4>
+			<div class="box-contents stop-nesting-boxes">
+<div class="response">
+	<div class="description">Look at the Response property for more information about the nature of this response</div>
+		<div class="content">
+			<div class="content-type">Content Type: application/json</div>
+			<div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Response</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/SearchResultOfFireteamSummary">SearchResultOfFireteamSummary</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorCode</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Exceptions.PlatformErrorCodes">Exceptions.PlatformErrorCodes</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ThrottleSeconds</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorStatus</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Message</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>MessageData</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			string
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		string
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+</div>			</div>
+		</div>
+	</div>
+</div>		</div>
+		<div class="endpoint">
+<div class="box">
+	<a id="Fireteam.GetMyClanFireteams"><h3>Fireteam.GetMyClanFireteams</h3></a>
+	<div class="box-contents">
+		<div class="attributes">
+			<span class="Fireteam tag">Fireteam</span>
+		</div>
+		<br />
+		<div><strong>Verb:</strong> GET</div>
+		<br />
+		<div><strong>Path:</strong> /Fireteam/Clan/{groupId}/My/{platform}/{includeClosed}/{page}/</div>
+		<br />
+		<div class="description">Gets a listing of all clan fireteams that caller is an applicant, a member, or an alternate of.</div>
+		<br />
+		<div class="required-scopes box">
+			<h4>Required Scope(s)</h4>
+			<div class="box-contents">
+				<ul>
+					<li>oauth2: ReadGroups</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="parameters box">
+			<h4>Path Parameters</h4>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<strong>groupId</strong>
+						<div class="description">The group id of the clan.</div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int64
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>					</li>
+					<li>
+						<strong>includeClosed</strong>
+						<div class="description">If true, return fireteams that have been closed.</div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>					</li>
+					<li>
+						<strong>page</strong>
+						<div class="description">Zero based page</div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>					</li>
+					<li>
+						<strong>platform</strong>
+						<div class="description">The platform filter.</div>
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Fireteam.FireteamPlatform">Fireteam.FireteamPlatform</a>
+</div>					</li>
+				</ul>
+			</div>
+		</div>
+
+	
+	
+		<div class="response box">
+			<h4>Response</h4>
+			<div class="box-contents stop-nesting-boxes">
+<div class="response">
+	<div class="description">Look at the Response property for more information about the nature of this response</div>
+		<div class="content">
+			<div class="content-type">Content Type: application/json</div>
+			<div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Response</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/SearchResultOfFireteamResponse">SearchResultOfFireteamResponse</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorCode</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Exceptions.PlatformErrorCodes">Exceptions.PlatformErrorCodes</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ThrottleSeconds</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorStatus</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Message</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>MessageData</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			string
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		string
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+</div>			</div>
+		</div>
+	</div>
+</div>		</div>
+		<div class="endpoint">
+<div class="box">
+	<a id="Fireteam.GetClanFireteam"><h3>Fireteam.GetClanFireteam</h3></a>
+	<div class="box-contents">
+		<div class="attributes">
+			<span class="Fireteam tag">Fireteam</span>
+		</div>
+		<br />
+		<div><strong>Verb:</strong> GET</div>
+		<br />
+		<div><strong>Path:</strong> /Fireteam/Clan/{groupId}/Summary/{fireteamId}/</div>
+		<br />
+		<div class="description">Gets a specific clan fireteam.</div>
+		<br />
+		<div class="required-scopes box">
+			<h4>Required Scope(s)</h4>
+			<div class="box-contents">
+				<ul>
+					<li>oauth2: ReadGroups</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="parameters box">
+			<h4>Path Parameters</h4>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<strong>fireteamId</strong>
+						<div class="description">The unique id of the fireteam.</div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int64
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>					</li>
+					<li>
+						<strong>groupId</strong>
+						<div class="description">The group id of the clan.</div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int64
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>					</li>
+				</ul>
+			</div>
+		</div>
+
+	
+	
+		<div class="response box">
+			<h4>Response</h4>
+			<div class="box-contents stop-nesting-boxes">
+<div class="response">
+	<div class="description">Look at the Response property for more information about the nature of this response</div>
+		<div class="content">
+			<div class="content-type">Content Type: application/json</div>
+			<div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Response</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Fireteam.FireteamResponse">Fireteam.FireteamResponse</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorCode</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Exceptions.PlatformErrorCodes">Exceptions.PlatformErrorCodes</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ThrottleSeconds</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorStatus</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Message</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>MessageData</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			string
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		string
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+</div>			</div>
+		</div>
+	</div>
+</div>		</div>
 	</div>
 </div>
 <div class="schemas box">
@@ -28067,6 +29767,389 @@ clan/group memberships, recent activity, muted users.</div>
 				</ul>
 			</div>
 		</div>
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Applications.ApiUsage"><h3>Applications.ApiUsage</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>range</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The date range for the data being reported.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Dates.DateRange">Dates.DateRange</a>
+</div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>apiCalls</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Counts for on API calls made for the time range.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/Applications.Series">Applications.Series</a>
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>throttledRequests</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Instances of blocked requests or requests that crossed the warn threshold during the time range.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/Applications.Series">Applications.Series</a>
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Dates.DateRange"><h3>Dates.DateRange</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>start</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: date-time
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>end</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: date-time
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Applications.Series"><h3>Applications.Series</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>datapoints</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Collection of samples with time and value.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/Applications.Datapoint">Applications.Datapoint</a>
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>target</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Target to which to datapoints apply.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Applications.Datapoint"><h3>Applications.Datapoint</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>time</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Timestamp for the related count.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: date-time
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>count</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+	</div>
+	
+	<div class="description">
+		Count associated with timestamp
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: double
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
 
 </div>			</div>
 		</div>
@@ -32462,33 +34545,6 @@ This is a long-held historical throwback to when we used to do paging with known
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
-						<div class="title"><strong>primaryAlliedGroupId</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int64
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
 						<div class="title"><strong>motto</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
@@ -32734,33 +34790,6 @@ This is a long-held historical throwback to when we used to do paging with known
 	
 	<div class="type">
 		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>isAllianceOwner</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: boolean
 	</div>
 	
 	
@@ -39798,6 +41827,7 @@ In Destiny 2, this is not possible unless Talent Grids begin to be used again fo
 	
 	<div class="description">
 		The maximum possible value for this stat that we think the item can roll.
+WARNING: In Destiny 1, this field was calculated using the potential stat rolls on the item's talent grid. In Destiny 2, items no longer have meaningful talent grids and instead have sockets: but the calculation of this field was never altered to adapt to this change. As such, this field should be considered deprecated until we can address this oversight.
 	</div>
 	
 	
@@ -43548,86 +45578,6 @@ But usually, it will be a small square image that you can use as... well, an ico
 	
 	<div class="type">
 		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	
-			
-
-</div>			</div>
-		</div>
-		<div class="schema box">
-			<a id="/components/schemas/Dates.DateRange"><h3>Dates.DateRange</h3></a>
-			<div class="schema-detail box-contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	
-		<div class="properties box">
-			<h5>Object Properties</h5>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>start</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: date-time
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>end</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: date-time
 	</div>
 	
 	
@@ -48937,6 +50887,12 @@ Activities also have Activity Types, but unfortunately in Destiny 2 these are ev
 					<li>
 						<div><strong>Rumble</strong>: 48</div>
 					</li>
+					<li>
+						<div><strong>AllDoubles</strong>: 49</div>
+					</li>
+					<li>
+						<div><strong>Doubles</strong>: 50</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -52139,6 +54095,12 @@ When entities refer to each other in Destiny content, it is this hash that they 
 					<li>
 						<div><strong>Rumble</strong>: 48</div>
 					</li>
+					<li>
+						<div><strong>AllDoubles</strong>: 49</div>
+					</li>
+					<li>
+						<div><strong>Doubles</strong>: 50</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -52377,6 +54339,12 @@ When entities refer to each other in Destiny content, it is this hash that they 
 					</li>
 					<li>
 						<div><strong>Rumble</strong>: 48</div>
+					</li>
+					<li>
+						<div><strong>AllDoubles</strong>: 49</div>
+					</li>
+					<li>
+						<div><strong>Doubles</strong>: 50</div>
 					</li>
 				</ul>
 			</div>
@@ -62753,6 +64721,36 @@ We then populate all of the categories that we think an item belongs to in its D
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
+						<div class="title"><strong>deprecated</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If True, this category has been deprecated: it may have no items left, or there may be only legacy items that remain in it which are no longer relevant to the game.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
 						<div class="title"><strong>shortTitle</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
@@ -69848,6 +71846,12 @@ This is a long-held historical throwback to when we used to do paging with known
 						<div><strong>PsnApiAccountAttributeMissing</strong>: 1237</div>
 					</li>
 					<li>
+						<div><strong>PsnApiNoPermission</strong>: 1238</div>
+					</li>
+					<li>
+						<div><strong>PsnApiTargetUserBlocked</strong>: 1239</div>
+					</li>
+					<li>
 						<div><strong>XblExSystemDisabled</strong>: 1300</div>
 					</li>
 					<li>
@@ -70501,6 +72505,69 @@ This is a long-held historical throwback to when we used to do paging with known
 					</li>
 					<li>
 						<div><strong>AwaWriteRequestTokenUsageLimitReached</strong>: 2806</div>
+					</li>
+					<li>
+						<div><strong>ClanFireteamNotFound</strong>: 3000</div>
+					</li>
+					<li>
+						<div><strong>ClanFireteamAddNoAlternatesForImmediate</strong>: 3001</div>
+					</li>
+					<li>
+						<div><strong>ClanFireteamFull</strong>: 3002</div>
+					</li>
+					<li>
+						<div><strong>ClanFireteamAltFull</strong>: 3003</div>
+					</li>
+					<li>
+						<div><strong>ClanFireteamBlocked</strong>: 3004</div>
+					</li>
+					<li>
+						<div><strong>ClanFireteamPlayerEntryNotFound</strong>: 3005</div>
+					</li>
+					<li>
+						<div><strong>ClanFireteamPermissions</strong>: 3006</div>
+					</li>
+					<li>
+						<div><strong>ClanFireteamInvalidPlatform</strong>: 3007</div>
+					</li>
+					<li>
+						<div><strong>ClanFireteamCannotAdjustSlotCount</strong>: 3008</div>
+					</li>
+					<li>
+						<div><strong>ClanFireteamInvalidPlayerPlatform</strong>: 3009</div>
+					</li>
+					<li>
+						<div><strong>ClanFireteamNotReadyForInvitesNotEnoughPlayers</strong>: 3010</div>
+					</li>
+					<li>
+						<div><strong>ClanFireteamGameInvitesNotSupportForPlatform</strong>: 3011</div>
+					</li>
+					<li>
+						<div><strong>ClanFireteamPlatformInvitePreqFailure</strong>: 3012</div>
+					</li>
+					<li>
+						<div><strong>ClanFireteamInvalidAuthContext</strong>: 3013</div>
+					</li>
+					<li>
+						<div><strong>ClanFireteamInvalidAuthProviderPsn</strong>: 3014</div>
+					</li>
+					<li>
+						<div><strong>ClanFireteamPs4SessionFull</strong>: 3015</div>
+					</li>
+					<li>
+						<div><strong>ClanFireteamInvalidAuthToken</strong>: 3016</div>
+					</li>
+					<li>
+						<div><strong>ClanFireteamScheduledFireteamsDisabled</strong>: 3017</div>
+					</li>
+					<li>
+						<div><strong>ClanFireteamNotReadyForInvitesNotScheduledYet</strong>: 3018</div>
+					</li>
+					<li>
+						<div><strong>ClanFireteamNotReadyForInvitesClosed</strong>: 3019</div>
+					</li>
+					<li>
+						<div><strong>ClanFireteamScheduledFireteamsRequireAdminPermissions</strong>: 3020</div>
 					</li>
 				</ul>
 			</div>
@@ -77428,6 +79495,12 @@ Before we even use it, it's already deprecated! How much of a bummer is that? We
 					<li>
 						<div><strong>Rumble</strong>: 48</div>
 					</li>
+					<li>
+						<div><strong>AllDoubles</strong>: 49</div>
+					</li>
+					<li>
+						<div><strong>Doubles</strong>: 50</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -77795,6 +79868,12 @@ Before we even use it, it's already deprecated! How much of a bummer is that? We
 					</li>
 					<li>
 						<div><strong>Rumble</strong>: 48</div>
+					</li>
+					<li>
+						<div><strong>AllDoubles</strong>: 49</div>
+					</li>
+					<li>
+						<div><strong>Doubles</strong>: 50</div>
 					</li>
 				</ul>
 			</div>
@@ -81283,6 +83362,12 @@ You can look up the relevant class/race/gender combo in DestinyCharacterCustomiz
 					</li>
 					<li>
 						<div><strong>Rumble</strong>: 48</div>
+					</li>
+					<li>
+						<div><strong>AllDoubles</strong>: 49</div>
+					</li>
+					<li>
+						<div><strong>Doubles</strong>: 50</div>
 					</li>
 				</ul>
 			</div>
@@ -96219,6 +98304,12 @@ Deprecated, already, for the sake of the new "vendors" property that has more da
 					<li>
 						<div><strong>Rumble</strong>: 48</div>
 					</li>
+					<li>
+						<div><strong>AllDoubles</strong>: 49</div>
+					</li>
+					<li>
+						<div><strong>Doubles</strong>: 50</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -96476,6 +98567,12 @@ Deprecated, already, for the sake of the new "vendors" property that has more da
 					</li>
 					<li>
 						<div><strong>Rumble</strong>: 48</div>
+					</li>
+					<li>
+						<div><strong>AllDoubles</strong>: 49</div>
+					</li>
+					<li>
+						<div><strong>Doubles</strong>: 50</div>
 					</li>
 				</ul>
 			</div>
@@ -100811,6 +102908,1356 @@ These are often pointers to fake items that look good in a tooltip, but represen
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
 		See: <a href="#/components/schemas/Partnerships.PartnershipType">Partnerships.PartnershipType</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Fireteam.FireteamActivityType"><h3>Fireteam.FireteamActivityType</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="enum">Enumeration</span>
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+		<div class="enum-values box">
+			<h5>Valid Enum Values</h5>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<div><strong>All</strong>: 0</div>
+					</li>
+					<li>
+						<div><strong>Raid</strong>: 1</div>
+					</li>
+					<li>
+						<div><strong>Crucible</strong>: 2</div>
+					</li>
+					<li>
+						<div><strong>Trials</strong>: 3</div>
+					</li>
+					<li>
+						<div><strong>Nightfall</strong>: 4</div>
+					</li>
+					<li>
+						<div><strong>Anything</strong>: 5</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Fireteam.FireteamDateRange"><h3>Fireteam.FireteamDateRange</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="enum">Enumeration</span>
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: byte
+	</div>
+	
+	
+
+	
+	
+			
+		<div class="enum-values box">
+			<h5>Valid Enum Values</h5>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<div><strong>All</strong>: 0</div>
+					</li>
+					<li>
+						<div><strong>Now</strong>: 1</div>
+					</li>
+					<li>
+						<div><strong>TwentyFourHours</strong>: 2</div>
+					</li>
+					<li>
+						<div><strong>FortyEightHours</strong>: 3</div>
+					</li>
+					<li>
+						<div><strong>ThisWeek</strong>: 4</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Fireteam.FireteamPlatform"><h3>Fireteam.FireteamPlatform</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="enum">Enumeration</span>
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: byte
+	</div>
+	
+	
+
+	
+	
+			
+		<div class="enum-values box">
+			<h5>Valid Enum Values</h5>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<div><strong>Unknown</strong>: 0</div>
+					</li>
+					<li>
+						<div><strong>Playstation4</strong>: 1</div>
+					</li>
+					<li>
+						<div><strong>XboxOne</strong>: 2</div>
+					</li>
+					<li>
+						<div><strong>Blizzard</strong>: 3</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Fireteam.FireteamPublicSearchOption"><h3>Fireteam.FireteamPublicSearchOption</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="enum">Enumeration</span>
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: byte
+	</div>
+	
+	
+
+	
+	
+			
+		<div class="enum-values box">
+			<h5>Valid Enum Values</h5>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<div><strong>PublicAndPrivate</strong>: 0</div>
+					</li>
+					<li>
+						<div><strong>PublicOnly</strong>: 1</div>
+					</li>
+					<li>
+						<div><strong>PrivateOnly</strong>: 2</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Fireteam.FireteamSlotSearch"><h3>Fireteam.FireteamSlotSearch</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="enum">Enumeration</span>
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: byte
+	</div>
+	
+	
+
+	
+	
+			
+		<div class="enum-values box">
+			<h5>Valid Enum Values</h5>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<div><strong>NoSlotRestriction</strong>: 0</div>
+					</li>
+					<li>
+						<div><strong>HasOpenPlayerSlots</strong>: 1</div>
+					</li>
+					<li>
+						<div><strong>HasOpenPlayerOrAltSlots</strong>: 2</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Fireteam.FireteamSummary"><h3>Fireteam.FireteamSummary</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>fireteamId</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int64
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>groupId</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int64
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>platform</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Fireteam.FireteamPlatform">Fireteam.FireteamPlatform</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>activityType</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Fireteam.FireteamActivityType">Fireteam.FireteamActivityType</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>isImmediate</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>scheduledTime</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: date-time
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ownerMembershipId</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int64
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>playerSlotCount</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>alternateSlotCount</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>availablePlayerSlotCount</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>availableAlternateSlotCount</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>title</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>dateCreated</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: date-time
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>dateModified</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: date-time
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>isPublic</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>locale</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>isValid</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/SearchResultOfFireteamSummary"><h3>SearchResultOfFireteamSummary</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>results</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/Fireteam.FireteamSummary">Fireteam.FireteamSummary</a>
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>totalResults</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>hasMore</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>query</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Queries.PagedQuery">Queries.PagedQuery</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>replacementContinuationToken</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>useTotalResults</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If useTotalResults is true, then totalResults represents an accurate count.
+If False, it does not, and may be estimated/only the size of the current page.
+Either way, you should probably always only trust hasMore.
+This is a long-held historical throwback to when we used to do paging with known total results. Those queries toasted our database, and we were left to hastily alter our endpoints and create backward- compatible shims, of which useTotalResults is one.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Fireteam.FireteamResponse"><h3>Fireteam.FireteamResponse</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Summary</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Fireteam.FireteamSummary">Fireteam.FireteamSummary</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Members</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/Fireteam.FireteamMember">Fireteam.FireteamMember</a>
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Alternates</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/Fireteam.FireteamMember">Fireteam.FireteamMember</a>
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Fireteam.FireteamMember"><h3>Fireteam.FireteamMember</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>destinyUserInfo</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/User.UserInfoCard">User.UserInfoCard</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>bungieNetUserInfo</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/User.UserInfoCard">User.UserInfoCard</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>characterId</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int64
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>dateJoined</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: date-time
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>hasMicrophone</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>lastPlatformInviteAttemptDate</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: date-time
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>lastPlatformInviteAttemptResult</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Fireteam.FireteamPlatformInviteResult">Fireteam.FireteamPlatformInviteResult</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Fireteam.FireteamPlatformInviteResult"><h3>Fireteam.FireteamPlatformInviteResult</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="enum">Enumeration</span>
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: byte
+	</div>
+	
+	
+
+	
+	
+			
+		<div class="enum-values box">
+			<h5>Valid Enum Values</h5>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<div><strong>None</strong>: 0</div>
+					</li>
+					<li>
+						<div><strong>Success</strong>: 1</div>
+					</li>
+					<li>
+						<div><strong>AlreadyInFireteam</strong>: 2</div>
+					</li>
+					<li>
+						<div><strong>Throttled</strong>: 3</div>
+					</li>
+					<li>
+						<div><strong>ServiceError</strong>: 4</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/SearchResultOfFireteamResponse"><h3>SearchResultOfFireteamResponse</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>results</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/Fireteam.FireteamResponse">Fireteam.FireteamResponse</a>
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>totalResults</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>hasMore</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>query</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Queries.PagedQuery">Queries.PagedQuery</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>replacementContinuationToken</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>useTotalResults</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If useTotalResults is true, then totalResults represents an accurate count.
+If False, it does not, and may be estimated/only the size of the current page.
+Either way, you should probably always only trust hasMore.
+This is a long-held historical throwback to when we used to do paging with known total results. Those queries toasted our database, and we were left to hastily alter our endpoints and create backward- compatible shims, of which useTotalResults is one.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
 </div>						</div>
 					</div>
 				</div>
