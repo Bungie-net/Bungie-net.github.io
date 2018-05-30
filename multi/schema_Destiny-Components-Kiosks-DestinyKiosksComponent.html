@@ -367,6 +367,11 @@
 										</span>
 									</li>
 									<li>
+										GET: <a href="operation_get_Destiny2-GetLinkedProfiles.html#operation_get_Destiny2-GetLinkedProfiles" id="operation_get_Destiny2-GetLinkedProfiles">Destiny2.GetLinkedProfiles</a>
+										<span class="attributes">
+										</span>
+									</li>
+									<li>
 										GET: <a href="operation_get_Destiny2-GetProfile.html#operation_get_Destiny2-GetProfile" id="operation_get_Destiny2-GetProfile">Destiny2.GetProfile</a>
 										<span class="attributes">
 										</span>
@@ -2097,6 +2102,16 @@
 							</span>
 						</li>
 						<li>
+							<a href="schema_Destiny-Responses-DestinyLinkedProfilesResponse.html#schema_Destiny-Responses-DestinyLinkedProfilesResponse" id="schema_Destiny-Responses-DestinyLinkedProfilesResponse">Destiny.Responses.DestinyLinkedProfilesResponse</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
+							<a href="schema_Destiny-Responses-DestinyErrorProfile.html#schema_Destiny-Responses-DestinyErrorProfile" id="schema_Destiny-Responses-DestinyErrorProfile">Destiny.Responses.DestinyErrorProfile</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
 							<a href="schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType" id="schema_Destiny-DestinyComponentType">Destiny.DestinyComponentType</a>
 							<span class="attributes">
 								<span class="enum">Enum</span>
@@ -3352,9 +3367,7 @@
 	
 	
 	<div class="description">
-		A Kiosk is a Vendor (DestinyVendorDefinition) that sells items based on whether you have already acquired that item before.
-This component returns information about what Kiosk items are available to you on a *Profile* level. It is theoretically possible for Kiosks to have items gated by specific Character as well. If you ever have those, you will find them on the individual character's DestinyCharacterKiosksComponent.
-Note that, because this component returns vendorItemIndexes (that is to say, indexes into the Kiosk Vendor's itemList property), these results are necessarily content version dependent. Make sure that you have the latest version of the content manifest databases before using this data.
+		A Kiosk is a Vendor (DestinyVendorDefinition) that sells items based on whether you have already acquired that item before.<br /><br />This component returns information about what Kiosk items are available to you on a *Profile* level. It is theoretically possible for Kiosks to have items gated by specific Character as well. If you ever have those, you will find them on the individual character's DestinyCharacterKiosksComponent.<br /><br />Note that, because this component returns vendorItemIndexes (that is to say, indexes into the Kiosk Vendor's itemList property), these results are necessarily content version dependent. Make sure that you have the latest version of the content manifest databases before using this data.
 	</div>
 	
 	

@@ -367,6 +367,11 @@
 										</span>
 									</li>
 									<li>
+										GET: <a href="operation_get_Destiny2-GetLinkedProfiles.html#operation_get_Destiny2-GetLinkedProfiles" id="operation_get_Destiny2-GetLinkedProfiles">Destiny2.GetLinkedProfiles</a>
+										<span class="attributes">
+										</span>
+									</li>
+									<li>
 										GET: <a href="operation_get_Destiny2-GetProfile.html#operation_get_Destiny2-GetProfile" id="operation_get_Destiny2-GetProfile">Destiny2.GetProfile</a>
 										<span class="attributes">
 										</span>
@@ -2097,6 +2102,16 @@
 							</span>
 						</li>
 						<li>
+							<a href="schema_Destiny-Responses-DestinyLinkedProfilesResponse.html#schema_Destiny-Responses-DestinyLinkedProfilesResponse" id="schema_Destiny-Responses-DestinyLinkedProfilesResponse">Destiny.Responses.DestinyLinkedProfilesResponse</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
+							<a href="schema_Destiny-Responses-DestinyErrorProfile.html#schema_Destiny-Responses-DestinyErrorProfile" id="schema_Destiny-Responses-DestinyErrorProfile">Destiny.Responses.DestinyErrorProfile</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
 							<a href="schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType" id="schema_Destiny-DestinyComponentType">Destiny.DestinyComponentType</a>
 							<span class="attributes">
 								<span class="enum">Enum</span>
@@ -3351,9 +3366,7 @@
 	
 	
 	<div class="description">
-		Information about the item's calculated stats, with as much data as we can find for the stats without having an actual instance of the item.
-Note that this means the entire concept of providing these stats is fundamentally insufficient: we cannot predict with 100% accuracy the conditions under which an item can spawn, so we use various heuristics to attempt to simulate the conditions as accurately as possible. Actual stats for items in-game can and will vary, but these should at least be useful base points for comparison and display.
-It is also worth noting that some stats, like Magazine size, have further calculations performed on them by scripts in-game and on the game servers that BNet does not have access to. We cannot know how those stats are further transformed, and thus some stats will be inaccurate even on instances of items in BNet vs. how they appear in-game. This is a known limitation of our item statistics, without any planned fix.
+		Information about the item's calculated stats, with as much data as we can find for the stats without having an actual instance of the item.<br /><br />Note that this means the entire concept of providing these stats is fundamentally insufficient: we cannot predict with 100% accuracy the conditions under which an item can spawn, so we use various heuristics to attempt to simulate the conditions as accurately as possible. Actual stats for items in-game can and will vary, but these should at least be useful base points for comparison and display.<br /><br />It is also worth noting that some stats, like Magazine size, have further calculations performed on them by scripts in-game and on the game servers that BNet does not have access to. We cannot know how those stats are further transformed, and thus some stats will be inaccurate even on instances of items in BNet vs. how they appear in-game. This is a known limitation of our item statistics, without any planned fix.
 	</div>
 	
 	
@@ -3381,8 +3394,7 @@ It is also worth noting that some stats, like Magazine size, have further calcul
 	
 	
 	<div class="description">
-		If true, the game won't show the "primary" stat on this item when you inspect it.
-NOTE: This is being manually mapped, because I happen to want it in a block that isn't going to directly create this derivative block.
+		If true, the game won't show the "primary" stat on this item when you inspect it.<br /><br />NOTE: This is being manually mapped, because I happen to want it in a block that isn't going to directly create this derivative block.
 	</div>
 	
 	
@@ -3417,8 +3429,7 @@ NOTE: This is being manually mapped, because I happen to want it in a block that
 	
 	
 	<div class="description">
-		If the item's stats are meant to be modified by a DestinyStatGroupDefinition, this will be the identifier for that definition.
-If you are using live data or precomputed stats data on the DestinyInventoryItemDefinition.stats.stats property, you don't have to worry about statGroupHash and how it alters stats: the already altered stats are provided to you. But if you want to see how the sausage gets made, or perform computations yourself, this is valuable information.
+		If the item's stats are meant to be modified by a DestinyStatGroupDefinition, this will be the identifier for that definition.<br /><br />If you are using live data or precomputed stats data on the DestinyInventoryItemDefinition.stats.stats property, you don't have to worry about statGroupHash and how it alters stats: the already altered stats are provided to you. But if you want to see how the sausage gets made, or perform computations yourself, this is valuable information.
 	</div>
 	
 	
@@ -3456,8 +3467,7 @@ If you are using live data or precomputed stats data on the DestinyInventoryItem
 	
 	
 	<div class="description">
-		If you are looking for precomputed values for the stats on a weapon, this is where they are stored. Technically these are the "Display" stat values. Please see DestinyStatsDefinition for what Display Stat Values means, it's a very long story... but essentially these are the closest values BNet can get to the item stats that you see in-game.
-These stats are keyed by the DestinyStatDefinition's hash identifier for the stat that's found on the item.
+		If you are looking for precomputed values for the stats on a weapon, this is where they are stored. Technically these are the "Display" stat values. Please see DestinyStatsDefinition for what Display Stat Values means, it's a very long story... but essentially these are the closest values BNet can get to the item stats that you see in-game.<br /><br />These stats are keyed by the DestinyStatDefinition's hash identifier for the stat that's found on the item.
 	</div>
 	
 	
@@ -3536,8 +3546,7 @@ These stats are keyed by the DestinyStatDefinition's hash identifier for the sta
 	
 	
 	<div class="description">
-		This stat is determined to be the "primary" stat, and can be looked up in the stats or any other stat collection related to the item.
-Use this hash to look up the stat's value using DestinyInventoryItemDefinition.stats.stats, and the renderable data for the primary stat in the related DestinyStatDefinition.
+		This stat is determined to be the "primary" stat, and can be looked up in the stats or any other stat collection related to the item.<br /><br />Use this hash to look up the stat's value using DestinyInventoryItemDefinition.stats.stats, and the renderable data for the primary stat in the related DestinyStatDefinition.
 	</div>
 	
 	

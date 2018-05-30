@@ -367,6 +367,11 @@
 										</span>
 									</li>
 									<li>
+										GET: <a href="operation_get_Destiny2-GetLinkedProfiles.html#operation_get_Destiny2-GetLinkedProfiles" id="operation_get_Destiny2-GetLinkedProfiles">Destiny2.GetLinkedProfiles</a>
+										<span class="attributes">
+										</span>
+									</li>
+									<li>
 										GET: <a href="operation_get_Destiny2-GetProfile.html#operation_get_Destiny2-GetProfile" id="operation_get_Destiny2-GetProfile">Destiny2.GetProfile</a>
 										<span class="attributes">
 										</span>
@@ -2097,6 +2102,16 @@
 							</span>
 						</li>
 						<li>
+							<a href="schema_Destiny-Responses-DestinyLinkedProfilesResponse.html#schema_Destiny-Responses-DestinyLinkedProfilesResponse" id="schema_Destiny-Responses-DestinyLinkedProfilesResponse">Destiny.Responses.DestinyLinkedProfilesResponse</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
+							<a href="schema_Destiny-Responses-DestinyErrorProfile.html#schema_Destiny-Responses-DestinyErrorProfile" id="schema_Destiny-Responses-DestinyErrorProfile">Destiny.Responses.DestinyErrorProfile</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
 							<a href="schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType" id="schema_Destiny-DestinyComponentType">Destiny.DestinyComponentType</a>
 							<span class="attributes">
 								<span class="enum">Enum</span>
@@ -3352,9 +3367,7 @@
 	
 	
 	<div class="description">
-		If an item is "instanced", this will contain information about the item's instance that doesn't fit easily into other components. One might say this is the "essential" instance data for the item.
-Items are instanced if they require information or state that can vary. For instance, weapons are Instanced: they are given a unique identifier, uniquely generated stats, and can have their properties altered. Non-instanced items have none of these things: for instance, Glimmer has no unique properties aside from how much of it you own.
-You can tell from an item's definition whether it will be instanced or not by looking at the DestinyInventoryItemDefinition's definition.inventory.isInstanceItem property.
+		If an item is "instanced", this will contain information about the item's instance that doesn't fit easily into other components. One might say this is the "essential" instance data for the item.<br /><br />Items are instanced if they require information or state that can vary. For instance, weapons are Instanced: they are given a unique identifier, uniquely generated stats, and can have their properties altered. Non-instanced items have none of these things: for instance, Glimmer has no unique properties aside from how much of it you own.<br /><br />You can tell from an item's definition whether it will be instanced or not by looking at the DestinyInventoryItemDefinition's definition.inventory.isInstanceItem property.
 	</div>
 	
 	
@@ -3657,8 +3670,7 @@ You can tell from an item's definition whether it will be instanced or not by lo
 	
 	
 	<div class="description">
-		Sometimes, there are limitations to equipping that are represented by character-level flags called "unlocks".
-This is a list of flags that they need in order to equip the item that the character has not met. Use these to look up the descriptions to show in your UI by looking up the relevant DestinyUnlockDefinitions for the hashes.
+		Sometimes, there are limitations to equipping that are represented by character-level flags called "unlocks".<br /><br />This is a list of flags that they need in order to equip the item that the character has not met. Use these to look up the descriptions to show in your UI by looking up the relevant DestinyUnlockDefinitions for the hashes.
 	</div>
 	
 	

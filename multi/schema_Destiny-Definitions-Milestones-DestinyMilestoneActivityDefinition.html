@@ -367,6 +367,11 @@
 										</span>
 									</li>
 									<li>
+										GET: <a href="operation_get_Destiny2-GetLinkedProfiles.html#operation_get_Destiny2-GetLinkedProfiles" id="operation_get_Destiny2-GetLinkedProfiles">Destiny2.GetLinkedProfiles</a>
+										<span class="attributes">
+										</span>
+									</li>
+									<li>
 										GET: <a href="operation_get_Destiny2-GetProfile.html#operation_get_Destiny2-GetProfile" id="operation_get_Destiny2-GetProfile">Destiny2.GetProfile</a>
 										<span class="attributes">
 										</span>
@@ -2097,6 +2102,16 @@
 							</span>
 						</li>
 						<li>
+							<a href="schema_Destiny-Responses-DestinyLinkedProfilesResponse.html#schema_Destiny-Responses-DestinyLinkedProfilesResponse" id="schema_Destiny-Responses-DestinyLinkedProfilesResponse">Destiny.Responses.DestinyLinkedProfilesResponse</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
+							<a href="schema_Destiny-Responses-DestinyErrorProfile.html#schema_Destiny-Responses-DestinyErrorProfile" id="schema_Destiny-Responses-DestinyErrorProfile">Destiny.Responses.DestinyErrorProfile</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
 							<a href="schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType" id="schema_Destiny-DestinyComponentType">Destiny.DestinyComponentType</a>
 							<span class="attributes">
 								<span class="enum">Enum</span>
@@ -3351,8 +3366,7 @@
 	
 	
 	<div class="description">
-		Milestones can have associated activities which provide additional information about the context, challenges, modifiers, state etc... related to this Milestone. 
-Information we need to be able to return that data is defined here, along with Tier data to establish a relationship between a conceptual Activity and its difficulty levels and variants.
+		Milestones can have associated activities which provide additional information about the context, challenges, modifiers, state etc... related to this Milestone. <br /><br />Information we need to be able to return that data is defined here, along with Tier data to establish a relationship between a conceptual Activity and its difficulty levels and variants.
 	</div>
 	
 	
@@ -3381,8 +3395,7 @@ Information we need to be able to return that data is defined here, along with T
 	
 	
 	<div class="description">
-		The "Conceptual" activity hash. Basically, we picked the lowest level activity and are treating it as the canonical definition of the activity for rendering purposes.
-If you care about the specific difficulty modes and variations, use the activities under "Variants".
+		The "Conceptual" activity hash. Basically, we picked the lowest level activity and are treating it as the canonical definition of the activity for rendering purposes.<br /><br />If you care about the specific difficulty modes and variations, use the activities under "Variants".
 	</div>
 	
 	
@@ -3420,10 +3433,7 @@ If you care about the specific difficulty modes and variations, use the activiti
 	
 	
 	<div class="description">
-		A milestone-referenced activity can have many variants, such as Tiers or alternative modes of play.
-Even if there is only a single variant, the details for these are represented within as a variant definition.
-It is assumed that, if this DestinyMilestoneActivityDefinition is active, then all variants should be active.
-If a Milestone could ever split the variants' active status conditionally, they should all have their own DestinyMilestoneActivityDefinition instead! The potential duplication will be worth it for the obviousness of processing and use.
+		A milestone-referenced activity can have many variants, such as Tiers or alternative modes of play.<br /><br />Even if there is only a single variant, the details for these are represented within as a variant definition.<br /><br />It is assumed that, if this DestinyMilestoneActivityDefinition is active, then all variants should be active.<br /><br />If a Milestone could ever split the variants' active status conditionally, they should all have their own DestinyMilestoneActivityDefinition instead! The potential duplication will be worth it for the obviousness of processing and use.
 	</div>
 	
 	

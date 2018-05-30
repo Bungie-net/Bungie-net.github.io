@@ -367,6 +367,11 @@
 										</span>
 									</li>
 									<li>
+										GET: <a href="operation_get_Destiny2-GetLinkedProfiles.html#operation_get_Destiny2-GetLinkedProfiles" id="operation_get_Destiny2-GetLinkedProfiles">Destiny2.GetLinkedProfiles</a>
+										<span class="attributes">
+										</span>
+									</li>
+									<li>
 										GET: <a href="operation_get_Destiny2-GetProfile.html#operation_get_Destiny2-GetProfile" id="operation_get_Destiny2-GetProfile">Destiny2.GetProfile</a>
 										<span class="attributes">
 										</span>
@@ -2097,6 +2102,16 @@
 							</span>
 						</li>
 						<li>
+							<a href="schema_Destiny-Responses-DestinyLinkedProfilesResponse.html#schema_Destiny-Responses-DestinyLinkedProfilesResponse" id="schema_Destiny-Responses-DestinyLinkedProfilesResponse">Destiny.Responses.DestinyLinkedProfilesResponse</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
+							<a href="schema_Destiny-Responses-DestinyErrorProfile.html#schema_Destiny-Responses-DestinyErrorProfile" id="schema_Destiny-Responses-DestinyErrorProfile">Destiny.Responses.DestinyErrorProfile</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
 							<a href="schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType" id="schema_Destiny-DestinyComponentType">Destiny.DestinyComponentType</a>
 							<span class="attributes">
 								<span class="enum">Enum</span>
@@ -3351,8 +3366,7 @@
 	
 	
 	<div class="description">
-		If an item is a Plug, its DestinyInventoryItemDefinition.plug property will be populated with an instance of one of these bad boys.
-This gives information about when it can be inserted, what the plug's category is (and thus whether it is compatible with a socket... see DestinySocketTypeDefinition for information about Plug Categories and socket compatibility), whether it is enabled and other Plug info.
+		If an item is a Plug, its DestinyInventoryItemDefinition.plug property will be populated with an instance of one of these bad boys.<br /><br />This gives information about when it can be inserted, what the plug's category is (and thus whether it is compatible with a socket... see DestinySocketTypeDefinition for information about Plug Categories and socket compatibility), whether it is enabled and other Plug info.
 	</div>
 	
 	
@@ -3380,8 +3394,7 @@ This gives information about when it can be inserted, what the plug's category i
 	
 	
 	<div class="description">
-		The rules around when this plug can be inserted into a socket, aside from the socket's individual restrictions.
-The live data DestinyItemPlugComponent.insertFailIndexes will be an index into this array, so you can pull out the failure strings appropriate for the user.
+		The rules around when this plug can be inserted into a socket, aside from the socket's individual restrictions.<br /><br />The live data DestinyItemPlugComponent.insertFailIndexes will be an index into this array, so you can pull out the failure strings appropriate for the user.
 	</div>
 	
 	
@@ -3631,8 +3644,7 @@ The live data DestinyItemPlugComponent.insertFailIndexes will be an index into t
 	
 	
 	<div class="description">
-		The rules around whether the plug, once inserted, is enabled and providing its benefits.
-The live data DestinyItemPlugComponent.enableFailIndexes will be an index into this array, so you can pull out the failure strings appropriate for the user.
+		The rules around whether the plug, once inserted, is enabled and providing its benefits.<br /><br />The live data DestinyItemPlugComponent.enableFailIndexes will be an index into this array, so you can pull out the failure strings appropriate for the user.
 	</div>
 	
 	

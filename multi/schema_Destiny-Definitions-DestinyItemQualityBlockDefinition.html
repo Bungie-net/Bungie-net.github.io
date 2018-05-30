@@ -367,6 +367,11 @@
 										</span>
 									</li>
 									<li>
+										GET: <a href="operation_get_Destiny2-GetLinkedProfiles.html#operation_get_Destiny2-GetLinkedProfiles" id="operation_get_Destiny2-GetLinkedProfiles">Destiny2.GetLinkedProfiles</a>
+										<span class="attributes">
+										</span>
+									</li>
+									<li>
 										GET: <a href="operation_get_Destiny2-GetProfile.html#operation_get_Destiny2-GetProfile" id="operation_get_Destiny2-GetProfile">Destiny2.GetProfile</a>
 										<span class="attributes">
 										</span>
@@ -2097,6 +2102,16 @@
 							</span>
 						</li>
 						<li>
+							<a href="schema_Destiny-Responses-DestinyLinkedProfilesResponse.html#schema_Destiny-Responses-DestinyLinkedProfilesResponse" id="schema_Destiny-Responses-DestinyLinkedProfilesResponse">Destiny.Responses.DestinyLinkedProfilesResponse</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
+							<a href="schema_Destiny-Responses-DestinyErrorProfile.html#schema_Destiny-Responses-DestinyErrorProfile" id="schema_Destiny-Responses-DestinyErrorProfile">Destiny.Responses.DestinyErrorProfile</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
 							<a href="schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType" id="schema_Destiny-DestinyComponentType">Destiny.DestinyComponentType</a>
 							<span class="attributes">
 								<span class="enum">Enum</span>
@@ -3351,8 +3366,7 @@
 	
 	
 	<div class="description">
-		An item's "Quality" determines its calculated stats. The Level at which the item spawns is combined with its "qualityLevel" along with some additional calculations to determine the value of those stats.
-In Destiny 2, most items don't have default item levels and quality, making this property less useful: these apparently are almost always determined by the complex mechanisms of the Reward system rather than statically. They are still provided here in case they are still useful for people. This also contains some information about Infusion.
+		An item's "Quality" determines its calculated stats. The Level at which the item spawns is combined with its "qualityLevel" along with some additional calculations to determine the value of those stats.<br /><br />In Destiny 2, most items don't have default item levels and quality, making this property less useful: these apparently are almost always determined by the complex mechanisms of the Reward system rather than statically. They are still provided here in case they are still useful for people. This also contains some information about Infusion.
 	</div>
 	
 	
@@ -3380,8 +3394,7 @@ In Destiny 2, most items don't have default item levels and quality, making this
 	
 	
 	<div class="description">
-		The "base" defined level of an item. This is a list because, in theory, each Expansion could define its own base level for an item.
-In practice, not only was that never done in Destiny 1, but now this isn't even populated at all. When it's not populated, the level at which it spawns has to be inferred by Reward information, of which BNet receives an imperfect view and will only be reliable on instanced data as a result.
+		The "base" defined level of an item. This is a list because, in theory, each Expansion could define its own base level for an item.<br /><br />In practice, not only was that never done in Destiny 1, but now this isn't even populated at all. When it's not populated, the level at which it spawns has to be inferred by Reward information, of which BNet receives an imperfect view and will only be reliable on instanced data as a result.
 	</div>
 	
 	
@@ -3451,9 +3464,7 @@ In practice, not only was that never done in Destiny 1, but now this isn't even 
 	
 	
 	<div class="description">
-		The string identifier for this item's "infusability", if any. 
-Items that match the same infusionCategoryName are allowed to infuse with each other.
-DEPRECATED: Items can now have multiple infusion categories. Please use infusionCategoryHashes instead.
+		The string identifier for this item's "infusability", if any. <br /><br />Items that match the same infusionCategoryName are allowed to infuse with each other.<br /><br />DEPRECATED: Items can now have multiple infusion categories. Please use infusionCategoryHashes instead.
 	</div>
 	
 	
@@ -3486,8 +3497,7 @@ DEPRECATED: Items can now have multiple infusion categories. Please use infusion
 	
 	
 	<div class="description">
-		The hash identifier for the infusion. It does not map to a Definition entity.
-DEPRECATED: Items can now have multiple infusion categories. Please use infusionCategoryHashes instead.
+		The hash identifier for the infusion. It does not map to a Definition entity.<br /><br />DEPRECATED: Items can now have multiple infusion categories. Please use infusionCategoryHashes instead.
 	</div>
 	
 	

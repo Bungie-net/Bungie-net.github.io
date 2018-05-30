@@ -367,6 +367,11 @@
 										</span>
 									</li>
 									<li>
+										GET: <a href="operation_get_Destiny2-GetLinkedProfiles.html#operation_get_Destiny2-GetLinkedProfiles" id="operation_get_Destiny2-GetLinkedProfiles">Destiny2.GetLinkedProfiles</a>
+										<span class="attributes">
+										</span>
+									</li>
+									<li>
 										GET: <a href="operation_get_Destiny2-GetProfile.html#operation_get_Destiny2-GetProfile" id="operation_get_Destiny2-GetProfile">Destiny2.GetProfile</a>
 										<span class="attributes">
 										</span>
@@ -2097,6 +2102,16 @@
 							</span>
 						</li>
 						<li>
+							<a href="schema_Destiny-Responses-DestinyLinkedProfilesResponse.html#schema_Destiny-Responses-DestinyLinkedProfilesResponse" id="schema_Destiny-Responses-DestinyLinkedProfilesResponse">Destiny.Responses.DestinyLinkedProfilesResponse</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
+							<a href="schema_Destiny-Responses-DestinyErrorProfile.html#schema_Destiny-Responses-DestinyErrorProfile" id="schema_Destiny-Responses-DestinyErrorProfile">Destiny.Responses.DestinyErrorProfile</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
 							<a href="schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType" id="schema_Destiny-DestinyComponentType">Destiny.DestinyComponentType</a>
 							<span class="attributes">
 								<span class="enum">Enum</span>
@@ -3352,8 +3367,7 @@
 	
 	
 	<div class="description">
-		So much of what you see in Destiny is actually an Item used in a new and creative way. This is the definition for Items in Destiny, which started off as just entities that could exist in your Inventory but ended up being the backing data for so much more: quests, reward previews, slots, and subclasses.
-In practice, you will want to associate this data with "live" item data from a Bungie.Net Platform call: these definitions describe the item in generic, non-instanced terms: but an actual instance of an item can vary widely from these generic definitions.
+		So much of what you see in Destiny is actually an Item used in a new and creative way. This is the definition for Items in Destiny, which started off as just entities that could exist in your Inventory but ended up being the backing data for so much more: quests, reward previews, slots, and subclasses.<br /><br />In practice, you will want to associate this data with "live" item data from a Bungie.Net Platform call: these definitions describe the item in generic, non-instanced terms: but an actual instance of an item can vary widely from these generic definitions.
 	</div>
 	
 	<div class="manifest-database">
@@ -4471,8 +4485,7 @@ In practice, you will want to associate this data with "live" item data from a B
 	
 	
 	<div class="description">
-		There are times when the game will show you a "summary/vague" version of an item - such as a description of its type represented as a DestinyInventoryItemDefinition - rather than display the item itself.
-This happens sometimes when summarizing possible rewards in a tooltip. This is the item displayed instead, if it exists.
+		There are times when the game will show you a "summary/vague" version of an item - such as a description of its type represented as a DestinyInventoryItemDefinition - rather than display the item itself.<br /><br />This happens sometimes when summarizing possible rewards in a tooltip. This is the item displayed instead, if it exists.
 	</div>
 	
 	
@@ -4616,8 +4629,7 @@ This happens sometimes when summarizing possible rewards in a tooltip. This is t
 	
 	
 	<div class="description">
-		The boolean will indicate to us (and you!) whether something *could* happen when you transfer this item from the Postmaster that might be considered a "destructive" action.
-It is not feasible currently to tell you (or ourelves!) in a consistent way whether this *will* actually cause a destructive action, so we are playing it safe: if it has the potential to do so, we will not allow it to be transferred from the Postmaster by default. You will need to check for this flag before transferring an item from the Postmaster, or else you'll end up receiving an error.
+		The boolean will indicate to us (and you!) whether something *could* happen when you transfer this item from the Postmaster that might be considered a "destructive" action.<br /><br />It is not feasible currently to tell you (or ourelves!) in a consistent way whether this *will* actually cause a destructive action, so we are playing it safe: if it has the potential to do so, we will not allow it to be transferred from the Postmaster by default. You will need to check for this flag before transferring an item from the Postmaster, or else you'll end up receiving an error.
 	</div>
 	
 	
@@ -4650,9 +4662,7 @@ It is not feasible currently to tell you (or ourelves!) in a consistent way whet
 	
 	
 	<div class="description">
-		The intrinsic transferability of an item.
-I hate that this boolean is negative - but there's a reason.
-Just because an item is intrinsically transferrable doesn't mean that it can be transferred, and we don't want to imply that this is the only source of that transferability.
+		The intrinsic transferability of an item.<br /><br />I hate that this boolean is negative - but there's a reason.<br /><br />Just because an item is intrinsically transferrable doesn't mean that it can be transferred, and we don't want to imply that this is the only source of that transferability.
 	</div>
 	
 	
@@ -4686,8 +4696,7 @@ Just because an item is intrinsically transferrable doesn't mean that it can be 
 	
 	
 	<div class="description">
-		BNet attempts to make a more formal definition of item "Categories", as defined by DestinyItemCategoryDefinition. This is a list of all Categories that we were able to algorithmically determine that this item is a member of. (for instance, that it's a "Weapon", that it's an "Auto Rifle", etc...)
-The algorithm for these is, unfortunately, volatile. If you believe you see a miscategorized item, please let us know on the Bungie API forums.
+		BNet attempts to make a more formal definition of item "Categories", as defined by DestinyItemCategoryDefinition. This is a list of all Categories that we were able to algorithmically determine that this item is a member of. (for instance, that it's a "Weapon", that it's an "Auto Rifle", etc...)<br /><br />The algorithm for these is, unfortunately, volatile. If you believe you see a miscategorized item, please let us know on the Bungie API forums.
 	</div>
 	
 	
@@ -4763,8 +4772,7 @@ The algorithm for these is, unfortunately, volatile. If you believe you see a mi
 	
 	
 	<div class="description">
-		A value indicating the "base" the of the item. This enum is a useful but dramatic oversimplification of what it means for an item to have a "Type". Still, it's handy in many situations.
-itemCategoryHashes are the preferred way of identifying types, we have retained this enum for its convenience.
+		A value indicating the "base" the of the item. This enum is a useful but dramatic oversimplification of what it means for an item to have a "Type". Still, it's handy in many situations.<br /><br />itemCategoryHashes are the preferred way of identifying types, we have retained this enum for its convenience.
 	</div>
 	
 	
@@ -4799,8 +4807,7 @@ itemCategoryHashes are the preferred way of identifying types, we have retained 
 	
 	
 	<div class="description">
-		A value indicating the "sub-type" of the item. For instance, where an item might have an itemType value "Weapon", this will be something more specific like "Auto Rifle".
-itemCategoryHashes are the preferred way of identifying types, we have retained this enum for its convenience.
+		A value indicating the "sub-type" of the item. For instance, where an item might have an itemType value "Weapon", this will be something more specific like "Auto Rifle".<br /><br />itemCategoryHashes are the preferred way of identifying types, we have retained this enum for its convenience.
 	</div>
 	
 	
@@ -4835,8 +4842,7 @@ itemCategoryHashes are the preferred way of identifying types, we have retained 
 	
 	
 	<div class="description">
-		We run a similarly weak-sauce algorithm to try and determine whether an item is restricted to a specific class. If we find it to be restricted in such a way, we set this classType property to match the class' enumeration value so that users can easily identify class restricted items.
-If you see a mis-classed item, please inform the developers in the Bungie API forum.
+		We run a similarly weak-sauce algorithm to try and determine whether an item is restricted to a specific class. If we find it to be restricted in such a way, we set this classType property to match the class' enumeration value so that users can easily identify class restricted items.<br /><br />If you see a mis-classed item, please inform the developers in the Bungie API forum.
 	</div>
 	
 	
@@ -4871,8 +4877,7 @@ If you see a mis-classed item, please inform the developers in the Bungie API fo
 	
 	
 	<div class="description">
-		If true, then you will be allowed to equip the item if you pass its other requirements.
-This being false means that you cannot equip the item under any circumstances.
+		If true, then you will be allowed to equip the item if you pass its other requirements.<br /><br />This being false means that you cannot equip the item under any circumstances.
 	</div>
 	
 	
@@ -4947,11 +4952,7 @@ This being false means that you cannot equip the item under any circumstances.
 	
 	
 	<div class="description">
-		This is the list of all damage types that we know ahead of time the item can take on. Unfortunately, this does not preclude the possibility of something funky happening to give the item a damage type that cannot be predicted beforehand: for example, if some designer decides to create arbitrary non-reusable plugs that cause damage type to change.
-This damage type prediction will only use the following to determine potential damage types:
-- Intrinsic perks
-- Talent Node perks
-- Known, reusable plugs for sockets
+		This is the list of all damage types that we know ahead of time the item can take on. Unfortunately, this does not preclude the possibility of something funky happening to give the item a damage type that cannot be predicted beforehand: for example, if some designer decides to create arbitrary non-reusable plugs that cause damage type to change.<br /><br />This damage type prediction will only use the following to determine potential damage types:<br /><br />- Intrinsic perks<br /><br />- Talent Node perks<br /><br />- Known, reusable plugs for sockets
 	</div>
 	
 	
@@ -4988,8 +4989,7 @@ This damage type prediction will only use the following to determine potential d
 	
 	
 	<div class="description">
-		If the item has a damage type that could be considered to be default, it will be populated here.
-For various upsetting reasons, it's surprisingly cumbersome to figure this out. I hope you're happy.
+		If the item has a damage type that could be considered to be default, it will be populated here.<br /><br />For various upsetting reasons, it's surprisingly cumbersome to figure this out. I hope you're happy.
 	</div>
 	
 	
@@ -5026,8 +5026,7 @@ For various upsetting reasons, it's surprisingly cumbersome to figure this out. 
 	
 	
 	<div class="description">
-		Similar to defaultDamageType, but represented as the hash identifier for a DestinyDamageTypeDefinition.
-I will likely regret leaving in the enumeration versions of these properties, but for now they're very convenient.
+		Similar to defaultDamageType, but represented as the hash identifier for a DestinyDamageTypeDefinition.<br /><br />I will likely regret leaving in the enumeration versions of these properties, but for now they're very convenient.
 	</div>
 	
 	
@@ -5064,8 +5063,7 @@ I will likely regret leaving in the enumeration versions of these properties, bu
 	
 	
 	<div class="description">
-		The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
-When entities refer to each other in Destiny content, it is this hash that they are referring to.
+		The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.<br /><br />When entities refer to each other in Destiny content, it is this hash that they are referring to.
 	</div>
 	
 	

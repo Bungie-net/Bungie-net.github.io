@@ -367,6 +367,11 @@
 										</span>
 									</li>
 									<li>
+										GET: <a href="operation_get_Destiny2-GetLinkedProfiles.html#operation_get_Destiny2-GetLinkedProfiles" id="operation_get_Destiny2-GetLinkedProfiles">Destiny2.GetLinkedProfiles</a>
+										<span class="attributes">
+										</span>
+									</li>
+									<li>
 										GET: <a href="operation_get_Destiny2-GetProfile.html#operation_get_Destiny2-GetProfile" id="operation_get_Destiny2-GetProfile">Destiny2.GetProfile</a>
 										<span class="attributes">
 										</span>
@@ -2097,6 +2102,16 @@
 							</span>
 						</li>
 						<li>
+							<a href="schema_Destiny-Responses-DestinyLinkedProfilesResponse.html#schema_Destiny-Responses-DestinyLinkedProfilesResponse" id="schema_Destiny-Responses-DestinyLinkedProfilesResponse">Destiny.Responses.DestinyLinkedProfilesResponse</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
+							<a href="schema_Destiny-Responses-DestinyErrorProfile.html#schema_Destiny-Responses-DestinyErrorProfile" id="schema_Destiny-Responses-DestinyErrorProfile">Destiny.Responses.DestinyErrorProfile</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
 							<a href="schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType" id="schema_Destiny-DestinyComponentType">Destiny.DestinyComponentType</a>
 							<span class="attributes">
 								<span class="enum">Enum</span>
@@ -3352,12 +3367,7 @@
 	
 	
 	<div class="description">
-		Perks are modifiers to a character or item that can be applied situationally.
-- Perks determine a weapons' damage type.
-- Perks put the Mods in Modifiers (they are literally the entity that bestows the Sandbox benefit for whatever fluff text about the modifier in the Socket, Plug or Talent Node)
-- Perks are applied for unique alterations of state in Objectives
-Anyways, I'm sure you can see why perks are so interesting.
-What Perks often don't have is human readable information, so we attempt to reverse engineer that by pulling that data from places that uniquely refer to these perks: namely, Talent Nodes and Plugs. That only gives us a subset of perks that are human readable, but those perks are the ones people generally care about anyways. The others are left as a mystery, their true purpose mostly unknown and undocumented.
+		Perks are modifiers to a character or item that can be applied situationally.<br /><br />- Perks determine a weapons' damage type.<br /><br />- Perks put the Mods in Modifiers (they are literally the entity that bestows the Sandbox benefit for whatever fluff text about the modifier in the Socket, Plug or Talent Node)<br /><br />- Perks are applied for unique alterations of state in Objectives<br /><br />Anyways, I'm sure you can see why perks are so interesting.<br /><br />What Perks often don't have is human readable information, so we attempt to reverse engineer that by pulling that data from places that uniquely refer to these perks: namely, Talent Nodes and Plugs. That only gives us a subset of perks that are human readable, but those perks are the ones people generally care about anyways. The others are left as a mystery, their true purpose mostly unknown and undocumented.
 	</div>
 	
 	<div class="manifest-database">
@@ -3489,8 +3499,7 @@ What Perks often don't have is human readable information, so we attempt to reve
 	
 	
 	<div class="description">
-		If this perk grants a damage type to a weapon, the damage type will be defined here.
-Unless you have a compelling reason to use this enum value, use the damageTypeHash instead to look up the actual DestinyDamageTypeDefinition.
+		If this perk grants a damage type to a weapon, the damage type will be defined here.<br /><br />Unless you have a compelling reason to use this enum value, use the damageTypeHash instead to look up the actual DestinyDamageTypeDefinition.
 	</div>
 	
 	
@@ -3526,8 +3535,7 @@ Unless you have a compelling reason to use this enum value, use the damageTypeHa
 	
 	
 	<div class="description">
-		The hash identifier for looking up the DestinyDamageTypeDefinition, if this perk has a damage type.
-This is preferred over using the damageType enumeration value, which has been left purely because it is occasionally convenient.
+		The hash identifier for looking up the DestinyDamageTypeDefinition, if this perk has a damage type.<br /><br />This is preferred over using the damageType enumeration value, which has been left purely because it is occasionally convenient.
 	</div>
 	
 	
@@ -3560,8 +3568,7 @@ This is preferred over using the damageType enumeration value, which has been le
 	
 	
 	<div class="description">
-		An old holdover from the original Armory, this was an attempt to group perks by functionality.
-It is as yet unpopulated, and there will be quite a bit of work needed to restore it to its former working order.
+		An old holdover from the original Armory, this was an attempt to group perks by functionality.<br /><br />It is as yet unpopulated, and there will be quite a bit of work needed to restore it to its former working order.
 	</div>
 	
 	
@@ -3596,8 +3603,7 @@ It is as yet unpopulated, and there will be quite a bit of work needed to restor
 	
 	
 	<div class="description">
-		The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
-When entities refer to each other in Destiny content, it is this hash that they are referring to.
+		The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.<br /><br />When entities refer to each other in Destiny content, it is this hash that they are referring to.
 	</div>
 	
 	

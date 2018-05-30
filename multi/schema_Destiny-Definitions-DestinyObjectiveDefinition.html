@@ -367,6 +367,11 @@
 										</span>
 									</li>
 									<li>
+										GET: <a href="operation_get_Destiny2-GetLinkedProfiles.html#operation_get_Destiny2-GetLinkedProfiles" id="operation_get_Destiny2-GetLinkedProfiles">Destiny2.GetLinkedProfiles</a>
+										<span class="attributes">
+										</span>
+									</li>
+									<li>
 										GET: <a href="operation_get_Destiny2-GetProfile.html#operation_get_Destiny2-GetProfile" id="operation_get_Destiny2-GetProfile">Destiny2.GetProfile</a>
 										<span class="attributes">
 										</span>
@@ -2097,6 +2102,16 @@
 							</span>
 						</li>
 						<li>
+							<a href="schema_Destiny-Responses-DestinyLinkedProfilesResponse.html#schema_Destiny-Responses-DestinyLinkedProfilesResponse" id="schema_Destiny-Responses-DestinyLinkedProfilesResponse">Destiny.Responses.DestinyLinkedProfilesResponse</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
+							<a href="schema_Destiny-Responses-DestinyErrorProfile.html#schema_Destiny-Responses-DestinyErrorProfile" id="schema_Destiny-Responses-DestinyErrorProfile">Destiny.Responses.DestinyErrorProfile</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
 							<a href="schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType" id="schema_Destiny-DestinyComponentType">Destiny.DestinyComponentType</a>
 							<span class="attributes">
 								<span class="enum">Enum</span>
@@ -3352,13 +3367,7 @@
 	
 	
 	<div class="description">
-		Defines an "Objective".
-An objective is a specific task you should accomplish in the game. These are referred to by:
-- Quest Steps (which are DestinyInventoryItemDefinition entities with Objectives)
-- Challenges (which are Objectives defined on an DestinyActivityDefintion)
-- Milestones (which refer to Objectives that are defined on both Quest Steps and Activities)
-- Anything else that the designers decide to do later.
-Objectives have progress, a notion of having been Completed, human readable data describing the task to be accomplished, and a lot of optional tack-on data that can enhance the information provided about the task.
+		Defines an "Objective".<br /><br />An objective is a specific task you should accomplish in the game. These are referred to by:<br /><br />- Quest Steps (which are DestinyInventoryItemDefinition entities with Objectives)<br /><br />- Challenges (which are Objectives defined on an DestinyActivityDefintion)<br /><br />- Milestones (which refer to Objectives that are defined on both Quest Steps and Activities)<br /><br />- Anything else that the designers decide to do later.<br /><br />Objectives have progress, a notion of having been Completed, human readable data describing the task to be accomplished, and a lot of optional tack-on data that can enhance the information provided about the task.
 	</div>
 	
 	<div class="manifest-database">
@@ -3528,8 +3537,7 @@ Objectives have progress, a notion of having been Completed, human readable data
 	
 	
 	<div class="description">
-		If true, you can effectively "un-complete" this objective if you lose progress after crossing the completion threshold. 
-If False, once you complete the task it will remain completed forever by locking the value.
+		If true, you can effectively "un-complete" this objective if you lose progress after crossing the completion threshold. <br /><br />If False, once you complete the task it will remain completed forever by locking the value.
 	</div>
 	
 	
@@ -3562,8 +3570,7 @@ If False, once you complete the task it will remain completed forever by locking
 	
 	
 	<div class="description">
-		If true, completion means having an unlock value less than or equal to the completionValue.
-If False, completion means having an unlock value greater than or equal to the completionValue.
+		If true, completion means having an unlock value less than or equal to the completionValue.<br /><br />If False, completion means having an unlock value greater than or equal to the completionValue.
 	</div>
 	
 	
@@ -3833,8 +3840,7 @@ If False, completion means having an unlock value greater than or equal to the c
 	
 	
 	<div class="description">
-		The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.
-When entities refer to each other in Destiny content, it is this hash that they are referring to.
+		The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.<br /><br />When entities refer to each other in Destiny content, it is this hash that they are referring to.
 	</div>
 	
 	

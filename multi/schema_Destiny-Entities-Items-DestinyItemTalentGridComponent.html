@@ -367,6 +367,11 @@
 										</span>
 									</li>
 									<li>
+										GET: <a href="operation_get_Destiny2-GetLinkedProfiles.html#operation_get_Destiny2-GetLinkedProfiles" id="operation_get_Destiny2-GetLinkedProfiles">Destiny2.GetLinkedProfiles</a>
+										<span class="attributes">
+										</span>
+									</li>
+									<li>
 										GET: <a href="operation_get_Destiny2-GetProfile.html#operation_get_Destiny2-GetProfile" id="operation_get_Destiny2-GetProfile">Destiny2.GetProfile</a>
 										<span class="attributes">
 										</span>
@@ -2097,6 +2102,16 @@
 							</span>
 						</li>
 						<li>
+							<a href="schema_Destiny-Responses-DestinyLinkedProfilesResponse.html#schema_Destiny-Responses-DestinyLinkedProfilesResponse" id="schema_Destiny-Responses-DestinyLinkedProfilesResponse">Destiny.Responses.DestinyLinkedProfilesResponse</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
+							<a href="schema_Destiny-Responses-DestinyErrorProfile.html#schema_Destiny-Responses-DestinyErrorProfile" id="schema_Destiny-Responses-DestinyErrorProfile">Destiny.Responses.DestinyErrorProfile</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
 							<a href="schema_Destiny-DestinyComponentType.html#schema_Destiny-DestinyComponentType" id="schema_Destiny-DestinyComponentType">Destiny.DestinyComponentType</a>
 							<span class="attributes">
 								<span class="enum">Enum</span>
@@ -3352,13 +3367,7 @@
 	
 	
 	<div class="description">
-		Well, we're here in Destiny 2, and Talent Grids are unfortunately still around.
-The good news is that they're pretty much only being used for certain base information on items and for Builds/Subclasses. The bad news is that they still suck. If you really want this information, grab this component.
-An important note is that talent grids are defined as such:
-A Grid has 1:M Nodes, which has 1:M Steps.
-Any given node can only have a single step active at one time, which represents the actual visual contents and effects of the Node (for instance, if you see a "Super Cool Bonus" node, the actual icon and text for the node is coming from the current Step of that node).
-Nodes can be grouped into exclusivity sets *and* as of D2, exclusivity groups (which are collections of exclusivity sets that affect each other).
-See DestinyTalentGridDefinition for more information. Brace yourself, the water's cold out there in the deep end.
+		Well, we're here in Destiny 2, and Talent Grids are unfortunately still around.<br /><br />The good news is that they're pretty much only being used for certain base information on items and for Builds/Subclasses. The bad news is that they still suck. If you really want this information, grab this component.<br /><br />An important note is that talent grids are defined as such:<br /><br />A Grid has 1:M Nodes, which has 1:M Steps.<br /><br />Any given node can only have a single step active at one time, which represents the actual visual contents and effects of the Node (for instance, if you see a "Super Cool Bonus" node, the actual icon and text for the node is coming from the current Step of that node).<br /><br />Nodes can be grouped into exclusivity sets *and* as of D2, exclusivity groups (which are collections of exclusivity sets that affect each other).<br /><br />See DestinyTalentGridDefinition for more information. Brace yourself, the water's cold out there in the deep end.
 	</div>
 	
 	
@@ -3387,8 +3396,7 @@ See DestinyTalentGridDefinition for more information. Brace yourself, the water'
 	
 	
 	<div class="description">
-		Most items don't have useful talent grids anymore, but Builds in particular still do.
-You can use this hash to lookup the DestinyTalentGridDefinition attached to this item, which will be crucial for understanding the node values on the item.
+		Most items don't have useful talent grids anymore, but Builds in particular still do.<br /><br />You can use this hash to lookup the DestinyTalentGridDefinition attached to this item, which will be crucial for understanding the node values on the item.
 	</div>
 	
 	
@@ -3425,8 +3433,7 @@ You can use this hash to lookup the DestinyTalentGridDefinition attached to this
 	
 	
 	<div class="description">
-		Detailed information about the individual nodes in the talent grid.
-A node represents a single visual "pip" in the talent grid or Build detail view, though each node may have multiple "steps" which indicate the actual bonuses and visual representation of that node.
+		Detailed information about the individual nodes in the talent grid.<br /><br />A node represents a single visual "pip" in the talent grid or Build detail view, though each node may have multiple "steps" which indicate the actual bonuses and visual representation of that node.
 	</div>
 	
 	
@@ -3463,8 +3470,7 @@ A node represents a single visual "pip" in the talent grid or Build detail view,
 	
 	
 	<div class="description">
-		Indicates whether the talent grid on this item is completed, and thus whether it should have a gold border around it.
-Only will be true if the item actually *has* a talent grid, and only then if it is completed (i.e. every exclusive set has an activated node, and every non-exclusive set node has been activated)
+		Indicates whether the talent grid on this item is completed, and thus whether it should have a gold border around it.<br /><br />Only will be true if the item actually *has* a talent grid, and only then if it is completed (i.e. every exclusive set has an activated node, and every non-exclusive set node has been activated)
 	</div>
 	
 	
