@@ -14,7 +14,7 @@
 		<div class="box-contents">
 			<div>These endpoints constitute the functionality exposed by Bungie.net, both for more traditional website functionality and for connectivity to Bungie video games and their related functionality.</div>
 			<div class="about-line-items">
-				<div><strong>Version:</strong> 2.2.2
+				<div><strong>Version:</strong> 2.2.3
 				</div>
 				<div><strong>License:</strong> <a href="https://github.com/Bungie-net/api/blob/master/LICENSE">https://github.com/Bungie-net/api/blob/master/LICENSE (BSD License 2.0)</a>
 				</div>
@@ -787,17 +787,17 @@
 			<div class="box-contents">
 				<ul>
 					<li>
-						<span>GET:</span> <a href="#.GetAvailableLocales">//GetAvailableLocales/</a>
+						<span>GET:</span> <a href="#.GetAvailableLocales">/GetAvailableLocales/</a>
 						<span class="attributes">
 						</span>
 					</li>
 					<li>
-						<span>GET:</span> <a href="#.GetCommonSettings">//Settings/</a>
+						<span>GET:</span> <a href="#.GetCommonSettings">/Settings/</a>
 						<span class="attributes">
 						</span>
 					</li>
 					<li>
-						<span>GET:</span> <a href="#.GetGlobalAlerts">//GlobalAlerts/</a>
+						<span>GET:</span> <a href="#.GetGlobalAlerts">/GlobalAlerts/</a>
 						<span class="attributes">
 						</span>
 					</li>
@@ -33573,6 +33573,37 @@
 			</div>
 		</div>
 
+		<div class="parameters box">
+			<h4>Querystring Parameters</h4>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<div class="name">
+							<strong>langFilter</strong>
+						</div>
+						<div class="description">An optional language filter.</div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>					</li>
+				</ul>
+			</div>
+		</div>
 	
 	
 		<div class="response box">
@@ -33852,6 +33883,37 @@
 			</div>
 		</div>
 
+		<div class="parameters box">
+			<h4>Querystring Parameters</h4>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<div class="name">
+							<strong>langFilter</strong>
+						</div>
+						<div class="description">An optional language filter.</div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>					</li>
+				</ul>
+			</div>
+		</div>
 	
 	
 		<div class="response box">
@@ -34127,7 +34189,7 @@
 </div>					</li>
 					<li>
 						<strong>page</strong>
-						<div class="description">Zero based page</div>
+						<div class="description">Deprecated parameter, ignored.</div>
 <div class="type-info stop-nesting-boxes">
 
 	
@@ -34176,6 +34238,30 @@
 	
 	<div class="type">
 		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>					</li>
+					<li>
+						<div class="name">
+							<strong>langFilter</strong>
+						</div>
+						<div class="description">An optional language filter.</div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
 	</div>
 	
 	
@@ -34677,7 +34763,7 @@
 		<br />
 		<div><strong>Verb:</strong> GET</div>
 		<br />
-		<div><strong>Path:</strong> //GetAvailableLocales/</div>
+		<div><strong>Path:</strong> /GetAvailableLocales/</div>
 		<br />
 		<div class="description">List of available localization cultures</div>
 		<br />
@@ -34919,7 +35005,7 @@
 		<br />
 		<div><strong>Verb:</strong> GET</div>
 		<br />
-		<div><strong>Path:</strong> //Settings/</div>
+		<div><strong>Path:</strong> /Settings/</div>
 		<br />
 		<div class="description">Get the common settings used by the Bungie.Net environment.</div>
 		<br />
@@ -35137,7 +35223,7 @@
 		<br />
 		<div><strong>Verb:</strong> GET</div>
 		<br />
-		<div><strong>Path:</strong> //GlobalAlerts/</div>
+		<div><strong>Path:</strong> /GlobalAlerts/</div>
 		<br />
 		<div class="description">Gets any active global alert for display in the forum banners, help pages, etc. Usually used for DOC alerts.</div>
 		<br />
@@ -55611,6 +55697,60 @@
 					</div>
 				</div>
 			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>resetIntervalMinutesOverride</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>resetOffsetMinutesOverride</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	
 			
@@ -60606,6 +60746,15 @@
 					<li>
 						<div><strong>Showdown</strong>: 59</div>
 					</li>
+					<li>
+						<div><strong>Lockdown</strong>: 60</div>
+					</li>
+					<li>
+						<div><strong>Scorched</strong>: 61</div>
+					</li>
+					<li>
+						<div><strong>ScorchedTeam</strong>: 62</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -63935,6 +64084,15 @@
 					<li>
 						<div><strong>Showdown</strong>: 59</div>
 					</li>
+					<li>
+						<div><strong>Lockdown</strong>: 60</div>
+					</li>
+					<li>
+						<div><strong>Scorched</strong>: 61</div>
+					</li>
+					<li>
+						<div><strong>ScorchedTeam</strong>: 62</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -64206,6 +64364,15 @@
 					</li>
 					<li>
 						<div><strong>Showdown</strong>: 59</div>
+					</li>
+					<li>
+						<div><strong>Lockdown</strong>: 60</div>
+					</li>
+					<li>
+						<div><strong>Scorched</strong>: 61</div>
+					</li>
+					<li>
+						<div><strong>ScorchedTeam</strong>: 62</div>
 					</li>
 				</ul>
 			</div>
@@ -82654,6 +82821,9 @@
 					<li>
 						<div><strong>ClanFireteamAlreadyJoined</strong>: 3023</div>
 					</li>
+					<li>
+						<div><strong>ClanFireteamScheduledFireteamsRange</strong>: 3024</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -86108,7 +86278,7 @@
 						<div><strong>DLC1</strong>: 2</div>
 					</li>
 					<li>
-						<div><strong>DLC2</strong>: 3</div>
+						<div><strong>DLC2</strong>: 4</div>
 					</li>
 				</ul>
 			</div>
@@ -87835,6 +88005,38 @@
 	</div>
 	
 	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>scope</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The scope at which this specific entry can be computed.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.DestinyScope">Destiny.DestinyScope</a>
+</div>	
 
 	
 	
@@ -91206,6 +91408,15 @@
 					<li>
 						<div><strong>Showdown</strong>: 59</div>
 					</li>
+					<li>
+						<div><strong>Lockdown</strong>: 60</div>
+					</li>
+					<li>
+						<div><strong>Scorched</strong>: 61</div>
+					</li>
+					<li>
+						<div><strong>ScorchedTeam</strong>: 62</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -91606,6 +91817,15 @@
 					</li>
 					<li>
 						<div><strong>Showdown</strong>: 59</div>
+					</li>
+					<li>
+						<div><strong>Lockdown</strong>: 60</div>
+					</li>
+					<li>
+						<div><strong>Scorched</strong>: 61</div>
+					</li>
+					<li>
+						<div><strong>ScorchedTeam</strong>: 62</div>
 					</li>
 				</ul>
 			</div>
@@ -95132,6 +95352,15 @@
 					</li>
 					<li>
 						<div><strong>Showdown</strong>: 59</div>
+					</li>
+					<li>
+						<div><strong>Lockdown</strong>: 60</div>
+					</li>
+					<li>
+						<div><strong>Scorched</strong>: 61</div>
+					</li>
+					<li>
+						<div><strong>ScorchedTeam</strong>: 62</div>
 					</li>
 				</ul>
 			</div>
@@ -104548,6 +104777,37 @@
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
+						<div class="title"><strong>startingPhaseIndex</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+	</div>
+	
+	<div class="description">
+		If this activity has "phases", this is the phase at which the activity was started.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
 						<div class="title"><strong>activityDetails</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
@@ -110068,6 +110328,15 @@
 					<li>
 						<div><strong>Showdown</strong>: 59</div>
 					</li>
+					<li>
+						<div><strong>Lockdown</strong>: 60</div>
+					</li>
+					<li>
+						<div><strong>Scorched</strong>: 61</div>
+					</li>
+					<li>
+						<div><strong>ScorchedTeam</strong>: 62</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -110358,6 +110627,15 @@
 					</li>
 					<li>
 						<div><strong>Showdown</strong>: 59</div>
+					</li>
+					<li>
+						<div><strong>Lockdown</strong>: 60</div>
+					</li>
+					<li>
+						<div><strong>Scorched</strong>: 61</div>
+					</li>
+					<li>
+						<div><strong>ScorchedTeam</strong>: 62</div>
 					</li>
 				</ul>
 			</div>
