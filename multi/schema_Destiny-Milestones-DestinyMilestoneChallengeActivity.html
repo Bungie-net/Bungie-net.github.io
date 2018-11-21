@@ -237,6 +237,11 @@
 										</span>
 									</li>
 									<li>
+										POST: <a href="operation_post_GroupV2-GetGroupByNameV2.html#operation_post_GroupV2-GetGroupByNameV2" id="operation_post_GroupV2-GetGroupByNameV2">GroupV2.GetGroupByNameV2</a>
+										<span class="attributes">
+										</span>
+									</li>
+									<li>
 										GET: <a href="operation_get_GroupV2-GetGroupOptionalConversations.html#operation_get_GroupV2-GetGroupOptionalConversations" id="operation_get_GroupV2-GetGroupOptionalConversations">GroupV2.GetGroupOptionalConversations</a>
 										<span class="attributes">
 										</span>
@@ -2099,6 +2104,12 @@
 							</span>
 						</li>
 						<li>
+							<a href="schema_Destiny-Definitions-DestinyGenderDefinition.html#schema_Destiny-Definitions-DestinyGenderDefinition" id="schema_Destiny-Definitions-DestinyGenderDefinition">Destiny.Definitions.DestinyGenderDefinition</a>
+							<span class="attributes">
+								<span class="manifest-entity">Manifest</span>
+							</span>
+						</li>
+						<li>
 							<a href="schema_Destiny-Definitions-Records-DestinyRecordCompletionBlock.html#schema_Destiny-Definitions-Records-DestinyRecordCompletionBlock" id="schema_Destiny-Definitions-Records-DestinyRecordCompletionBlock">Destiny.Definitions.Records.DestinyRecordCompletionBlock</a>
 							<span class="attributes">
 							</span>
@@ -2237,6 +2248,11 @@
 							<a href="schema_GroupsV2-GroupMemberCountFilter.html#schema_GroupsV2-GroupMemberCountFilter" id="schema_GroupsV2-GroupMemberCountFilter">GroupsV2.GroupMemberCountFilter</a>
 							<span class="attributes">
 								<span class="enum">Enum</span>
+							</span>
+						</li>
+						<li>
+							<a href="schema_GroupsV2-GroupNameSearchRequest.html#schema_GroupsV2-GroupNameSearchRequest" id="schema_GroupsV2-GroupNameSearchRequest">GroupsV2.GroupNameSearchRequest</a>
+							<span class="attributes">
 							</span>
 						</li>
 						<li>
@@ -2400,6 +2416,11 @@
 						</li>
 						<li>
 							<a href="schema_Destiny-Responses-DestinyLinkedProfilesResponse.html#schema_Destiny-Responses-DestinyLinkedProfilesResponse" id="schema_Destiny-Responses-DestinyLinkedProfilesResponse">Destiny.Responses.DestinyLinkedProfilesResponse</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
+							<a href="schema_Destiny-Responses-DestinyProfileUserInfoCard.html#schema_Destiny-Responses-DestinyProfileUserInfoCard" id="schema_Destiny-Responses-DestinyProfileUserInfoCard">Destiny.Responses.DestinyProfileUserInfoCard</a>
 							<span class="attributes">
 							</span>
 						</li>
@@ -2658,12 +2679,6 @@
 							</span>
 						</li>
 						<li>
-							<a href="schema_Destiny-Definitions-DestinyGenderDefinition.html#schema_Destiny-Definitions-DestinyGenderDefinition" id="schema_Destiny-Definitions-DestinyGenderDefinition">Destiny.Definitions.DestinyGenderDefinition</a>
-							<span class="attributes">
-								<span class="manifest-entity">Manifest</span>
-							</span>
-						</li>
-						<li>
 							<a href="schema_Destiny-Definitions-DestinyClassDefinition.html#schema_Destiny-Definitions-DestinyClassDefinition" id="schema_Destiny-Definitions-DestinyClassDefinition">Destiny.Definitions.DestinyClassDefinition</a>
 							<span class="attributes">
 								<span class="manifest-entity">Manifest</span>
@@ -2819,6 +2834,11 @@
 						</li>
 						<li>
 							<a href="schema_Destiny-Definitions-Milestones-DestinyMilestoneChallengeActivityGraphNodeEntry.html#schema_Destiny-Definitions-Milestones-DestinyMilestoneChallengeActivityGraphNodeEntry" id="schema_Destiny-Definitions-Milestones-DestinyMilestoneChallengeActivityGraphNodeEntry">Destiny.Definitions.Milestones.DestinyMilestoneChallengeActivityGraphNodeEntry</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
+							<a href="schema_Destiny-Definitions-Milestones-DestinyMilestoneChallengeActivityPhase.html#schema_Destiny-Definitions-Milestones-DestinyMilestoneChallengeActivityPhase" id="schema_Destiny-Definitions-Milestones-DestinyMilestoneChallengeActivityPhase">Destiny.Definitions.Milestones.DestinyMilestoneChallengeActivityPhase</a>
 							<span class="attributes">
 							</span>
 						</li>
@@ -4016,6 +4036,47 @@
 		<strong>Mapped to Manifest Database Definition: </strong>
 		<a href="schema_Destiny-Definitions-ActivityModifiers-DestinyActivityModifierDefinition.html#schema_Destiny-Definitions-ActivityModifiers-DestinyActivityModifierDefinition">Destiny.Definitions.ActivityModifiers.DestinyActivityModifierDefinition</a>
 	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>booleanActivityOptions</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	
+	<div class="attributes">
+	</div>
+	
+	
+	<div class="description">
+		The set of activity options for this activity, keyed by an identifier that's unique for this activity (not guaranteed to be unique between or across all activities, though should be unique for every *variant* of a given *conceptual* activity: for instance, the original D2 Raid has many variant DestinyActivityDefinitions. While other activities could potentially have the same option hashes, for any given D2 base Raid variant the hash will be unique).<br /><br />As a concrete example of this data, the hashes you get for Raids will correspond to the currently active "Challenge Mode".<br /><br />We don't have any human readable information for these, but saavy 3rd party app users could manually associate the key (a hash identifier for the "option" that is enabled/disabled) and the value (whether it's enabled or disabled presently)<br /><br />On our side, we don't necessarily even know what these are used for (the game designers know, but we don't), and we have no human readable data for them. In order to use them, you will have to do some experimentation.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			boolean
+	</div>
+	
+	<div>
+		<strong>Dictionary Key Type: </strong>
+		uint32
+	</div>
+	
+	
 			
 
 </div>						</div>

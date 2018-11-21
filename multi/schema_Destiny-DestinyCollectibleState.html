@@ -237,6 +237,11 @@
 										</span>
 									</li>
 									<li>
+										POST: <a href="operation_post_GroupV2-GetGroupByNameV2.html#operation_post_GroupV2-GetGroupByNameV2" id="operation_post_GroupV2-GetGroupByNameV2">GroupV2.GetGroupByNameV2</a>
+										<span class="attributes">
+										</span>
+									</li>
+									<li>
 										GET: <a href="operation_get_GroupV2-GetGroupOptionalConversations.html#operation_get_GroupV2-GetGroupOptionalConversations" id="operation_get_GroupV2-GetGroupOptionalConversations">GroupV2.GetGroupOptionalConversations</a>
 										<span class="attributes">
 										</span>
@@ -2099,6 +2104,12 @@
 							</span>
 						</li>
 						<li>
+							<a href="schema_Destiny-Definitions-DestinyGenderDefinition.html#schema_Destiny-Definitions-DestinyGenderDefinition" id="schema_Destiny-Definitions-DestinyGenderDefinition">Destiny.Definitions.DestinyGenderDefinition</a>
+							<span class="attributes">
+								<span class="manifest-entity">Manifest</span>
+							</span>
+						</li>
+						<li>
 							<a href="schema_Destiny-Definitions-Records-DestinyRecordCompletionBlock.html#schema_Destiny-Definitions-Records-DestinyRecordCompletionBlock" id="schema_Destiny-Definitions-Records-DestinyRecordCompletionBlock">Destiny.Definitions.Records.DestinyRecordCompletionBlock</a>
 							<span class="attributes">
 							</span>
@@ -2237,6 +2248,11 @@
 							<a href="schema_GroupsV2-GroupMemberCountFilter.html#schema_GroupsV2-GroupMemberCountFilter" id="schema_GroupsV2-GroupMemberCountFilter">GroupsV2.GroupMemberCountFilter</a>
 							<span class="attributes">
 								<span class="enum">Enum</span>
+							</span>
+						</li>
+						<li>
+							<a href="schema_GroupsV2-GroupNameSearchRequest.html#schema_GroupsV2-GroupNameSearchRequest" id="schema_GroupsV2-GroupNameSearchRequest">GroupsV2.GroupNameSearchRequest</a>
+							<span class="attributes">
 							</span>
 						</li>
 						<li>
@@ -2400,6 +2416,11 @@
 						</li>
 						<li>
 							<a href="schema_Destiny-Responses-DestinyLinkedProfilesResponse.html#schema_Destiny-Responses-DestinyLinkedProfilesResponse" id="schema_Destiny-Responses-DestinyLinkedProfilesResponse">Destiny.Responses.DestinyLinkedProfilesResponse</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
+							<a href="schema_Destiny-Responses-DestinyProfileUserInfoCard.html#schema_Destiny-Responses-DestinyProfileUserInfoCard" id="schema_Destiny-Responses-DestinyProfileUserInfoCard">Destiny.Responses.DestinyProfileUserInfoCard</a>
 							<span class="attributes">
 							</span>
 						</li>
@@ -2658,12 +2679,6 @@
 							</span>
 						</li>
 						<li>
-							<a href="schema_Destiny-Definitions-DestinyGenderDefinition.html#schema_Destiny-Definitions-DestinyGenderDefinition" id="schema_Destiny-Definitions-DestinyGenderDefinition">Destiny.Definitions.DestinyGenderDefinition</a>
-							<span class="attributes">
-								<span class="manifest-entity">Manifest</span>
-							</span>
-						</li>
-						<li>
 							<a href="schema_Destiny-Definitions-DestinyClassDefinition.html#schema_Destiny-Definitions-DestinyClassDefinition" id="schema_Destiny-Definitions-DestinyClassDefinition">Destiny.Definitions.DestinyClassDefinition</a>
 							<span class="attributes">
 								<span class="manifest-entity">Manifest</span>
@@ -2819,6 +2834,11 @@
 						</li>
 						<li>
 							<a href="schema_Destiny-Definitions-Milestones-DestinyMilestoneChallengeActivityGraphNodeEntry.html#schema_Destiny-Definitions-Milestones-DestinyMilestoneChallengeActivityGraphNodeEntry" id="schema_Destiny-Definitions-Milestones-DestinyMilestoneChallengeActivityGraphNodeEntry">Destiny.Definitions.Milestones.DestinyMilestoneChallengeActivityGraphNodeEntry</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
+							<a href="schema_Destiny-Definitions-Milestones-DestinyMilestoneChallengeActivityPhase.html#schema_Destiny-Definitions-Milestones-DestinyMilestoneChallengeActivityPhase" id="schema_Destiny-Definitions-Milestones-DestinyMilestoneChallengeActivityPhase">Destiny.Definitions.Milestones.DestinyMilestoneChallengeActivityPhase</a>
 							<span class="attributes">
 							</span>
 						</li>
@@ -3901,7 +3921,7 @@
 	
 	
 	<div class="description">
-		A Flags Enumeration where each bit represents a different state that the Collectible can be in. A collectible can be in any number of these states, and you can choose to use or ignore any or all of them when making your own UI that shows Collectible info. Our displays are going to honor them, but we're also the kind of people who only pretend to inhale before quickly passing it to the left. So, you know, do what you got to do.
+		A Flags Enumeration where each bit represents a different state that the Collectible can be in. A collectible can be in any number of these states, and you can choose to use or ignore any or all of them when making your own UI that shows Collectible info. Our displays are going to honor them, but we're also the kind of people who only pretend to inhale before quickly passing it to the left. So, you know, do what you got to do.<br /><br />(All joking aside, please note the caveat I mention around the Invisible flag: there are cases where it is in the best interest of your users to honor these flags even if you're a "show all the data" person. Collector-oriented compulsion is a very unfortunate and real thing, and I would hate to instill that compulsion in others through showing them items that they cannot earn. Please consider this when you are making your own apps/sites.)
 	</div>
 	
 	
@@ -3932,7 +3952,7 @@
 					</li>
 					<li>
 						<div><strong>Invisible</strong>: 4</div>
-						<div class="description">If this flag is set, the collectible should not be shown to the user.<br /><br />But, I mean do what you want: I'm not your mom. It's much more likely that I'm your Dad - wait, I promised your mom that I wouldn't tell you. Don't tell her that I told you.</div>
+						<div class="description">If this flag is set, the collectible should not be shown to the user.<br /><br />Please do consider honoring this flag. It is used - for example - to hide items that a person didn't get from the Eververse. I can't prevent these from being returned in definitions, because some people may have acquired them and thus they should show up: but I would hate for people to start feeling some variant of a Collector's Remorse about these items, and thus increasing their purchasing based on that compulsion. That would be a very unfortunate outcome, and one that I wouldn't like to see happen. So please, whether or not I'm your mom, consider honoring this flag and don't show people invisible collectibles.</div>
 					</li>
 					<li>
 						<div><strong>CannotAffordMaterialRequirements</strong>: 8</div>

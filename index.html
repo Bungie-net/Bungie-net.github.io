@@ -367,6 +367,11 @@
 						</span>
 					</li>
 					<li>
+						<span>POST:</span> <a href="#GroupV2.GetGroupByNameV2">/GroupV2/NameV2/</a>
+						<span class="attributes">
+						</span>
+					</li>
+					<li>
 						<span>GET:</span> <a href="#GroupV2.GetGroupOptionalConversations">/GroupV2/{groupId}/OptionalConversations/</a>
 						<span class="attributes">
 						</span>
@@ -2227,6 +2232,12 @@
 				</span>
 			</li>
 			<li>
+				<a href="#/components/schemas/Destiny.Definitions.DestinyGenderDefinition">Destiny.Definitions.DestinyGenderDefinition</a>
+				<span class="attributes">
+					<span class="manifest-entity">Mobile Manifest Entity</span>
+				</span>
+			</li>
+			<li>
 				<a href="#/components/schemas/Destiny.Definitions.Records.DestinyRecordCompletionBlock">Destiny.Definitions.Records.DestinyRecordCompletionBlock</a>
 				<span class="attributes">
 				</span>
@@ -2365,6 +2376,11 @@
 				<a href="#/components/schemas/GroupsV2.GroupMemberCountFilter">GroupsV2.GroupMemberCountFilter</a>
 				<span class="attributes">
 					<span class="enum">Enumeration</span>
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/GroupsV2.GroupNameSearchRequest">GroupsV2.GroupNameSearchRequest</a>
+				<span class="attributes">
 				</span>
 			</li>
 			<li>
@@ -2528,6 +2544,11 @@
 			</li>
 			<li>
 				<a href="#/components/schemas/Destiny.Responses.DestinyLinkedProfilesResponse">Destiny.Responses.DestinyLinkedProfilesResponse</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.Responses.DestinyProfileUserInfoCard">Destiny.Responses.DestinyProfileUserInfoCard</a>
 				<span class="attributes">
 				</span>
 			</li>
@@ -2786,12 +2807,6 @@
 				</span>
 			</li>
 			<li>
-				<a href="#/components/schemas/Destiny.Definitions.DestinyGenderDefinition">Destiny.Definitions.DestinyGenderDefinition</a>
-				<span class="attributes">
-					<span class="manifest-entity">Mobile Manifest Entity</span>
-				</span>
-			</li>
-			<li>
 				<a href="#/components/schemas/Destiny.Definitions.DestinyClassDefinition">Destiny.Definitions.DestinyClassDefinition</a>
 				<span class="attributes">
 					<span class="manifest-entity">Mobile Manifest Entity</span>
@@ -2947,6 +2962,11 @@
 			</li>
 			<li>
 				<a href="#/components/schemas/Destiny.Definitions.Milestones.DestinyMilestoneChallengeActivityGraphNodeEntry">Destiny.Definitions.Milestones.DestinyMilestoneChallengeActivityGraphNodeEntry</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.Definitions.Milestones.DestinyMilestoneChallengeActivityPhase">Destiny.Definitions.Milestones.DestinyMilestoneChallengeActivityPhase</a>
 				<span class="attributes">
 				</span>
 			</li>
@@ -13550,6 +13570,232 @@
 		</div>
 
 	
+	
+		<div class="response box">
+			<h4>Response</h4>
+			<div class="box-contents stop-nesting-boxes">
+<div class="response">
+	<div class="description">Look at the Response property for more information about the nature of this response</div>
+		<div class="content">
+			<div class="content-type">Content Type: application/json</div>
+			<div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Response</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/GroupsV2.GroupResponse">GroupsV2.GroupResponse</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorCode</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Exceptions.PlatformErrorCodes">Exceptions.PlatformErrorCodes</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ThrottleSeconds</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorStatus</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Message</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>MessageData</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			string
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		string
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>DetailedErrorTrace</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+</div>			</div>
+		</div>
+	</div>
+</div>		</div>
+		<div class="endpoint">
+<div class="box">
+	<a id="GroupV2.GetGroupByNameV2"><h3>GroupV2.GetGroupByNameV2</h3></a>
+	<div class="box-contents">
+		<div class="attributes">
+			<span class="GroupV2 tag">GroupV2</span>
+		</div>
+		<br />
+		<div><strong>Verb:</strong> POST</div>
+		<br />
+		<div><strong>Path:</strong> /GroupV2/NameV2/</div>
+		<br />
+		<div class="description">Get information about a specific group with the given name and type. The POST version.</div>
+		<br />
+		
+
+	
+		<div class="request-body box">
+			<h4>Request Body</h4>
+			<div class="box-contents stop-nesting-boxes">
+			
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/GroupsV2.GroupNameSearchRequest">GroupsV2.GroupNameSearchRequest</a>
+</div>			</div>
+		</div>
 	
 		<div class="response box">
 			<h4>Response</h4>
@@ -24784,6 +25030,11 @@
 			<span class="Destiny2 tag">Destiny2</span>
 		</div>
 		<br />
+		<div>
+			<div><strong>Notes:</strong></div>
+			<div class="preview">ThrottleSecondsBetweenActionPerUser: 0.1</div>
+		</div>
+		<br />
 		<div><strong>Verb:</strong> POST</div>
 		<br />
 		<div><strong>Path:</strong> /Destiny2/Actions/Items/TransferItem/</div>
@@ -25032,6 +25283,11 @@
 	<div class="box-contents">
 		<div class="attributes">
 			<span class="Destiny2 tag">Destiny2</span>
+		</div>
+		<br />
+		<div>
+			<div><strong>Notes:</strong></div>
+			<div class="preview">ThrottleSecondsBetweenActionPerUser: 0.1</div>
 		</div>
 		<br />
 		<div><strong>Verb:</strong> POST</div>
@@ -25284,6 +25540,11 @@
 			<span class="Destiny2 tag">Destiny2</span>
 		</div>
 		<br />
+		<div>
+			<div><strong>Notes:</strong></div>
+			<div class="preview">ThrottleSecondsBetweenActionPerUser: 0.1</div>
+		</div>
+		<br />
 		<div><strong>Verb:</strong> POST</div>
 		<br />
 		<div><strong>Path:</strong> /Destiny2/Actions/Items/EquipItem/</div>
@@ -25534,6 +25795,11 @@
 			<span class="Destiny2 tag">Destiny2</span>
 		</div>
 		<br />
+		<div>
+			<div><strong>Notes:</strong></div>
+			<div class="preview">ThrottleSecondsBetweenActionPerUser: 0.1</div>
+		</div>
+		<br />
 		<div><strong>Verb:</strong> POST</div>
 		<br />
 		<div><strong>Path:</strong> /Destiny2/Actions/Items/EquipItems/</div>
@@ -25766,6 +26032,11 @@
 	<div class="box-contents">
 		<div class="attributes">
 			<span class="Destiny2 tag">Destiny2</span>
+		</div>
+		<br />
+		<div>
+			<div><strong>Notes:</strong></div>
+			<div class="preview">ThrottleSecondsBetweenActionPerUser: 0.1</div>
 		</div>
 		<br />
 		<div><strong>Verb:</strong> POST</div>
@@ -26018,6 +26289,11 @@
 			<span class="preview">Preview - Not Ready for Release</span>
 			<span class="Destiny2 tag">Destiny2</span>
 			<span class="Preview tag">Preview</span>
+		</div>
+		<br />
+		<div>
+			<div><strong>Notes:</strong></div>
+			<div class="preview">ThrottleSecondsBetweenActionPerUser: 1</div>
 		</div>
 		<br />
 		<div><strong>Verb:</strong> POST</div>
@@ -67492,11 +67768,11 @@
 					</li>
 					<li>
 						<div><strong>PvP</strong>: 2</div>
-						<div class="description">PvP activities, where you teabag other humans in the face.</div>
+						<div class="description">PvP activities, where you shoot your "friends".</div>
 					</li>
 					<li>
 						<div><strong>PvECompetitive</strong>: 3</div>
-						<div class="description">PVE competitive activities.</div>
+						<div class="description">PVE competitive activities, where you shoot whoever you want whenever you want. Or run around collecting small glowing triangles.</div>
 					</li>
 				</ul>
 			</div>
@@ -79473,6 +79749,49 @@
 					</div>
 				</div>
 			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>titlesByGenderHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	<div class="description">
+		For those who prefer to use the definitions.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			string
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		uint32
+	</div>
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyGenderDefinition">Destiny.Definitions.DestinyGenderDefinition</a>
+	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	
 			
@@ -79520,6 +79839,172 @@
 </div>			</div>
 		</div>
 		<div class="schema box">
+			<a id="/components/schemas/Destiny.Definitions.DestinyGenderDefinition"><h3>Destiny.Definitions.DestinyGenderDefinition</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="manifest-entity">Mobile Manifest Entity</span>
+	</div>
+	
+	<div class="description">
+		Gender is a social construct, and as such we have definitions for Genders. Right now there happens to only be two, but we'll see what the future holds.
+	</div>
+	
+	<div class="manifest-database">
+		<strong>Mapped to Mobile Manifest Table</strong>: Genders
+	</div>
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>genderType</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		This is a quick reference enumeration for all of the currently defined Genders. We use the enumeration for quicker lookups in related data, like DestinyClassDefinition.genderedClassNames.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.DestinyGender">Destiny.DestinyGender</a>
+</div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>displayProperties</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.Definitions.Common.DestinyDisplayPropertiesDefinition">Destiny.Definitions.Common.DestinyDisplayPropertiesDefinition</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>hash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.<br /><br />When entities refer to each other in Destiny content, it is this hash that they are referring to.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>index</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The index of the entity as it was found in the investment tables.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>redacted</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
 			<a id="/components/schemas/Destiny.Definitions.Records.DestinyRecordCompletionBlock"><h3>Destiny.Definitions.Records.DestinyRecordCompletionBlock</h3></a>
 			<div class="schema-detail box-contents">
 <div class="type-info stop-nesting-boxes">
@@ -79550,6 +80035,9 @@
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		The number of objectives that must be completed before the objective is considered "complete"
+	</div>
 	
 	
 	<div class="type">
@@ -82778,6 +83266,70 @@
 				</ul>
 			</div>
 		</div>
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/GroupsV2.GroupNameSearchRequest"><h3>GroupsV2.GroupNameSearchRequest</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>groupName</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>groupType</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/GroupsV2.GroupType">GroupsV2.GroupType</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
 
 </div>			</div>
 		</div>
@@ -87566,6 +88118,24 @@
 						<div><strong>BungieRewardNotYetClaimable</strong>: 2050</div>
 					</li>
 					<li>
+						<div><strong>MissingOfferConfig</strong>: 2051</div>
+					</li>
+					<li>
+						<div><strong>RAFQuestEntitlementRequiresBnet</strong>: 2052</div>
+					</li>
+					<li>
+						<div><strong>RAFQuestEntitlementTransportFailure</strong>: 2053</div>
+					</li>
+					<li>
+						<div><strong>RAFQuestEntitlementUnknownFailure</strong>: 2054</div>
+					</li>
+					<li>
+						<div><strong>RAFVeteranRewardUnknownFailure</strong>: 2055</div>
+					</li>
+					<li>
+						<div><strong>RAFTooEarlyToCancelBond</strong>: 2056</div>
+					</li>
+					<li>
 						<div><strong>ApiExceededMaxKeys</strong>: 2100</div>
 					</li>
 					<li>
@@ -89082,7 +89652,7 @@
 	
 	<div class="items">
 		<strong>Array Contents:</strong>
-			<a href="#/components/schemas/User.UserInfoCard">User.UserInfoCard</a>
+			<a href="#/components/schemas/Destiny.Responses.DestinyProfileUserInfoCard">Destiny.Responses.DestinyProfileUserInfoCard</a>
 	</div>
 
 	
@@ -89150,6 +89720,211 @@
 		<strong>Array Contents:</strong>
 			<a href="#/components/schemas/Destiny.Responses.DestinyErrorProfile">Destiny.Responses.DestinyErrorProfile</a>
 	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Responses.DestinyProfileUserInfoCard"><h3>Destiny.Responses.DestinyProfileUserInfoCard</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>dateLastPlayed</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: date-time
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>supplementalDisplayName</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		A platform specific additional display name - ex: psn Real Name, bnet Unique Name, etc.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>iconPath</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		URL the Icon if available.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>membershipType</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Type of the membership.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/BungieMembershipType">BungieMembershipType</a>
+</div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>membershipId</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Membership ID as they user is known in the Accounts service
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int64
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>displayName</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Display Name the player has chosen for themselves. The display name is optional when the data type is used as input to a platform API.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
 
 	
 	
@@ -91543,6 +92318,9 @@
 					<li>
 						<div><strong>Forsaken</strong>: 8</div>
 					</li>
+					<li>
+						<div><strong>YearTwoAnnualPass</strong>: 16</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -93452,7 +94230,88 @@
 						<div class="title"><strong>objective</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		An optional property: presentation nodes MAY have objectives, which can be used to infer more human readable data about the progress. However, progressValue and completionValue ought to be considered the canonical values for progress on Progression Nodes.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
 		See: <a href="#/components/schemas/Destiny.Quests.DestinyObjectiveProgress">Destiny.Quests.DestinyObjectiveProgress</a>
+</div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>progressValue</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		How much of the presentation node is considered to be completed so far by the given character/profile.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>completionValue</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The value at which the presentation ode is considered to be completed.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
 </div>						</div>
 					</div>
 				</div>
@@ -94038,7 +94897,7 @@
 	</div>
 	
 	<div class="description">
-		A Flags Enumeration where each bit represents a different state that the Collectible can be in. A collectible can be in any number of these states, and you can choose to use or ignore any or all of them when making your own UI that shows Collectible info. Our displays are going to honor them, but we're also the kind of people who only pretend to inhale before quickly passing it to the left. So, you know, do what you got to do.
+		A Flags Enumeration where each bit represents a different state that the Collectible can be in. A collectible can be in any number of these states, and you can choose to use or ignore any or all of them when making your own UI that shows Collectible info. Our displays are going to honor them, but we're also the kind of people who only pretend to inhale before quickly passing it to the left. So, you know, do what you got to do.<br /><br />(All joking aside, please note the caveat I mention around the Invisible flag: there are cases where it is in the best interest of your users to honor these flags even if you're a "show all the data" person. Collector-oriented compulsion is a very unfortunate and real thing, and I would hate to instill that compulsion in others through showing them items that they cannot earn. Please consider this when you are making your own apps/sites.)
 	</div>
 	
 	
@@ -94068,7 +94927,7 @@
 					</li>
 					<li>
 						<div><strong>Invisible</strong>: 4</div>
-						<div class="description">If this flag is set, the collectible should not be shown to the user.<br /><br />But, I mean do what you want: I'm not your mom. It's much more likely that I'm your Dad - wait, I promised your mom that I wouldn't tell you. Don't tell her that I told you.</div>
+						<div class="description">If this flag is set, the collectible should not be shown to the user.<br /><br />Please do consider honoring this flag. It is used - for example - to hide items that a person didn't get from the Eververse. I can't prevent these from being returned in definitions, because some people may have acquired them and thus they should show up: but I would hate for people to start feeling some variant of a Collector's Remorse about these items, and thus increasing their purchasing based on that compulsion. That would be a very unfortunate outcome, and one that I wouldn't like to see happen. So please, whether or not I'm your mom, consider honoring this flag and don't show people invisible collectibles.</div>
 					</li>
 					<li>
 						<div><strong>CannotAffordMaterialRequirements</strong>: 8</div>
@@ -95170,116 +96029,16 @@
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
-						<div class="title"><strong>hash</strong></div>
+						<div class="title"><strong>genderedRaceNamesByGenderHash</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
 
 	
 	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.<br /><br />When entities refer to each other in Destiny content, it is this hash that they are referring to.
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	
-	<div class="type">
-		<strong>Type</strong>: uint32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>index</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		The index of the entity as it was found in the investment tables.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>redacted</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: boolean
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	
-			
-
-</div>			</div>
-		</div>
-		<div class="schema box">
-			<a id="/components/schemas/Destiny.Definitions.DestinyGenderDefinition"><h3>Destiny.Definitions.DestinyGenderDefinition</h3></a>
-			<div class="schema-detail box-contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-		<span class="manifest-entity">Mobile Manifest Entity</span>
-	</div>
-	
-	<div class="description">
-		Gender is a social construct, and as such we have definitions for Genders. Right now there happens to only be two, but we'll see what the future holds.
-	</div>
-	
-	<div class="manifest-database">
-		<strong>Mapped to Mobile Manifest Table</strong>: Genders
-	</div>
 	
 	<div class="type">
 		<strong>Type</strong>: object
@@ -95287,48 +96046,22 @@
 	
 	
 
-	
-		<div class="properties box">
-			<h5>Object Properties</h5>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>genderType</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			string
 	</div>
-	
-	<div class="description">
-		This is a quick reference enumeration for all of the currently defined Genders. We use the enumeration for quicker lookups in related data, like DestinyClassDefinition.genderedClassNames.
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		uint32
 	</div>
 	
 	
-	<div class="type">
-		<strong>Type</strong>: object
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyGenderDefinition">Destiny.Definitions.DestinyGenderDefinition</a>
 	</div>
-	
-<div class="type-info stop-nesting-boxes">
-		See: <a href="#/components/schemas/Destiny.DestinyGender">Destiny.DestinyGender</a>
-</div>	
-
-	
-	
 			
 
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>displayProperties</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-		See: <a href="#/components/schemas/Destiny.Definitions.Common.DestinyDisplayPropertiesDefinition">Destiny.Definitions.Common.DestinyDisplayPropertiesDefinition</a>
 </div>						</div>
 					</div>
 				</div>
@@ -95531,6 +96264,46 @@
 	</div>
 	
 	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>genderedClassNamesByGenderHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			string
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		uint32
+	</div>
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyGenderDefinition">Destiny.Definitions.DestinyGenderDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -98467,6 +99240,44 @@
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
+						<div class="title"><strong>booleanActivityOptions</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The set of activity options for this activity, keyed by an identifier that's unique for this activity (not guaranteed to be unique between or across all activities, though should be unique for every *variant* of a given *conceptual* activity: for instance, the original D2 Raid has many variant DestinyActivityDefinitions. While other activities could potentially have the same option hashes, for any given D2 base Raid variant the hash will be unique).<br /><br />As a concrete example of this data, the hashes you get for Raids will correspond to the currently active "Challenge Mode".<br /><br />We don't have any human readable information for these, but saavy 3rd party app users could manually associate the key (a hash identifier for the "option" that is enabled/disabled) and the value (whether it's enabled or disabled presently)<br /><br />On our side, we don't necessarily even know what these are used for (the game designers know, but we don't), and we have no human readable data for them. In order to use them, you will have to do some experimentation.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			boolean
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		uint32
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
 						<div class="title"><strong>loadoutRequirementIndex</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
@@ -100898,6 +101709,40 @@
 					</div>
 				</div>
 			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>phases</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Phases related to this activity, if there are any.<br /><br />These will be listed in the order in which they will appear in the actual activity.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/Destiny.Definitions.Milestones.DestinyMilestoneChallengeActivityPhase">Destiny.Definitions.Milestones.DestinyMilestoneChallengeActivityPhase</a>
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	
 			
@@ -101018,6 +101863,62 @@
 	<div class="attributes">
 	</div>
 	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Definitions.Milestones.DestinyMilestoneChallengeActivityPhase"><h3>Destiny.Definitions.Milestones.DestinyMilestoneChallengeActivityPhase</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>phaseHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The hash identifier of the activity's phase.
+	</div>
 	
 	
 	<div class="type">
@@ -119282,6 +120183,78 @@
 					</div>
 				</div>
 			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>phaseHashes</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The ordered list of phases for this activity, if any. Note that we have no human readable info for phases, nor any entities to relate them to: relating these hashes to something human readable is up to you unfortunately.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			uint32
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>booleanActivityOptions</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The set of activity options for this activity, keyed by an identifier that's unique for this activity (not guaranteed to be unique between or across all activities, though should be unique for every *variant* of a given *conceptual* activity: for instance, the original D2 Raid has many variant DestinyActivityDefinitions. While other activities could potentially have the same option hashes, for any given D2 base Raid variant the hash will be unique).<br /><br />As a concrete example of this data, the hashes you get for Raids will correspond to the currently active "Challenge Mode".<br /><br />We have no human readable information for this data, so it's up to you if you want to associate it with such info to show it.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			boolean
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		uint32
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	
 			
@@ -122949,6 +123922,12 @@
 					</li>
 					<li>
 						<div><strong>Gambit</strong>: 6</div>
+					</li>
+					<li>
+						<div><strong>BlindWell</strong>: 7</div>
+					</li>
+					<li>
+						<div><strong>EscalationProtocol</strong>: 8</div>
 					</li>
 				</ul>
 			</div>
