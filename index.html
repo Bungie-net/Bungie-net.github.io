@@ -14,7 +14,7 @@
 		<div class="box-contents">
 			<div>These endpoints constitute the functionality exposed by Bungie.net, both for more traditional website functionality and for connectivity to Bungie video games and their related functionality.</div>
 			<div class="about-line-items">
-				<div><strong>Version:</strong> 2.3.2
+				<div><strong>Version:</strong> 2.3.3
 				</div>
 				<div><strong>License:</strong> <a href="https://github.com/Bungie-net/api/blob/master/LICENSE">https://github.com/Bungie-net/api/blob/master/LICENSE (BSD License 2.0)</a>
 				</div>
@@ -1039,13 +1039,13 @@
 				</span>
 			</li>
 			<li>
-				<a href="#/components/schemas/Forum.ForumPostCategoryEnums">Forum.ForumPostCategoryEnums</a>
+				<a href="#/components/schemas/Forums.ForumPostCategoryEnums">Forums.ForumPostCategoryEnums</a>
 				<span class="attributes">
 					<span class="enum">Enumeration</span>
 				</span>
 			</li>
 			<li>
-				<a href="#/components/schemas/Forum.ForumFlagsEnum">Forum.ForumFlagsEnum</a>
+				<a href="#/components/schemas/Forums.ForumFlagsEnum">Forums.ForumFlagsEnum</a>
 				<span class="attributes">
 					<span class="enum">Enumeration</span>
 				</span>
@@ -43486,7 +43486,7 @@
 </div>			</div>
 		</div>
 		<div class="schema box">
-			<a id="/components/schemas/Forum.ForumPostCategoryEnums"><h3>Forum.ForumPostCategoryEnums</h3></a>
+			<a id="/components/schemas/Forums.ForumPostCategoryEnums"><h3>Forums.ForumPostCategoryEnums</h3></a>
 			<div class="schema-detail box-contents">
 <div class="type-info stop-nesting-boxes">
 
@@ -43553,7 +43553,7 @@
 </div>			</div>
 		</div>
 		<div class="schema box">
-			<a id="/components/schemas/Forum.ForumFlagsEnum"><h3>Forum.ForumFlagsEnum</h3></a>
+			<a id="/components/schemas/Forums.ForumFlagsEnum"><h3>Forums.ForumFlagsEnum</h3></a>
 			<div class="schema-detail box-contents">
 <div class="type-info stop-nesting-boxes">
 
@@ -46802,6 +46802,68 @@
 		<strong>Mapped to Manifest Database Definition: </strong>
 		<a href="#/components/schemas/Destiny.Definitions.DestinyFactionDefinition">Destiny.Definitions.DestinyFactionDefinition</a>
 	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>color</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The #RGB string value for the color related to this progression, if there is one.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.Misc.DestinyColor">Destiny.Misc.DestinyColor</a>
+</div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>rankIcon</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		For progressions that have it, this is the rank icon we use in the Companion, displayed above the progressions' rank value.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
 			
 
 </div>						</div>
@@ -63405,6 +63467,15 @@
 					<li>
 						<div><strong>Breakthrough</strong>: 65</div>
 					</li>
+					<li>
+						<div><strong>BlackArmoryRun</strong>: 66</div>
+					</li>
+					<li>
+						<div><strong>Salvage</strong>: 67</div>
+					</li>
+					<li>
+						<div><strong>IronBannerSalvage</strong>: 68</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -66984,6 +67055,15 @@
 					<li>
 						<div><strong>Breakthrough</strong>: 65</div>
 					</li>
+					<li>
+						<div><strong>BlackArmoryRun</strong>: 66</div>
+					</li>
+					<li>
+						<div><strong>Salvage</strong>: 67</div>
+					</li>
+					<li>
+						<div><strong>IronBannerSalvage</strong>: 68</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -67273,6 +67353,15 @@
 					</li>
 					<li>
 						<div><strong>Breakthrough</strong>: 65</div>
+					</li>
+					<li>
+						<div><strong>BlackArmoryRun</strong>: 66</div>
+					</li>
+					<li>
+						<div><strong>Salvage</strong>: 67</div>
+					</li>
+					<li>
+						<div><strong>IronBannerSalvage</strong>: 68</div>
 					</li>
 				</ul>
 			</div>
@@ -89461,6 +89550,41 @@
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
+						<div class="title"><strong>jsonWorldContentPaths</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			string
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		string
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
 						<div class="title"><strong>mobileClanBannerDatabasePath</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
@@ -98439,6 +98563,15 @@
 					<li>
 						<div><strong>Breakthrough</strong>: 65</div>
 					</li>
+					<li>
+						<div><strong>BlackArmoryRun</strong>: 66</div>
+					</li>
+					<li>
+						<div><strong>Salvage</strong>: 67</div>
+					</li>
+					<li>
+						<div><strong>IronBannerSalvage</strong>: 68</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -98857,6 +98990,15 @@
 					</li>
 					<li>
 						<div><strong>Breakthrough</strong>: 65</div>
+					</li>
+					<li>
+						<div><strong>BlackArmoryRun</strong>: 66</div>
+					</li>
+					<li>
+						<div><strong>Salvage</strong>: 67</div>
+					</li>
+					<li>
+						<div><strong>IronBannerSalvage</strong>: 68</div>
 					</li>
 				</ul>
 			</div>
@@ -103100,6 +103242,15 @@
 					</li>
 					<li>
 						<div><strong>Breakthrough</strong>: 65</div>
+					</li>
+					<li>
+						<div><strong>BlackArmoryRun</strong>: 66</div>
+					</li>
+					<li>
+						<div><strong>Salvage</strong>: 67</div>
+					</li>
+					<li>
+						<div><strong>IronBannerSalvage</strong>: 68</div>
 					</li>
 				</ul>
 			</div>
@@ -119607,6 +119758,15 @@
 					<li>
 						<div><strong>Breakthrough</strong>: 65</div>
 					</li>
+					<li>
+						<div><strong>BlackArmoryRun</strong>: 66</div>
+					</li>
+					<li>
+						<div><strong>Salvage</strong>: 67</div>
+					</li>
+					<li>
+						<div><strong>IronBannerSalvage</strong>: 68</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -119915,6 +120075,15 @@
 					</li>
 					<li>
 						<div><strong>Breakthrough</strong>: 65</div>
+					</li>
+					<li>
+						<div><strong>BlackArmoryRun</strong>: 66</div>
+					</li>
+					<li>
+						<div><strong>Salvage</strong>: 67</div>
+					</li>
+					<li>
+						<div><strong>IronBannerSalvage</strong>: 68</div>
 					</li>
 				</ul>
 			</div>
@@ -123929,6 +124098,9 @@
 					<li>
 						<div><strong>EscalationProtocol</strong>: 8</div>
 					</li>
+					<li>
+						<div><strong>Forge</strong>: 9</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -126224,6 +126396,37 @@
 	</div>
 	
 	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>currentRankProgressionHashes</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			uint32
+	</div>
 
 	
 	
