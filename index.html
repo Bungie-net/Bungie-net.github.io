@@ -14,7 +14,7 @@
 		<div class="box-contents">
 			<div>These endpoints constitute the functionality exposed by Bungie.net, both for more traditional website functionality and for connectivity to Bungie video games and their related functionality.</div>
 			<div class="about-line-items">
-				<div><strong>Version:</strong> 2.3.4
+				<div><strong>Version:</strong> 2.3.5
 				</div>
 				<div><strong>License:</strong> <a href="https://github.com/Bungie-net/api/blob/master/LICENSE">https://github.com/Bungie-net/api/blob/master/LICENSE (BSD License 2.0)</a>
 				</div>
@@ -295,26 +295,6 @@
 						</span>
 					</li>
 					<li>
-						<span>POST:</span> <a href="#Forum.JoinFireteamThread">/Forum/Recruit/Join/{topicId}/</a>
-						<span class="attributes">
-						</span>
-					</li>
-					<li>
-						<span>POST:</span> <a href="#Forum.LeaveFireteamThread">/Forum/Recruit/Leave/{topicId}/</a>
-						<span class="attributes">
-						</span>
-					</li>
-					<li>
-						<span>POST:</span> <a href="#Forum.KickBanFireteamApplicant">/Forum/Recruit/KickBan/{topicId}/{targetMembershipId}/</a>
-						<span class="attributes">
-						</span>
-					</li>
-					<li>
-						<span>POST:</span> <a href="#Forum.ApproveFireteamThread">/Forum/Recruit/Approve/{topicId}/</a>
-						<span class="attributes">
-						</span>
-					</li>
-					<li>
 						<span>POST:</span> <a href="#Forum.GetRecruitmentThreadSummaries">/Forum/Recruit/Summaries/</a>
 						<span class="attributes">
 						</span>
@@ -338,11 +318,6 @@
 					</li>
 					<li>
 						<span>GET:</span> <a href="#GroupV2.GetUserClanInviteSetting">/GroupV2/GetUserClanInviteSetting/{mType}/</a>
-						<span class="attributes">
-						</span>
-					</li>
-					<li>
-						<span>POST:</span> <a href="#GroupV2.SetUserClanInviteSetting">/GroupV2/SetUserClanInviteSetting/{mType}/{allowInvites}/</a>
 						<span class="attributes">
 						</span>
 					</li>
@@ -373,11 +348,6 @@
 					</li>
 					<li>
 						<span>GET:</span> <a href="#GroupV2.GetGroupOptionalConversations">/GroupV2/{groupId}/OptionalConversations/</a>
-						<span class="attributes">
-						</span>
-					</li>
-					<li>
-						<span>POST:</span> <a href="#GroupV2.CreateGroup">/GroupV2/Create/</a>
 						<span class="attributes">
 						</span>
 					</li>
@@ -447,22 +417,12 @@
 						</span>
 					</li>
 					<li>
-						<span>POST:</span> <a href="#GroupV2.RequestGroupMembership">/GroupV2/{groupId}/Members/Apply/{membershipType}/</a>
-						<span class="attributes">
-						</span>
-					</li>
-					<li>
 						<span>GET:</span> <a href="#GroupV2.GetPendingMemberships">/GroupV2/{groupId}/Members/Pending/</a>
 						<span class="attributes">
 						</span>
 					</li>
 					<li>
 						<span>GET:</span> <a href="#GroupV2.GetInvitedIndividuals">/GroupV2/{groupId}/Members/InvitedIndividuals/</a>
-						<span class="attributes">
-						</span>
-					</li>
-					<li>
-						<span>POST:</span> <a href="#GroupV2.RescindGroupMembership">/GroupV2/{groupId}/Members/Rescind/{membershipType}/</a>
 						<span class="attributes">
 						</span>
 					</li>
@@ -2347,11 +2307,6 @@
 				</span>
 			</li>
 			<li>
-				<a href="#/components/schemas/Messages.Responses.SaveMessageResult">Messages.Responses.SaveMessageResult</a>
-				<span class="attributes">
-				</span>
-			</li>
-			<li>
 				<a href="#/components/schemas/Config.GroupTheme">Config.GroupTheme</a>
 				<span class="attributes">
 				</span>
@@ -2401,16 +2356,6 @@
 			</li>
 			<li>
 				<a href="#/components/schemas/GroupsV2.GroupOptionalConversation">GroupsV2.GroupOptionalConversation</a>
-				<span class="attributes">
-				</span>
-			</li>
-			<li>
-				<a href="#/components/schemas/GroupsV2.GroupCreationResponse">GroupsV2.GroupCreationResponse</a>
-				<span class="attributes">
-				</span>
-			</li>
-			<li>
-				<a href="#/components/schemas/GroupsV2.GroupAction">GroupsV2.GroupAction</a>
 				<span class="attributes">
 				</span>
 			</li>
@@ -2466,7 +2411,7 @@
 				</span>
 			</li>
 			<li>
-				<a href="#/components/schemas/GroupsV2.GroupApplicationResponse">GroupsV2.GroupApplicationResponse</a>
+				<a href="#/components/schemas/GroupsV2.GroupMemberApplication">GroupsV2.GroupMemberApplication</a>
 				<span class="attributes">
 				</span>
 			</li>
@@ -2474,16 +2419,6 @@
 				<a href="#/components/schemas/GroupsV2.GroupApplicationResolveState">GroupsV2.GroupApplicationResolveState</a>
 				<span class="attributes">
 					<span class="enum">Enumeration</span>
-				</span>
-			</li>
-			<li>
-				<a href="#/components/schemas/GroupsV2.GroupApplicationRequest">GroupsV2.GroupApplicationRequest</a>
-				<span class="attributes">
-				</span>
-			</li>
-			<li>
-				<a href="#/components/schemas/GroupsV2.GroupMemberApplication">GroupsV2.GroupMemberApplication</a>
-				<span class="attributes">
 				</span>
 			</li>
 			<li>
@@ -2500,6 +2435,11 @@
 				<a href="#/components/schemas/Exceptions.PlatformErrorCodes">Exceptions.PlatformErrorCodes</a>
 				<span class="attributes">
 					<span class="enum">Enumeration</span>
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/GroupsV2.GroupApplicationRequest">GroupsV2.GroupApplicationRequest</a>
+				<span class="attributes">
 				</span>
 			</li>
 			<li>
@@ -2545,6 +2485,11 @@
 			</li>
 			<li>
 				<a href="#/components/schemas/GroupsV2.GroupPotentialMembershipSearchResponse">GroupsV2.GroupPotentialMembershipSearchResponse</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/GroupsV2.GroupApplicationResponse">GroupsV2.GroupApplicationResponse</a>
 				<span class="attributes">
 				</span>
 			</li>
@@ -11035,1116 +10980,6 @@
 </div>		</div>
 		<div class="endpoint">
 <div class="box">
-	<a id="Forum.JoinFireteamThread"><h3>Forum.JoinFireteamThread</h3></a>
-	<div class="box-contents">
-		<div class="attributes">
-			<span class="Forum tag">Forum</span>
-		</div>
-		<br />
-		<div><strong>Verb:</strong> POST</div>
-		<br />
-		<div><strong>Path:</strong> /Forum/Recruit/Join/{topicId}/</div>
-		<br />
-		<div class="description">Allows a user to slot themselves into a recruitment thread fireteam slot. Returns the new state of the fireteam.</div>
-		<br />
-		<div class="required-scopes box">
-			<h4>Required Scope(s)</h4>
-			<div class="box-contents">
-				<ul>
-					<li>oauth2: WriteGroups</li>
-					<li>oauth2: BnetWrite</li>
-				</ul>
-			</div>
-		</div>
-		
-		<div class="parameters box">
-			<h4>Path Parameters</h4>
-			<div class="box-contents stop-nesting-boxes">
-				<ul>
-					<li>
-						<strong>topicId</strong>
-						<div class="description">The post id of the recruitment topic you wish to join.</div>
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int64
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>					</li>
-				</ul>
-			</div>
-		</div>
-
-	
-	
-		<div class="response box">
-			<h4>Response</h4>
-			<div class="box-contents stop-nesting-boxes">
-<div class="response">
-	<div class="description">Look at the Response property for more information about the nature of this response</div>
-		<div class="content">
-			<div class="content-type">Content Type: application/json</div>
-			<div>
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	
-		<div class="properties box">
-			<h5>Object Properties</h5>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>Response</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-		See: <a href="#/components/schemas/Forum.ForumRecruitmentDetail">Forum.ForumRecruitmentDetail</a>
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>ErrorCode</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>ThrottleSeconds</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>ErrorStatus</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>Message</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>MessageData</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	<div class="dictionary">
-		<strong>Dictionary Contents:</strong>
-			string
-	</div>
-	<div>
-		<strong>Dictionary Key Type: </strong> 
-		string
-	</div>
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>DetailedErrorTrace</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	
-			
-
-</div>			</div>
-		</div>
-</div>			</div>
-		</div>
-	</div>
-</div>		</div>
-		<div class="endpoint">
-<div class="box">
-	<a id="Forum.LeaveFireteamThread"><h3>Forum.LeaveFireteamThread</h3></a>
-	<div class="box-contents">
-		<div class="attributes">
-			<span class="Forum tag">Forum</span>
-		</div>
-		<br />
-		<div><strong>Verb:</strong> POST</div>
-		<br />
-		<div><strong>Path:</strong> /Forum/Recruit/Leave/{topicId}/</div>
-		<br />
-		<div class="description">Allows a user to remove themselves from a recruitment thread fireteam slot. Returns the new state of the fireteam.</div>
-		<br />
-		<div class="required-scopes box">
-			<h4>Required Scope(s)</h4>
-			<div class="box-contents">
-				<ul>
-					<li>oauth2: WriteGroups</li>
-					<li>oauth2: BnetWrite</li>
-				</ul>
-			</div>
-		</div>
-		
-		<div class="parameters box">
-			<h4>Path Parameters</h4>
-			<div class="box-contents stop-nesting-boxes">
-				<ul>
-					<li>
-						<strong>topicId</strong>
-						<div class="description">The post id of the recruitment topic you wish to leave.</div>
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int64
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>					</li>
-				</ul>
-			</div>
-		</div>
-
-	
-	
-		<div class="response box">
-			<h4>Response</h4>
-			<div class="box-contents stop-nesting-boxes">
-<div class="response">
-	<div class="description">Look at the Response property for more information about the nature of this response</div>
-		<div class="content">
-			<div class="content-type">Content Type: application/json</div>
-			<div>
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	
-		<div class="properties box">
-			<h5>Object Properties</h5>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>Response</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-		See: <a href="#/components/schemas/Forum.ForumRecruitmentDetail">Forum.ForumRecruitmentDetail</a>
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>ErrorCode</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>ThrottleSeconds</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>ErrorStatus</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>Message</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>MessageData</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	<div class="dictionary">
-		<strong>Dictionary Contents:</strong>
-			string
-	</div>
-	<div>
-		<strong>Dictionary Key Type: </strong> 
-		string
-	</div>
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>DetailedErrorTrace</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	
-			
-
-</div>			</div>
-		</div>
-</div>			</div>
-		</div>
-	</div>
-</div>		</div>
-		<div class="endpoint">
-<div class="box">
-	<a id="Forum.KickBanFireteamApplicant"><h3>Forum.KickBanFireteamApplicant</h3></a>
-	<div class="box-contents">
-		<div class="attributes">
-			<span class="Forum tag">Forum</span>
-		</div>
-		<br />
-		<div><strong>Verb:</strong> POST</div>
-		<br />
-		<div><strong>Path:</strong> /Forum/Recruit/KickBan/{topicId}/{targetMembershipId}/</div>
-		<br />
-		<div class="description">Allows a recruitment thread owner to kick a join user from the fireteam. Returns the new state of the fireteam.</div>
-		<br />
-		<div class="required-scopes box">
-			<h4>Required Scope(s)</h4>
-			<div class="box-contents">
-				<ul>
-					<li>oauth2: WriteGroups</li>
-					<li>oauth2: BnetWrite</li>
-				</ul>
-			</div>
-		</div>
-		
-		<div class="parameters box">
-			<h4>Path Parameters</h4>
-			<div class="box-contents stop-nesting-boxes">
-				<ul>
-					<li>
-						<strong>targetMembershipId</strong>
-						<div class="description">The id of the user you wish to kick.</div>
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int64
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>					</li>
-					<li>
-						<strong>topicId</strong>
-						<div class="description">The post id of the recruitment topic you wish to join.</div>
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int64
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>					</li>
-				</ul>
-			</div>
-		</div>
-
-	
-	
-		<div class="response box">
-			<h4>Response</h4>
-			<div class="box-contents stop-nesting-boxes">
-<div class="response">
-	<div class="description">Look at the Response property for more information about the nature of this response</div>
-		<div class="content">
-			<div class="content-type">Content Type: application/json</div>
-			<div>
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	
-		<div class="properties box">
-			<h5>Object Properties</h5>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>Response</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-		See: <a href="#/components/schemas/Forum.ForumRecruitmentDetail">Forum.ForumRecruitmentDetail</a>
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>ErrorCode</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>ThrottleSeconds</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>ErrorStatus</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>Message</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>MessageData</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	<div class="dictionary">
-		<strong>Dictionary Contents:</strong>
-			string
-	</div>
-	<div>
-		<strong>Dictionary Key Type: </strong> 
-		string
-	</div>
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>DetailedErrorTrace</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	
-			
-
-</div>			</div>
-		</div>
-</div>			</div>
-		</div>
-	</div>
-</div>		</div>
-		<div class="endpoint">
-<div class="box">
-	<a id="Forum.ApproveFireteamThread"><h3>Forum.ApproveFireteamThread</h3></a>
-	<div class="box-contents">
-		<div class="attributes">
-			<span class="Forum tag">Forum</span>
-		</div>
-		<br />
-		<div><strong>Verb:</strong> POST</div>
-		<br />
-		<div><strong>Path:</strong> /Forum/Recruit/Approve/{topicId}/</div>
-		<br />
-		<div class="description">Allows the owner of a fireteam thread to approve all joined members and start a private message conversation with them.</div>
-		<br />
-		<div class="required-scopes box">
-			<h4>Required Scope(s)</h4>
-			<div class="box-contents">
-				<ul>
-					<li>oauth2: WriteGroups</li>
-					<li>oauth2: BnetWrite</li>
-				</ul>
-			</div>
-		</div>
-		
-		<div class="parameters box">
-			<h4>Path Parameters</h4>
-			<div class="box-contents stop-nesting-boxes">
-				<ul>
-					<li>
-						<strong>topicId</strong>
-						<div class="description">The post id of the recruitment topic to approve.</div>
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int64
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>					</li>
-				</ul>
-			</div>
-		</div>
-
-	
-	
-		<div class="response box">
-			<h4>Response</h4>
-			<div class="box-contents stop-nesting-boxes">
-<div class="response">
-	<div class="description">Look at the Response property for more information about the nature of this response</div>
-		<div class="content">
-			<div class="content-type">Content Type: application/json</div>
-			<div>
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	
-		<div class="properties box">
-			<h5>Object Properties</h5>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>Response</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-		See: <a href="#/components/schemas/Messages.Responses.SaveMessageResult">Messages.Responses.SaveMessageResult</a>
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>ErrorCode</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>ThrottleSeconds</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>ErrorStatus</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>Message</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>MessageData</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	<div class="dictionary">
-		<strong>Dictionary Contents:</strong>
-			string
-	</div>
-	<div>
-		<strong>Dictionary Key Type: </strong> 
-		string
-	</div>
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>DetailedErrorTrace</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	
-			
-
-</div>			</div>
-		</div>
-</div>			</div>
-		</div>
-	</div>
-</div>		</div>
-		<div class="endpoint">
-<div class="box">
 	<a id="Forum.GetRecruitmentThreadSummaries"><h3>Forum.GetRecruitmentThreadSummaries</h3></a>
 	<div class="box-contents">
 		<div class="attributes">
@@ -13035,318 +11870,6 @@
 	
 	<div class="type">
 		<strong>Type</strong>: boolean
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>ErrorCode</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>ThrottleSeconds</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>ErrorStatus</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>Message</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>MessageData</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	<div class="dictionary">
-		<strong>Dictionary Contents:</strong>
-			string
-	</div>
-	<div>
-		<strong>Dictionary Key Type: </strong> 
-		string
-	</div>
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>DetailedErrorTrace</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	
-			
-
-</div>			</div>
-		</div>
-</div>			</div>
-		</div>
-	</div>
-</div>		</div>
-		<div class="endpoint">
-<div class="box">
-	<a id="GroupV2.SetUserClanInviteSetting"><h3>GroupV2.SetUserClanInviteSetting</h3></a>
-	<div class="box-contents">
-		<div class="attributes">
-			<span class="GroupV2 tag">GroupV2</span>
-		</div>
-		<br />
-		<div><strong>Verb:</strong> POST</div>
-		<br />
-		<div><strong>Path:</strong> /GroupV2/SetUserClanInviteSetting/{mType}/{allowInvites}/</div>
-		<br />
-		<div class="description">Sets the state of the user's clan invite preferences - true if they wish to be invited to clans, false otherwise.</div>
-		<br />
-		<div class="required-scopes box">
-			<h4>Required Scope(s)</h4>
-			<div class="box-contents">
-				<ul>
-					<li>oauth2: EditUserData</li>
-				</ul>
-			</div>
-		</div>
-		
-		<div class="parameters box">
-			<h4>Path Parameters</h4>
-			<div class="box-contents stop-nesting-boxes">
-				<ul>
-					<li>
-						<strong>allowInvites</strong>
-						<div class="description">True to allow invites of this user to clans, false otherwise.</div>
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: boolean
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>					</li>
-					<li>
-						<strong>mType</strong>
-						<div class="description">The Destiny membership type of linked account we are manipulating.</div>
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		The types of membership the Accounts system supports. This is the external facing enum used in place of the internal-only Bungie.SharedDefinitions.MembershipType.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>					</li>
-				</ul>
-			</div>
-		</div>
-
-	
-	
-		<div class="response box">
-			<h4>Response</h4>
-			<div class="box-contents stop-nesting-boxes">
-<div class="response">
-	<div class="description">Look at the Response property for more information about the nature of this response</div>
-		<div class="content">
-			<div class="content-type">Content Type: application/json</div>
-			<div>
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	
-		<div class="properties box">
-			<h5>Object Properties</h5>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>Response</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
 	</div>
 	
 	
@@ -14983,256 +13506,6 @@
 	
 			
 
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>ErrorCode</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>ThrottleSeconds</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>ErrorStatus</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>Message</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>MessageData</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	<div class="dictionary">
-		<strong>Dictionary Contents:</strong>
-			string
-	</div>
-	<div>
-		<strong>Dictionary Key Type: </strong> 
-		string
-	</div>
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>DetailedErrorTrace</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	
-			
-
-</div>			</div>
-		</div>
-</div>			</div>
-		</div>
-	</div>
-</div>		</div>
-		<div class="endpoint">
-<div class="box">
-	<a id="GroupV2.CreateGroup"><h3>GroupV2.CreateGroup</h3></a>
-	<div class="box-contents">
-		<div class="attributes">
-			<span class="GroupV2 tag">GroupV2</span>
-		</div>
-		<br />
-		<div><strong>Verb:</strong> POST</div>
-		<br />
-		<div><strong>Path:</strong> /GroupV2/Create/</div>
-		<br />
-		<div class="description">Create a new group.</div>
-		<br />
-		<div class="required-scopes box">
-			<h4>Required Scope(s)</h4>
-			<div class="box-contents">
-				<ul>
-					<li>oauth2: BnetWrite</li>
-				</ul>
-			</div>
-		</div>
-		
-
-	
-		<div class="request-body box">
-			<h4>Request Body</h4>
-			<div class="box-contents stop-nesting-boxes">
-			
-<div class="type-info stop-nesting-boxes">
-		See: <a href="#/components/schemas/GroupsV2.GroupAction">GroupsV2.GroupAction</a>
-</div>			</div>
-		</div>
-	
-		<div class="response box">
-			<h4>Response</h4>
-			<div class="box-contents stop-nesting-boxes">
-<div class="response">
-	<div class="description">Look at the Response property for more information about the nature of this response</div>
-		<div class="content">
-			<div class="content-type">Content Type: application/json</div>
-			<div>
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	
-		<div class="properties box">
-			<h5>Object Properties</h5>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>Response</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-		See: <a href="#/components/schemas/GroupsV2.GroupCreationResponse">GroupsV2.GroupCreationResponse</a>
 </div>						</div>
 					</div>
 				</div>
@@ -19515,310 +17788,6 @@
 </div>		</div>
 		<div class="endpoint">
 <div class="box">
-	<a id="GroupV2.RequestGroupMembership"><h3>GroupV2.RequestGroupMembership</h3></a>
-	<div class="box-contents">
-		<div class="attributes">
-			<span class="GroupV2 tag">GroupV2</span>
-		</div>
-		<br />
-		<div><strong>Verb:</strong> POST</div>
-		<br />
-		<div><strong>Path:</strong> /GroupV2/{groupId}/Members/Apply/{membershipType}/</div>
-		<br />
-		<div class="description">Request permission to join the given group.</div>
-		<br />
-		<div class="required-scopes box">
-			<h4>Required Scope(s)</h4>
-			<div class="box-contents">
-				<ul>
-					<li>oauth2: BnetWrite</li>
-				</ul>
-			</div>
-		</div>
-		
-		<div class="parameters box">
-			<h4>Path Parameters</h4>
-			<div class="box-contents stop-nesting-boxes">
-				<ul>
-					<li>
-						<strong>groupId</strong>
-						<div class="description">ID of the group you would like to join.</div>
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int64
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>					</li>
-					<li>
-						<strong>membershipType</strong>
-						<div class="description">MembershipType of the account to use when joining.</div>
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		The types of membership the Accounts system supports. This is the external facing enum used in place of the internal-only Bungie.SharedDefinitions.MembershipType.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>					</li>
-				</ul>
-			</div>
-		</div>
-
-	
-		<div class="request-body box">
-			<h4>Request Body</h4>
-			<div class="box-contents stop-nesting-boxes">
-			
-<div class="type-info stop-nesting-boxes">
-		See: <a href="#/components/schemas/GroupsV2.GroupApplicationRequest">GroupsV2.GroupApplicationRequest</a>
-</div>			</div>
-		</div>
-	
-		<div class="response box">
-			<h4>Response</h4>
-			<div class="box-contents stop-nesting-boxes">
-<div class="response">
-	<div class="description">Look at the Response property for more information about the nature of this response</div>
-		<div class="content">
-			<div class="content-type">Content Type: application/json</div>
-			<div>
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	
-		<div class="properties box">
-			<h5>Object Properties</h5>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>Response</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-		See: <a href="#/components/schemas/GroupsV2.GroupApplicationResponse">GroupsV2.GroupApplicationResponse</a>
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>ErrorCode</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>ThrottleSeconds</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>ErrorStatus</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>Message</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>MessageData</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	<div class="dictionary">
-		<strong>Dictionary Contents:</strong>
-			string
-	</div>
-	<div>
-		<strong>Dictionary Key Type: </strong> 
-		string
-	</div>
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>DetailedErrorTrace</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	
-			
-
-</div>			</div>
-		</div>
-</div>			</div>
-		</div>
-	</div>
-</div>		</div>
-		<div class="endpoint">
-<div class="box">
 	<a id="GroupV2.GetPendingMemberships"><h3>GroupV2.GetPendingMemberships</h3></a>
 	<div class="box-contents">
 		<div class="attributes">
@@ -20219,302 +18188,6 @@
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
 		See: <a href="#/components/schemas/SearchResultOfGroupMemberApplication">SearchResultOfGroupMemberApplication</a>
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>ErrorCode</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>ThrottleSeconds</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>ErrorStatus</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>Message</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>MessageData</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	<div class="dictionary">
-		<strong>Dictionary Contents:</strong>
-			string
-	</div>
-	<div>
-		<strong>Dictionary Key Type: </strong> 
-		string
-	</div>
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>DetailedErrorTrace</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	
-			
-
-</div>			</div>
-		</div>
-</div>			</div>
-		</div>
-	</div>
-</div>		</div>
-		<div class="endpoint">
-<div class="box">
-	<a id="GroupV2.RescindGroupMembership"><h3>GroupV2.RescindGroupMembership</h3></a>
-	<div class="box-contents">
-		<div class="attributes">
-			<span class="GroupV2 tag">GroupV2</span>
-		</div>
-		<br />
-		<div><strong>Verb:</strong> POST</div>
-		<br />
-		<div><strong>Path:</strong> /GroupV2/{groupId}/Members/Rescind/{membershipType}/</div>
-		<br />
-		<div class="description">Rescind your application to join the given group or leave the group if you are already a member..</div>
-		<br />
-		<div class="required-scopes box">
-			<h4>Required Scope(s)</h4>
-			<div class="box-contents">
-				<ul>
-					<li>oauth2: BnetWrite</li>
-				</ul>
-			</div>
-		</div>
-		
-		<div class="parameters box">
-			<h4>Path Parameters</h4>
-			<div class="box-contents stop-nesting-boxes">
-				<ul>
-					<li>
-						<strong>groupId</strong>
-						<div class="description">ID of the group.</div>
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int64
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>					</li>
-					<li>
-						<strong>membershipType</strong>
-						<div class="description">MembershipType of the account to leave.</div>
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		The types of membership the Accounts system supports. This is the external facing enum used in place of the internal-only Bungie.SharedDefinitions.MembershipType.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>					</li>
-				</ul>
-			</div>
-		</div>
-
-	
-	
-		<div class="response box">
-			<h4>Response</h4>
-			<div class="box-contents stop-nesting-boxes">
-<div class="response">
-	<div class="description">Look at the Response property for more information about the nature of this response</div>
-		<div class="content">
-			<div class="content-type">Content Type: application/json</div>
-			<div>
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	
-		<div class="properties box">
-			<h5>Object Properties</h5>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>Response</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-		See: <a href="#/components/schemas/GroupsV2.GroupMemberLeaveResult">GroupsV2.GroupMemberLeaveResult</a>
 </div>						</div>
 					</div>
 				</div>
@@ -67129,6 +64802,12 @@
 					<li>
 						<div><strong>ControlCompetitive</strong>: 74</div>
 					</li>
+					<li>
+						<div><strong>GambitPrime</strong>: 75</div>
+					</li>
+					<li>
+						<div><strong>Reckoning</strong>: 76</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -70799,6 +68478,12 @@
 					<li>
 						<div><strong>ControlCompetitive</strong>: 74</div>
 					</li>
+					<li>
+						<div><strong>GambitPrime</strong>: 75</div>
+					</li>
+					<li>
+						<div><strong>Reckoning</strong>: 76</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -71115,6 +68800,12 @@
 					</li>
 					<li>
 						<div><strong>ControlCompetitive</strong>: 74</div>
+					</li>
+					<li>
+						<div><strong>GambitPrime</strong>: 75</div>
+					</li>
+					<li>
+						<div><strong>Reckoning</strong>: 76</div>
 					</li>
 				</ul>
 			</div>
@@ -85221,6 +82912,33 @@
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
+						<div class="title"><strong>lastOnlineStatusChange</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int64
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
 						<div class="title"><strong>groupId</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
@@ -86264,86 +83982,6 @@
 				</ul>
 			</div>
 		</div>
-
-</div>			</div>
-		</div>
-		<div class="schema box">
-			<a id="/components/schemas/Messages.Responses.SaveMessageResult"><h3>Messages.Responses.SaveMessageResult</h3></a>
-			<div class="schema-detail box-contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	
-		<div class="properties box">
-			<h5>Object Properties</h5>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>conversationId</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int64
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>messageId</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int64
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	
-			
 
 </div>			</div>
 		</div>
@@ -87847,577 +85485,6 @@
 	<div class="attributes">
 	</div>
 	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	
-			
-
-</div>			</div>
-		</div>
-		<div class="schema box">
-			<a id="/components/schemas/GroupsV2.GroupCreationResponse"><h3>GroupsV2.GroupCreationResponse</h3></a>
-			<div class="schema-detail box-contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	
-		<div class="properties box">
-			<h5>Object Properties</h5>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>groupId</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int64
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	
-			
-
-</div>			</div>
-		</div>
-		<div class="schema box">
-			<a id="/components/schemas/GroupsV2.GroupAction"><h3>GroupsV2.GroupAction</h3></a>
-			<div class="schema-detail box-contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	
-		<div class="properties box">
-			<h5>Object Properties</h5>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>groupType</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		Type of group, either Bungie.net hosted group, or a game services hosted clan.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>name</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>about</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>motto</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>theme</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>avatarImageIndex</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>tags</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>isPublic</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: boolean
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>membershipOption</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>isPublicTopicAdminOnly</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: boolean
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>isDefaultPostPublic</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: boolean
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>allowChat</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: boolean
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>isDefaultPostAlliance</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: boolean
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>chatSecurity</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>callsign</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>locale</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>homepage</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>platformMembershipType</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		When operation needs a platform specific account ID for the present user, use this property. In particular, groupType of Clan requires this value to be set.
-	</div>
 	
 	
 	<div class="type">
@@ -90147,155 +87214,6 @@
 </div>			</div>
 		</div>
 		<div class="schema box">
-			<a id="/components/schemas/GroupsV2.GroupApplicationResponse"><h3>GroupsV2.GroupApplicationResponse</h3></a>
-			<div class="schema-detail box-contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	
-		<div class="properties box">
-			<h5>Object Properties</h5>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>resolution</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	
-			
-
-</div>			</div>
-		</div>
-		<div class="schema box">
-			<a id="/components/schemas/GroupsV2.GroupApplicationResolveState"><h3>GroupsV2.GroupApplicationResolveState</h3></a>
-			<div class="schema-detail box-contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-		<span class="enum">Enumeration</span>
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-		<div class="enum-values box">
-			<h5>Valid Enum Values</h5>
-			<div class="box-contents stop-nesting-boxes">
-				<ul>
-					<li>
-						<div><strong>Unresolved</strong>: 0</div>
-					</li>
-					<li>
-						<div><strong>Accepted</strong>: 1</div>
-					</li>
-					<li>
-						<div><strong>Denied</strong>: 2</div>
-					</li>
-					<li>
-						<div><strong>Rescinded</strong>: 3</div>
-					</li>
-				</ul>
-			</div>
-		</div>
-
-</div>			</div>
-		</div>
-		<div class="schema box">
-			<a id="/components/schemas/GroupsV2.GroupApplicationRequest"><h3>GroupsV2.GroupApplicationRequest</h3></a>
-			<div class="schema-detail box-contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	
-		<div class="properties box">
-			<h5>Object Properties</h5>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>message</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	
-			
-
-</div>			</div>
-		</div>
-		<div class="schema box">
 			<a id="/components/schemas/GroupsV2.GroupMemberApplication"><h3>GroupsV2.GroupMemberApplication</h3></a>
 			<div class="schema-detail box-contents">
 <div class="type-info stop-nesting-boxes">
@@ -90531,6 +87449,49 @@
 		</div>
 	
 			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/GroupsV2.GroupApplicationResolveState"><h3>GroupsV2.GroupApplicationResolveState</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="enum">Enumeration</span>
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+		<div class="enum-values box">
+			<h5>Valid Enum Values</h5>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<div><strong>Unresolved</strong>: 0</div>
+					</li>
+					<li>
+						<div><strong>Accepted</strong>: 1</div>
+					</li>
+					<li>
+						<div><strong>Denied</strong>: 2</div>
+					</li>
+					<li>
+						<div><strong>Rescinded</strong>: 3</div>
+					</li>
+				</ul>
+			</div>
+		</div>
 
 </div>			</div>
 		</div>
@@ -91328,6 +88289,9 @@
 					</li>
 					<li>
 						<div><strong>UserEmailValidationLimit</strong>: 229</div>
+					</li>
+					<li>
+						<div><strong>TransactionEmailSendFailure</strong>: 230</div>
 					</li>
 					<li>
 						<div><strong>MessagingUnknownError</strong>: 300</div>
@@ -92870,6 +89834,59 @@
 </div>			</div>
 		</div>
 		<div class="schema box">
+			<a id="/components/schemas/GroupsV2.GroupApplicationRequest"><h3>GroupsV2.GroupApplicationRequest</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>message</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
 			<a id="/components/schemas/GroupsV2.GroupApplicationListRequest"><h3>GroupsV2.GroupApplicationListRequest</h3></a>
 			<div class="schema-detail box-contents">
 <div class="type-info stop-nesting-boxes">
@@ -93824,6 +90841,59 @@
 	
 	<div class="type">
 		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/GroupsV2.GroupApplicationResponse"><h3>GroupsV2.GroupApplicationResponse</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>resolution</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
 	</div>
 	
 	
@@ -103356,6 +100426,12 @@
 					<li>
 						<div><strong>ControlCompetitive</strong>: 74</div>
 					</li>
+					<li>
+						<div><strong>GambitPrime</strong>: 75</div>
+					</li>
+					<li>
+						<div><strong>Reckoning</strong>: 76</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -103801,6 +100877,12 @@
 					</li>
 					<li>
 						<div><strong>ControlCompetitive</strong>: 74</div>
+					</li>
+					<li>
+						<div><strong>GambitPrime</strong>: 75</div>
+					</li>
+					<li>
+						<div><strong>Reckoning</strong>: 76</div>
 					</li>
 				</ul>
 			</div>
@@ -108101,6 +105183,12 @@
 					</li>
 					<li>
 						<div><strong>ControlCompetitive</strong>: 74</div>
+					</li>
+					<li>
+						<div><strong>GambitPrime</strong>: 75</div>
+					</li>
+					<li>
+						<div><strong>Reckoning</strong>: 76</div>
 					</li>
 				</ul>
 			</div>
@@ -126772,6 +123860,12 @@
 					<li>
 						<div><strong>ControlCompetitive</strong>: 74</div>
 					</li>
+					<li>
+						<div><strong>GambitPrime</strong>: 75</div>
+					</li>
+					<li>
+						<div><strong>Reckoning</strong>: 76</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -127107,6 +124201,12 @@
 					</li>
 					<li>
 						<div><strong>ControlCompetitive</strong>: 74</div>
+					</li>
+					<li>
+						<div><strong>GambitPrime</strong>: 75</div>
+					</li>
+					<li>
+						<div><strong>Reckoning</strong>: 76</div>
 					</li>
 				</ul>
 			</div>
@@ -131173,6 +128273,9 @@
 					</li>
 					<li>
 						<div><strong>Forge</strong>: 9</div>
+					</li>
+					<li>
+						<div><strong>Reckoning</strong>: 10</div>
 					</li>
 				</ul>
 			</div>
