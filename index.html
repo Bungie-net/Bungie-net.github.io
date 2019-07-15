@@ -14,7 +14,7 @@
 		<div class="box-contents">
 			<div>These endpoints constitute the functionality exposed by Bungie.net, both for more traditional website functionality and for connectivity to Bungie video games and their related functionality.</div>
 			<div class="about-line-items">
-				<div><strong>Version:</strong> 2.3.5
+				<div><strong>Version:</strong> 2.3.6
 				</div>
 				<div><strong>License:</strong> <a href="https://github.com/Bungie-net/api/blob/master/LICENSE">https://github.com/Bungie-net/api/blob/master/LICENSE (BSD License 2.0)</a>
 				</div>
@@ -242,6 +242,11 @@
 						<span class="attributes">
 						</span>
 					</li>
+					<li>
+						<span>GET:</span> <a href="#Content.SearchHelpArticles">/Content/SearchHelpArticles/{searchtext}/{size}</a>
+						<span class="attributes">
+						</span>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -453,6 +458,11 @@
 					</li>
 					<li>
 						<span>GET:</span> <a href="#GroupV2.GetGroupsForMember">/GroupV2/User/{membershipType}/{membershipId}/{filter}/{groupType}/</a>
+						<span class="attributes">
+						</span>
+					</li>
+					<li>
+						<span>GET:</span> <a href="#GroupV2.RecoverGroupForFounder">/GroupV2/Recover/{membershipType}/{membershipId}/{groupType}/</a>
 						<span class="attributes">
 						</span>
 					</li>
@@ -1111,6 +1121,11 @@
 			</li>
 			<li>
 				<a href="#/components/schemas/Destiny.DestinyProgression">Destiny.DestinyProgression</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.DestinyProgressionResetEntry">Destiny.DestinyProgressionResetEntry</a>
 				<span class="attributes">
 				</span>
 			</li>
@@ -2242,6 +2257,12 @@
 				</span>
 			</li>
 			<li>
+				<a href="#/components/schemas/Destiny.Definitions.Seasons.DestinySeasonDefinition">Destiny.Definitions.Seasons.DestinySeasonDefinition</a>
+				<span class="attributes">
+					<span class="manifest-entity">Mobile Manifest Entity</span>
+				</span>
+			</li>
+			<li>
 				<a href="#/components/schemas/GroupsV2.GroupUserBase">GroupsV2.GroupUserBase</a>
 				<span class="attributes">
 				</span>
@@ -2519,6 +2540,41 @@
 				</span>
 			</li>
 			<li>
+				<a href="#/components/schemas/Destiny.Components.Inventory.DestinyPlatformSilverComponent">Destiny.Components.Inventory.DestinyPlatformSilverComponent</a>
+				<span class="attributes">
+					<span class="depends-on">Depends on Component "PlatformSilver"</span>
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.Entities.Items.DestinyItemComponent">Destiny.Entities.Items.DestinyItemComponent</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.ItemBindStatus">Destiny.ItemBindStatus</a>
+				<span class="attributes">
+					<span class="enum">Enumeration</span>
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.TransferStatuses">Destiny.TransferStatuses</a>
+				<span class="attributes">
+					<span class="enum">Enumeration</span>
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.ItemState">Destiny.ItemState</a>
+				<span class="attributes">
+					<span class="enum">Enumeration</span>
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.DestinyGameVersions">Destiny.DestinyGameVersions</a>
+				<span class="attributes">
+					<span class="enum">Enumeration</span>
+				</span>
+			</li>
+			<li>
 				<a href="#/components/schemas/Destiny.Responses.DestinyErrorProfile">Destiny.Responses.DestinyErrorProfile</a>
 				<span class="attributes">
 				</span>
@@ -2567,29 +2623,6 @@
 				</span>
 			</li>
 			<li>
-				<a href="#/components/schemas/Destiny.Entities.Items.DestinyItemComponent">Destiny.Entities.Items.DestinyItemComponent</a>
-				<span class="attributes">
-				</span>
-			</li>
-			<li>
-				<a href="#/components/schemas/Destiny.ItemBindStatus">Destiny.ItemBindStatus</a>
-				<span class="attributes">
-					<span class="enum">Enumeration</span>
-				</span>
-			</li>
-			<li>
-				<a href="#/components/schemas/Destiny.TransferStatuses">Destiny.TransferStatuses</a>
-				<span class="attributes">
-					<span class="enum">Enumeration</span>
-				</span>
-			</li>
-			<li>
-				<a href="#/components/schemas/Destiny.ItemState">Destiny.ItemState</a>
-				<span class="attributes">
-					<span class="enum">Enumeration</span>
-				</span>
-			</li>
-			<li>
 				<a href="#/components/schemas/SingleComponentResponseOfDestinyInventoryComponent">SingleComponentResponseOfDestinyInventoryComponent</a>
 				<span class="attributes">
 				</span>
@@ -2601,13 +2634,12 @@
 				</span>
 			</li>
 			<li>
-				<a href="#/components/schemas/Destiny.DestinyGameVersions">Destiny.DestinyGameVersions</a>
+				<a href="#/components/schemas/SingleComponentResponseOfDestinyProfileComponent">SingleComponentResponseOfDestinyProfileComponent</a>
 				<span class="attributes">
-					<span class="enum">Enumeration</span>
 				</span>
 			</li>
 			<li>
-				<a href="#/components/schemas/SingleComponentResponseOfDestinyProfileComponent">SingleComponentResponseOfDestinyProfileComponent</a>
+				<a href="#/components/schemas/SingleComponentResponseOfDestinyPlatformSilverComponent">SingleComponentResponseOfDestinyPlatformSilverComponent</a>
 				<span class="attributes">
 				</span>
 			</li>
@@ -4028,6 +4060,47 @@
 			</li>
 			<li>
 				<a href="#/components/schemas/Common.Models.Destiny2CoreSettings">Common.Models.Destiny2CoreSettings</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/User.EmailSettings">User.EmailSettings</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/User.EmailOptInDefinition">User.EmailOptInDefinition</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/User.OptInFlags">User.OptInFlags</a>
+				<span class="attributes">
+					<span class="enum">Enumeration</span>
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/User.EmailSubscriptionDefinition">User.EmailSubscriptionDefinition</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/User.EMailSettingLocalization">User.EMailSettingLocalization</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/User.EMailSettingSubscriptionLocalization">User.EMailSettingSubscriptionLocalization</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/User.EmailViewDefinition">User.EmailViewDefinition</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/User.EmailViewDefinitionSetting">User.EmailViewDefinitionSetting</a>
 				<span class="attributes">
 				</span>
 			</li>
@@ -7777,6 +7850,305 @@
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
 		See: <a href="#/components/schemas/SearchResultOfContentItemPublicContract">SearchResultOfContentItemPublicContract</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorCode</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ThrottleSeconds</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorStatus</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Message</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>MessageData</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			string
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		string
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>DetailedErrorTrace</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+</div>			</div>
+		</div>
+	</div>
+</div>		</div>
+		<div class="endpoint">
+<div class="box">
+	<a id="Content.SearchHelpArticles"><h3>Content.SearchHelpArticles</h3></a>
+	<div class="box-contents">
+		<div class="attributes">
+			<span class="Content tag">Content</span>
+		</div>
+		<br />
+		<div><strong>Verb:</strong> GET</div>
+		<br />
+		<div><strong>Path:</strong> /Content/SearchHelpArticles/{searchtext}/{size}</div>
+		<br />
+		<div class="description">Search for Help Articles.</div>
+		<br />
+		
+		<div class="parameters box">
+			<h4>Path Parameters</h4>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<strong>searchtext</strong>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>					</li>
+					<li>
+						<strong>size</strong>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>					</li>
+				</ul>
+			</div>
+		</div>
+
+	
+	
+		<div class="response box">
+			<h4>Response</h4>
+			<div class="box-contents stop-nesting-boxes">
+<div class="response">
+	<div class="description">Look at the Response property for more information about the nature of this response</div>
+		<div class="content">
+			<div class="content-type">Content Type: application/json</div>
+			<div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Response</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+	
+			
+
 </div>						</div>
 					</div>
 				</div>
@@ -20244,6 +20616,316 @@
 </div>		</div>
 		<div class="endpoint">
 <div class="box">
+	<a id="GroupV2.RecoverGroupForFounder"><h3>GroupV2.RecoverGroupForFounder</h3></a>
+	<div class="box-contents">
+		<div class="attributes">
+			<span class="GroupV2 tag">GroupV2</span>
+		</div>
+		<br />
+		<div><strong>Verb:</strong> GET</div>
+		<br />
+		<div><strong>Path:</strong> /GroupV2/Recover/{membershipType}/{membershipId}/{groupType}/</div>
+		<br />
+		<div class="description">Allows a founder to manually recover a group they can see in game but not on bungie.net</div>
+		<br />
+		
+		<div class="parameters box">
+			<h4>Path Parameters</h4>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<strong>groupType</strong>
+						<div class="description">Type of group the supplied member founded.</div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>					</li>
+					<li>
+						<strong>membershipId</strong>
+						<div class="description">Membership ID to for which to find founded groups.</div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int64
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>					</li>
+					<li>
+						<strong>membershipType</strong>
+						<div class="description">Membership type of the supplied membership ID.</div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The types of membership the Accounts system supports. This is the external facing enum used in place of the internal-only Bungie.SharedDefinitions.MembershipType.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>					</li>
+				</ul>
+			</div>
+		</div>
+
+	
+	
+		<div class="response box">
+			<h4>Response</h4>
+			<div class="box-contents stop-nesting-boxes">
+<div class="response">
+	<div class="description">Look at the Response property for more information about the nature of this response</div>
+		<div class="content">
+			<div class="content-type">Content Type: application/json</div>
+			<div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Response</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/GroupsV2.GroupMembershipSearchResponse">GroupsV2.GroupMembershipSearchResponse</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorCode</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ThrottleSeconds</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorStatus</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Message</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>MessageData</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			string
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		string
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>DetailedErrorTrace</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+</div>			</div>
+		</div>
+	</div>
+</div>		</div>
+		<div class="endpoint">
+<div class="box">
 	<a id="GroupV2.GetPotentialGroupsForMember"><h3>GroupV2.GetPotentialGroupsForMember</h3></a>
 	<div class="box-contents">
 		<div class="attributes">
@@ -22115,6 +22797,37 @@
 			</div>
 		</div>
 
+		<div class="parameters box">
+			<h4>Querystring Parameters</h4>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<div class="name">
+							<strong>getAllMemberships</strong>
+						</div>
+						<div class="description">(optional) if set to 'true', all memberships regardless of whether they're obscured by overrides will be returned. Normal privacy restrictions on account linking will still apply no matter what.</div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>					</li>
+				</ul>
+			</div>
+		</div>
 	
 	
 		<div class="response box">
@@ -29279,7 +29992,7 @@
 						<div class="name">
 							<strong>dayend</strong>
 						</div>
-						<div class="description">Last day to return when daily stats are requested. Use the format YYYY-MM-DD.</div>
+						<div class="description">Last day to return when daily stats are requested. Use the format YYYY-MM-DD. Currently, we cannot allow more than 31 days of daily data to be requested in a single request.</div>
 <div class="type-info stop-nesting-boxes">
 
 	
@@ -29303,7 +30016,7 @@
 						<div class="name">
 							<strong>daystart</strong>
 						</div>
-						<div class="description">First day to return when daily stats are requested. Use the format YYYY-MM-DD</div>
+						<div class="description">First day to return when daily stats are requested. Use the format YYYY-MM-DD. Currently, we cannot allow more than 31 days of daily data to be requested in a single request.</div>
 <div class="type-info stop-nesting-boxes">
 
 	
@@ -38844,7 +39557,13 @@
 						<div><strong>TigerPsn</strong>: 2</div>
 					</li>
 					<li>
+						<div><strong>TigerSteam</strong>: 3</div>
+					</li>
+					<li>
 						<div><strong>TigerBlizzard</strong>: 4</div>
+					</li>
+					<li>
+						<div><strong>TigerStadia</strong>: 5</div>
 					</li>
 					<li>
 						<div><strong>TigerDemon</strong>: 10</div>
@@ -47817,6 +48536,154 @@
 					</div>
 				</div>
 			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>currentResetCount</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+	</div>
+	
+	<div class="description">
+		The number of resets of this progression you've executed this season, if applicable to this progression.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>seasonResets</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Information about historical resets of this progression, if there is any data for it.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/Destiny.DestinyProgressionResetEntry">Destiny.DestinyProgressionResetEntry</a>
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.DestinyProgressionResetEntry"><h3>Destiny.DestinyProgressionResetEntry</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Represents a season and the number of resets you had in that season.<br /><br /> We do not necessarily - even for progressions with resets - track it over all seasons. So be careful and check the season numbers being returned.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>season</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>resets</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	
 			
@@ -48438,6 +49305,36 @@
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
+						<div class="title"><strong>highResIcon</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If this item has a high-res icon (at least for now, many things won't), then the path to that icon will be here.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
 						<div class="title"><strong>hasIcon</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
@@ -48585,6 +49482,36 @@
 	
 	<div class="description">
 		Note that "icon" is sometimes misleading, and should be interpreted in the context of the entity. For instance, in Destiny 1 the DestinyRecordBookDefinition's icon was a big picture of a book.<br /><br />But usually, it will be a small square image that you can use as... well, an icon.<br /><br />They are currently represented as 96px x 96px images.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>highResIcon</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If this item has a high-res icon (at least for now, many things won't), then the path to that icon will be here.
 	</div>
 	
 	
@@ -50618,6 +51545,72 @@
 		<strong>Mapped to Manifest Database Definition: </strong>
 		<a href="#/components/schemas/Destiny.Definitions.DestinyDamageTypeDefinition">Destiny.Definitions.DestinyDamageTypeDefinition</a>
 	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>seasonHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	<div class="description">
+		If this item is related directly to a Season of Destiny, this is the hash identifier for that season.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.Seasons.DestinySeasonDefinition">Destiny.Definitions.Seasons.DestinySeasonDefinition</a>
+	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>isWrapper</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If true, this is a dummy vendor-wrapped item template. Items purchased from Eververse will be "wrapped" by one of these items so that we can safely provide refund capabilities before the item is "unwrapped".
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
 			
 
 </div>						</div>
@@ -57383,6 +58376,36 @@
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
+						<div class="title"><strong>highResIcon</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If this item has a high-res icon (at least for now, many things won't), then the path to that icon will be here.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
 						<div class="title"><strong>hasIcon</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
@@ -59550,39 +60573,43 @@
 						<div><strong>Unknown</strong>: 0</div>
 					</li>
 					<li>
-						<div><strong>QuestComplete</strong>: 1</div>
+						<div><strong>Undefined</strong>: 1</div>
+						<div class="description">An empty interaction. If this ends up in content, it is probably a game bug.</div>
+					</li>
+					<li>
+						<div><strong>QuestComplete</strong>: 2</div>
 						<div class="description">An interaction shown when you complete a quest and receive a reward.</div>
 					</li>
 					<li>
-						<div><strong>QuestContinue</strong>: 2</div>
+						<div><strong>QuestContinue</strong>: 3</div>
 						<div class="description">An interaction shown when you talk to a Vendor as an intermediary step of a quest.</div>
 					</li>
 					<li>
-						<div><strong>ReputationPreview</strong>: 3</div>
+						<div><strong>ReputationPreview</strong>: 4</div>
 						<div class="description">An interaction shown when you are previewing the vendor's reputation rewards.</div>
 					</li>
 					<li>
-						<div><strong>RankUpReward</strong>: 4</div>
+						<div><strong>RankUpReward</strong>: 5</div>
 						<div class="description">An interaction shown when you rank up with the vendor.</div>
 					</li>
 					<li>
-						<div><strong>TokenTurnIn</strong>: 5</div>
+						<div><strong>TokenTurnIn</strong>: 6</div>
 						<div class="description">An interaction shown when you have tokens to turn in for the vendor.</div>
 					</li>
 					<li>
-						<div><strong>QuestAccept</strong>: 6</div>
+						<div><strong>QuestAccept</strong>: 7</div>
 						<div class="description">An interaction shown when you're accepting a new quest.</div>
 					</li>
 					<li>
-						<div><strong>ProgressTab</strong>: 7</div>
+						<div><strong>ProgressTab</strong>: 8</div>
 						<div class="description">Honestly, this doesn't seem consistent to me. It is used to give you choices in the Cryptarch as well as some reward prompts by the Eververse vendor. I'll have to look into that further at some point.</div>
 					</li>
 					<li>
-						<div><strong>End</strong>: 8</div>
+						<div><strong>End</strong>: 9</div>
 						<div class="description">These seem even less consistent. I don't know what these are.</div>
 					</li>
 					<li>
-						<div><strong>Start</strong>: 9</div>
+						<div><strong>Start</strong>: 10</div>
 						<div class="description">Also seem inconsistent. I also don't know what these are offhand.</div>
 					</li>
 				</ul>
@@ -64808,6 +65835,9 @@
 					<li>
 						<div><strong>Reckoning</strong>: 76</div>
 					</li>
+					<li>
+						<div><strong>Menagerie</strong>: 77</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -68484,6 +69514,9 @@
 					<li>
 						<div><strong>Reckoning</strong>: 76</div>
 					</li>
+					<li>
+						<div><strong>Menagerie</strong>: 77</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -68806,6 +69839,9 @@
 					</li>
 					<li>
 						<div><strong>Reckoning</strong>: 76</div>
+					</li>
+					<li>
+						<div><strong>Menagerie</strong>: 77</div>
 					</li>
 				</ul>
 			</div>
@@ -79296,6 +80332,9 @@
 					<li>
 						<div><strong>Bounty</strong>: 26</div>
 					</li>
+					<li>
+						<div><strong>Wrapper</strong>: 27</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -82625,6 +83664,167 @@
 	
 	<div class="type">
 		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>hash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.<br /><br />When entities refer to each other in Destiny content, it is this hash that they are referring to.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>index</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The index of the entity as it was found in the investment tables.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>redacted</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Definitions.Seasons.DestinySeasonDefinition"><h3>Destiny.Definitions.Seasons.DestinySeasonDefinition</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="manifest-entity">Mobile Manifest Entity</span>
+	</div>
+	
+	<div class="description">
+		Defines a canonical "Season" of Destiny: a range of a few months where the game highlights certain challenges, provides new loot, has new Clan-related rewards and celebrates various seasonal events.
+	</div>
+	
+	<div class="manifest-database">
+		<strong>Mapped to Mobile Manifest Table</strong>: Seasons
+	</div>
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>displayProperties</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.Definitions.Common.DestinyDisplayPropertiesDefinition">Destiny.Definitions.Common.DestinyDisplayPropertiesDefinition</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>seasonNumber</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
 	</div>
 	
 	
@@ -88294,6 +89494,12 @@
 						<div><strong>TransactionEmailSendFailure</strong>: 230</div>
 					</li>
 					<li>
+						<div><strong>MailHookPermissionFailure</strong>: 231</div>
+					</li>
+					<li>
+						<div><strong>MailServiceRateLimit</strong>: 232</div>
+					</li>
+					<li>
 						<div><strong>MessagingUnknownError</strong>: 300</div>
 					</li>
 					<li>
@@ -89826,6 +91032,66 @@
 					</li>
 					<li>
 						<div><strong>ClanFireteamExpired</strong>: 3026</div>
+					</li>
+					<li>
+						<div><strong>ClanFireteamInvalidAuthProvider</strong>: 3027</div>
+					</li>
+					<li>
+						<div><strong>CrossSaveOverriddenAccountNotFound</strong>: 3200</div>
+					</li>
+					<li>
+						<div><strong>CrossSaveTooManyOverriddenPlatforms</strong>: 3201</div>
+					</li>
+					<li>
+						<div><strong>CrossSaveNoOverriddenPlatforms</strong>: 3202</div>
+					</li>
+					<li>
+						<div><strong>CrossSavePrimaryAccountNotFound</strong>: 3203</div>
+					</li>
+					<li>
+						<div><strong>CrossSaveRequestInvalid</strong>: 3204</div>
+					</li>
+					<li>
+						<div><strong>CrossSaveBungieAccountValidationFailure</strong>: 3206</div>
+					</li>
+					<li>
+						<div><strong>CrossSaveOverriddenPlatformNotAllowed</strong>: 3207</div>
+					</li>
+					<li>
+						<div><strong>CrossSaveThresholdExceeded</strong>: 3208</div>
+					</li>
+					<li>
+						<div><strong>CrossSaveIncompatibleMembershipType</strong>: 3209</div>
+					</li>
+					<li>
+						<div><strong>CrossSaveCouldNotFindLinkedAccountForMembershipType</strong>: 3210</div>
+					</li>
+					<li>
+						<div><strong>CrossSaveCouldNotCreateDestinyProfileForMembershipType</strong>: 3211</div>
+					</li>
+					<li>
+						<div><strong>CrossSaveErrorCreatingDestinyProfileForMembershipType</strong>: 3212</div>
+					</li>
+					<li>
+						<div><strong>CrossSaveCannotOverrideSelf</strong>: 3213</div>
+					</li>
+					<li>
+						<div><strong>CrossSaveRecentSilverPurchase</strong>: 3214</div>
+					</li>
+					<li>
+						<div><strong>CrossSaveSilverBalanceNegative</strong>: 3215</div>
+					</li>
+					<li>
+						<div><strong>CrossSaveAccountNotAuthenticated</strong>: 3216</div>
+					</li>
+					<li>
+						<div><strong>ErrorOneAccountAlreadyActive</strong>: 3217</div>
+					</li>
+					<li>
+						<div><strong>ErrorOneAccountDestinyRestriction</strong>: 3218</div>
+					</li>
+					<li>
+						<div><strong>AuthVerificationNotLinkedToAccount</strong>: 3300</div>
 					</li>
 				</ul>
 			</div>
@@ -91537,6 +92803,100 @@
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
+						<div class="title"><strong>applicableMembershipTypes</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The list of membership types/Platforms that this Destiny Account can be used on - either its own original platform, or any subservient platforms hooked up to it through Cross Save.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			int32
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>isOverridden</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If this profile is being overridden/obscured by Cross Save, this will be set to true. We will still return the profile for display purposes where users need to know the info: it is up to any given area of the app/site to determine if this profile should still be shown.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>isCrossSavePrimary</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If true, this account is hooked up as the "Primary" cross save account for one or more platforms.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
 						<div class="title"><strong>supplementalDisplayName</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
@@ -91691,6 +93051,675 @@
 </div>			</div>
 		</div>
 		<div class="schema box">
+			<a id="/components/schemas/Destiny.Components.Inventory.DestinyPlatformSilverComponent"><h3>Destiny.Components.Inventory.DestinyPlatformSilverComponent</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="depends-on">Depends on Component "PlatformSilver"</span>
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>platformSilver</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If a Profile is played on multiple platforms, this is the silver they have for each platform, keyed by Membership Type.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			<a href="#/components/schemas/Destiny.Entities.Items.DestinyItemComponent">Destiny.Entities.Items.DestinyItemComponent</a>
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		int32
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Entities.Items.DestinyItemComponent"><h3>Destiny.Entities.Items.DestinyItemComponent</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The base item component, filled with properties that are generally useful to know in any item request or that don't feel worthwhile to put in their own component.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>itemHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	<div class="description">
+		The identifier for the item's definition, which is where most of the useful static information for the item can be found.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyInventoryItemDefinition">Destiny.Definitions.DestinyInventoryItemDefinition</a>
+	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>itemInstanceId</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+	</div>
+	
+	<div class="description">
+		If the item is instanced, it will have an instance ID. Lack of an instance ID implies that the item has no distinct local qualities aside from stack size.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int64
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>quantity</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The quantity of the item in this stack. Note that Instanced items cannot stack. If an instanced item, this value will always be 1 (as the stack has exactly one item in it)
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>bindStatus</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If the item is bound to a location, it will be specified in this enum.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>location</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		An easy reference for where the item is located. Redundant if you got the item from an Inventory, but useful when making detail calls on specific items.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>bucketHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	<div class="description">
+		The hash identifier for the specific inventory bucket in which the item is located.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyInventoryBucketDefinition">Destiny.Definitions.DestinyInventoryBucketDefinition</a>
+	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>transferStatus</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If there is a known error state that would cause this item to not be transferable, this Flags enum will indicate all of those error states. Otherwise, it will be 0 (CanTransfer).
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>lockable</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If the item can be locked, this will indicate that state.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>state</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		A flags enumeration indicating the transient/custom states of the item that affect how it is rendered: whether it's tracked or locked for example, or whether it has a masterwork plug inserted.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>overrideStyleItemHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	<div class="description">
+		If populated, this is the hash of the item whose icon (and other secondary styles, but *not* the human readable strings) should override whatever icons/styles are on the item being sold.<br /><br />If you don't do this, certain items whose styles are being overridden by socketed items - such as the "Recycle Shader" item - would show whatever their default icon/style is, and it wouldn't be pretty or look accurate.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyInventoryItemDefinition">Destiny.Definitions.DestinyInventoryItemDefinition</a>
+	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>expirationDate</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+	</div>
+	
+	<div class="description">
+		If the item can expire, this is the date at which it will/did expire.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: date-time
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>isWrapper</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If this is true, the object is actually a "wrapper" of the object it's representing. This means that it's not the actual item itself, but rather an item that must be "opened" in game before you have and can use the item.<br /><br /> Wrappers are an evolution of "bundles", which give an easy way to let you preview the contents of what you purchased while still letting you get a refund before you "open" it.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.ItemBindStatus"><h3>Destiny.ItemBindStatus</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="enum">Enumeration</span>
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+		<div class="enum-values box">
+			<h5>Valid Enum Values</h5>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<div><strong>NotBound</strong>: 0</div>
+					</li>
+					<li>
+						<div><strong>BoundToCharacter</strong>: 1</div>
+					</li>
+					<li>
+						<div><strong>BoundToAccount</strong>: 2</div>
+					</li>
+					<li>
+						<div><strong>BoundToGuild</strong>: 3</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.TransferStatuses"><h3>Destiny.TransferStatuses</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="enum">Enumeration</span>
+	</div>
+	
+	<div class="description">
+		Whether you can transfer an item, and why not if you can't.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+		<div class="enum-values box">
+			<h5>Valid Enum Values</h5>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<div><strong>CanTransfer</strong>: 0</div>
+						<div class="description">The item can be transferred.</div>
+					</li>
+					<li>
+						<div><strong>ItemIsEquipped</strong>: 1</div>
+						<div class="description">You can't transfer the item because it is equipped on a character.</div>
+					</li>
+					<li>
+						<div><strong>NotTransferrable</strong>: 2</div>
+						<div class="description">The item is defined as not transferrable in its DestinyInventoryItemDefinition.nonTransferrable property.</div>
+					</li>
+					<li>
+						<div><strong>NoRoomInDestination</strong>: 4</div>
+						<div class="description">You could transfer the item, but the place you're trying to put it has run out of room! Check your remaining Vault and/or character space.</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.ItemState"><h3>Destiny.ItemState</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="enum">Enumeration</span>
+	</div>
+	
+	<div class="description">
+		A flags enumeration/bitmask where each bit represents a different possible state that the item can be in that may effect how the item is displayed to the user and what actions can be performed against it.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+		<div class="enum-values box">
+			<h5>Valid Enum Values</h5>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<div><strong>None</strong>: 0</div>
+					</li>
+					<li>
+						<div><strong>Locked</strong>: 1</div>
+						<div class="description">If this bit is set, the item has been "locked" by the user and cannot be deleted. You may want to represent this visually with a "lock" icon.</div>
+					</li>
+					<li>
+						<div><strong>Tracked</strong>: 2</div>
+						<div class="description">If this bit is set, the item is a quest that's being tracked by the user. You may want a visual indicator to show that this is a tracked quest.</div>
+					</li>
+					<li>
+						<div><strong>Masterwork</strong>: 4</div>
+						<div class="description">If this bit is set, the item has a Masterwork plug inserted. This usually coincides with having a special "glowing" effect applied to the item's icon.</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.DestinyGameVersions"><h3>Destiny.DestinyGameVersions</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="enum">Enumeration</span>
+	</div>
+	
+	<div class="description">
+		A flags enumeration/bitmask indicating the versions of the game that a given user has purchased.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+		<div class="enum-values box">
+			<h5>Valid Enum Values</h5>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<div><strong>None</strong>: 0</div>
+					</li>
+					<li>
+						<div><strong>Destiny2</strong>: 1</div>
+					</li>
+					<li>
+						<div><strong>DLC1</strong>: 2</div>
+					</li>
+					<li>
+						<div><strong>DLC2</strong>: 4</div>
+					</li>
+					<li>
+						<div><strong>Forsaken</strong>: 8</div>
+					</li>
+					<li>
+						<div><strong>YearTwoAnnualPass</strong>: 16</div>
+					</li>
+					<li>
+						<div><strong>Shadowkeep</strong>: 32</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+</div>			</div>
+		</div>
+		<div class="schema box">
 			<a id="/components/schemas/Destiny.Responses.DestinyErrorProfile"><h3>Destiny.Responses.DestinyErrorProfile</h3></a>
 			<div class="schema-detail box-contents">
 <div class="type-info stop-nesting-boxes">
@@ -91831,6 +93860,10 @@
 					<li>
 						<div><strong>ProfileProgression</strong>: 104</div>
 						<div class="description">This will get you any progression-related information that exists on a Profile-wide level, across all characters.</div>
+					</li>
+					<li>
+						<div><strong>PlatformSilver</strong>: 105</div>
+						<div class="description">This will get you information about the silver that this profile has on every platform on which it plays.<br /><br /> You may only request this component for the logged in user's Profile, and will not recieve it if you request it for another Profile.</div>
 					</li>
 					<li>
 						<div><strong>Characters</strong>: 200</div>
@@ -92075,6 +94108,39 @@
 	
 <div class="type-info stop-nesting-boxes">
 		See: <a href="#/components/schemas/SingleComponentResponseOfDestinyProfileComponent">SingleComponentResponseOfDestinyProfileComponent</a>
+</div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>platformSilver</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="depends-on">Depends on Component "PlatformSilver"</span>
+	</div>
+	
+	<div class="description">
+		Silver quantities for any platform on which this Profile plays destiny.<br /><br /> COMPONENT TYPE: PlatformSilver
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/SingleComponentResponseOfDestinyPlatformSilverComponent">SingleComponentResponseOfDestinyPlatformSilverComponent</a>
 </div>	
 
 	
@@ -93321,525 +95387,6 @@
 </div>			</div>
 		</div>
 		<div class="schema box">
-			<a id="/components/schemas/Destiny.Entities.Items.DestinyItemComponent"><h3>Destiny.Entities.Items.DestinyItemComponent</h3></a>
-			<div class="schema-detail box-contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		The base item component, filled with properties that are generally useful to know in any item request or that don't feel worthwhile to put in their own component.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	
-		<div class="properties box">
-			<h5>Object Properties</h5>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>itemHash</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-		<span class="mapped">Mapped to Definition</span>
-	</div>
-	
-	<div class="description">
-		The identifier for the item's definition, which is where most of the useful static information for the item can be found.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: uint32
-	</div>
-	
-	
-
-	
-	
-	<div class="mapped">
-		<strong>Mapped to Manifest Database Definition: </strong>
-		<a href="#/components/schemas/Destiny.Definitions.DestinyInventoryItemDefinition">Destiny.Definitions.DestinyInventoryItemDefinition</a>
-	</div>
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>itemInstanceId</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-		<span class="nullable">Nullable</span>
-	</div>
-	
-	<div class="description">
-		If the item is instanced, it will have an instance ID. Lack of an instance ID implies that the item has no distinct local qualities aside from stack size.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int64
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>quantity</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		The quantity of the item in this stack. Note that Instanced items cannot stack. If an instanced item, this value will always be 1 (as the stack has exactly one item in it)
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>bindStatus</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		If the item is bound to a location, it will be specified in this enum.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>location</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		An easy reference for where the item is located. Redundant if you got the item from an Inventory, but useful when making detail calls on specific items.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>bucketHash</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-		<span class="mapped">Mapped to Definition</span>
-	</div>
-	
-	<div class="description">
-		The hash identifier for the specific inventory bucket in which the item is located.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: uint32
-	</div>
-	
-	
-
-	
-	
-	<div class="mapped">
-		<strong>Mapped to Manifest Database Definition: </strong>
-		<a href="#/components/schemas/Destiny.Definitions.DestinyInventoryBucketDefinition">Destiny.Definitions.DestinyInventoryBucketDefinition</a>
-	</div>
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>transferStatus</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		If there is a known error state that would cause this item to not be transferable, this Flags enum will indicate all of those error states. Otherwise, it will be 0 (CanTransfer).
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>lockable</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		If the item can be locked, this will indicate that state.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: boolean
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>state</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		A flags enumeration indicating the transient/custom states of the item that affect how it is rendered: whether it's tracked or locked for example, or whether it has a masterwork plug inserted.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>overrideStyleItemHash</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-		<span class="nullable">Nullable</span>
-		<span class="mapped">Mapped to Definition</span>
-	</div>
-	
-	<div class="description">
-		If populated, this is the hash of the item whose icon (and other secondary styles, but *not* the human readable strings) should override whatever icons/styles are on the item being sold.<br /><br />If you don't do this, certain items whose styles are being overridden by socketed items - such as the "Recycle Shader" item - would show whatever their default icon/style is, and it wouldn't be pretty or look accurate.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: uint32
-	</div>
-	
-	
-
-	
-	
-	<div class="mapped">
-		<strong>Mapped to Manifest Database Definition: </strong>
-		<a href="#/components/schemas/Destiny.Definitions.DestinyInventoryItemDefinition">Destiny.Definitions.DestinyInventoryItemDefinition</a>
-	</div>
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>expirationDate</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-		<span class="nullable">Nullable</span>
-	</div>
-	
-	<div class="description">
-		If the item can expire, this is the date at which it will/did expire.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: date-time
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	
-			
-
-</div>			</div>
-		</div>
-		<div class="schema box">
-			<a id="/components/schemas/Destiny.ItemBindStatus"><h3>Destiny.ItemBindStatus</h3></a>
-			<div class="schema-detail box-contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-		<span class="enum">Enumeration</span>
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-		<div class="enum-values box">
-			<h5>Valid Enum Values</h5>
-			<div class="box-contents stop-nesting-boxes">
-				<ul>
-					<li>
-						<div><strong>NotBound</strong>: 0</div>
-					</li>
-					<li>
-						<div><strong>BoundToCharacter</strong>: 1</div>
-					</li>
-					<li>
-						<div><strong>BoundToAccount</strong>: 2</div>
-					</li>
-					<li>
-						<div><strong>BoundToGuild</strong>: 3</div>
-					</li>
-				</ul>
-			</div>
-		</div>
-
-</div>			</div>
-		</div>
-		<div class="schema box">
-			<a id="/components/schemas/Destiny.TransferStatuses"><h3>Destiny.TransferStatuses</h3></a>
-			<div class="schema-detail box-contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-		<span class="enum">Enumeration</span>
-	</div>
-	
-	<div class="description">
-		Whether you can transfer an item, and why not if you can't.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-		<div class="enum-values box">
-			<h5>Valid Enum Values</h5>
-			<div class="box-contents stop-nesting-boxes">
-				<ul>
-					<li>
-						<div><strong>CanTransfer</strong>: 0</div>
-						<div class="description">The item can be transferred.</div>
-					</li>
-					<li>
-						<div><strong>ItemIsEquipped</strong>: 1</div>
-						<div class="description">You can't transfer the item because it is equipped on a character.</div>
-					</li>
-					<li>
-						<div><strong>NotTransferrable</strong>: 2</div>
-						<div class="description">The item is defined as not transferrable in its DestinyInventoryItemDefinition.nonTransferrable property.</div>
-					</li>
-					<li>
-						<div><strong>NoRoomInDestination</strong>: 4</div>
-						<div class="description">You could transfer the item, but the place you're trying to put it has run out of room! Check your remaining Vault and/or character space.</div>
-					</li>
-				</ul>
-			</div>
-		</div>
-
-</div>			</div>
-		</div>
-		<div class="schema box">
-			<a id="/components/schemas/Destiny.ItemState"><h3>Destiny.ItemState</h3></a>
-			<div class="schema-detail box-contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-		<span class="enum">Enumeration</span>
-	</div>
-	
-	<div class="description">
-		A flags enumeration/bitmask where each bit represents a different possible state that the item can be in that may effect how the item is displayed to the user and what actions can be performed against it.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-		<div class="enum-values box">
-			<h5>Valid Enum Values</h5>
-			<div class="box-contents stop-nesting-boxes">
-				<ul>
-					<li>
-						<div><strong>None</strong>: 0</div>
-					</li>
-					<li>
-						<div><strong>Locked</strong>: 1</div>
-						<div class="description">If this bit is set, the item has been "locked" by the user and cannot be deleted. You may want to represent this visually with a "lock" icon.</div>
-					</li>
-					<li>
-						<div><strong>Tracked</strong>: 2</div>
-						<div class="description">If this bit is set, the item is a quest that's being tracked by the user. You may want a visual indicator to show that this is a tracked quest.</div>
-					</li>
-					<li>
-						<div><strong>Masterwork</strong>: 4</div>
-						<div class="description">If this bit is set, the item has a Masterwork plug inserted. This usually coincides with having a special "glowing" effect applied to the item's icon.</div>
-					</li>
-				</ul>
-			</div>
-		</div>
-
-</div>			</div>
-		</div>
-		<div class="schema box">
 			<a id="/components/schemas/SingleComponentResponseOfDestinyInventoryComponent"><h3>SingleComponentResponseOfDestinyInventoryComponent</h3></a>
 			<div class="schema-detail box-contents">
 <div class="type-info stop-nesting-boxes">
@@ -94001,7 +95548,7 @@
 	</div>
 	
 	<div class="description">
-		If you want to know what expansions they own, this will contain that data.
+		If you want to know what expansions they own, this will contain that data.<br /><br /> IMPORTANT: This field may not return the data you're interested in for Cross-Saved users. It returns the last ownership data we saw for this account - which is to say, what they've purchased on the platform on which they last played, which now could be a different platform.<br /><br /> If you don't care about per-platform ownership and only care about whatever platform it seems they are playing on most recently, then this should be "good enough." Otherwise, this should be considered deprecated. We do not have a good alternative to provide at this time with platform specific ownership data for DLC.
 	</div>
 	
 	
@@ -94060,58 +95607,6 @@
 </div>			</div>
 		</div>
 		<div class="schema box">
-			<a id="/components/schemas/Destiny.DestinyGameVersions"><h3>Destiny.DestinyGameVersions</h3></a>
-			<div class="schema-detail box-contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-		<span class="enum">Enumeration</span>
-	</div>
-	
-	<div class="description">
-		A flags enumeration/bitmask indicating the versions of the game that a given user has purchased.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-		<div class="enum-values box">
-			<h5>Valid Enum Values</h5>
-			<div class="box-contents stop-nesting-boxes">
-				<ul>
-					<li>
-						<div><strong>None</strong>: 0</div>
-					</li>
-					<li>
-						<div><strong>Destiny2</strong>: 1</div>
-					</li>
-					<li>
-						<div><strong>DLC1</strong>: 2</div>
-					</li>
-					<li>
-						<div><strong>DLC2</strong>: 4</div>
-					</li>
-					<li>
-						<div><strong>Forsaken</strong>: 8</div>
-					</li>
-					<li>
-						<div><strong>YearTwoAnnualPass</strong>: 16</div>
-					</li>
-				</ul>
-			</div>
-		</div>
-
-</div>			</div>
-		</div>
-		<div class="schema box">
 			<a id="/components/schemas/SingleComponentResponseOfDestinyProfileComponent"><h3>SingleComponentResponseOfDestinyProfileComponent</h3></a>
 			<div class="schema-detail box-contents">
 <div class="type-info stop-nesting-boxes">
@@ -94138,6 +95633,70 @@
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
 		See: <a href="#/components/schemas/Destiny.Entities.Profiles.DestinyProfileComponent">Destiny.Entities.Profiles.DestinyProfileComponent</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>privacy</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/SingleComponentResponseOfDestinyPlatformSilverComponent"><h3>SingleComponentResponseOfDestinyPlatformSilverComponent</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>data</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.Components.Inventory.DestinyPlatformSilverComponent">Destiny.Components.Inventory.DestinyPlatformSilverComponent</a>
 </div>						</div>
 					</div>
 				</div>
@@ -99248,6 +100807,71 @@
 					</div>
 				</div>
 			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>currentResetCount</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+	</div>
+	
+	<div class="description">
+		The number of resets of this progression you've executed this season, if applicable to this progression.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>seasonResets</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Information about historical resets of this progression, if there is any data for it.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/Destiny.DestinyProgressionResetEntry">Destiny.DestinyProgressionResetEntry</a>
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	
 			
@@ -100432,6 +102056,9 @@
 					<li>
 						<div><strong>Reckoning</strong>: 76</div>
 					</li>
+					<li>
+						<div><strong>Menagerie</strong>: 77</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -100883,6 +102510,9 @@
 					</li>
 					<li>
 						<div><strong>Reckoning</strong>: 76</div>
+					</li>
+					<li>
+						<div><strong>Menagerie</strong>: 77</div>
 					</li>
 				</ul>
 			</div>
@@ -105189,6 +106819,9 @@
 					</li>
 					<li>
 						<div><strong>Reckoning</strong>: 76</div>
+					</li>
+					<li>
+						<div><strong>Menagerie</strong>: 77</div>
 					</li>
 				</ul>
 			</div>
@@ -118564,6 +120197,36 @@
 					</div>
 				</div>
 			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>membershipType</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The Membership Type indicating the platform on which this match was played.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	
 			
@@ -123866,6 +125529,9 @@
 					<li>
 						<div><strong>Reckoning</strong>: 76</div>
 					</li>
+					<li>
+						<div><strong>Menagerie</strong>: 77</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -124207,6 +125873,9 @@
 					</li>
 					<li>
 						<div><strong>Reckoning</strong>: 76</div>
+					</li>
+					<li>
+						<div><strong>Menagerie</strong>: 77</div>
 					</li>
 				</ul>
 			</div>
@@ -128277,6 +129946,9 @@
 					<li>
 						<div><strong>Reckoning</strong>: 10</div>
 					</li>
+					<li>
+						<div><strong>Menagerie</strong>: 11</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -129676,6 +131348,33 @@
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
+						<div class="title"><strong>environment</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
 						<div class="title"><strong>systems</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
@@ -130211,6 +131910,17 @@
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
 		See: <a href="#/components/schemas/Common.Models.Destiny2CoreSettings">Common.Models.Destiny2CoreSettings</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>emailSettings</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/User.EmailSettings">User.EmailSettings</a>
 </div>						</div>
 					</div>
 				</div>
@@ -130759,6 +132469,1060 @@
 	</div>
 	
 	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/User.EmailSettings"><h3>User.EmailSettings</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The set of all email subscription/opt-in settings and definitions.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>optInDefinitions</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Keyed by the name identifier of the opt-in definition.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			<a href="#/components/schemas/User.EmailOptInDefinition">User.EmailOptInDefinition</a>
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		string
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>subscriptionDefinitions</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Keyed by the name identifier of the Subscription definition.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			<a href="#/components/schemas/User.EmailSubscriptionDefinition">User.EmailSubscriptionDefinition</a>
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		string
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>views</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Keyed by the name identifier of the View definition.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			<a href="#/components/schemas/User.EmailViewDefinition">User.EmailViewDefinition</a>
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		string
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/User.EmailOptInDefinition"><h3>User.EmailOptInDefinition</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Defines a single opt-in category: a wide-scoped permission to send emails for the subject related to the opt-in.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>name</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The unique identifier for this opt-in category.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>value</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The flag value for this opt-in category. For historical reasons, this is defined as a flags enum.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int64
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>setByDefault</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If true, this opt-in setting should be set by default in situations where accounts are created without explicit choices about what they're opting into.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>dependentSubscriptions</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Information about the dependent subscriptions for this opt-in.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/User.EmailSubscriptionDefinition">User.EmailSubscriptionDefinition</a>
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/User.OptInFlags"><h3>User.OptInFlags</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="enum">Enumeration</span>
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int64
+	</div>
+	
+	
+
+	
+	
+			
+		<div class="enum-values box">
+			<h5>Valid Enum Values</h5>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<div><strong>Newsletter</strong>: 1</div>
+					</li>
+					<li>
+						<div><strong>System</strong>: 2</div>
+					</li>
+					<li>
+						<div><strong>Marketing</strong>: 4</div>
+					</li>
+					<li>
+						<div><strong>UserResearch</strong>: 8</div>
+					</li>
+					<li>
+						<div><strong>CustomerService</strong>: 16</div>
+					</li>
+					<li>
+						<div><strong>Social</strong>: 32</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/User.EmailSubscriptionDefinition"><h3>User.EmailSubscriptionDefinition</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Defines a single subscription: permission to send emails for a specific, focused subject (generally timeboxed, such as for a specific release of a product or feature).
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>name</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The unique identifier for this subscription.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>localization</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		A dictionary of localized text for the EMail Opt-in setting, keyed by the locale.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			<a href="#/components/schemas/User.EMailSettingSubscriptionLocalization">User.EMailSettingSubscriptionLocalization</a>
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		string
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>value</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The bitflag value for this subscription. Should be a unique power of two value.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int64
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/User.EMailSettingLocalization"><h3>User.EMailSettingLocalization</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Localized text relevant to a given EMail setting in a given localization.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>title</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>description</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/User.EMailSettingSubscriptionLocalization"><h3>User.EMailSettingSubscriptionLocalization</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Localized text relevant to a given EMail setting in a given localization. Extra settings specifically for subscriptions.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>unknownUserDescription</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>registeredUserDescription</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>unregisteredUserDescription</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>unknownUserActionText</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>knownUserActionText</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>title</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>description</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/User.EmailViewDefinition"><h3>User.EmailViewDefinition</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Represents a data-driven view for Email settings. Web/Mobile UI can use this data to show new EMail settings consistently without further manual work.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>name</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The identifier for this view.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>viewSettings</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The ordered list of settings to show in this view.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/User.EmailViewDefinitionSetting">User.EmailViewDefinitionSetting</a>
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/User.EmailViewDefinitionSetting"><h3>User.EmailViewDefinitionSetting</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>name</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The identifier for this UI Setting, which can be used to relate it to custom strings or other data as desired.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>localization</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		A dictionary of localized text for the EMail setting, keyed by the locale.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			<a href="#/components/schemas/User.EMailSettingLocalization">User.EMailSettingLocalization</a>
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		string
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>setByDefault</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If true, this setting should be set by default if the user hasn't chosen whether it's set or cleared yet.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>optInAggregateValue</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The OptInFlags value to set or clear if this setting is set or cleared in the UI. It is the aggregate of all underlying opt-in flags related to this setting.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int64
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>subscriptions</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The subscriptions to show as children of this setting, if any.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/User.EmailSubscriptionDefinition">User.EmailSubscriptionDefinition</a>
+	</div>
 
 	
 	
