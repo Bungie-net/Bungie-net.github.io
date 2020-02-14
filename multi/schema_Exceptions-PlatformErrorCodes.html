@@ -360,6 +360,28 @@
 							</div>
 						</li>
 						<li>
+							<h3>Tokens</h3>
+							<div>
+								<ul>
+									<li>
+										POST: <a href="operation_post_Tokens-ClaimPartnerOffer.html#operation_post_Tokens-ClaimPartnerOffer" id="operation_post_Tokens-ClaimPartnerOffer">Tokens.ClaimPartnerOffer</a>
+										<span class="attributes">
+										</span>
+									</li>
+									<li>
+										POST: <a href="operation_post_Tokens-ApplyMissingPartnerOffersWithoutClaim.html#operation_post_Tokens-ApplyMissingPartnerOffersWithoutClaim" id="operation_post_Tokens-ApplyMissingPartnerOffersWithoutClaim">Tokens.ApplyMissingPartnerOffersWithoutClaim</a>
+										<span class="attributes">
+										</span>
+									</li>
+									<li>
+										GET: <a href="operation_get_Tokens-GetPartnerOfferSkuHistory.html#operation_get_Tokens-GetPartnerOfferSkuHistory" id="operation_get_Tokens-GetPartnerOfferSkuHistory">Tokens.GetPartnerOfferSkuHistory</a>
+										<span class="attributes">
+										</span>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li>
 							<h3>Destiny2</h3>
 							<div>
 								<ul>
@@ -2512,6 +2534,21 @@
 							</span>
 						</li>
 						<li>
+							<a href="schema_Tokens-PartnerOfferClaimRequest.html#schema_Tokens-PartnerOfferClaimRequest" id="schema_Tokens-PartnerOfferClaimRequest">Tokens.PartnerOfferClaimRequest</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
+							<a href="schema_Tokens-PartnerOfferSkuHistoryResponse.html#schema_Tokens-PartnerOfferSkuHistoryResponse" id="schema_Tokens-PartnerOfferSkuHistoryResponse">Tokens.PartnerOfferSkuHistoryResponse</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
+							<a href="schema_Tokens-PartnerOfferHistoryResponse.html#schema_Tokens-PartnerOfferHistoryResponse" id="schema_Tokens-PartnerOfferHistoryResponse">Tokens.PartnerOfferHistoryResponse</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
 							<a href="schema_Destiny-Config-DestinyManifest.html#schema_Destiny-Config-DestinyManifest" id="schema_Destiny-Config-DestinyManifest">Destiny.Config.DestinyManifest</a>
 							<span class="attributes">
 							</span>
@@ -4469,6 +4506,12 @@
 						<div><strong>PerUserThrottleExceeded</strong>: 57</div>
 					</li>
 					<li>
+						<div><strong>PayloadSignatureVerificationFailure</strong>: 58</div>
+					</li>
+					<li>
+						<div><strong>InvalidServiceAuthContext</strong>: 59</div>
+					</li>
+					<li>
 						<div><strong>ObsoleteCredentialType</strong>: 89</div>
 					</li>
 					<li>
@@ -5931,6 +5974,21 @@
 						<div><strong>DestinyPublicAccountNotAccessible</strong>: 1682</div>
 					</li>
 					<li>
+						<div><strong>DestinyClaimsItemAlreadyClaimed</strong>: 1683</div>
+					</li>
+					<li>
+						<div><strong>DestinyClaimsNoInventorySpace</strong>: 1684</div>
+					</li>
+					<li>
+						<div><strong>DestinyClaimsRequiredLevelNotMet</strong>: 1685</div>
+					</li>
+					<li>
+						<div><strong>DestinyClaimsInvalidState</strong>: 1686</div>
+					</li>
+					<li>
+						<div><strong>DestinyNotEnoughRoomForMultipleRewards</strong>: 1687</div>
+					</li>
+					<li>
 						<div><strong>FbInvalidRequest</strong>: 1800</div>
 					</li>
 					<li>
@@ -6171,6 +6229,27 @@
 						<div><strong>UnclaimedLoyaltyRewardEntryNotFound</strong>: 2058</div>
 					</li>
 					<li>
+						<div><strong>PartnerOfferPartialFailure</strong>: 2059</div>
+					</li>
+					<li>
+						<div><strong>PartnerOfferAlreadyClaimed</strong>: 2060</div>
+					</li>
+					<li>
+						<div><strong>PartnerOfferSkuNotFound</strong>: 2061</div>
+					</li>
+					<li>
+						<div><strong>PartnerOfferSkuExpired</strong>: 2062</div>
+					</li>
+					<li>
+						<div><strong>PartnerOfferPermissionFailure</strong>: 2063</div>
+					</li>
+					<li>
+						<div><strong>PartnerOfferNoDestinyAccount</strong>: 2064</div>
+					</li>
+					<li>
+						<div><strong>PartnerOfferApplyDataNotFound</strong>: 2065</div>
+					</li>
+					<li>
 						<div><strong>ApiExceededMaxKeys</strong>: 2100</div>
 					</li>
 					<li>
@@ -6217,6 +6296,9 @@
 					</li>
 					<li>
 						<div><strong>OAuthAccessTokenExpired</strong>: 2115</div>
+					</li>
+					<li>
+						<div><strong>ApplicationTokenKeyIdDoesNotExist</strong>: 2116</div>
 					</li>
 					<li>
 						<div><strong>PartnershipInvalidType</strong>: 2200</div>
@@ -6384,6 +6466,9 @@
 						<div><strong>ClanFireteamInvalidAuthProvider</strong>: 3027</div>
 					</li>
 					<li>
+						<div><strong>ClanFireteamInvalidAuthProviderXuid</strong>: 3028</div>
+					</li>
+					<li>
 						<div><strong>CrossSaveOverriddenAccountNotFound</strong>: 3200</div>
 					</li>
 					<li>
@@ -6496,6 +6581,9 @@
 					</li>
 					<li>
 						<div><strong>UnsupportedBrowser</strong>: 3500</div>
+					</li>
+					<li>
+						<div><strong>StadiaAccountRequired</strong>: 3600</div>
 					</li>
 				</ul>
 			</div>
