@@ -1792,6 +1792,17 @@
 							</span>
 						</li>
 						<li>
+							<a href="schema_Destiny-Definitions-DestinyItemVersionDefinition.html#schema_Destiny-Definitions-DestinyItemVersionDefinition" id="schema_Destiny-Definitions-DestinyItemVersionDefinition">Destiny.Definitions.DestinyItemVersionDefinition</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
+							<a href="schema_Destiny-Definitions-PowerCaps-DestinyPowerCapDefinition.html#schema_Destiny-Definitions-PowerCaps-DestinyPowerCapDefinition" id="schema_Destiny-Definitions-PowerCaps-DestinyPowerCapDefinition">Destiny.Definitions.PowerCaps.DestinyPowerCapDefinition</a>
+							<span class="attributes">
+								<span class="manifest-entity">Manifest</span>
+							</span>
+						</li>
+						<li>
 							<a href="schema_Destiny-Definitions-Progression-DestinyProgressionLevelRequirementDefinition.html#schema_Destiny-Definitions-Progression-DestinyProgressionLevelRequirementDefinition" id="schema_Destiny-Definitions-Progression-DestinyProgressionLevelRequirementDefinition">Destiny.Definitions.Progression.DestinyProgressionLevelRequirementDefinition</a>
 							<span class="attributes">
 								<span class="manifest-entity">Manifest</span>
@@ -3455,6 +3466,12 @@
 						<li>
 							<a href="schema_SingleComponentResponseOfDestinyItemPlugObjectivesComponent.html#schema_SingleComponentResponseOfDestinyItemPlugObjectivesComponent" id="schema_SingleComponentResponseOfDestinyItemPlugObjectivesComponent">SingleComponentResponseOfDestinyItemPlugObjectivesComponent</a>
 							<span class="attributes">
+							</span>
+						</li>
+						<li>
+							<a href="schema_Destiny-DestinyVendorFilter.html#schema_Destiny-DestinyVendorFilter" id="schema_Destiny-DestinyVendorFilter">Destiny.DestinyVendorFilter</a>
+							<span class="attributes">
+								<span class="enum">Enum</span>
 							</span>
 						</li>
 						<li>
@@ -5155,6 +5172,40 @@
 		<strong>Array Contents:</strong>
 			<a href="schema_Destiny-Definitions-DestinyVendorItemSocketOverride.html#schema_Destiny-Definitions-DestinyVendorItemSocketOverride">Destiny.Definitions.DestinyVendorItemSocketOverride</a>
 	</div>
+
+	
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>unpurchasable</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+	</div>
+	
+	
+	<div class="description">
+		If true, this item is some sort of dummy sale item that cannot actually be purchased. It may be a display only item, or some fluff left by a content designer for testing purposes, or something that got disabled because it was a terrible idea. You get the picture. We won't know *why* it can't be purchased, only that it can't be. Sorry.<br /><br />This is also only whether it's unpurchasable as a static property according to game content. There are other reasons why an item may or may not be purchasable at runtime, so even if this isn't set to True you should trust the runtime value for this sale item over the static definition if this is unset.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
 
 	
 	

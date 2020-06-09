@@ -14,7 +14,7 @@
 		<div class="box-contents">
 			<div>These endpoints constitute the functionality exposed by Bungie.net, both for more traditional website functionality and for connectivity to Bungie video games and their related functionality.</div>
 			<div class="about-line-items">
-				<div><strong>Version:</strong> 2.8.0
+				<div><strong>Version:</strong> 2.8.1
 				</div>
 				<div><strong>License:</strong> <a href="https://github.com/Bungie-net/api/blob/master/LICENSE">https://github.com/Bungie-net/api/blob/master/LICENSE (BSD License 2.0)</a>
 				</div>
@@ -1926,6 +1926,17 @@
 				</span>
 			</li>
 			<li>
+				<a href="#/components/schemas/Destiny.Definitions.DestinyItemVersionDefinition">Destiny.Definitions.DestinyItemVersionDefinition</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.Definitions.PowerCaps.DestinyPowerCapDefinition">Destiny.Definitions.PowerCaps.DestinyPowerCapDefinition</a>
+				<span class="attributes">
+					<span class="manifest-entity">Mobile Manifest Entity</span>
+				</span>
+			</li>
+			<li>
 				<a href="#/components/schemas/Destiny.Definitions.Progression.DestinyProgressionLevelRequirementDefinition">Destiny.Definitions.Progression.DestinyProgressionLevelRequirementDefinition</a>
 				<span class="attributes">
 					<span class="manifest-entity">Mobile Manifest Entity</span>
@@ -3589,6 +3600,12 @@
 			<li>
 				<a href="#/components/schemas/SingleComponentResponseOfDestinyItemPlugObjectivesComponent">SingleComponentResponseOfDestinyItemPlugObjectivesComponent</a>
 				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.DestinyVendorFilter">Destiny.DestinyVendorFilter</a>
+				<span class="attributes">
+					<span class="enum">Enumeration</span>
 				</span>
 			</li>
 			<li>
@@ -25654,6 +25671,33 @@
 		<strong>Array Contents:</strong>
 			int32
 	</div>
+
+	
+	
+			
+
+</div>					</li>
+					<li>
+						<div class="name">
+							<strong>filter</strong>
+						</div>
+						<div class="description">The filter of what vendors and items to return, if any.</div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Indicates the type of filter to apply to Vendor results.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
 
 	
 	
@@ -62827,6 +62871,37 @@
 					</div>
 				</div>
 			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>unpurchasable</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+	</div>
+	
+	<div class="description">
+		If true, this item is some sort of dummy sale item that cannot actually be purchased. It may be a display only item, or some fluff left by a content designer for testing purposes, or something that got disabled because it was a terrible idea. You get the picture. We won't know *why* it can't be purchased, only that it can't be. Sorry.<br /><br />This is also only whether it's unpurchasable as a static property according to game content. There are other reasons why an item may or may not be purchasable at runtime, so even if this isn't set to True you should trust the runtime value for this sale item over the static definition if this is unset.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	
 			
@@ -74791,6 +74866,321 @@
 		<strong>Mapped to Manifest Database Definition: </strong>
 		<a href="#/components/schemas/Destiny.Definitions.Progression.DestinyProgressionLevelRequirementDefinition">Destiny.Definitions.Progression.DestinyProgressionLevelRequirementDefinition</a>
 	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>currentVersion</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The latest version available for this item.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>versions</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The list of versions available for this item.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/Destiny.Definitions.DestinyItemVersionDefinition">Destiny.Definitions.DestinyItemVersionDefinition</a>
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>displayVersionWatermarkIcons</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Icon overlays to denote the item version and power cap status.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			string
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Definitions.DestinyItemVersionDefinition"><h3>Destiny.Definitions.DestinyItemVersionDefinition</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The version definition currently just holds a reference to the power cap.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>powerCapHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	<div class="description">
+		A reference to the power cap for this item version.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.PowerCaps.DestinyPowerCapDefinition">Destiny.Definitions.PowerCaps.DestinyPowerCapDefinition</a>
+	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Definitions.PowerCaps.DestinyPowerCapDefinition"><h3>Destiny.Definitions.PowerCaps.DestinyPowerCapDefinition</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="manifest-entity">Mobile Manifest Entity</span>
+	</div>
+	
+	<div class="description">
+		Defines a 'power cap' (limit) for gear items, based on the rarity tier and season of release.
+	</div>
+	
+	<div class="manifest-database">
+		<strong>Mapped to Mobile Manifest Table</strong>: PowerCaps
+	</div>
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>powerCap</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The raw value for a power cap.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>hash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.<br /><br />When entities refer to each other in Destiny content, it is this hash that they are referring to.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>index</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The index of the entity as it was found in the investment tables.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>redacted</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
 			
 
 </div>						</div>
@@ -96065,6 +96455,36 @@
 						<div><strong>ApplicationTokenKeyIdDoesNotExist</strong>: 2116</div>
 					</li>
 					<li>
+						<div><strong>ProvidedTokenNotValidRefreshToken</strong>: 2117</div>
+					</li>
+					<li>
+						<div><strong>RefreshTokenExpired</strong>: 2118</div>
+					</li>
+					<li>
+						<div><strong>AuthorizationRecordInvalid</strong>: 2119</div>
+					</li>
+					<li>
+						<div><strong>TokenPreviouslyRevoked</strong>: 2120</div>
+					</li>
+					<li>
+						<div><strong>TokenInvalidMembership</strong>: 2121</div>
+					</li>
+					<li>
+						<div><strong>AuthorizationCodeStale</strong>: 2122</div>
+					</li>
+					<li>
+						<div><strong>AuthorizationRecordExpired</strong>: 2123</div>
+					</li>
+					<li>
+						<div><strong>AuthorizationRecordRevoked</strong>: 2124</div>
+					</li>
+					<li>
+						<div><strong>AuthorizationRecordInactiveApiKey</strong>: 2125</div>
+					</li>
+					<li>
+						<div><strong>AuthorizationRecordApiKeyMatching</strong>: 2126</div>
+					</li>
+					<li>
 						<div><strong>PartnershipInvalidType</strong>: 2200</div>
 					</li>
 					<li>
@@ -96105,6 +96525,12 @@
 					</li>
 					<li>
 						<div><strong>TwitchCouldNotUnregisterUser</strong>: 2504</div>
+					</li>
+					<li>
+						<div><strong>TwitchRequiresRelinking</strong>: 2505</div>
+					</li>
+					<li>
+						<div><strong>TwitchNoPlatformChosen</strong>: 2506</div>
 					</li>
 					<li>
 						<div><strong>TrendingCategoryNotFound</strong>: 2600</div>
@@ -99886,6 +100312,37 @@
 <div class="type-info stop-nesting-boxes">
 		See: <a href="#/components/schemas/Destiny.Quests.DestinyObjectiveProgress">Destiny.Quests.DestinyObjectiveProgress</a>
 </div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>versionNumber</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+	</div>
+	
+	<div class="description">
+		The version of this item, used to index into the versions list in the item definition quality block.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
 
 	
 	
@@ -104517,6 +104974,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	
@@ -104537,6 +104995,10 @@
 	</div>
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.Presentation.DestinyPresentationNodeDefinition">Destiny.Definitions.Presentation.DestinyPresentationNodeDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -105497,6 +105959,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	
@@ -105517,6 +105980,10 @@
 	</div>
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.Collectibles.DestinyCollectibleDefinition">Destiny.Definitions.Collectibles.DestinyCollectibleDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -105825,6 +106292,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	
@@ -105845,6 +106313,10 @@
 	</div>
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.Collectibles.DestinyCollectibleDefinition">Destiny.Definitions.Collectibles.DestinyCollectibleDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -124800,6 +125272,43 @@
 </div>			</div>
 		</div>
 		<div class="schema box">
+			<a id="/components/schemas/Destiny.DestinyVendorFilter"><h3>Destiny.DestinyVendorFilter</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="enum">Enumeration</span>
+	</div>
+	
+	<div class="description">
+		Indicates the type of filter to apply to Vendor results.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+		<div class="enum-values box">
+			<h5>Valid Enum Values</h5>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<div><strong>None</strong>: 0</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+</div>			</div>
+		</div>
+		<div class="schema box">
 			<a id="/components/schemas/Destiny.Responses.DestinyVendorsResponse"><h3>Destiny.Responses.DestinyVendorsResponse</h3></a>
 			<div class="schema-detail box-contents">
 <div class="type-info stop-nesting-boxes">
@@ -125451,7 +125960,7 @@
 	</div>
 	
 	<div class="description">
-		If True, you can purchase from the Vendor.<br /><br />Theoretically, Vendors can be restricted from selling items. In practice, none do that (yet?).
+		If True, you can purchase from the Vendor.
 	</div>
 	
 	
@@ -126930,6 +127439,10 @@
 					<li>
 						<div><strong>DailyOffer</strong>: 4096</div>
 						<div class="description">This indicates that the item is a daily offer.</div>
+					</li>
+					<li>
+						<div><strong>Charity</strong>: 8192</div>
+						<div class="description">This indicates that the item is for charity.</div>
 					</li>
 				</ul>
 			</div>
@@ -145125,6 +145638,9 @@
 					</li>
 					<li>
 						<div><strong>PlayTestsLocal</strong>: 128</div>
+					</li>
+					<li>
+						<div><strong>Careers</strong>: 256</div>
 					</li>
 				</ul>
 			</div>
