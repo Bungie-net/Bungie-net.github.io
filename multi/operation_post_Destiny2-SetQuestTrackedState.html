@@ -3,7 +3,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta charset="utf-8" />
-	<title>Bungie.Net API - Destiny.TierType</title>
+	<title>Bungie.Net API - Destiny2.SetQuestTrackedState</title>
 	<link href="../css/shared.css" rel="stylesheet" type="text/css" />
 	<link href="css/docs.css" rel="stylesheet" type="text/css" />
 </head>
@@ -4309,16 +4309,86 @@
 			</div>
 		</div>
 	</div>
-</div>	<div class="main">
-		<div class="schema box">
-			<h3>Destiny.TierType</h3>
-			<div class="schema-detail box-contents">
+</div><div class="main">
+		<div class="box">
+			<a id="Destiny2.SetQuestTrackedState">
+				<h3>Destiny2.SetQuestTrackedState</h3></a>
+			<div class="box-contents">
+				<div class="attributes">
+					<span class="Destiny2 tag">Destiny2</span>
+				</div>
+				<br />
+				<div>
+					<div><strong>Notes:</strong></div>
+					<div class="preview">ThrottleSecondsBetweenActionPerUser: 1</div>
+				</div>
+				<br/>
+				<div><strong>Verb:</strong> POST
+				</div>
+				<br/>
+				<div><strong>Path:</strong> /Destiny2/Actions/Items/SetTrackedState/
+				</div>
+				<br/>
+				<div class="description">Set the Tracking State for an instanced item, if that item is a Quest or Bounty. You must have a valid Destiny Account. Yeah, it's an item.</div>
+				<br/>
+				<div class="required-scopes box">
+					<h4>Required Scope(s)</h4>
+					<div class="box-contents">
+						<ul>
+							<li>oauth2: MoveEquipDestinyItems</li>
+						</ul>
+					</div>
+				</div>
+
+
+
+				<div class="request-body box">
+					<h4>Request Body</h4>
+					<div class="box-contents stop-nesting-boxes">
+
+<div class="type-info stop-nesting-boxes">
+		See: <a href="schema_Destiny-Requests-Actions-DestinyItemStateRequest.html#schema_Destiny-Requests-Actions-DestinyItemStateRequest">Destiny.Requests.Actions.DestinyItemStateRequest</a>
+</div>					</div>
+				</div>
+
+				<div class="response box">
+					<h4>Response</h4>
+					<div class="box-contents stop-nesting-boxes">
+<div class="response">
+	<div class="description">Look at the Response property for more information about the nature of this response</div>
+		<div class="content">
+			<div class="content-type">Content Type: application/json</div>
+			<div>
 <div class="type-info stop-nesting-boxes">
 
 	
 	
 	<div class="attributes">
-		<span class="enum">Enumeration</span>
+	</div>
+	
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Response</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	
+	<div class="attributes">
 	</div>
 	
 	
@@ -4334,37 +4404,209 @@
 	
 	
 			
-		<div class="enum-values box">
-			<h5>Valid Enum Values</h5>
-			<div class="box-contents stop-nesting-boxes">
-				<ul>
-					<li>
-						<div><strong>Unknown</strong>: 0</div>
-					</li>
-					<li>
-						<div><strong>Currency</strong>: 1</div>
-					</li>
-					<li>
-						<div><strong>Basic</strong>: 2</div>
-					</li>
-					<li>
-						<div><strong>Common</strong>: 3</div>
-					</li>
-					<li>
-						<div><strong>Rare</strong>: 4</div>
-					</li>
-					<li>
-						<div><strong>Superior</strong>: 5</div>
-					</li>
-					<li>
-						<div><strong>Exotic</strong>: 6</div>
-					</li>
-				</ul>
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorCode</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ThrottleSeconds</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorStatus</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Message</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>MessageData</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			string
+	</div>
+	
+	<div>
+		<strong>Dictionary Key Type: </strong>
+		string
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>DetailedErrorTrace</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
 			</div>
 		</div>
+	
+			
 
 </div>			</div>
 		</div>
-	</div>
+</div>					</div>
+				</div>
+			</div>
+		</div>
+</div>
 </body>
 </html>
