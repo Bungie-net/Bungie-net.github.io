@@ -14,7 +14,7 @@
 		<div class="box-contents">
 			<div>These endpoints constitute the functionality exposed by Bungie.net, both for more traditional website functionality and for connectivity to Bungie video games and their related functionality.</div>
 			<div class="about-line-items">
-				<div><strong>Version:</strong> 2.9.2
+				<div><strong>Version:</strong> 2.10.0
 				</div>
 				<div><strong>License:</strong> <a href="https://github.com/Bungie-net/api/blob/master/LICENSE">https://github.com/Bungie-net/api/blob/master/LICENSE (BSD License 2.0)</a>
 				</div>
@@ -1421,6 +1421,12 @@
 				</span>
 			</li>
 			<li>
+				<a href="#/components/schemas/Destiny.DestinyVendorProgressionType">Destiny.DestinyVendorProgressionType</a>
+				<span class="attributes">
+					<span class="enum">Enumeration</span>
+				</span>
+			</li>
+			<li>
 				<a href="#/components/schemas/Dates.DateRange">Dates.DateRange</a>
 				<span class="attributes">
 				</span>
@@ -2177,6 +2183,11 @@
 				</span>
 			</li>
 			<li>
+				<a href="#/components/schemas/Destiny.Definitions.Records.DestinyRecordIntervalRewards">Destiny.Definitions.Records.DestinyRecordIntervalRewards</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
 				<a href="#/components/schemas/Destiny.Definitions.Lore.DestinyLoreDefinition">Destiny.Definitions.Lore.DestinyLoreDefinition</a>
 				<span class="attributes">
 					<span class="manifest-entity">Mobile Manifest Entity</span>
@@ -2418,6 +2429,16 @@
 				<a href="#/components/schemas/Destiny.Definitions.Seasons.DestinySeasonDefinition">Destiny.Definitions.Seasons.DestinySeasonDefinition</a>
 				<span class="attributes">
 					<span class="manifest-entity">Mobile Manifest Entity</span>
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.Definitions.Seasons.DestinySeasonPreviewDefinition">Destiny.Definitions.Seasons.DestinySeasonPreviewDefinition</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.Definitions.Seasons.DestinySeasonPreviewImageDefinition">Destiny.Definitions.Seasons.DestinySeasonPreviewImageDefinition</a>
+				<span class="attributes">
 				</span>
 			</li>
 			<li>
@@ -51811,6 +51832,33 @@
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
+						<div class="title"><strong>flavorText</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
 						<div class="title"><strong>uiItemDisplayStyle</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
@@ -58946,6 +58994,36 @@
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
+						<div class="title"><strong>vendorProgressionType</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The type of reward progression that this vendor has. Default - The original rank progression from token redemption. Ritual - Progression from ranks in ritual content. For example: Crucible (Shaxx), Gambit (Drifter), and Battlegrounds (War Table).
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
 						<div class="title"><strong>buyString</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
@@ -60548,6 +60626,48 @@
 		</div>
 	
 			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.DestinyVendorProgressionType"><h3>Destiny.DestinyVendorProgressionType</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="enum">Enumeration</span>
+	</div>
+	
+	<div class="description">
+		Describes the type of progression that a vendor has.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+		<div class="enum-values box">
+			<h5>Valid Enum Values</h5>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<div><strong>Default</strong>: 0</div>
+						<div class="description">The original rank progression from token redemption.</div>
+					</li>
+					<li>
+						<div><strong>Ritual</strong>: 1</div>
+						<div class="description">Progression from ranks in ritual content. For example: Crucible (Shaxx), Gambit (Drifter), and Season 13 Battlegrounds (War Table).</div>
+					</li>
+				</ul>
+			</div>
+		</div>
 
 </div>			</div>
 		</div>
@@ -67118,36 +67238,6 @@
 	
 	<div class="description">
 		If the activity will not be visible until a specific and known time, this will be the seconds since the Epoch when it will become visible.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>activityLevel</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		The difficulty level of the activity.
 	</div>
 	
 	
@@ -81198,6 +81288,33 @@
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
+						<div class="title"><strong>forTitleGilding</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
 						<div class="title"><strong>titleInfo</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
@@ -81716,6 +81833,39 @@
 					</div>
 				</div>
 			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>gildingTrackingRecordHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.Records.DestinyRecordDefinition">Destiny.Definitions.Records.DestinyRecordDefinition</a>
+	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	
 			
@@ -82106,6 +82256,12 @@
 					<li>
 						<div><strong>MedalComplete</strong>: 5</div>
 					</li>
+					<li>
+						<div><strong>SeasonChallengeComplete</strong>: 6</div>
+					</li>
+					<li>
+						<div><strong>GildedTitleComplete</strong>: 7</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -82356,6 +82512,37 @@
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
+						<div class="title"><strong>intervalRewards</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/Destiny.Definitions.Records.DestinyRecordIntervalRewards">Destiny.Definitions.Records.DestinyRecordIntervalRewards</a>
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
 						<div class="title"><strong>originalObjectiveArrayInsertionIndex</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
@@ -82451,6 +82638,63 @@
 	</div>
 	
 	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Definitions.Records.DestinyRecordIntervalRewards"><h3>Destiny.Definitions.Records.DestinyRecordIntervalRewards</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>intervalRewardItems</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/Destiny.DestinyItemQuantity">Destiny.DestinyItemQuantity</a>
+	</div>
 
 	
 	
@@ -90205,6 +90449,71 @@
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
+						<div class="title"><strong>seasonalChallengesPresentationNodeHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.Presentation.DestinyPresentationNodeDefinition">Destiny.Definitions.Presentation.DestinyPresentationNodeDefinition</a>
+	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>preview</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Optional - Defines the promotional text, images, and links to preview this season.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.Definitions.Seasons.DestinySeasonPreviewDefinition">Destiny.Definitions.Seasons.DestinySeasonPreviewDefinition</a>
+</div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
 						<div class="title"><strong>hash</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
@@ -90280,6 +90589,248 @@
 	
 	<div class="type">
 		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Definitions.Seasons.DestinySeasonPreviewDefinition"><h3>Destiny.Definitions.Seasons.DestinySeasonPreviewDefinition</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Defines the promotional text, images, and links to preview this season.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>description</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		A localized description of the season.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>linkPath</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		A relative path to learn more about the season. Web browsers should be automatically redirected to the user's Bungie.net locale. For example: "/SeasonOfTheChosen" will redirect to "/7/en/Seasons/SeasonOfTheChosen" for English users.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>videoLink</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		An optional link to a localized video, probably YouTube.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>images</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		A list of images to preview the seasonal content. Should have at least three to show.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/Destiny.Definitions.Seasons.DestinySeasonPreviewImageDefinition">Destiny.Definitions.Seasons.DestinySeasonPreviewImageDefinition</a>
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Definitions.Seasons.DestinySeasonPreviewImageDefinition"><h3>Destiny.Definitions.Seasons.DestinySeasonPreviewImageDefinition</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Defines the thumbnail icon, high-res image, and video link for promotional images
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>thumbnailImage</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		A thumbnail icon path to preview seasonal content, probably 480x270.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>highResImage</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		An optional path to a high-resolution image, probably 1920x1080.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
 	</div>
 	
 	
@@ -96988,6 +97539,9 @@
 						<div><strong>ClanNameRestricted</strong>: 751</div>
 					</li>
 					<li>
+						<div><strong>ClanCreationBan</strong>: 752</div>
+					</li>
+					<li>
 						<div><strong>ItemAlreadyFollowed</strong>: 801</div>
 					</li>
 					<li>
@@ -97127,6 +97681,15 @@
 					</li>
 					<li>
 						<div><strong>PsnApiTargetUserBlocked</strong>: 1239</div>
+					</li>
+					<li>
+						<div><strong>PsnApiJwksMissing</strong>: 1240</div>
+					</li>
+					<li>
+						<div><strong>PsnApiJwtMalformedHeader</strong>: 1241</div>
+					</li>
+					<li>
+						<div><strong>PsnApiJwtMalformedPayload</strong>: 1242</div>
 					</li>
 					<li>
 						<div><strong>XblExSystemDisabled</strong>: 1300</div>
@@ -100850,6 +101413,9 @@
 					<li>
 						<div><strong>Shadowkeep</strong>: 32</div>
 					</li>
+					<li>
+						<div><strong>BeyondLight</strong>: 64</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -102155,6 +102721,9 @@
 					</li>
 					<li>
 						<div><strong>Shadowkeep</strong>: 32</div>
+					</li>
+					<li>
+						<div><strong>BeyondLight</strong>: 64</div>
 					</li>
 				</ul>
 			</div>
@@ -129011,6 +129580,10 @@
 						<div><strong>Charity</strong>: 8192</div>
 						<div class="description">This indicates that the item is for charity.</div>
 					</li>
+					<li>
+						<div><strong>SeasonalRewardExpiration</strong>: 16384</div>
+						<div class="description">This indicates that the item has a seasonal reward expiration.</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -147004,6 +147577,39 @@
 
 	
 	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>seasonalChallengesPresentationNodeHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.Presentation.DestinyPresentationNodeDefinition">Destiny.Definitions.Presentation.DestinyPresentationNodeDefinition</a>
+	</div>
 			
 
 </div>						</div>
