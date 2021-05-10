@@ -14,7 +14,7 @@
 		<div class="box-contents">
 			<div>These endpoints constitute the functionality exposed by Bungie.net, both for more traditional website functionality and for connectivity to Bungie video games and their related functionality.</div>
 			<div class="about-line-items">
-				<div><strong>Version:</strong> 2.10.0
+				<div><strong>Version:</strong> 2.11.0
 				</div>
 				<div><strong>License:</strong> <a href="https://github.com/Bungie-net/api/blob/master/LICENSE">https://github.com/Bungie-net/api/blob/master/LICENSE (BSD License 2.0)</a>
 				</div>
@@ -152,6 +152,12 @@
 									<li>
 										<div class="title">PartnerOfferGrant</div>
 										<div class="description">Can user the partner offer api to claim rewards defined for a partner</div>
+									</li>
+								</ul>
+								<ul>
+									<li>
+										<div class="title">DestinyUnlockValueQuery</div>
+										<div class="description">Allows an app to query sensitive information like unlock flags and values not available through normal methods.</div>
 									</li>
 								</ul>
 							</div>
@@ -3072,6 +3078,17 @@
 				</span>
 			</li>
 			<li>
+				<a href="#/components/schemas/Destiny.Components.StringVariables.DestinyStringVariablesComponent">Destiny.Components.StringVariables.DestinyStringVariablesComponent</a>
+				<span class="attributes">
+					<span class="depends-on">Depends on Component "StringVariables"</span>
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/SingleComponentResponseOfDestinyStringVariablesComponent">SingleComponentResponseOfDestinyStringVariablesComponent</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
 				<a href="#/components/schemas/Destiny.Entities.Characters.DestinyCharacterComponent">Destiny.Entities.Characters.DestinyCharacterComponent</a>
 				<span class="attributes">
 					<span class="depends-on">Depends on Component "Characters"</span>
@@ -3371,6 +3388,11 @@
 			</li>
 			<li>
 				<a href="#/components/schemas/DictionaryComponentResponseOfint64AndDestinyCollectiblesComponent">DictionaryComponentResponseOfint64AndDestinyCollectiblesComponent</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/DictionaryComponentResponseOfint64AndDestinyStringVariablesComponent">DictionaryComponentResponseOfint64AndDestinyStringVariablesComponent</a>
 				<span class="attributes">
 				</span>
 			</li>
@@ -37085,7 +37107,7 @@
 		<br />
 		<div><strong>Path:</strong> /Fireteam/Clan/{groupId}/My/{platform}/{includeClosed}/{page}/</div>
 		<br />
-		<div class="description">Gets a listing of all clan fireteams that caller is an applicant, a member, or an alternate of.</div>
+		<div class="description">Gets a listing of all fireteams that caller is an applicant, a member, or an alternate of.</div>
 		<br />
 		<div class="required-scopes box">
 			<h4>Required Scope(s)</h4>
@@ -37477,7 +37499,7 @@
 		<br />
 		<div><strong>Path:</strong> /Fireteam/Clan/{groupId}/Summary/{fireteamId}/</div>
 		<br />
-		<div class="description">Gets a specific clan fireteam.</div>
+		<div class="description">Gets a specific fireteam.</div>
 		<br />
 		<div class="required-scopes box">
 			<h4>Required Scope(s)</h4>
@@ -38874,6 +38896,10 @@
 					<li>
 						<div><strong>PartnerOfferGrant</strong>: 4096</div>
 						<div class="description">Can user the partner offer api to claim rewards defined for a partner</div>
+					</li>
+					<li>
+						<div><strong>DestinyUnlockValueQuery</strong>: 8192</div>
+						<div class="description">Allows an app to query sensitive information like unlock flags and values not available through normal methods.</div>
 					</li>
 				</ul>
 			</div>
@@ -51473,6 +51499,36 @@
 					</div>
 				</div>
 			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>hasConditionalVisibility</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Indicates that this item quantity may be conditionally shown or hidden, based on various sources of state. For example: server flags, account state, or character progress.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	
 			
@@ -53365,6 +53421,40 @@
 	<div class="items">
 		<strong>Array Contents:</strong>
 			string
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>traitHashes</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		These are the corresponding trait definition hashes for the entries in traitIds.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			uint32
 	</div>
 
 	
@@ -64119,6 +64209,36 @@
 	
 	<div class="type">
 		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>hasConditionalVisibility</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Indicates that this item quantity may be conditionally shown or hidden, based on various sources of state. For example: server flags, account state, or character progress.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
 	</div>
 	
 	
@@ -91278,6 +91398,36 @@
 					</div>
 				</div>
 			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>hasConditionalVisibility</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Indicates that this item quantity may be conditionally shown or hidden, based on various sources of state. For example: server flags, account state, or character progress.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	
 			
@@ -97542,6 +97692,9 @@
 						<div><strong>ClanCreationBan</strong>: 752</div>
 					</li>
 					<li>
+						<div><strong>ClanCreationTenureRequirementsNotMet</strong>: 753</div>
+					</li>
+					<li>
 						<div><strong>ItemAlreadyFollowed</strong>: 801</div>
 					</li>
 					<li>
@@ -98566,6 +98719,15 @@
 						<div><strong>ClanFireteamInvalidAuthProviderXuid</strong>: 3028</div>
 					</li>
 					<li>
+						<div><strong>ClanFireteamThrottle</strong>: 3029</div>
+					</li>
+					<li>
+						<div><strong>ClanFireteamTooManyOpenScheduledFireteams</strong>: 3030</div>
+					</li>
+					<li>
+						<div><strong>ClanFireteamCannotReopenScheduledFireteams</strong>: 3031</div>
+					</li>
+					<li>
 						<div><strong>CrossSaveOverriddenAccountNotFound</strong>: 3200</div>
 					</li>
 					<li>
@@ -98696,6 +98858,42 @@
 					</li>
 					<li>
 						<div><strong>ErrorPhoneValidationBanned</strong>: 3706</div>
+					</li>
+					<li>
+						<div><strong>ErrorPhoneValidationCodeTooRecentlySent</strong>: 3707</div>
+					</li>
+					<li>
+						<div><strong>ErrorPhoneValidationCodeExpired</strong>: 3708</div>
+					</li>
+					<li>
+						<div><strong>ErrorPhoneValidationInvalidNumberType</strong>: 3709</div>
+					</li>
+					<li>
+						<div><strong>ErrorPhoneValidationCodeTooRecentlyChecked</strong>: 3710</div>
+					</li>
+					<li>
+						<div><strong>ApplePushErrorUnknown</strong>: 3800</div>
+					</li>
+					<li>
+						<div><strong>ApplePushErrorNull</strong>: 3801</div>
+					</li>
+					<li>
+						<div><strong>ApplePushErrorTimeout</strong>: 3802</div>
+					</li>
+					<li>
+						<div><strong>ApplePushBadRequest</strong>: 3803</div>
+					</li>
+					<li>
+						<div><strong>ApplePushFailedAuth</strong>: 3804</div>
+					</li>
+					<li>
+						<div><strong>ApplePushThrottled</strong>: 3805</div>
+					</li>
+					<li>
+						<div><strong>ApplePushServiceUnavailable</strong>: 3806</div>
+					</li>
+					<li>
+						<div><strong>NotAnImageOrVideo</strong>: 3807</div>
 					</li>
 				</ul>
 			</div>
@@ -102268,6 +102466,40 @@
 					</div>
 				</div>
 			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>itemValueVisibility</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If available, a list that describes which item values (rewards) should be shown (true) or hidden (false).
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			boolean
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	
 			
@@ -102985,6 +103217,10 @@
 						<div><strong>Metrics</strong>: 1100</div>
 						<div class="description">Returns summary status information about all "Metrics" (also known in the game as "Stat Trackers").</div>
 					</li>
+					<li>
+						<div><strong>StringVariables</strong>: 1200</div>
+						<div class="description">Returns a mapping of localized string variable hashes to values, on a per-account or per-character basis.</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -103446,6 +103682,39 @@
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
+						<div class="title"><strong>profileStringVariables</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="depends-on">Depends on Component "StringVariables"</span>
+	</div>
+	
+	<div class="description">
+		COMPONENT TYPE: StringVariables
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/SingleComponentResponseOfDestinyStringVariablesComponent">SingleComponentResponseOfDestinyStringVariablesComponent</a>
+</div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
 						<div class="title"><strong>characters</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
@@ -103834,6 +104103,39 @@
 	
 <div class="type-info stop-nesting-boxes">
 		See: <a href="#/components/schemas/DictionaryComponentResponseOfint64AndDestinyCollectiblesComponent">DictionaryComponentResponseOfint64AndDestinyCollectiblesComponent</a>
+</div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>characterStringVariables</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="depends-on">Depends on Component "StringVariables"</span>
+	</div>
+	
+	<div class="description">
+		COMPONENT TYPE: StringVariables
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/DictionaryComponentResponseOfint64AndDestinyStringVariablesComponent">DictionaryComponentResponseOfint64AndDestinyStringVariablesComponent</a>
 </div>	
 
 	
@@ -107545,6 +107847,40 @@
 					</div>
 				</div>
 			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>rewardVisibilty</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If available, a list that describes which reward rewards should be shown (true) or hidden (false). This property is for regular record rewards, and not for interval objective rewards.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			boolean
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	
 			
@@ -109930,6 +110266,163 @@
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
 		See: <a href="#/components/schemas/Destiny.Components.Metrics.DestinyMetricsComponent">Destiny.Components.Metrics.DestinyMetricsComponent</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>privacy</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>disabled</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+	</div>
+	
+	<div class="description">
+		If true, this component is disabled.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Components.StringVariables.DestinyStringVariablesComponent"><h3>Destiny.Components.StringVariables.DestinyStringVariablesComponent</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="depends-on">Depends on Component "StringVariables"</span>
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>integerValuesByHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			int32
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		uint32
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/SingleComponentResponseOfDestinyStringVariablesComponent"><h3>SingleComponentResponseOfDestinyStringVariablesComponent</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>data</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.Components.StringVariables.DestinyStringVariablesComponent">Destiny.Components.StringVariables.DestinyStringVariablesComponent</a>
 </div>						</div>
 					</div>
 				</div>
@@ -116106,6 +116599,36 @@
 					</div>
 				</div>
 			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>hasConditionalVisibility</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Indicates that this item quantity may be conditionally shown or hidden, based on various sources of state. For example: server flags, account state, or character progress.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	
 			
@@ -120622,6 +121145,125 @@
 	<div class="dictionary">
 		<strong>Dictionary Contents:</strong>
 			<a href="#/components/schemas/Destiny.Components.Collectibles.DestinyCollectiblesComponent">Destiny.Components.Collectibles.DestinyCollectiblesComponent</a>
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		int64
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>privacy</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>disabled</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+	</div>
+	
+	<div class="description">
+		If true, this component is disabled.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/DictionaryComponentResponseOfint64AndDestinyStringVariablesComponent"><h3>DictionaryComponentResponseOfint64AndDestinyStringVariablesComponent</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>data</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			<a href="#/components/schemas/Destiny.Components.StringVariables.DestinyStringVariablesComponent">Destiny.Components.StringVariables.DestinyStringVariablesComponent</a>
 	</div>
 	<div>
 		<strong>Dictionary Key Type: </strong> 
@@ -129080,6 +129722,40 @@
 	</div>
 	
 	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>itemValueVisibility</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If available, a list that describes which item values (rewards) should be shown (true) or hidden (false).
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			boolean
+	</div>
 
 	
 	
