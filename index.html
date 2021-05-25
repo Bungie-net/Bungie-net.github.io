@@ -14,7 +14,7 @@
 		<div class="box-contents">
 			<div>These endpoints constitute the functionality exposed by Bungie.net, both for more traditional website functionality and for connectivity to Bungie video games and their related functionality.</div>
 			<div class="about-line-items">
-				<div><strong>Version:</strong> 2.11.0
+				<div><strong>Version:</strong> 2.11.1
 				</div>
 				<div><strong>License:</strong> <a href="https://github.com/Bungie-net/api/blob/master/LICENSE">https://github.com/Bungie-net/api/blob/master/LICENSE (BSD License 2.0)</a>
 				</div>
@@ -158,6 +158,12 @@
 									<li>
 										<div class="title">DestinyUnlockValueQuery</div>
 										<div class="description">Allows an app to query sensitive information like unlock flags and values not available through normal methods.</div>
+									</li>
+								</ul>
+								<ul>
+									<li>
+										<div class="title">UserPiiRead</div>
+										<div class="description">Allows an app to query sensitive user PII, most notably email information.</div>
 									</li>
 								</ul>
 							</div>
@@ -38900,6 +38906,10 @@
 					<li>
 						<div><strong>DestinyUnlockValueQuery</strong>: 8192</div>
 						<div class="description">Allows an app to query sensitive information like unlock flags and values not available through normal methods.</div>
+					</li>
+					<li>
+						<div><strong>UserPiiRead</strong>: 16384</div>
+						<div class="description">Allows an app to query sensitive user PII, most notably email information.</div>
 					</li>
 				</ul>
 			</div>
@@ -128250,6 +128260,39 @@
 					</div>
 				</div>
 			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>stringVariables</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="depends-on">Depends on Component "StringVariables"</span>
+	</div>
+	
+	<div class="description">
+		A map of string variable values by hash for this character context.<br /><br />COMPONENT TYPE: StringVariables
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/SingleComponentResponseOfDestinyStringVariablesComponent">SingleComponentResponseOfDestinyStringVariablesComponent</a>
+</div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	
 			
@@ -131940,6 +131983,39 @@
 					</div>
 				</div>
 			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>stringVariables</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="depends-on">Depends on Component "StringVariables"</span>
+	</div>
+	
+	<div class="description">
+		A map of string variable values by hash for this character context.<br /><br />COMPONENT TYPE: StringVariables
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/SingleComponentResponseOfDestinyStringVariablesComponent">SingleComponentResponseOfDestinyStringVariablesComponent</a>
+</div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	
 			
@@ -132400,6 +132476,39 @@
 	
 <div class="type-info stop-nesting-boxes">
 		See: <a href="#/components/schemas/DictionaryComponentResponseOfuint32AndPublicDestinyVendorSaleItemSetComponent">DictionaryComponentResponseOfuint32AndPublicDestinyVendorSaleItemSetComponent</a>
+</div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>stringVariables</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="depends-on">Depends on Component "StringVariables"</span>
+	</div>
+	
+	<div class="description">
+		A set of string variable values by hash for a public vendors context.<br /><br />COMPONENT TYPE: StringVariables
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/SingleComponentResponseOfDestinyStringVariablesComponent">SingleComponentResponseOfDestinyStringVariablesComponent</a>
 </div>	
 
 	
