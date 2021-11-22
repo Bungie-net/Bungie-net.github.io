@@ -85,6 +85,11 @@
 										<span class="attributes">
 										</span>
 									</li>
+									<li>
+										POST: <a href="operation_post_User-SearchByGlobalNamePost.html#operation_post_User-SearchByGlobalNamePost" id="operation_post_User-SearchByGlobalNamePost">User.SearchByGlobalNamePost</a>
+										<span class="attributes">
+										</span>
+									</li>
 								</ul>
 							</div>
 						</li>
@@ -396,7 +401,7 @@
 										</span>
 									</li>
 									<li>
-										GET: <a href="operation_get_Destiny2-SearchDestinyPlayer.html#operation_get_Destiny2-SearchDestinyPlayer" id="operation_get_Destiny2-SearchDestinyPlayer">Destiny2.SearchDestinyPlayer</a>
+										POST: <a href="operation_post_Destiny2-SearchDestinyPlayerByBungieName.html#operation_post_Destiny2-SearchDestinyPlayerByBungieName" id="operation_post_Destiny2-SearchDestinyPlayerByBungieName">Destiny2.SearchDestinyPlayerByBungieName</a>
 										<span class="attributes">
 										</span>
 									</li>
@@ -855,6 +860,11 @@
 						</li>
 						<li>
 							<a href="schema_User-UserSearchResponseDetail.html#schema_User-UserSearchResponseDetail" id="schema_User-UserSearchResponseDetail">User.UserSearchResponseDetail</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
+							<a href="schema_User-UserSearchPrefixRequest.html#schema_User-UserSearchPrefixRequest" id="schema_User-UserSearchPrefixRequest">User.UserSearchPrefixRequest</a>
 							<span class="attributes">
 							</span>
 						</li>
@@ -2670,6 +2680,11 @@
 						</li>
 						<li>
 							<a href="schema_Destiny-Config-ImagePyramidEntry.html#schema_Destiny-Config-ImagePyramidEntry" id="schema_Destiny-Config-ImagePyramidEntry">Destiny.Config.ImagePyramidEntry</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
+							<a href="schema_User-ExactSearchRequest.html#schema_User-ExactSearchRequest" id="schema_User-ExactSearchRequest">User.ExactSearchRequest</a>
 							<span class="attributes">
 							</span>
 						</li>
@@ -4496,7 +4511,7 @@
 				<div><strong>Path:</strong> /User/Search/Prefix/{displayNamePrefix}/{page}/
 				</div>
 				<br/>
-				<div class="description">Given the prefix of a global display name, returns all users who share that name.</div>
+				<div class="description">[OBSOLETE] Do not use this to search users, use SearchByGlobalNamePost instead.</div>
 				<br/>
 
 				<div class="parameters box">

@@ -14,7 +14,7 @@
 		<div class="box-contents">
 			<div>These endpoints constitute the functionality exposed by Bungie.net, both for more traditional website functionality and for connectivity to Bungie video games and their related functionality.</div>
 			<div class="about-line-items">
-				<div><strong>Version:</strong> 2.12.2
+				<div><strong>Version:</strong> 2.12.3
 				</div>
 				<div><strong>License:</strong> <a href="https://github.com/Bungie-net/api/blob/master/LICENSE">https://github.com/Bungie-net/api/blob/master/LICENSE (BSD License 2.0)</a>
 				</div>
@@ -230,6 +230,11 @@
 					</li>
 					<li>
 						<span>GET:</span> <a href="#User.SearchByGlobalNamePrefix">/User/Search/Prefix/{displayNamePrefix}/{page}/</a>
+						<span class="attributes">
+						</span>
+					</li>
+					<li>
+						<span>POST:</span> <a href="#User.SearchByGlobalNamePost">/User/Search/GlobalName/{page}/</a>
 						<span class="attributes">
 						</span>
 					</li>
@@ -544,7 +549,7 @@
 						</span>
 					</li>
 					<li>
-						<span>GET:</span> <a href="#Destiny2.SearchDestinyPlayer">/Destiny2/SearchDestinyPlayer/{membershipType}/{displayName}/</a>
+						<span>POST:</span> <a href="#Destiny2.SearchDestinyPlayerByBungieName">/Destiny2/SearchDestinyPlayerByBungieName/{membershipType}/</a>
 						<span class="attributes">
 						</span>
 					</li>
@@ -1001,6 +1006,11 @@
 			</li>
 			<li>
 				<a href="#/components/schemas/User.UserSearchResponseDetail">User.UserSearchResponseDetail</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/User.UserSearchPrefixRequest">User.UserSearchPrefixRequest</a>
 				<span class="attributes">
 				</span>
 			</li>
@@ -2816,6 +2826,11 @@
 			</li>
 			<li>
 				<a href="#/components/schemas/Destiny.Config.ImagePyramidEntry">Destiny.Config.ImagePyramidEntry</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/User.ExactSearchRequest">User.ExactSearchRequest</a>
 				<span class="attributes">
 				</span>
 			</li>
@@ -6838,7 +6853,7 @@
 		<br />
 		<div><strong>Path:</strong> /User/Search/Prefix/{displayNamePrefix}/{page}/</div>
 		<br />
-		<div class="description">Given the prefix of a global display name, returns all users who share that name.</div>
+		<div class="description">[OBSOLETE] Do not use this to search users, use SearchByGlobalNamePost instead.</div>
 		<br />
 		
 		<div class="parameters box">
@@ -6894,6 +6909,277 @@
 		</div>
 
 	
+	
+		<div class="response box">
+			<h4>Response</h4>
+			<div class="box-contents stop-nesting-boxes">
+<div class="response">
+	<div class="description">Look at the Response property for more information about the nature of this response</div>
+		<div class="content">
+			<div class="content-type">Content Type: application/json</div>
+			<div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Response</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/User.UserSearchResponse">User.UserSearchResponse</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorCode</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ThrottleSeconds</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorStatus</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Message</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>MessageData</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			string
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		string
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>DetailedErrorTrace</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+</div>			</div>
+		</div>
+	</div>
+</div>		</div>
+		<div class="endpoint">
+<div class="box">
+	<a id="User.SearchByGlobalNamePost"><h3>User.SearchByGlobalNamePost</h3></a>
+	<div class="box-contents">
+		<div class="attributes">
+			<span class="User tag">User</span>
+		</div>
+		<br />
+		<div><strong>Verb:</strong> POST</div>
+		<br />
+		<div><strong>Path:</strong> /User/Search/GlobalName/{page}/</div>
+		<br />
+		<div class="description">Given the prefix of a global display name, returns all users who share that name.</div>
+		<br />
+		
+		<div class="parameters box">
+			<h4>Path Parameters</h4>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<strong>page</strong>
+						<div class="description">The zero-based page of results you desire.</div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>					</li>
+				</ul>
+			</div>
+		</div>
+
+	
+		<div class="request-body box">
+			<h4>Request Body</h4>
+			<div class="box-contents stop-nesting-boxes">
+			
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/User.UserSearchPrefixRequest">User.UserSearchPrefixRequest</a>
+</div>			</div>
+		</div>
 	
 		<div class="response box">
 			<h4>Response</h4>
@@ -24093,15 +24379,15 @@
 </div>		</div>
 		<div class="endpoint">
 <div class="box">
-	<a id="Destiny2.SearchDestinyPlayer"><h3>Destiny2.SearchDestinyPlayer</h3></a>
+	<a id="Destiny2.SearchDestinyPlayerByBungieName"><h3>Destiny2.SearchDestinyPlayerByBungieName</h3></a>
 	<div class="box-contents">
 		<div class="attributes">
 			<span class="Destiny2 tag">Destiny2</span>
 		</div>
 		<br />
-		<div><strong>Verb:</strong> GET</div>
+		<div><strong>Verb:</strong> POST</div>
 		<br />
-		<div><strong>Path:</strong> /Destiny2/SearchDestinyPlayer/{membershipType}/{displayName}/</div>
+		<div><strong>Path:</strong> /Destiny2/SearchDestinyPlayerByBungieName/{membershipType}/</div>
 		<br />
 		<div class="description">Returns a list of Destiny memberships given a global Bungie Display Name. This method will hide overridden memberships due to cross save.</div>
 		<br />
@@ -24110,28 +24396,6 @@
 			<h4>Path Parameters</h4>
 			<div class="box-contents stop-nesting-boxes">
 				<ul>
-					<li>
-						<strong>displayName</strong>
-						<div class="description">The full bungie global display name to look up, include the # and the code at the end. This is an exact match lookup.</div>
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>					</li>
 					<li>
 						<strong>membershipType</strong>
 						<div class="description">A valid non-BungieNet membership type, or All. Indicates which memberships to return. You probably want this set to All.</div>
@@ -24162,6 +24426,14 @@
 		</div>
 
 	
+		<div class="request-body box">
+			<h4>Request Body</h4>
+			<div class="box-contents stop-nesting-boxes">
+			
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/User.ExactSearchRequest">User.ExactSearchRequest</a>
+</div>			</div>
+		</div>
 	
 		<div class="response box">
 			<h4>Response</h4>
@@ -45502,6 +45774,59 @@
 		<strong>Array Contents:</strong>
 			<a href="#/components/schemas/User.UserInfoCard">User.UserInfoCard</a>
 	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/User.UserSearchPrefixRequest"><h3>User.UserSearchPrefixRequest</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>displayNamePrefix</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
 
 	
 	
@@ -100903,6 +101228,9 @@
 						<div><strong>IgnoreUserIgnored</strong>: 1009</div>
 					</li>
 					<li>
+						<div><strong>TargetUserIgnored</strong>: 1010</div>
+					</li>
+					<li>
 						<div><strong>NotificationSettingInvalid</strong>: 1100</div>
 					</li>
 					<li>
@@ -104449,6 +104777,86 @@
 </div>			</div>
 		</div>
 		<div class="schema box">
+			<a id="/components/schemas/User.ExactSearchRequest"><h3>User.ExactSearchRequest</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>displayName</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>displayNameCode</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int16
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
 			<a id="/components/schemas/Destiny.Responses.DestinyLinkedProfilesResponse"><h3>Destiny.Responses.DestinyLinkedProfilesResponse</h3></a>
 			<div class="schema-detail box-contents">
 <div class="type-info stop-nesting-boxes">
@@ -104770,6 +105178,12 @@
 					</li>
 					<li>
 						<div><strong>BeyondLight</strong>: 64</div>
+					</li>
+					<li>
+						<div><strong>Anniversary30th</strong>: 128</div>
+					</li>
+					<li>
+						<div><strong>TheWitchQueen</strong>: 256</div>
 					</li>
 				</ul>
 			</div>
@@ -106174,6 +106588,12 @@
 					</li>
 					<li>
 						<div><strong>BeyondLight</strong>: 64</div>
+					</li>
+					<li>
+						<div><strong>Anniversary30th</strong>: 128</div>
+					</li>
+					<li>
+						<div><strong>TheWitchQueen</strong>: 256</div>
 					</li>
 				</ul>
 			</div>
