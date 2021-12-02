@@ -14,7 +14,7 @@
 		<div class="box-contents">
 			<div>These endpoints constitute the functionality exposed by Bungie.net, both for more traditional website functionality and for connectivity to Bungie video games and their related functionality.</div>
 			<div class="about-line-items">
-				<div><strong>Version:</strong> 2.12.3
+				<div><strong>Version:</strong> 2.13.0
 				</div>
 				<div><strong>License:</strong> <a href="https://github.com/Bungie-net/api/blob/master/LICENSE">https://github.com/Bungie-net/api/blob/master/LICENSE (BSD License 2.0)</a>
 				</div>
@@ -636,6 +636,12 @@
 					</li>
 					<li>
 						<span>POST:</span> <a href="#Destiny2.InsertSocketPlug">/Destiny2/Actions/Items/InsertSocketPlug/</a>
+						<span class="attributes">
+							<span class="preview">Preview - Not Ready for Release</span>
+						</span>
+					</li>
+					<li>
+						<span>POST:</span> <a href="#Destiny2.InsertSocketPlugFree">/Destiny2/Actions/Items/InsertSocketPlugFree/</a>
 						<span class="attributes">
 							<span class="preview">Preview - Not Ready for Release</span>
 						</span>
@@ -4096,6 +4102,11 @@
 				<a href="#/components/schemas/Destiny.Requests.Actions.DestinySocketArrayType">Destiny.Requests.Actions.DestinySocketArrayType</a>
 				<span class="attributes">
 					<span class="enum">Enumeration</span>
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.Requests.Actions.DestinyInsertPlugsFreeActionRequest">Destiny.Requests.Actions.DestinyInsertPlugsFreeActionRequest</a>
+				<span class="attributes">
 				</span>
 			</li>
 			<li>
@@ -29499,7 +29510,7 @@
 		<br />
 		<div>
 			<div><strong>Notes:</strong></div>
-			<div class="preview">ThrottleSecondsBetweenActionPerUser: 1</div>
+			<div class="preview">ThrottleSecondsBetweenActionPerUser: 0.5</div>
 		</div>
 		<br />
 		<div><strong>Verb:</strong> POST</div>
@@ -29525,6 +29536,263 @@
 			
 <div class="type-info stop-nesting-boxes">
 		See: <a href="#/components/schemas/Destiny.Requests.Actions.DestinyInsertPlugsActionRequest">Destiny.Requests.Actions.DestinyInsertPlugsActionRequest</a>
+</div>			</div>
+		</div>
+	
+		<div class="response box">
+			<h4>Response</h4>
+			<div class="box-contents stop-nesting-boxes">
+<div class="response">
+	<div class="description">Look at the Response property for more information about the nature of this response</div>
+		<div class="content">
+			<div class="content-type">Content Type: application/json</div>
+			<div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Response</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.Responses.DestinyItemChangeResponse">Destiny.Responses.DestinyItemChangeResponse</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorCode</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ThrottleSeconds</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorStatus</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Message</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>MessageData</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			string
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		string
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>DetailedErrorTrace</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+</div>			</div>
+		</div>
+	</div>
+</div>		</div>
+		<div class="endpoint">
+<div class="box">
+	<a id="Destiny2.InsertSocketPlugFree"><h3>Destiny2.InsertSocketPlugFree</h3></a>
+	<div class="box-contents">
+		<div class="attributes">
+			<span class="preview">Preview - Not Ready for Release</span>
+			<span class="Destiny2 tag">Destiny2</span>
+			<span class="Preview tag">Preview</span>
+		</div>
+		<br />
+		<div>
+			<div><strong>Notes:</strong></div>
+			<div class="preview">ThrottleSecondsBetweenActionPerUser: 0.5</div>
+		</div>
+		<br />
+		<div><strong>Verb:</strong> POST</div>
+		<br />
+		<div><strong>Path:</strong> /Destiny2/Actions/Items/InsertSocketPlugFree/</div>
+		<br />
+		<div class="description">Insert a 'free' plug into an item's socket. This does not require 'Advanced Write Action' authorization and is available to 3rd-party apps, but will only work on 'free and reversible' socket actions (Perks, Armor Mods, Shaders, Ornaments, etc.). You must have a valid Destiny Account, and the character must either be in a social space, in orbit, or offline.</div>
+		<br />
+		<div class="required-scopes box">
+			<h4>Required Scope(s)</h4>
+			<div class="box-contents">
+				<ul>
+					<li>oauth2: MoveEquipDestinyItems</li>
+				</ul>
+			</div>
+		</div>
+		
+
+	
+		<div class="request-body box">
+			<h4>Request Body</h4>
+			<div class="box-contents stop-nesting-boxes">
+			
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.Requests.Actions.DestinyInsertPlugsFreeActionRequest">Destiny.Requests.Actions.DestinyInsertPlugsFreeActionRequest</a>
 </div>			</div>
 		</div>
 	
@@ -64198,6 +64466,10 @@
 						<div><strong>Ritual</strong>: 1</div>
 						<div class="description">Progression from ranks in ritual content. For example: Crucible (Shaxx), Gambit (Drifter), and Season 13 Battlegrounds (War Table).</div>
 					</li>
+					<li>
+						<div><strong>NoSeasonalRefresh</strong>: 2</div>
+						<div class="description">A vendor progression with no seasonal refresh. For example: Xur in the Eternity destination for the 30th Anniversary.</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -71610,6 +71882,9 @@
 					<li>
 						<div><strong>TrialsOfOsiris</strong>: 84</div>
 					</li>
+					<li>
+						<div><strong>Dares</strong>: 85</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -75330,6 +75605,9 @@
 					<li>
 						<div><strong>TrialsOfOsiris</strong>: 84</div>
 					</li>
+					<li>
+						<div><strong>Dares</strong>: 85</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -75676,6 +75954,9 @@
 					</li>
 					<li>
 						<div><strong>TrialsOfOsiris</strong>: 84</div>
+					</li>
+					<li>
+						<div><strong>Dares</strong>: 85</div>
 					</li>
 				</ul>
 			</div>
@@ -102380,6 +102661,18 @@
 					<li>
 						<div><strong>ErrorBungieFriendsIdenticalSourceTarget</strong>: 3906</div>
 					</li>
+					<li>
+						<div><strong>ErrorBungieFriendsSelf</strong>: 3907</div>
+					</li>
+					<li>
+						<div><strong>ErrorBungieBlockSelf</strong>: 3908</div>
+					</li>
+					<li>
+						<div><strong>ErrorBungieFriendsListFull</strong>: 3910</div>
+					</li>
+					<li>
+						<div><strong>ErrorBungieBlockListFull</strong>: 3911</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -117773,6 +118066,9 @@
 					<li>
 						<div><strong>TrialsOfOsiris</strong>: 84</div>
 					</li>
+					<li>
+						<div><strong>Dares</strong>: 85</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -118248,6 +118544,9 @@
 					</li>
 					<li>
 						<div><strong>TrialsOfOsiris</strong>: 84</div>
+					</li>
+					<li>
+						<div><strong>Dares</strong>: 85</div>
 					</li>
 				</ul>
 			</div>
@@ -123325,6 +123624,9 @@
 					</li>
 					<li>
 						<div><strong>TrialsOfOsiris</strong>: 84</div>
+					</li>
+					<li>
+						<div><strong>Dares</strong>: 85</div>
 					</li>
 				</ul>
 			</div>
@@ -134284,6 +134586,10 @@
 						<div><strong>Popular</strong>: 65536</div>
 						<div class="description">This indicates that the sale item is popular.</div>
 					</li>
+					<li>
+						<div><strong>Free</strong>: 131072</div>
+						<div class="description">This indicates that the sale item is free.</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -138488,6 +138794,9 @@
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		The instance ID of the item for this action request.
+	</div>
 	
 	
 	<div class="type">
@@ -138676,6 +138985,9 @@
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		The instance ID of the item for this action request.
+	</div>
 	
 	
 	<div class="type">
@@ -138837,6 +139149,9 @@
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		The instance ID of the item for this action request.
+	</div>
 	
 	
 	<div class="type">
@@ -139231,6 +139546,9 @@
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		The instance ID of the item for this action request.
+	</div>
 	
 	
 	<div class="type">
@@ -139837,6 +140155,148 @@
 				</ul>
 			</div>
 		</div>
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Requests.Actions.DestinyInsertPlugsFreeActionRequest"><h3>Destiny.Requests.Actions.DestinyInsertPlugsFreeActionRequest</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>plug</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The plugs being inserted.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.Requests.Actions.DestinyInsertPlugsRequestEntry">Destiny.Requests.Actions.DestinyInsertPlugsRequestEntry</a>
+</div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>itemId</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The instance ID of the item for this action request.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int64
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>characterId</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int64
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>membershipType</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
 
 </div>			</div>
 		</div>
@@ -145600,6 +146060,9 @@
 					<li>
 						<div><strong>TrialsOfOsiris</strong>: 84</div>
 					</li>
+					<li>
+						<div><strong>Dares</strong>: 85</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -145965,6 +146428,9 @@
 					</li>
 					<li>
 						<div><strong>TrialsOfOsiris</strong>: 84</div>
+					</li>
+					<li>
+						<div><strong>Dares</strong>: 85</div>
 					</li>
 				</ul>
 			</div>
@@ -152986,6 +153452,68 @@
 				<div class="box">
 					<div class="box-contents">
 						<div class="title"><strong>currentRankProgressionHashes</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			uint32
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>insertPlugFreeProtectedPlugItemHashes</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			uint32
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>insertPlugFreeBlockedSocketTypeHashes</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
 
