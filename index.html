@@ -14,7 +14,7 @@
 		<div class="box-contents">
 			<div>These endpoints constitute the functionality exposed by Bungie.net, both for more traditional website functionality and for connectivity to Bungie video games and their related functionality.</div>
 			<div class="about-line-items">
-				<div><strong>Version:</strong> 2.13.0
+				<div><strong>Version:</strong> 2.13.1
 				</div>
 				<div><strong>License:</strong> <a href="https://github.com/Bungie-net/api/blob/master/LICENSE">https://github.com/Bungie-net/api/blob/master/LICENSE (BSD License 2.0)</a>
 				</div>
@@ -1480,18 +1480,27 @@
 				</span>
 			</li>
 			<li>
-				<a href="#/components/schemas/Destiny.Definitions.DestinyItemPreviewBlockDefinition">Destiny.Definitions.DestinyItemPreviewBlockDefinition</a>
+				<a href="#/components/schemas/Destiny.Definitions.DestinyClassDefinition">Destiny.Definitions.DestinyClassDefinition</a>
 				<span class="attributes">
+					<span class="manifest-entity">Mobile Manifest Entity</span>
 				</span>
 			</li>
 			<li>
-				<a href="#/components/schemas/Destiny.Definitions.Items.DestinyDerivedItemCategoryDefinition">Destiny.Definitions.Items.DestinyDerivedItemCategoryDefinition</a>
+				<a href="#/components/schemas/Destiny.DestinyClass">Destiny.DestinyClass</a>
 				<span class="attributes">
+					<span class="enum">Enumeration</span>
 				</span>
 			</li>
 			<li>
-				<a href="#/components/schemas/Destiny.Definitions.Items.DestinyDerivedItemDefinition">Destiny.Definitions.Items.DestinyDerivedItemDefinition</a>
+				<a href="#/components/schemas/Destiny.DestinyGender">Destiny.DestinyGender</a>
 				<span class="attributes">
+					<span class="enum">Enumeration</span>
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.Definitions.DestinyGenderDefinition">Destiny.Definitions.DestinyGenderDefinition</a>
+				<span class="attributes">
+					<span class="manifest-entity">Mobile Manifest Entity</span>
 				</span>
 			</li>
 			<li>
@@ -1834,6 +1843,12 @@
 				</span>
 			</li>
 			<li>
+				<a href="#/components/schemas/Destiny.Definitions.DestinyDamageTypeDefinition">Destiny.Definitions.DestinyDamageTypeDefinition</a>
+				<span class="attributes">
+					<span class="manifest-entity">Mobile Manifest Entity</span>
+				</span>
+			</li>
+			<li>
 				<a href="#/components/schemas/Destiny.Definitions.DestinyObjectiveStatEntryDefinition">Destiny.Definitions.DestinyObjectiveStatEntryDefinition</a>
 				<span class="attributes">
 				</span>
@@ -2011,6 +2026,21 @@
 			</li>
 			<li>
 				<a href="#/components/schemas/Destiny.Definitions.DestinyFactionVendorDefinition">Destiny.Definitions.DestinyFactionVendorDefinition</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.Definitions.DestinyItemPreviewBlockDefinition">Destiny.Definitions.DestinyItemPreviewBlockDefinition</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.Definitions.Items.DestinyDerivedItemCategoryDefinition">Destiny.Definitions.Items.DestinyDerivedItemCategoryDefinition</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.Definitions.Items.DestinyDerivedItemDefinition">Destiny.Definitions.Items.DestinyDerivedItemDefinition</a>
 				<span class="attributes">
 				</span>
 			</li>
@@ -2230,18 +2260,6 @@
 				</span>
 			</li>
 			<li>
-				<a href="#/components/schemas/Destiny.DestinyGender">Destiny.DestinyGender</a>
-				<span class="attributes">
-					<span class="enum">Enumeration</span>
-				</span>
-			</li>
-			<li>
-				<a href="#/components/schemas/Destiny.Definitions.DestinyGenderDefinition">Destiny.Definitions.DestinyGenderDefinition</a>
-				<span class="attributes">
-					<span class="manifest-entity">Mobile Manifest Entity</span>
-				</span>
-			</li>
-			<li>
 				<a href="#/components/schemas/Destiny.Definitions.Records.DestinyRecordCompletionBlock">Destiny.Definitions.Records.DestinyRecordCompletionBlock</a>
 				<span class="attributes">
 				</span>
@@ -2438,12 +2456,6 @@
 				</span>
 			</li>
 			<li>
-				<a href="#/components/schemas/Destiny.Definitions.DestinyDamageTypeDefinition">Destiny.Definitions.DestinyDamageTypeDefinition</a>
-				<span class="attributes">
-					<span class="manifest-entity">Mobile Manifest Entity</span>
-				</span>
-			</li>
-			<li>
 				<a href="#/components/schemas/Destiny.Definitions.DestinyTalentNodeExclusiveSetDefinition">Destiny.Definitions.DestinyTalentNodeExclusiveSetDefinition</a>
 				<span class="attributes">
 				</span>
@@ -2487,12 +2499,6 @@
 			</li>
 			<li>
 				<a href="#/components/schemas/Destiny.DestinyItemType">Destiny.DestinyItemType</a>
-				<span class="attributes">
-					<span class="enum">Enumeration</span>
-				</span>
-			</li>
-			<li>
-				<a href="#/components/schemas/Destiny.DestinyClass">Destiny.DestinyClass</a>
 				<span class="attributes">
 					<span class="enum">Enumeration</span>
 				</span>
@@ -3191,12 +3197,6 @@
 			</li>
 			<li>
 				<a href="#/components/schemas/Destiny.Definitions.DestinyRaceDefinition">Destiny.Definitions.DestinyRaceDefinition</a>
-				<span class="attributes">
-					<span class="manifest-entity">Mobile Manifest Entity</span>
-				</span>
-			</li>
-			<li>
-				<a href="#/components/schemas/Destiny.Definitions.DestinyClassDefinition">Destiny.Definitions.DestinyClassDefinition</a>
 				<span class="attributes">
 					<span class="manifest-entity">Mobile Manifest Entity</span>
 				</span>
@@ -4208,6 +4208,12 @@
 				<a href="#/components/schemas/Destiny.HistoricalStats.Definitions.DestinyStatsMergeMethod">Destiny.HistoricalStats.Definitions.DestinyStatsMergeMethod</a>
 				<span class="attributes">
 					<span class="enum">Enumeration</span>
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Destiny.Definitions.DestinyMedalTierDefinition">Destiny.Definitions.DestinyMedalTierDefinition</a>
+				<span class="attributes">
+					<span class="manifest-entity">Mobile Manifest Entity</span>
 				</span>
 			</li>
 			<li>
@@ -62206,6 +62212,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	
@@ -62218,6 +62225,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyClassDefinition">Destiny.Definitions.DestinyClassDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -62258,18 +62269,22 @@
 </div>			</div>
 		</div>
 		<div class="schema box">
-			<a id="/components/schemas/Destiny.Definitions.DestinyItemPreviewBlockDefinition"><h3>Destiny.Definitions.DestinyItemPreviewBlockDefinition</h3></a>
+			<a id="/components/schemas/Destiny.Definitions.DestinyClassDefinition"><h3>Destiny.Definitions.DestinyClassDefinition</h3></a>
 			<div class="schema-detail box-contents">
 <div class="type-info stop-nesting-boxes">
 
 	
 	<div class="attributes">
+		<span class="manifest-entity">Mobile Manifest Entity</span>
 	</div>
 	
 	<div class="description">
-		Items like Sacks or Boxes can have items that it shows in-game when you view details that represent the items you can obtain if you use or acquire the item.<br /><br />This defines those categories, and gives some insights into that data's source.
+		Defines a Character Class in Destiny 2. These are types of characters you can play, like Titan, Warlock, and Hunter.
 	</div>
 	
+	<div class="manifest-database">
+		<strong>Mapped to Mobile Manifest Table</strong>: Classes
+	</div>
 	
 	<div class="type">
 		<strong>Type</strong>: object
@@ -62283,7 +62298,7 @@
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
-						<div class="title"><strong>screenStyle</strong></div>
+						<div class="title"><strong>classType</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
 
@@ -62292,12 +62307,12 @@
 	</div>
 	
 	<div class="description">
-		A string that the game UI uses as a hint for which detail screen to show for the item. You, too, can leverage this for your own custom screen detail views. Note, however, that these are arbitrarily defined by designers: there's no guarantees of a fixed, known number of these - so fall back to something reasonable if you don't recognize it.
+		In Destiny 1, we added a convenience Enumeration for referring to classes. We've kept it, though mostly for posterity. This is the enum value for this definition's class.
 	</div>
 	
 	
 	<div class="type">
-		<strong>Type</strong>: string
+		<strong>Type</strong>: int32
 	</div>
 	
 	
@@ -62313,7 +62328,56 @@
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
-						<div class="title"><strong>previewVendorHash</strong></div>
+						<div class="title"><strong>displayProperties</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.Definitions.Common.DestinyDisplayPropertiesDefinition">Destiny.Definitions.Common.DestinyDisplayPropertiesDefinition</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>genderedClassNames</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		A localized string referring to the singular form of the Class's name when referred to in gendered form. Keyed by the DestinyGender.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			string
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		int32
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>genderedClassNamesByGenderHash</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
 
@@ -62322,8 +62386,49 @@
 		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			string
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		uint32
+	</div>
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyGenderDefinition">Destiny.Definitions.DestinyGenderDefinition</a>
+	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>mentorVendorHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
 	<div class="description">
-		If the preview data is derived from a fake "Preview" Vendor, this will be the hash identifier for the DestinyVendorDefinition of that fake vendor.
+		Mentors don't really mean anything anymore. Don't expect this to be populated.
 	</div>
 	
 	
@@ -62348,43 +62453,7 @@
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
-						<div class="title"><strong>artifactHash</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-		<span class="nullable">Nullable</span>
-		<span class="mapped">Mapped to Definition</span>
-	</div>
-	
-	<div class="description">
-		If this item should show you Artifact information when you preview it, this is the hash identifier of the DestinyArtifactDefinition for the artifact whose data should be shown.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: uint32
-	</div>
-	
-	
-
-	
-	
-	<div class="mapped">
-		<strong>Mapped to Manifest Database Definition: </strong>
-		<a href="#/components/schemas/Destiny.Definitions.Artifacts.DestinyArtifactDefinition">Destiny.Definitions.Artifacts.DestinyArtifactDefinition</a>
-	</div>
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>previewActionString</strong></div>
+						<div class="title"><strong>hash</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
 
@@ -62393,194 +62462,7 @@
 	</div>
 	
 	<div class="description">
-		If the preview has an associated action (like "Open"), this will be the localized string for that action.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>derivedItemCategories</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		This is a list of the items being previewed, categorized in the same way as they are in the preview UI.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: array
-	</div>
-	
-	
-	<div class="items">
-		<strong>Array Contents:</strong>
-			<a href="#/components/schemas/Destiny.Definitions.Items.DestinyDerivedItemCategoryDefinition">Destiny.Definitions.Items.DestinyDerivedItemCategoryDefinition</a>
-	</div>
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	
-			
-
-</div>			</div>
-		</div>
-		<div class="schema box">
-			<a id="/components/schemas/Destiny.Definitions.Items.DestinyDerivedItemCategoryDefinition"><h3>Destiny.Definitions.Items.DestinyDerivedItemCategoryDefinition</h3></a>
-			<div class="schema-detail box-contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		A shortcut for the fact that some items have a "Preview Vendor" - See DestinyInventoryItemDefinition.preview.previewVendorHash - that is intended to be used to show what items you can get as a result of acquiring or using this item.<br /><br />A common example of this in Destiny 1 was Eververse "Boxes," which could have many possible items. This "Preview Vendor" is not a vendor you can actually see in the game, but it defines categories and sale items for all of the possible items you could get from the Box so that the game can show them to you. We summarize that info here so that you don't have to do that Vendor lookup and aggregation manually.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	
-		<div class="properties box">
-			<h5>Object Properties</h5>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>categoryDescription</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		The localized string for the category title. This will be something describing the items you can get as a group, or your likelihood/the quantity you'll get.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>items</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		This is the list of all of the items for this category and the basic properties we'll know about them.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: array
-	</div>
-	
-	
-	<div class="items">
-		<strong>Array Contents:</strong>
-			<a href="#/components/schemas/Destiny.Definitions.Items.DestinyDerivedItemDefinition">Destiny.Definitions.Items.DestinyDerivedItemDefinition</a>
-	</div>
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	
-			
-
-</div>			</div>
-		</div>
-		<div class="schema box">
-			<a id="/components/schemas/Destiny.Definitions.Items.DestinyDerivedItemDefinition"><h3>Destiny.Definitions.Items.DestinyDerivedItemDefinition</h3></a>
-			<div class="schema-detail box-contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		This is a reference to, and summary data for, a specific item that you can get as a result of Using or Acquiring some other Item (For example, this could be summary information for an Emote that you can get by opening an an Eververse Box) See DestinyDerivedItemCategoryDefinition for more information.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	
-		<div class="properties box">
-			<h5>Object Properties</h5>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>itemHash</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-		<span class="nullable">Nullable</span>
-	</div>
-	
-	<div class="description">
-		The hash for the DestinyInventoryItemDefinition of this derived item, if there is one. Sometimes we are given this information as a manual override, in which case there won't be an actual DestinyInventoryItemDefinition for what we display, but you can still show the strings from this object itself.
+		The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.<br /><br />When entities refer to each other in Destiny content, it is this hash that they are referring to.
 	</div>
 	
 	
@@ -62601,7 +62483,7 @@
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
-						<div class="title"><strong>itemName</strong></div>
+						<div class="title"><strong>index</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
 
@@ -62610,132 +62492,289 @@
 	</div>
 	
 	<div class="description">
-		The name of the derived item.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>itemDetail</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		Additional details about the derived item, in addition to the description.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>itemDescription</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		A brief description of the item.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>iconPath</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		An icon for the item.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>vendorItemIndex</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		If the item was derived from a "Preview Vendor", this will be an index into the DestinyVendorDefinition's itemList property. Otherwise, -1.
+		The index of the entity as it was found in the investment tables.
 	</div>
 	
 	
 	<div class="type">
 		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>redacted</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.DestinyClass"><h3>Destiny.DestinyClass</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="enum">Enumeration</span>
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+		<div class="enum-values box">
+			<h5>Valid Enum Values</h5>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<div><strong>Titan</strong>: 0</div>
+					</li>
+					<li>
+						<div><strong>Hunter</strong>: 1</div>
+					</li>
+					<li>
+						<div><strong>Warlock</strong>: 2</div>
+					</li>
+					<li>
+						<div><strong>Unknown</strong>: 3</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.DestinyGender"><h3>Destiny.DestinyGender</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="enum">Enumeration</span>
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+		<div class="enum-values box">
+			<h5>Valid Enum Values</h5>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<div><strong>Male</strong>: 0</div>
+					</li>
+					<li>
+						<div><strong>Female</strong>: 1</div>
+					</li>
+					<li>
+						<div><strong>Unknown</strong>: 2</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Definitions.DestinyGenderDefinition"><h3>Destiny.Definitions.DestinyGenderDefinition</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="manifest-entity">Mobile Manifest Entity</span>
+	</div>
+	
+	<div class="description">
+		Gender is a social construct, and as such we have definitions for Genders. Right now there happens to only be two, but we'll see what the future holds.
+	</div>
+	
+	<div class="manifest-database">
+		<strong>Mapped to Mobile Manifest Table</strong>: Genders
+	</div>
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>genderType</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		This is a quick reference enumeration for all of the currently defined Genders. We use the enumeration for quicker lookups in related data, like DestinyClassDefinition.genderedClassNames.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>displayProperties</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.Definitions.Common.DestinyDisplayPropertiesDefinition">Destiny.Definitions.Common.DestinyDisplayPropertiesDefinition</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>hash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.<br /><br />When entities refer to each other in Destiny content, it is this hash that they are referring to.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>index</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The index of the entity as it was found in the investment tables.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>redacted</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
 	</div>
 	
 	
@@ -65478,6 +65517,7 @@
 	
 	<div class="attributes">
 		<span class="nullable">Nullable</span>
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	<div class="description">
@@ -65493,6 +65533,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyInventoryItemDefinition">Destiny.Definitions.DestinyInventoryItemDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -67482,6 +67526,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	<div class="description">
@@ -67497,6 +67542,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyInventoryBucketDefinition">Destiny.Definitions.DestinyInventoryBucketDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -69118,6 +69167,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	
@@ -69130,6 +69180,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyInventoryItemDefinition">Destiny.Definitions.DestinyInventoryItemDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -73583,6 +73637,7 @@
 	
 	<div class="attributes">
 		<span class="nullable">Nullable</span>
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	<div class="description">
@@ -73598,6 +73653,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyDamageTypeDefinition">Destiny.Definitions.DestinyDamageTypeDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -74241,6 +74300,251 @@
 				</ul>
 			</div>
 		</div>
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Definitions.DestinyDamageTypeDefinition"><h3>Destiny.Definitions.DestinyDamageTypeDefinition</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="manifest-entity">Mobile Manifest Entity</span>
+	</div>
+	
+	<div class="description">
+		All damage types that are possible in the game are defined here, along with localized info and icons as needed.
+	</div>
+	
+	<div class="manifest-database">
+		<strong>Mapped to Mobile Manifest Table</strong>: DamageTypes
+	</div>
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>displayProperties</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The description of the damage type, icon etc...
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Destiny.Definitions.Common.DestinyDisplayPropertiesDefinition">Destiny.Definitions.Common.DestinyDisplayPropertiesDefinition</a>
+</div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>transparentIconPath</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		A variant of the icon that is transparent and colorless.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>showIcon</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If TRUE, the game shows this damage type's icon. Otherwise, it doesn't. Whether you show it or not is up to you.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>enumValue</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		We have an enumeration for damage types for quick reference. This is the current definition's damage type enum value.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>hash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.<br /><br />When entities refer to each other in Destiny content, it is this hash that they are referring to.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>index</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The index of the entity as it was found in the investment tables.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>redacted</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
 
 </div>			</div>
 		</div>
@@ -79130,6 +79434,503 @@
 </div>			</div>
 		</div>
 		<div class="schema box">
+			<a id="/components/schemas/Destiny.Definitions.DestinyItemPreviewBlockDefinition"><h3>Destiny.Definitions.DestinyItemPreviewBlockDefinition</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Items like Sacks or Boxes can have items that it shows in-game when you view details that represent the items you can obtain if you use or acquire the item.<br /><br />This defines those categories, and gives some insights into that data's source.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>screenStyle</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		A string that the game UI uses as a hint for which detail screen to show for the item. You, too, can leverage this for your own custom screen detail views. Note, however, that these are arbitrarily defined by designers: there's no guarantees of a fixed, known number of these - so fall back to something reasonable if you don't recognize it.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>previewVendorHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	<div class="description">
+		If the preview data is derived from a fake "Preview" Vendor, this will be the hash identifier for the DestinyVendorDefinition of that fake vendor.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyVendorDefinition">Destiny.Definitions.DestinyVendorDefinition</a>
+	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>artifactHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	<div class="description">
+		If this item should show you Artifact information when you preview it, this is the hash identifier of the DestinyArtifactDefinition for the artifact whose data should be shown.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.Artifacts.DestinyArtifactDefinition">Destiny.Definitions.Artifacts.DestinyArtifactDefinition</a>
+	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>previewActionString</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If the preview has an associated action (like "Open"), this will be the localized string for that action.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>derivedItemCategories</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		This is a list of the items being previewed, categorized in the same way as they are in the preview UI.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/Destiny.Definitions.Items.DestinyDerivedItemCategoryDefinition">Destiny.Definitions.Items.DestinyDerivedItemCategoryDefinition</a>
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Definitions.Items.DestinyDerivedItemCategoryDefinition"><h3>Destiny.Definitions.Items.DestinyDerivedItemCategoryDefinition</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		A shortcut for the fact that some items have a "Preview Vendor" - See DestinyInventoryItemDefinition.preview.previewVendorHash - that is intended to be used to show what items you can get as a result of acquiring or using this item.<br /><br />A common example of this in Destiny 1 was Eververse "Boxes," which could have many possible items. This "Preview Vendor" is not a vendor you can actually see in the game, but it defines categories and sale items for all of the possible items you could get from the Box so that the game can show them to you. We summarize that info here so that you don't have to do that Vendor lookup and aggregation manually.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>categoryDescription</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The localized string for the category title. This will be something describing the items you can get as a group, or your likelihood/the quantity you'll get.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>items</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		This is the list of all of the items for this category and the basic properties we'll know about them.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/Destiny.Definitions.Items.DestinyDerivedItemDefinition">Destiny.Definitions.Items.DestinyDerivedItemDefinition</a>
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Definitions.Items.DestinyDerivedItemDefinition"><h3>Destiny.Definitions.Items.DestinyDerivedItemDefinition</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		This is a reference to, and summary data for, a specific item that you can get as a result of Using or Acquiring some other Item (For example, this could be summary information for an Emote that you can get by opening an an Eververse Box) See DestinyDerivedItemCategoryDefinition for more information.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>itemHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+	</div>
+	
+	<div class="description">
+		The hash for the DestinyInventoryItemDefinition of this derived item, if there is one. Sometimes we are given this information as a manual override, in which case there won't be an actual DestinyInventoryItemDefinition for what we display, but you can still show the strings from this object itself.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>itemName</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The name of the derived item.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>itemDetail</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		Additional details about the derived item, in addition to the description.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>itemDescription</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		A brief description of the item.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>iconPath</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		An icon for the item.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>vendorItemIndex</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If the item was derived from a "Preview Vendor", this will be an index into the DestinyVendorDefinition's itemList property. Otherwise, -1.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
 			<a id="/components/schemas/Destiny.Definitions.Artifacts.DestinyArtifactDefinition"><h3>Destiny.Definitions.Artifacts.DestinyArtifactDefinition</h3></a>
 			<div class="schema-detail box-contents">
 <div class="type-info stop-nesting-boxes">
@@ -79559,6 +80360,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	<div class="description">
@@ -79574,6 +80376,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyInventoryItemDefinition">Destiny.Definitions.DestinyInventoryItemDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -85717,210 +86523,6 @@
 </div>			</div>
 		</div>
 		<div class="schema box">
-			<a id="/components/schemas/Destiny.DestinyGender"><h3>Destiny.DestinyGender</h3></a>
-			<div class="schema-detail box-contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-		<span class="enum">Enumeration</span>
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-		<div class="enum-values box">
-			<h5>Valid Enum Values</h5>
-			<div class="box-contents stop-nesting-boxes">
-				<ul>
-					<li>
-						<div><strong>Male</strong>: 0</div>
-					</li>
-					<li>
-						<div><strong>Female</strong>: 1</div>
-					</li>
-					<li>
-						<div><strong>Unknown</strong>: 2</div>
-					</li>
-				</ul>
-			</div>
-		</div>
-
-</div>			</div>
-		</div>
-		<div class="schema box">
-			<a id="/components/schemas/Destiny.Definitions.DestinyGenderDefinition"><h3>Destiny.Definitions.DestinyGenderDefinition</h3></a>
-			<div class="schema-detail box-contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-		<span class="manifest-entity">Mobile Manifest Entity</span>
-	</div>
-	
-	<div class="description">
-		Gender is a social construct, and as such we have definitions for Genders. Right now there happens to only be two, but we'll see what the future holds.
-	</div>
-	
-	<div class="manifest-database">
-		<strong>Mapped to Mobile Manifest Table</strong>: Genders
-	</div>
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	
-		<div class="properties box">
-			<h5>Object Properties</h5>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>genderType</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		This is a quick reference enumeration for all of the currently defined Genders. We use the enumeration for quicker lookups in related data, like DestinyClassDefinition.genderedClassNames.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>displayProperties</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-		See: <a href="#/components/schemas/Destiny.Definitions.Common.DestinyDisplayPropertiesDefinition">Destiny.Definitions.Common.DestinyDisplayPropertiesDefinition</a>
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>hash</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.<br /><br />When entities refer to each other in Destiny content, it is this hash that they are referring to.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: uint32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>index</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		The index of the entity as it was found in the investment tables.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>redacted</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: boolean
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	
-			
-
-</div>			</div>
-		</div>
-		<div class="schema box">
 			<a id="/components/schemas/Destiny.Definitions.Records.DestinyRecordCompletionBlock"><h3>Destiny.Definitions.Records.DestinyRecordCompletionBlock</h3></a>
 			<div class="schema-detail box-contents">
 <div class="type-info stop-nesting-boxes">
@@ -86446,6 +87048,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	
@@ -86458,6 +87061,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyObjectiveDefinition">Destiny.Definitions.DestinyObjectiveDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -88271,6 +88878,7 @@
 	
 	<div class="attributes">
 		<span class="nullable">Nullable</span>
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	<div class="description">
@@ -88286,6 +88894,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyStatDefinition">Destiny.Definitions.DestinyStatDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -88301,6 +88913,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	<div class="description">
@@ -88316,6 +88929,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyStatDefinition">Destiny.Definitions.DestinyStatDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -91977,251 +92594,6 @@
 </div>			</div>
 		</div>
 		<div class="schema box">
-			<a id="/components/schemas/Destiny.Definitions.DestinyDamageTypeDefinition"><h3>Destiny.Definitions.DestinyDamageTypeDefinition</h3></a>
-			<div class="schema-detail box-contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-		<span class="manifest-entity">Mobile Manifest Entity</span>
-	</div>
-	
-	<div class="description">
-		All damage types that are possible in the game are defined here, along with localized info and icons as needed.
-	</div>
-	
-	<div class="manifest-database">
-		<strong>Mapped to Mobile Manifest Table</strong>: DamageTypes
-	</div>
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	
-		<div class="properties box">
-			<h5>Object Properties</h5>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>displayProperties</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		The description of the damage type, icon etc...
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-<div class="type-info stop-nesting-boxes">
-		See: <a href="#/components/schemas/Destiny.Definitions.Common.DestinyDisplayPropertiesDefinition">Destiny.Definitions.Common.DestinyDisplayPropertiesDefinition</a>
-</div>	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>transparentIconPath</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		A variant of the icon that is transparent and colorless.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: string
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>showIcon</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		If TRUE, the game shows this damage type's icon. Otherwise, it doesn't. Whether you show it or not is up to you.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: boolean
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>enumValue</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		We have an enumeration for damage types for quick reference. This is the current definition's damage type enum value.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>hash</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.<br /><br />When entities refer to each other in Destiny content, it is this hash that they are referring to.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: uint32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>index</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		The index of the entity as it was found in the investment tables.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>redacted</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: boolean
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	
-			
-
-</div>			</div>
-		</div>
-		<div class="schema box">
 			<a id="/components/schemas/Destiny.Definitions.DestinyTalentNodeExclusiveSetDefinition"><h3>Destiny.Definitions.DestinyTalentNodeExclusiveSetDefinition</h3></a>
 			<div class="schema-detail box-contents">
 <div class="type-info stop-nesting-boxes">
@@ -93159,49 +93531,6 @@
 					</li>
 					<li>
 						<div><strong>Finisher</strong>: 29</div>
-					</li>
-				</ul>
-			</div>
-		</div>
-
-</div>			</div>
-		</div>
-		<div class="schema box">
-			<a id="/components/schemas/Destiny.DestinyClass"><h3>Destiny.DestinyClass</h3></a>
-			<div class="schema-detail box-contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-		<span class="enum">Enumeration</span>
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-		<div class="enum-values box">
-			<h5>Valid Enum Values</h5>
-			<div class="box-contents stop-nesting-boxes">
-				<ul>
-					<li>
-						<div><strong>Titan</strong>: 0</div>
-					</li>
-					<li>
-						<div><strong>Hunter</strong>: 1</div>
-					</li>
-					<li>
-						<div><strong>Warlock</strong>: 2</div>
-					</li>
-					<li>
-						<div><strong>Unknown</strong>: 3</div>
 					</li>
 				</ul>
 			</div>
@@ -106307,6 +106636,7 @@
 	
 	<div class="attributes">
 		<span class="nullable">Nullable</span>
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	<div class="description">
@@ -106322,6 +106652,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.Metrics.DestinyMetricDefinition">Destiny.Definitions.Metrics.DestinyMetricDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -110950,6 +111284,7 @@
 	
 	<div class="attributes">
 		<span class="nullable">Nullable</span>
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	
@@ -110962,6 +111297,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyVendorDefinition">Destiny.Definitions.DestinyVendorDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -115363,284 +115702,6 @@
 	<div class="mapped">
 		<strong>Mapped to Manifest Database Definition: </strong>
 		<a href="#/components/schemas/Destiny.Definitions.DestinyGenderDefinition">Destiny.Definitions.DestinyGenderDefinition</a>
-	</div>
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>hash</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.<br /><br />When entities refer to each other in Destiny content, it is this hash that they are referring to.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: uint32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>index</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		The index of the entity as it was found in the investment tables.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>redacted</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: boolean
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	
-			
-
-</div>			</div>
-		</div>
-		<div class="schema box">
-			<a id="/components/schemas/Destiny.Definitions.DestinyClassDefinition"><h3>Destiny.Definitions.DestinyClassDefinition</h3></a>
-			<div class="schema-detail box-contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-		<span class="manifest-entity">Mobile Manifest Entity</span>
-	</div>
-	
-	<div class="description">
-		Defines a Character Class in Destiny 2. These are types of characters you can play, like Titan, Warlock, and Hunter.
-	</div>
-	
-	<div class="manifest-database">
-		<strong>Mapped to Mobile Manifest Table</strong>: Classes
-	</div>
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	
-		<div class="properties box">
-			<h5>Object Properties</h5>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>classType</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		In Destiny 1, we added a convenience Enumeration for referring to classes. We've kept it, though mostly for posterity. This is the enum value for this definition's class.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: int32
-	</div>
-	
-	
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>displayProperties</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-		See: <a href="#/components/schemas/Destiny.Definitions.Common.DestinyDisplayPropertiesDefinition">Destiny.Definitions.Common.DestinyDisplayPropertiesDefinition</a>
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>genderedClassNames</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	<div class="description">
-		A localized string referring to the singular form of the Class's name when referred to in gendered form. Keyed by the DestinyGender.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	<div class="dictionary">
-		<strong>Dictionary Contents:</strong>
-			string
-	</div>
-	<div>
-		<strong>Dictionary Key Type: </strong> 
-		int32
-	</div>
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>genderedClassNamesByGenderHash</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-		<span class="mapped">Mapped to Definition</span>
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: object
-	</div>
-	
-	
-
-	<div class="dictionary">
-		<strong>Dictionary Contents:</strong>
-			string
-	</div>
-	<div>
-		<strong>Dictionary Key Type: </strong> 
-		uint32
-	</div>
-	
-	
-	<div class="mapped">
-		<strong>Mapped to Manifest Database Definition: </strong>
-		<a href="#/components/schemas/Destiny.Definitions.DestinyGenderDefinition">Destiny.Definitions.DestinyGenderDefinition</a>
-	</div>
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>mentorVendorHash</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-		<span class="nullable">Nullable</span>
-		<span class="mapped">Mapped to Definition</span>
-	</div>
-	
-	<div class="description">
-		Mentors don't really mean anything anymore. Don't expect this to be populated.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: uint32
-	</div>
-	
-	
-
-	
-	
-	<div class="mapped">
-		<strong>Mapped to Manifest Database Definition: </strong>
-		<a href="#/components/schemas/Destiny.Definitions.DestinyVendorDefinition">Destiny.Definitions.DestinyVendorDefinition</a>
 	</div>
 			
 
@@ -121417,6 +121478,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	<div class="description">
@@ -121432,6 +121494,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyActivityDefinition">Destiny.Definitions.DestinyActivityDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -121572,6 +121638,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	<div class="description">
@@ -121587,6 +121654,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyObjectiveDefinition">Destiny.Definitions.DestinyObjectiveDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -138902,6 +138973,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	
@@ -138914,6 +138986,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyInventoryItemDefinition">Destiny.Definitions.DestinyInventoryItemDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -139093,6 +139169,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	
@@ -139105,6 +139182,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyInventoryItemDefinition">Destiny.Definitions.DestinyInventoryItemDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -141320,6 +141401,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	
@@ -141332,6 +141414,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyClassDefinition">Destiny.Definitions.DestinyClassDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -141347,6 +141433,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	
@@ -141359,6 +141446,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyRaceDefinition">Destiny.Definitions.DestinyRaceDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -141374,6 +141465,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	
@@ -141386,6 +141478,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyGenderDefinition">Destiny.Definitions.DestinyGenderDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -141553,6 +141649,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	<div class="description">
@@ -141568,6 +141665,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyInventoryItemDefinition">Destiny.Definitions.DestinyInventoryItemDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -142754,6 +142855,7 @@
 	
 	<div class="attributes">
 		<span class="nullable">Nullable</span>
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	<div class="description">
@@ -142769,6 +142871,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyMedalTierDefinition">Destiny.Definitions.DestinyMedalTierDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -143105,6 +143211,189 @@
 				</ul>
 			</div>
 		</div>
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Destiny.Definitions.DestinyMedalTierDefinition"><h3>Destiny.Definitions.DestinyMedalTierDefinition</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="manifest-entity">Mobile Manifest Entity</span>
+	</div>
+	
+	<div class="description">
+		An artificial construct of our own creation, to try and put some order on top of Medals and keep them from being one giant, unmanageable and unsorted blob of stats.<br /><br />Unfortunately, we haven't had time to do this evaluation yet in Destiny 2, so we're short on Medal Tiers. This will hopefully be updated over time, if Medals continue to exist.
+	</div>
+	
+	<div class="manifest-database">
+		<strong>Mapped to Mobile Manifest Table</strong>: MedalTiers
+	</div>
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>tierName</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The name of the tier.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>order</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If you're rendering medals by tier, render them in this order (ascending)
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>hash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.<br /><br />When entities refer to each other in Destiny content, it is this hash that they are referring to.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>index</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The index of the entity as it was found in the investment tables.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>redacted</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
 
 </div>			</div>
 		</div>
@@ -146109,6 +146398,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	<div class="description">
@@ -146124,6 +146414,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyActivityDefinition">Destiny.Definitions.DestinyActivityDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -153133,6 +153427,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	
@@ -153145,6 +153440,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.Presentation.DestinyPresentationNodeDefinition">Destiny.Definitions.Presentation.DestinyPresentationNodeDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -153160,6 +153459,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	
@@ -153172,6 +153472,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.Presentation.DestinyPresentationNodeDefinition">Destiny.Definitions.Presentation.DestinyPresentationNodeDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -153187,6 +153491,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	
@@ -153199,6 +153504,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.Presentation.DestinyPresentationNodeDefinition">Destiny.Definitions.Presentation.DestinyPresentationNodeDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -153214,6 +153523,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	
@@ -153226,6 +153536,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.Presentation.DestinyPresentationNodeDefinition">Destiny.Definitions.Presentation.DestinyPresentationNodeDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -153241,6 +153555,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	
@@ -153253,6 +153568,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.Presentation.DestinyPresentationNodeDefinition">Destiny.Definitions.Presentation.DestinyPresentationNodeDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -153268,6 +153587,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	
@@ -153280,6 +153600,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.Presentation.DestinyPresentationNodeDefinition">Destiny.Definitions.Presentation.DestinyPresentationNodeDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -153295,6 +153619,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	
@@ -153307,6 +153632,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.Presentation.DestinyPresentationNodeDefinition">Destiny.Definitions.Presentation.DestinyPresentationNodeDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -153322,6 +153651,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	
@@ -153334,6 +153664,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.Presentation.DestinyPresentationNodeDefinition">Destiny.Definitions.Presentation.DestinyPresentationNodeDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -153349,6 +153683,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	
@@ -153361,6 +153696,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.Presentation.DestinyPresentationNodeDefinition">Destiny.Definitions.Presentation.DestinyPresentationNodeDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -153376,6 +153715,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	
@@ -153388,6 +153728,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.Presentation.DestinyPresentationNodeDefinition">Destiny.Definitions.Presentation.DestinyPresentationNodeDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -153403,6 +153747,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	
@@ -153415,6 +153760,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.Presentation.DestinyPresentationNodeDefinition">Destiny.Definitions.Presentation.DestinyPresentationNodeDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -153430,6 +153779,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	
@@ -153442,6 +153792,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.Presentation.DestinyPresentationNodeDefinition">Destiny.Definitions.Presentation.DestinyPresentationNodeDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -153457,6 +153811,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	
@@ -153473,6 +153828,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyProgressionDefinition">Destiny.Definitions.DestinyProgressionDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -153488,6 +153847,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	
@@ -153504,6 +153864,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyInventoryItemDefinition">Destiny.Definitions.DestinyInventoryItemDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -153519,6 +153883,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	
@@ -153535,6 +153900,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.Sockets.DestinySocketTypeDefinition">Destiny.Definitions.Sockets.DestinySocketTypeDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -153658,6 +154027,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	
@@ -153670,6 +154040,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.DestinyVendorDefinition">Destiny.Definitions.DestinyVendorDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -153686,6 +154060,7 @@
 	
 	<div class="attributes">
 		<span class="nullable">Nullable</span>
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	
@@ -153698,6 +154073,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.Seasons.DestinySeasonDefinition">Destiny.Definitions.Seasons.DestinySeasonDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -153746,6 +154125,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	
@@ -153762,6 +154142,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.Seasons.DestinySeasonDefinition">Destiny.Definitions.Seasons.DestinySeasonDefinition</a>
+	</div>
 			
 
 </div>						</div>
@@ -153777,6 +154161,7 @@
 
 	
 	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
 	</div>
 	
 	
@@ -153793,6 +154178,10 @@
 
 	
 	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.Seasons.DestinySeasonDefinition">Destiny.Definitions.Seasons.DestinySeasonDefinition</a>
+	</div>
 			
 
 </div>						</div>

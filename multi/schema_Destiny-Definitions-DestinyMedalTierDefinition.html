@@ -3,7 +3,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta charset="utf-8" />
-	<title>Bungie.Net API - SingleComponentResponseOfDestinyVendorGroupComponent</title>
+	<title>Bungie.Net API - Destiny.Definitions.DestinyMedalTierDefinition</title>
 	<link href="../css/shared.css" rel="stylesheet" type="text/css" />
 	<link href="css/docs.css" rel="stylesheet" type="text/css" />
 </head>
@@ -4515,17 +4515,24 @@
 	</div>
 </div>	<div class="main">
 		<div class="schema box">
-			<h3>SingleComponentResponseOfDestinyVendorGroupComponent</h3>
+			<h3>Destiny.Definitions.DestinyMedalTierDefinition</h3>
 			<div class="schema-detail box-contents">
 <div class="type-info stop-nesting-boxes">
 
 	
 	
 	<div class="attributes">
+		<span class="manifest-entity">Mobile Manifest Entity</span>
 	</div>
 	
 	
+	<div class="description">
+		An artificial construct of our own creation, to try and put some order on top of Medals and keep them from being one giant, unmanageable and unsorted blob of stats.<br /><br />Unfortunately, we haven't had time to do this evaluation yet in Destiny 2, so we're short on Medal Tiers. This will hopefully be updated over time, if Medals continue to exist.
+	</div>
 	
+	<div class="manifest-database">
+		<strong>Mapped to Mobile Manifest Table</strong>: MedalTiers
+	</div>
 	
 	<div class="type">
 		<strong>Type</strong>: object
@@ -4540,18 +4547,7 @@
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
-						<div class="title"><strong>data</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-		See: <a href="schema_Destiny-Components-Vendors-DestinyVendorGroupComponent.html#schema_Destiny-Components-Vendors-DestinyVendorGroupComponent">Destiny.Components.Vendors.DestinyVendorGroupComponent</a>
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
-						<div class="title"><strong>privacy</strong></div>
+						<div class="title"><strong>tierName</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
 
@@ -4561,6 +4557,42 @@
 	</div>
 	
 	
+	<div class="description">
+		The name of the tier.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>order</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	
+	<div class="attributes">
+	</div>
+	
+	
+	<div class="description">
+		If you're rendering medals by tier, render them in this order (ascending)
+	</div>
 	
 	
 	<div class="type">
@@ -4581,19 +4613,84 @@
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
-						<div class="title"><strong>disabled</strong></div>
+						<div class="title"><strong>hash</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
 
 	
 	
 	<div class="attributes">
-		<span class="nullable">Nullable</span>
 	</div>
 	
 	
 	<div class="description">
-		If true, this component is disabled.
+		The unique identifier for this entity. Guaranteed to be unique for the type of entity, but not globally.<br /><br />When entities refer to each other in Destiny content, it is this hash that they are referring to.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>index</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	
+	<div class="attributes">
+	</div>
+	
+	
+	<div class="description">
+		The index of the entity as it was found in the investment tables.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>redacted</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	
+	<div class="attributes">
+	</div>
+	
+	
+	<div class="description">
+		If this is true, then there is an entity with this identifier/type combination, but BNet is not yet allowed to show it. Sorry!
 	</div>
 	
 	
