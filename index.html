@@ -14,7 +14,7 @@
 		<div class="box-contents">
 			<div>These endpoints constitute the functionality exposed by Bungie.net, both for more traditional website functionality and for connectivity to Bungie video games and their related functionality.</div>
 			<div class="about-line-items">
-				<div><strong>Version:</strong> 2.14.0
+				<div><strong>Version:</strong> 2.14.1
 				</div>
 				<div><strong>License:</strong> <a href="https://github.com/Bungie-net/api/blob/master/LICENSE">https://github.com/Bungie-net/api/blob/master/LICENSE (BSD License 2.0)</a>
 				</div>
@@ -200,6 +200,11 @@
 				<ul>
 					<li>
 						<span>GET:</span> <a href="#User.GetBungieNetUserById">/User/GetBungieNetUserById/{id}/</a>
+						<span class="attributes">
+						</span>
+					</li>
+					<li>
+						<span>GET:</span> <a href="#User.GetSanitizedPlatformDisplayNames">/User/GetSanitizedPlatformDisplayNames/{membershipId}/</a>
 						<span class="attributes">
 						</span>
 					</li>
@@ -975,14 +980,14 @@
 				</span>
 			</li>
 			<li>
-				<a href="#/components/schemas/User.Models.GetCredentialTypesForAccountResponse">User.Models.GetCredentialTypesForAccountResponse</a>
-				<span class="attributes">
-				</span>
-			</li>
-			<li>
 				<a href="#/components/schemas/BungieCredentialType">BungieCredentialType</a>
 				<span class="attributes">
 					<span class="enum">Enumeration</span>
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/User.Models.GetCredentialTypesForAccountResponse">User.Models.GetCredentialTypesForAccountResponse</a>
+				<span class="attributes">
 				</span>
 			</li>
 			<li>
@@ -5381,6 +5386,293 @@
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
 		See: <a href="#/components/schemas/User.GeneralUser">User.GeneralUser</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorCode</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ThrottleSeconds</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorStatus</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Message</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>MessageData</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			string
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		string
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>DetailedErrorTrace</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+</div>			</div>
+		</div>
+	</div>
+</div>		</div>
+		<div class="endpoint">
+<div class="box">
+	<a id="User.GetSanitizedPlatformDisplayNames"><h3>User.GetSanitizedPlatformDisplayNames</h3></a>
+	<div class="box-contents">
+		<div class="attributes">
+			<span class="User tag">User</span>
+		</div>
+		<br />
+		<div><strong>Verb:</strong> GET</div>
+		<br />
+		<div><strong>Path:</strong> /User/GetSanitizedPlatformDisplayNames/{membershipId}/</div>
+		<br />
+		<div class="description">Gets a list of all display names linked to this membership id but sanitized (profanity filtered). Obeys all visibility rules of calling user and is heavily cached.</div>
+		<br />
+		
+		<div class="parameters box">
+			<h4>Path Parameters</h4>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<strong>membershipId</strong>
+						<div class="description">The requested membership id to load.</div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int64
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>					</li>
+				</ul>
+			</div>
+		</div>
+
+	
+	
+		<div class="response box">
+			<h4>Response</h4>
+			<div class="box-contents stop-nesting-boxes">
+<div class="response">
+	<div class="description">Look at the Response property for more information about the nature of this response</div>
+		<div class="content">
+			<div class="content-type">Content Type: application/json</div>
+			<div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Response</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			string
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		byte
+	</div>
+	
+	
+			
+
 </div>						</div>
 					</div>
 				</div>
@@ -44933,6 +45225,79 @@
 </div>			</div>
 		</div>
 		<div class="schema box">
+			<a id="/components/schemas/BungieCredentialType"><h3>BungieCredentialType</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="enum">Enumeration</span>
+	</div>
+	
+	<div class="description">
+		The types of credentials the Accounts system supports. This is the external facing enum used in place of the internal-only Bungie.SharedDefinitions.CredentialType.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: byte
+	</div>
+	
+	
+
+	
+	
+			
+		<div class="enum-values box">
+			<h5>Valid Enum Values</h5>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<div><strong>None</strong>: 0</div>
+					</li>
+					<li>
+						<div><strong>Xuid</strong>: 1</div>
+					</li>
+					<li>
+						<div><strong>Psnid</strong>: 2</div>
+					</li>
+					<li>
+						<div><strong>Wlid</strong>: 3</div>
+					</li>
+					<li>
+						<div><strong>Fake</strong>: 4</div>
+					</li>
+					<li>
+						<div><strong>Facebook</strong>: 5</div>
+					</li>
+					<li>
+						<div><strong>Google</strong>: 8</div>
+					</li>
+					<li>
+						<div><strong>Windows</strong>: 9</div>
+					</li>
+					<li>
+						<div><strong>DemonId</strong>: 10</div>
+					</li>
+					<li>
+						<div><strong>SteamId</strong>: 12</div>
+					</li>
+					<li>
+						<div><strong>BattleNetId</strong>: 14</div>
+					</li>
+					<li>
+						<div><strong>StadiaId</strong>: 16</div>
+					</li>
+					<li>
+						<div><strong>TwitchId</strong>: 18</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+</div>			</div>
+		</div>
+		<div class="schema box">
 			<a id="/components/schemas/User.Models.GetCredentialTypesForAccountResponse"><h3>User.Models.GetCredentialTypesForAccountResponse</h3></a>
 			<div class="schema-detail box-contents">
 <div class="type-info stop-nesting-boxes">
@@ -45063,79 +45428,6 @@
 		</div>
 	
 			
-
-</div>			</div>
-		</div>
-		<div class="schema box">
-			<a id="/components/schemas/BungieCredentialType"><h3>BungieCredentialType</h3></a>
-			<div class="schema-detail box-contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-		<span class="enum">Enumeration</span>
-	</div>
-	
-	<div class="description">
-		The types of credentials the Accounts system supports. This is the external facing enum used in place of the internal-only Bungie.SharedDefinitions.CredentialType.
-	</div>
-	
-	
-	<div class="type">
-		<strong>Type</strong>: byte
-	</div>
-	
-	
-
-	
-	
-			
-		<div class="enum-values box">
-			<h5>Valid Enum Values</h5>
-			<div class="box-contents stop-nesting-boxes">
-				<ul>
-					<li>
-						<div><strong>None</strong>: 0</div>
-					</li>
-					<li>
-						<div><strong>Xuid</strong>: 1</div>
-					</li>
-					<li>
-						<div><strong>Psnid</strong>: 2</div>
-					</li>
-					<li>
-						<div><strong>Wlid</strong>: 3</div>
-					</li>
-					<li>
-						<div><strong>Fake</strong>: 4</div>
-					</li>
-					<li>
-						<div><strong>Facebook</strong>: 5</div>
-					</li>
-					<li>
-						<div><strong>Google</strong>: 8</div>
-					</li>
-					<li>
-						<div><strong>Windows</strong>: 9</div>
-					</li>
-					<li>
-						<div><strong>DemonId</strong>: 10</div>
-					</li>
-					<li>
-						<div><strong>SteamId</strong>: 12</div>
-					</li>
-					<li>
-						<div><strong>BattleNetId</strong>: 14</div>
-					</li>
-					<li>
-						<div><strong>StadiaId</strong>: 16</div>
-					</li>
-					<li>
-						<div><strong>TwitchId</strong>: 18</div>
-					</li>
-				</ul>
-			</div>
-		</div>
 
 </div>			</div>
 		</div>
@@ -72707,6 +72999,9 @@
 					<li>
 						<div><strong>Offensive</strong>: 86</div>
 					</li>
+					<li>
+						<div><strong>LostSector</strong>: 87</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -73207,6 +73502,60 @@
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
 		See: <a href="#/components/schemas/Destiny.Definitions.Common.DestinyDisplayPropertiesDefinition">Destiny.Definitions.Common.DestinyDisplayPropertiesDefinition</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>displayInNavMode</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>displayInActivitySelection</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
 </div>						</div>
 					</div>
 				</div>
@@ -76802,6 +77151,9 @@
 					<li>
 						<div><strong>Offensive</strong>: 86</div>
 					</li>
+					<li>
+						<div><strong>LostSector</strong>: 87</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -77154,6 +77506,9 @@
 					</li>
 					<li>
 						<div><strong>Offensive</strong>: 86</div>
+					</li>
+					<li>
+						<div><strong>LostSector</strong>: 87</div>
 					</li>
 				</ul>
 			</div>
@@ -91292,6 +91647,37 @@
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
+						<div class="title"><strong>requiredLevel</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+	</div>
+	
+	<div class="description">
+		If the plug has a known level requirement, it'll be available here.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
 						<div class="title"><strong>materialRequirementHashes</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
@@ -94574,6 +94960,9 @@
 					</li>
 					<li>
 						<div><strong>Finisher</strong>: 29</div>
+					</li>
+					<li>
+						<div><strong>Pattern</strong>: 30</div>
 					</li>
 				</ul>
 			</div>
@@ -102173,6 +102562,18 @@
 						<div><strong>DuplicateGlobalDisplayName</strong>: 237</div>
 					</li>
 					<li>
+						<div><strong>ErrorRunningNameValidationChecks</strong>: 238</div>
+					</li>
+					<li>
+						<div><strong>ErrorDatabaseGlobalName</strong>: 239</div>
+					</li>
+					<li>
+						<div><strong>ErrorNoAvailableNameChanges</strong>: 240</div>
+					</li>
+					<li>
+						<div><strong>ErrorNameAlreadySetToInput</strong>: 241</div>
+					</li>
+					<li>
 						<div><strong>MessagingUnknownError</strong>: 300</div>
 					</li>
 					<li>
@@ -103843,6 +104244,24 @@
 					</li>
 					<li>
 						<div><strong>ClanFireteamJoinNoAccountSpecified</strong>: 3032</div>
+					</li>
+					<li>
+						<div><strong>ClanFireteamMinDestiny2ProgressForCreation</strong>: 3033</div>
+					</li>
+					<li>
+						<div><strong>ClanFireteamMinDestiny2ProgressForJoin</strong>: 3034</div>
+					</li>
+					<li>
+						<div><strong>ClanFireteamSMSOrPurchaseRequiredCreate</strong>: 3035</div>
+					</li>
+					<li>
+						<div><strong>ClanFireteamPurchaseRequiredCreate</strong>: 3036</div>
+					</li>
+					<li>
+						<div><strong>ClanFireteamSMSOrPurchaseRequiredJoin</strong>: 3037</div>
+					</li>
+					<li>
+						<div><strong>ClanFireteamPurchaseRequiredJoin</strong>: 3038</div>
 					</li>
 					<li>
 						<div><strong>CrossSaveOverriddenAccountNotFound</strong>: 3200</div>
@@ -119221,6 +119640,9 @@
 					<li>
 						<div><strong>Offensive</strong>: 86</div>
 					</li>
+					<li>
+						<div><strong>LostSector</strong>: 87</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -119702,6 +120124,9 @@
 					</li>
 					<li>
 						<div><strong>Offensive</strong>: 86</div>
+					</li>
+					<li>
+						<div><strong>LostSector</strong>: 87</div>
 					</li>
 				</ul>
 			</div>
@@ -124795,6 +125220,9 @@
 					</li>
 					<li>
 						<div><strong>Offensive</strong>: 86</div>
+					</li>
+					<li>
+						<div><strong>LostSector</strong>: 87</div>
 					</li>
 				</ul>
 			</div>
@@ -142070,7 +142498,7 @@
 	</div>
 	
 	<div class="description">
-		OBSOLETE - If this activity has "phases", this is the phase at which the activity was started.
+		If this activity has "phases", this is the phase at which the activity was started. This value is only valid for activities before the Beyond Light expansion shipped. Subsequent activities will not have a valid value here.
 	</div>
 	
 	
@@ -142101,7 +142529,7 @@
 	</div>
 	
 	<div class="description">
-		True if the activity was started from the beginning, if that information is available.
+		True if the activity was started from the beginning, if that information is available and the activity was played post Witch Queen release.
 	</div>
 	
 	
@@ -148012,6 +148440,9 @@
 					<li>
 						<div><strong>Offensive</strong>: 86</div>
 					</li>
+					<li>
+						<div><strong>LostSector</strong>: 87</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -148388,6 +148819,9 @@
 					</li>
 					<li>
 						<div><strong>Offensive</strong>: 86</div>
+					</li>
+					<li>
+						<div><strong>LostSector</strong>: 87</div>
 					</li>
 				</ul>
 			</div>
