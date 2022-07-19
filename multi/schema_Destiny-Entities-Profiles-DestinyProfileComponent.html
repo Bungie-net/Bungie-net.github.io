@@ -132,6 +132,11 @@
 										<span class="attributes">
 										</span>
 									</li>
+									<li>
+										GET: <a href="operation_get_Content-RssNewsArticles.html#operation_get_Content-RssNewsArticles" id="operation_get_Content-RssNewsArticles">Content.RssNewsArticles</a>
+										<span class="attributes">
+										</span>
+									</li>
 								</ul>
 							</div>
 						</li>
@@ -390,6 +395,11 @@
 									</li>
 									<li>
 										GET: <a href="operation_get_Tokens-GetBungieRewardsForUser.html#operation_get_Tokens-GetBungieRewardsForUser" id="operation_get_Tokens-GetBungieRewardsForUser">Tokens.GetBungieRewardsForUser</a>
+										<span class="attributes">
+										</span>
+									</li>
+									<li>
+										GET: <a href="operation_get_Tokens-GetBungieRewardsForPlatformUser.html#operation_get_Tokens-GetBungieRewardsForPlatformUser" id="operation_get_Tokens-GetBungieRewardsForPlatformUser">Tokens.GetBungieRewardsForPlatformUser</a>
 										<span class="attributes">
 										</span>
 									</li>
@@ -957,6 +967,16 @@
 						</li>
 						<li>
 							<a href="schema_SearchResultOfContentItemPublicContract.html#schema_SearchResultOfContentItemPublicContract" id="schema_SearchResultOfContentItemPublicContract">SearchResultOfContentItemPublicContract</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
+							<a href="schema_Content-NewsArticleRssResponse.html#schema_Content-NewsArticleRssResponse" id="schema_Content-NewsArticleRssResponse">Content.NewsArticleRssResponse</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
+							<a href="schema_Content-NewsArticleRssItem.html#schema_Content-NewsArticleRssItem" id="schema_Content-NewsArticleRssItem">Content.NewsArticleRssItem</a>
 							<span class="attributes">
 							</span>
 						</li>
@@ -2894,6 +2914,17 @@
 							<a href="schema_Destiny-Entities-Profiles-DestinyProfileComponent.html#schema_Destiny-Entities-Profiles-DestinyProfileComponent" id="schema_Destiny-Entities-Profiles-DestinyProfileComponent">Destiny.Entities.Profiles.DestinyProfileComponent</a>
 							<span class="attributes">
 								<span class="depends-on">Component</span>
+							</span>
+						</li>
+						<li>
+							<a href="schema_Destiny-Definitions-Seasons-DestinyEventCardDefinition.html#schema_Destiny-Definitions-Seasons-DestinyEventCardDefinition" id="schema_Destiny-Definitions-Seasons-DestinyEventCardDefinition">Destiny.Definitions.Seasons.DestinyEventCardDefinition</a>
+							<span class="attributes">
+								<span class="manifest-entity">Manifest</span>
+							</span>
+						</li>
+						<li>
+							<a href="schema_Destiny-Definitions-Seasons-DestinyEventCardImages.html#schema_Destiny-Definitions-Seasons-DestinyEventCardImages" id="schema_Destiny-Definitions-Seasons-DestinyEventCardImages">Destiny.Definitions.Seasons.DestinyEventCardImages</a>
+							<span class="attributes">
 							</span>
 						</li>
 						<li>
@@ -4837,6 +4868,48 @@
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
+						<div class="title"><strong>eventCardHashesOwned</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	
+	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	
+	<div class="description">
+		A list of hashes for event cards that a profile owns. Unlike most values in versionsOwned, these stay with the profile across all platforms.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			uint32
+	</div>
+
+	
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="schema_Destiny-Definitions-Seasons-DestinyEventCardDefinition.html#schema_Destiny-Definitions-Seasons-DestinyEventCardDefinition">Destiny.Definitions.Seasons.DestinyEventCardDefinition</a>
+	</div>
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
 						<div class="title"><strong>currentSeasonHash</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
@@ -4901,6 +4974,45 @@
 	
 	
 	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>activeEventCardHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	
+	<div class="description">
+		If populated, this is a reference to the event card that is currently active.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: uint32
+	</div>
+	
+	
+
+	
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="schema_Destiny-Definitions-Seasons-DestinyEventCardDefinition.html#schema_Destiny-Definitions-Seasons-DestinyEventCardDefinition">Destiny.Definitions.Seasons.DestinyEventCardDefinition</a>
+	</div>
 			
 
 </div>						</div>
