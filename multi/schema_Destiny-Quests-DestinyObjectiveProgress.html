@@ -379,6 +379,11 @@
 							<div>
 								<ul>
 									<li>
+										POST: <a href="operation_post_Tokens-ForceDropsRepair.html#operation_post_Tokens-ForceDropsRepair" id="operation_post_Tokens-ForceDropsRepair">Tokens.ForceDropsRepair</a>
+										<span class="attributes">
+										</span>
+									</li>
+									<li>
 										POST: <a href="operation_post_Tokens-ClaimPartnerOffer.html#operation_post_Tokens-ClaimPartnerOffer" id="operation_post_Tokens-ClaimPartnerOffer">Tokens.ClaimPartnerOffer</a>
 										<span class="attributes">
 										</span>
@@ -390,6 +395,11 @@
 									</li>
 									<li>
 										GET: <a href="operation_get_Tokens-GetPartnerOfferSkuHistory.html#operation_get_Tokens-GetPartnerOfferSkuHistory" id="operation_get_Tokens-GetPartnerOfferSkuHistory">Tokens.GetPartnerOfferSkuHistory</a>
+										<span class="attributes">
+										</span>
+									</li>
+									<li>
+										GET: <a href="operation_get_Tokens-GetPartnerRewardHistory.html#operation_get_Tokens-GetPartnerRewardHistory" id="operation_get_Tokens-GetPartnerRewardHistory">Tokens.GetPartnerRewardHistory</a>
 										<span class="attributes">
 										</span>
 									</li>
@@ -2763,6 +2773,22 @@
 							</span>
 						</li>
 						<li>
+							<a href="schema_Tokens-PartnerRewardHistoryResponse.html#schema_Tokens-PartnerRewardHistoryResponse" id="schema_Tokens-PartnerRewardHistoryResponse">Tokens.PartnerRewardHistoryResponse</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
+							<a href="schema_Tokens-TwitchDropHistoryResponse.html#schema_Tokens-TwitchDropHistoryResponse" id="schema_Tokens-TwitchDropHistoryResponse">Tokens.TwitchDropHistoryResponse</a>
+							<span class="attributes">
+							</span>
+						</li>
+						<li>
+							<a href="schema_Streaming-DropStateEnum.html#schema_Streaming-DropStateEnum" id="schema_Streaming-DropStateEnum">Streaming.DropStateEnum</a>
+							<span class="attributes">
+								<span class="enum">Enum</span>
+							</span>
+						</li>
+						<li>
 							<a href="schema_Tokens-BungieRewardDisplay.html#schema_Tokens-BungieRewardDisplay" id="schema_Tokens-BungieRewardDisplay">Tokens.BungieRewardDisplay</a>
 							<span class="attributes">
 							</span>
@@ -4815,7 +4841,7 @@
 	
 	
 	<div class="description">
-		If progress has been made, and the progress can be measured numerically, this will be the value of that progress. You can compare it to the DestinyObjectiveDefinition.completionValue property for current vs. upper bounds, and use DestinyObjectiveDefinition.valueStyle to determine how this should be rendered. Note that progress, in Destiny 2, need not be a literal numeric progression. It could be one of a number of possible values, even a Timestamp. Always examine DestinyObjectiveDefinition.valueStyle before rendering progress.
+		If progress has been made, and the progress can be measured numerically, this will be the value of that progress. You can compare it to the DestinyObjectiveDefinition.completionValue property for current vs. upper bounds, and use DestinyObjectiveDefinition.inProgressValueStyle or completedValueStyle to determine how this should be rendered. Note that progress, in Destiny 2, need not be a literal numeric progression. It could be one of a number of possible values, even a Timestamp. Always examine DestinyObjectiveDefinition.inProgressValueStyle or completedValueStyle before rendering progress.
 	</div>
 	
 	

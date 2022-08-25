@@ -14,7 +14,7 @@
 		<div class="box-contents">
 			<div>These endpoints constitute the functionality exposed by Bungie.net, both for more traditional website functionality and for connectivity to Bungie video games and their related functionality.</div>
 			<div class="about-line-items">
-				<div><strong>Version:</strong> 2.15.1
+				<div><strong>Version:</strong> 2.16.0
 				</div>
 				<div><strong>License:</strong> <a href="https://github.com/Bungie-net/api/blob/master/LICENSE">https://github.com/Bungie-net/api/blob/master/LICENSE (BSD License 2.0)</a>
 				</div>
@@ -151,7 +151,7 @@
 								<ul>
 									<li>
 										<div class="title">PartnerOfferGrant</div>
-										<div class="description">Can user the partner offer api to claim rewards defined for a partner</div>
+										<div class="description">Can use the partner offer api to claim rewards defined for a partner</div>
 									</li>
 								</ul>
 								<ul>
@@ -527,6 +527,11 @@
 			<div class="box-contents">
 				<ul>
 					<li>
+						<span>POST:</span> <a href="#Tokens.ForceDropsRepair">/Tokens/Partner/ForceDropsRepair/</a>
+						<span class="attributes">
+						</span>
+					</li>
+					<li>
 						<span>POST:</span> <a href="#Tokens.ClaimPartnerOffer">/Tokens/Partner/ClaimOffer/</a>
 						<span class="attributes">
 						</span>
@@ -538,6 +543,11 @@
 					</li>
 					<li>
 						<span>GET:</span> <a href="#Tokens.GetPartnerOfferSkuHistory">/Tokens/Partner/History/{partnerApplicationId}/{targetBnetMembershipId}/</a>
+						<span class="attributes">
+						</span>
+					</li>
+					<li>
+						<span>GET:</span> <a href="#Tokens.GetPartnerRewardHistory">/Tokens/Partner/History/{targetBnetMembershipId}/Application/{partnerApplicationId}/</a>
 						<span class="attributes">
 						</span>
 					</li>
@@ -2906,6 +2916,22 @@
 			<li>
 				<a href="#/components/schemas/Tokens.PartnerOfferHistoryResponse">Tokens.PartnerOfferHistoryResponse</a>
 				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Tokens.PartnerRewardHistoryResponse">Tokens.PartnerRewardHistoryResponse</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Tokens.TwitchDropHistoryResponse">Tokens.TwitchDropHistoryResponse</a>
+				<span class="attributes">
+				</span>
+			</li>
+			<li>
+				<a href="#/components/schemas/Streaming.DropStateEnum">Streaming.DropStateEnum</a>
+				<span class="attributes">
+					<span class="enum">Enumeration</span>
 				</span>
 			</li>
 			<li>
@@ -23683,6 +23709,264 @@
 </div>		</div>
 		<div class="endpoint">
 <div class="box">
+	<a id="Tokens.ForceDropsRepair"><h3>Tokens.ForceDropsRepair</h3></a>
+	<div class="box-contents">
+		<div class="attributes">
+			<span class="Tokens tag">Tokens</span>
+		</div>
+		<br />
+		<div><strong>Verb:</strong> POST</div>
+		<br />
+		<div><strong>Path:</strong> /Tokens/Partner/ForceDropsRepair/</div>
+		<br />
+		<div class="description">Twitch Drops self-repair function - scans twitch for drops not marked as fulfilled and resyncs them.</div>
+		<br />
+		<div class="required-scopes box">
+			<h4>Required Scope(s)</h4>
+			<div class="box-contents">
+				<ul>
+					<li>oauth2: PartnerOfferGrant</li>
+				</ul>
+			</div>
+		</div>
+		
+
+	
+	
+		<div class="response box">
+			<h4>Response</h4>
+			<div class="box-contents stop-nesting-boxes">
+<div class="response">
+	<div class="description">Look at the Response property for more information about the nature of this response</div>
+		<div class="content">
+			<div class="content-type">Content Type: application/json</div>
+			<div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Response</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorCode</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ThrottleSeconds</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorStatus</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Message</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>MessageData</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			string
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		string
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>DetailedErrorTrace</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+</div>			</div>
+		</div>
+	</div>
+</div>		</div>
+		<div class="endpoint">
+<div class="box">
 	<a id="Tokens.ClaimPartnerOffer"><h3>Tokens.ClaimPartnerOffer</h3></a>
 	<div class="box-contents">
 		<div class="attributes">
@@ -24385,6 +24669,299 @@
 	
 			
 
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorCode</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ThrottleSeconds</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ErrorStatus</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Message</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>MessageData</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			string
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		string
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>DetailedErrorTrace</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+</div>			</div>
+		</div>
+	</div>
+</div>		</div>
+		<div class="endpoint">
+<div class="box">
+	<a id="Tokens.GetPartnerRewardHistory"><h3>Tokens.GetPartnerRewardHistory</h3></a>
+	<div class="box-contents">
+		<div class="attributes">
+			<span class="Tokens tag">Tokens</span>
+		</div>
+		<br />
+		<div><strong>Verb:</strong> GET</div>
+		<br />
+		<div><strong>Path:</strong> /Tokens/Partner/History/{targetBnetMembershipId}/Application/{partnerApplicationId}/</div>
+		<br />
+		<div class="description">Returns the partner rewards history of the targeted user, both partner offers and Twitch drops.</div>
+		<br />
+		<div class="required-scopes box">
+			<h4>Required Scope(s)</h4>
+			<div class="box-contents">
+				<ul>
+					<li>oauth2: PartnerOfferGrant</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="parameters box">
+			<h4>Path Parameters</h4>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<strong>partnerApplicationId</strong>
+						<div class="description">The partner application identifier.</div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int32
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>					</li>
+					<li>
+						<strong>targetBnetMembershipId</strong>
+						<div class="description">The bungie.net user to return reward history for.</div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int64
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>					</li>
+				</ul>
+			</div>
+		</div>
+
+	
+	
+		<div class="response box">
+			<h4>Response</h4>
+			<div class="box-contents stop-nesting-boxes">
+<div class="response">
+	<div class="description">Look at the Response property for more information about the nature of this response</div>
+		<div class="content">
+			<div class="content-type">Content Type: application/json</div>
+			<div>
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Response</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Tokens.PartnerRewardHistoryResponse">Tokens.PartnerRewardHistoryResponse</a>
 </div>						</div>
 					</div>
 				</div>
@@ -31083,7 +31660,7 @@
 		<br />
 		<div>
 			<div><strong>Notes:</strong></div>
-			<div class="preview">ThrottleSecondsBetweenActionPerUser: 1</div>
+			<div class="preview">ThrottleSecondsBetweenActionPerUser: 0.5</div>
 		</div>
 		<br />
 		<div><strong>Verb:</strong> POST</div>
@@ -31340,7 +31917,7 @@
 		<br />
 		<div>
 			<div><strong>Notes:</strong></div>
-			<div class="preview">ThrottleSecondsBetweenActionPerUser: 1</div>
+			<div class="preview">ThrottleSecondsBetweenActionPerUser: 0.5</div>
 		</div>
 		<br />
 		<div><strong>Verb:</strong> POST</div>
@@ -43542,7 +44119,7 @@
 					</li>
 					<li>
 						<div><strong>PartnerOfferGrant</strong>: 4096</div>
-						<div class="description">Can user the partner offer api to claim rewards defined for a partner</div>
+						<div class="description">Can use the partner offer api to claim rewards defined for a partner</div>
 					</li>
 					<li>
 						<div><strong>DestinyUnlockValueQuery</strong>: 8192</div>
@@ -44626,6 +45203,9 @@
 					</li>
 					<li>
 						<div><strong>TigerStadia</strong>: 5</div>
+					</li>
+					<li>
+						<div><strong>TigerEgs</strong>: 6</div>
 					</li>
 					<li>
 						<div><strong>TigerDemon</strong>: 10</div>
@@ -46207,6 +46787,33 @@
 					</div>
 				</div>
 			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>egsDisplayName</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	
 			
@@ -46503,6 +47110,9 @@
 					</li>
 					<li>
 						<div><strong>TwitchId</strong>: 18</div>
+					</li>
+					<li>
+						<div><strong>EgsId</strong>: 20</div>
 					</li>
 				</ul>
 			</div>
@@ -75537,7 +76147,7 @@
 	</div>
 	
 	<div class="description">
-		The UI style applied to the objective. It's an enum, take a look at DestinyUnlockValueUIStyle for details of the possible styles. Use this info as you wish to customize your UI.
+		The UI style applied to the objective. It's an enum, take a look at DestinyUnlockValueUIStyle for details of the possible styles. Use this info as you wish to customize your UI.<br /><br />DEPRECATED: This is no longer populated by Destiny 2 game content. Please use inProgressValueStyle and completedValueStyle instead.
 	</div>
 	
 	
@@ -104956,6 +105566,9 @@
 						<div><strong>ForumRequiresDestiny2Progress</strong>: 595</div>
 					</li>
 					<li>
+						<div><strong>ForumRequiresDestiny2EntitlementPurchase</strong>: 596</div>
+					</li>
+					<li>
 						<div><strong>GroupMembershipApplicationAlreadyResolved</strong>: 601</div>
 					</li>
 					<li>
@@ -106175,6 +106788,12 @@
 						<div><strong>TwitchNoPlatformChosen</strong>: 2506</div>
 					</li>
 					<li>
+						<div><strong>TwitchDropHistoryPermissionFailure</strong>: 2507</div>
+					</li>
+					<li>
+						<div><strong>TwitchDropsRepairPartialFailure</strong>: 2508</div>
+					</li>
+					<li>
 						<div><strong>TrendingCategoryNotFound</strong>: 2600</div>
 					</li>
 					<li>
@@ -106542,6 +107161,36 @@
 					</li>
 					<li>
 						<div><strong>ErrorBungieBlockListFull</strong>: 3911</div>
+					</li>
+					<li>
+						<div><strong>ErrorEgsUnknown</strong>: 4000</div>
+					</li>
+					<li>
+						<div><strong>ErrorEgsBadRequest</strong>: 4001</div>
+					</li>
+					<li>
+						<div><strong>ErrorEgsNotAuthorized</strong>: 4002</div>
+					</li>
+					<li>
+						<div><strong>ErrorEgsForbidden</strong>: 4003</div>
+					</li>
+					<li>
+						<div><strong>ErrorEgsAccountNotFound</strong>: 4004</div>
+					</li>
+					<li>
+						<div><strong>ErrorEgsWebException</strong>: 4005</div>
+					</li>
+					<li>
+						<div><strong>ErrorEgsUnavailable</strong>: 4006</div>
+					</li>
+					<li>
+						<div><strong>ErrorEgsJwksMissing</strong>: 4007</div>
+					</li>
+					<li>
+						<div><strong>ErrorEgsJwtMalformedHeader</strong>: 4008</div>
+					</li>
+					<li>
+						<div><strong>ErrorEgsJwtMalformedPayload</strong>: 4009</div>
 					</li>
 				</ul>
 			</div>
@@ -108293,6 +108942,9 @@
 						<div><strong>TigerStadia</strong>: 5</div>
 					</li>
 					<li>
+						<div><strong>TigerEgs</strong>: 6</div>
+					</li>
+					<li>
 						<div><strong>TigerDemon</strong>: 10</div>
 					</li>
 					<li>
@@ -108449,6 +109101,287 @@
 		</div>
 	
 			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Tokens.PartnerRewardHistoryResponse"><h3>Tokens.PartnerRewardHistoryResponse</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>PartnerOffers</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/Tokens.PartnerOfferSkuHistoryResponse">Tokens.PartnerOfferSkuHistoryResponse</a>
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>TwitchDrops</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/Tokens.TwitchDropHistoryResponse">Tokens.TwitchDropHistoryResponse</a>
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Tokens.TwitchDropHistoryResponse"><h3>Tokens.TwitchDropHistoryResponse</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	
+		<div class="properties box">
+			<h5>Object Properties</h5>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Title</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>Description</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>CreatedAt</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: date-time
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>ClaimState</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+		<span class="enum">Enumeration</span>
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: byte
+	</div>
+	
+	
+
+	
+	
+			
+		<div class="enum-values box">
+			<h5>Valid Enum Values</h5>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<div><strong>Claimed</strong>: 0</div>
+					</li>
+					<li>
+						<div><strong>Applied</strong>: 1</div>
+					</li>
+					<li>
+						<div><strong>Fulfilled</strong>: 2</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+			
+
+</div>			</div>
+		</div>
+		<div class="schema box">
+			<a id="/components/schemas/Streaming.DropStateEnum"><h3>Streaming.DropStateEnum</h3></a>
+			<div class="schema-detail box-contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="enum">Enumeration</span>
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: byte
+	</div>
+	
+	
+
+	
+	
+			
+		<div class="enum-values box">
+			<h5>Valid Enum Values</h5>
+			<div class="box-contents stop-nesting-boxes">
+				<ul>
+					<li>
+						<div><strong>Claimed</strong>: 0</div>
+					</li>
+					<li>
+						<div><strong>Applied</strong>: 1</div>
+					</li>
+					<li>
+						<div><strong>Fulfilled</strong>: 2</div>
+					</li>
+				</ul>
+			</div>
+		</div>
 
 </div>			</div>
 		</div>
@@ -111236,7 +112169,7 @@
 	</div>
 	
 	<div class="description">
-		If progress has been made, and the progress can be measured numerically, this will be the value of that progress. You can compare it to the DestinyObjectiveDefinition.completionValue property for current vs. upper bounds, and use DestinyObjectiveDefinition.valueStyle to determine how this should be rendered. Note that progress, in Destiny 2, need not be a literal numeric progression. It could be one of a number of possible values, even a Timestamp. Always examine DestinyObjectiveDefinition.valueStyle before rendering progress.
+		If progress has been made, and the progress can be measured numerically, this will be the value of that progress. You can compare it to the DestinyObjectiveDefinition.completionValue property for current vs. upper bounds, and use DestinyObjectiveDefinition.inProgressValueStyle or completedValueStyle to determine how this should be rendered. Note that progress, in Destiny 2, need not be a literal numeric progression. It could be one of a number of possible values, even a Timestamp. Always examine DestinyObjectiveDefinition.inProgressValueStyle or completedValueStyle before rendering progress.
 	</div>
 	
 	
@@ -155371,6 +156304,9 @@
 					<li>
 						<div><strong>Stadia</strong>: 5</div>
 					</li>
+					<li>
+						<div><strong>Egs</strong>: 6</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -157599,6 +158535,9 @@
 					<li>
 						<div><strong>Steam</strong>: 3</div>
 					</li>
+					<li>
+						<div><strong>Egs</strong>: 4</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -157892,6 +158831,9 @@
 						<div><strong>TigerStadia</strong>: 5</div>
 					</li>
 					<li>
+						<div><strong>TigerEgs</strong>: 6</div>
+					</li>
+					<li>
 						<div><strong>TigerDemon</strong>: 10</div>
 					</li>
 					<li>
@@ -158169,6 +159111,17 @@
 	
 			
 
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>defaultGroupTheme</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+		See: <a href="#/components/schemas/Common.Models.CoreSetting">Common.Models.CoreSetting</a>
 </div>						</div>
 					</div>
 				</div>
