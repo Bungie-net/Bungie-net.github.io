@@ -4736,8 +4736,20 @@
 						<div class="description">This item requires you to have reached a specific character level in order to equip it, and you haven't reached that level yet.</div>
 					</li>
 					<li>
-						<div><strong>ItemNotOnCharacter</strong>: 16</div>
-						<div class="description">This item can't be equipped on the character requested, because it must be in that character's inventory first. Transfer the item to the character you want to equip it before you attempt to equip it.</div>
+						<div><strong>ItemWrapped</strong>: 16</div>
+						<div class="description">This item is 'wrapped' and must be unwrapped before being equipped. NOTE: This value used to be called ItemNotOnCharacter but that is no longer accurate.</div>
+					</li>
+					<li>
+						<div><strong>ItemNotLoaded</strong>: 32</div>
+						<div class="description">This item is not yet loaded and cannot be equipped yet.</div>
+					</li>
+					<li>
+						<div><strong>ItemEquipBlocklisted</strong>: 64</div>
+						<div class="description">This item is block-listed and cannot be equipped.</div>
+					</li>
+					<li>
+						<div><strong>ItemLoadoutRequirementNotMet</strong>: 128</div>
+						<div class="description">This item does not meet the loadout requirements for the current activity</div>
 					</li>
 				</ul>
 			</div>
