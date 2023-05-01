@@ -14,7 +14,7 @@
 		<div class="box-contents">
 			<div>These endpoints constitute the functionality exposed by Bungie.net, both for more traditional website functionality and for connectivity to Bungie video games and their related functionality.</div>
 			<div class="about-line-items">
-				<div><strong>Version:</strong> 2.18.0
+				<div><strong>Version:</strong> 2.18.1
 				</div>
 				<div><strong>License:</strong> <a href="https://github.com/Bungie-net/api/blob/master/LICENSE">https://github.com/Bungie-net/api/blob/master/LICENSE (BSD License 2.0)</a>
 				</div>
@@ -53303,37 +53303,6 @@
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
-						<div class="title"><strong>NewsArticles</strong></div>
-						<div class="contents">
-<div class="type-info stop-nesting-boxes">
-
-	
-	<div class="attributes">
-	</div>
-	
-	
-	
-	<div class="type">
-		<strong>Type</strong>: array
-	</div>
-	
-	
-	<div class="items">
-		<strong>Array Contents:</strong>
-			<a href="#/components/schemas/Content.NewsArticleRssItem">Content.NewsArticleRssItem</a>
-	</div>
-
-	
-	
-			
-
-</div>						</div>
-					</div>
-				</div>
-			</div>
-			<div class="property box-contents stop-nesting-boxes">
-				<div class="box">
-					<div class="box-contents">
 						<div class="title"><strong>CurrentPaginationToken</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
@@ -53416,7 +53385,65 @@
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
+						<div class="title"><strong>NewsArticles</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			<a href="#/components/schemas/Content.NewsArticleRssItem">Content.NewsArticleRssItem</a>
+	</div>
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
 						<div class="title"><strong>CategoryFilter</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>PagerAction</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
 
@@ -56008,6 +56035,34 @@
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
 		See: <a href="#/components/schemas/GroupsV2.GroupFeatures">GroupsV2.GroupFeatures</a>
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>remoteGroupId</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int64
+	</div>
+	
+	
+
+	
+	
+			
+
 </div>						</div>
 					</div>
 				</div>
@@ -91063,6 +91118,36 @@
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
+						<div class="title"><strong>recordTypeName</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		A display name for the type of record this is (Triumphs, Lore, Medals, Seasonal Challenge, etc.).
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
 						<div class="title"><strong>presentationNodeType</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
@@ -91747,7 +91832,7 @@
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
-						<div class="title"><strong>obscuredString</strong></div>
+						<div class="title"><strong>obscuredName</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
 
@@ -91755,6 +91840,39 @@
 	<div class="attributes">
 	</div>
 	
+	<div class="description">
+		A display name override to show when this record is 'obscured' instead of the default obscured display name.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>obscuredDescription</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		A display description override to show when this record is 'obscured' instead of the default obscured display description.
+	</div>
 	
 	
 	<div class="type">
@@ -102523,6 +102641,34 @@
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
+						<div class="title"><strong>remoteGroupId</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="nullable">Nullable</span>
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: int64
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
 						<div class="title"><strong>clanInfo</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
@@ -106500,6 +106646,9 @@
 					</li>
 					<li>
 						<div><strong>PrivateMessagingRequiresDestinyMembership</strong>: 313</div>
+					</li>
+					<li>
+						<div><strong>MessagingSendDailyThrottle</strong>: 314</div>
 					</li>
 					<li>
 						<div><strong>AddSurveyAnswersUnknownSqlException</strong>: 400</div>
@@ -119735,7 +119884,7 @@
 					</li>
 					<li>
 						<div><strong>Obscured</strong>: 8</div>
-						<div class="description">If this is set, the game recommends that you replace the display text of this Record with DestinyRecordDefinition.stateInfo.obscuredString.</div>
+						<div class="description">If this is set, the game recommends that you replace the display text of this Record with DestinyRecordDefinition.stateInfo.obscuredDescription.</div>
 					</li>
 					<li>
 						<div><strong>Invisible</strong>: 16</div>
@@ -122344,6 +122493,44 @@
 			<div class="property box-contents stop-nesting-boxes">
 				<div class="box">
 					<div class="box-contents">
+						<div class="title"><strong>commendationNodePercentagesByHash</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		The percentage for each commendation type out of total received
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: object
+	</div>
+	
+	
+
+	<div class="dictionary">
+		<strong>Dictionary Contents:</strong>
+			uint32
+	</div>
+	<div>
+		<strong>Dictionary Key Type: </strong> 
+		uint32
+	</div>
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
 						<div class="title"><strong>scoreDetailValues</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
@@ -122516,6 +122703,36 @@
 <div class="type-info stop-nesting-boxes">
 		See: <a href="#/components/schemas/Destiny.Misc.DestinyColor">Destiny.Misc.DestinyColor</a>
 </div>	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>tintedIcon</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	<div class="description">
+		A version of the displayProperties icon tinted with the color of this node.
+	</div>
+	
+	
+	<div class="type">
+		<strong>Type</strong>: string
+	</div>
+	
+	
 
 	
 	
@@ -131580,6 +131797,33 @@
 				<div class="box">
 					<div class="box-contents">
 						<div class="title"><strong>isActive</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: boolean
+	</div>
+	
+	
+
+	
+	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>isVisible</strong></div>
 						<div class="contents">
 <div class="type-info stop-nesting-boxes">
 
@@ -165193,6 +165437,42 @@
 
 	
 	
+			
+
+</div>						</div>
+					</div>
+				</div>
+			</div>
+			<div class="property box-contents stop-nesting-boxes">
+				<div class="box">
+					<div class="box-contents">
+						<div class="title"><strong>guardianRankHashes</strong></div>
+						<div class="contents">
+<div class="type-info stop-nesting-boxes">
+
+	
+	<div class="attributes">
+		<span class="mapped">Mapped to Definition</span>
+	</div>
+	
+	
+	
+	<div class="type">
+		<strong>Type</strong>: array
+	</div>
+	
+	
+	<div class="items">
+		<strong>Array Contents:</strong>
+			uint32
+	</div>
+
+	
+	
+	<div class="mapped">
+		<strong>Mapped to Manifest Database Definition: </strong>
+		<a href="#/components/schemas/Destiny.Definitions.GuardianRanks.DestinyGuardianRankDefinition">Destiny.Definitions.GuardianRanks.DestinyGuardianRankDefinition</a>
+	</div>
 			
 
 </div>						</div>
