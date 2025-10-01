@@ -1,0 +1,20 @@
+[
+    {
+        "relation": [
+            "lookalikes/allowlist"
+        ],
+        "target": {
+            "namespace": "web",
+            "site": "https://bungie.net"
+        }
+    },
+    {
+        "relation": [
+            "lookalikes/allowlist"
+        ],
+        "target": {
+            "namespace": "web",
+            "site": "https://bungie-net.github.io"
+        }
+    }
+]
